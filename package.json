@@ -1,0 +1,23 @@
+{
+  "name": "semis-core",
+  "version": "1.0.0",
+  "description": "",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "scripts": {
+    "build": "d2-app-scripts build",
+    "start": "d2-app-scripts start --proxy https://emis.dhis2.org/startracker",
+    "test": "d2-app-scripts test",
+    "deploy": "d2-app-scripts deploy"
+  },
+  "devDependencies": {
+    "@dhis2/cli-app-scripts": "^12.0.0-alpha.23",
+    "@types/css-modules": "^1.0.5",
+    "@types/react": "^18.3.13",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "*"
+  },
+  "dependencies": {
+    "@dhis2/app-runtime": "^3.12.0"
+  }
+}

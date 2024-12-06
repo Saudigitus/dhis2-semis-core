@@ -23,7 +23,7 @@
     "@emotion/styled": "^11.13.5",
     "@mui/icons-material": "^6.1.10",
     "@mui/material": "^6.1.10",
-    "dhis2-semis-components": "^0.6.2-alpha.9",
+    "dhis2-semis-components": "^0.6.2-alpha.10",
     "react-router-dom": "^7.0.2"
   }
 }

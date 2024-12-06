@@ -1,5 +1,5 @@
 import { DashboardCard, useDataStoreKey, useProgramsKeys } from "dhis2-semis-components"
-import enrollmentImage from "../../assets/images/enrollment.png"
+import enrollmentImage from "../../assets/images/home/enrollment.png"
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from "react-router-dom";
 

@@ -1,14 +1,16 @@
-import { LayoutProps } from "../../types/layout/layoutProps"
 import style from "../layout.module.css"
+import { Outlet } from "react-router-dom"
+import { SideBar } from "dhis2-semis-components"
+import { sideBarData } from "../../utils/constants/menuData"
 
-const WithSideBarLayout = ({ children }: LayoutProps) => {
+const WithSideBarLayout = () => {
     return (
         <div className={style.LayoutContainer}>
             <aside className={style.AsideContainer}>
-                Side Bar
+                <SideBar sideBarData={sideBarData("2024")} />
             </aside>
             <main className={style.MainContentContainer}>
-                {children}
+                <Outlet/>
             </main>
         </div>
     )

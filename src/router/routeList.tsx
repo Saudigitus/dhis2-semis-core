@@ -1,24 +1,30 @@
-import { Navigate } from "react-router-dom";
-import SimpleLayout from "../layout/simpleLayout/simpleLayout";
-import WithSideBarLayout from "../layout/sidebarLayout/withSideBarLayout";
 import Home from "../pages/home";
 
 export default function RouteList() {
     return [
         {
-            path: "/",
-            layout: SimpleLayout,
-            component: () => <Navigate to="/semis" replace />
+            path: "/semis/",
+            component: <Home />
         },
         {
-            path: "/semis",
-            layout: WithSideBarLayout,
-            component: () => <Home />
+            path: "/semis/enrollment",
+            component: <span>Enrollments</span>
         },
         {
-            path: "/semis/enrollments",
-            layout: WithSideBarLayout,
-            component: () => <span>Enrollments</span>
+            path: "/semis/attendance",
+            component: <span>Attendance</span>
+        },
+        {
+            path: "/semis/performance",
+            component: <span>Performance</span>
+        },
+        {
+            path: "/semis/final-result",
+            component: <span>FinalResult</span>
+        },
+        {
+            path: "/semis/transfer",
+            component: <span>Transfer</span>
         }
     ]
 }

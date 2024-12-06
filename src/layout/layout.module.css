@@ -1,6 +1,7 @@
 /* CONTAINER CONTENT STYLE */
 .LayoutContainer {
     width: 100vw;
+    height: calc(100vh - 48px) !important;
     height: inherit;
     display: flex;
     flex-direction: row;

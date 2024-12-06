@@ -1,16 +1,18 @@
 import style from "../layout.module.css"
 import { Outlet } from "react-router-dom"
 import { SideBar } from "dhis2-semis-components"
-import { sideBarData } from "../../utils/constants/menuData"
+import { useMenuData } from "../../hooks/menu/useMenuData"
 
 const WithSideBarLayout = () => {
+    const { menuData } = useMenuData()
+
     return (
         <div className={style.LayoutContainer}>
             <aside className={style.AsideContainer}>
-                <SideBar sideBarData={sideBarData("2024")} />
+                <SideBar sideBarData={menuData} />
             </aside>
             <main className={style.MainContentContainer}>
-                <Outlet/>
+                <Outlet />
             </main>
         </div>
     )

@@ -8,7 +8,7 @@ import fileDocument from "../../assets/images/sidebar/file-document.svg"
 import { SideBarItemProps } from "dhis2-semis-components/dist/declarations/types/sideBar/SideBarTypes"
 
 
-export const sideBarData = (currentAcademicYear: string) : SideBarItemProps[] => ([
+export const menuData = (currentAcademicYear: string): SideBarItemProps[] => ([
     {
         title: "Navigation",
         displayInMenu: true,
@@ -20,14 +20,14 @@ export const sideBarData = (currentAcademicYear: string) : SideBarItemProps[] =>
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS",
-                route: `home`,
+                route: `/semis`,
                 appUrl: "#/semis",
-                active: true,
+                active: false,
             }
         ]
     },
     {
-        title: "Students",
+        title: "Student",
         displayInMenu: true,
         subItems: [
             {
@@ -37,8 +37,9 @@ export const sideBarData = (currentAcademicYear: string) : SideBarItemProps[] =>
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Enrollment",
-                route: `semis/enrollment?sectionType=student&academicYear=${currentAcademicYear}`,
-                appUrl: "#/semis/enrollment",
+                // route: `semis/enrollment`,
+                route: "/semis/enrollment",
+                appUrl: `#/semis/enrollment?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
             },
             {
@@ -48,8 +49,9 @@ export const sideBarData = (currentAcademicYear: string) : SideBarItemProps[] =>
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Attendance",
-                route: `attendance?sectionType=student&academicYear=${currentAcademicYear}`,
-                appUrl: "#/semis/attendance",
+                // route: `attendance?sectionType=student&academicYear=${currentAcademicYear}`,
+                route: "/semis/attendance",
+                appUrl: `#/semis/attendance?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
             },
             {
@@ -59,8 +61,9 @@ export const sideBarData = (currentAcademicYear: string) : SideBarItemProps[] =>
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Performance",
-                route: `performance?sectionType=student&academicYear=${currentAcademicYear}`,
-                appUrl: "#/semis/performance",
+                // route: `performance?sectionType=student&academicYear=${currentAcademicYear}`,
+                route: "/semis/performance",
+                appUrl: `#/semis/performance?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
             },
             {
@@ -70,8 +73,9 @@ export const sideBarData = (currentAcademicYear: string) : SideBarItemProps[] =>
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Final-Result",
-                route: `final-result?sectionType=student&academicYear=${currentAcademicYear}`,
-                appUrl: "#/semis/final-result",
+                // route: `final-result?sectionType=student&academicYear=${currentAcademicYear}`,
+                route: "/semis/final-result",
+                appUrl: `#/semis/final-result?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
             },
             {
@@ -81,8 +85,9 @@ export const sideBarData = (currentAcademicYear: string) : SideBarItemProps[] =>
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Transfer",
-                route: `transfer?sectionType=student&academicYear=${currentAcademicYear}`,
-                appUrl: "#/semis/transfer",
+                // route: `transfer?sectionType=student&academicYear=${currentAcademicYear}`,
+                route: "/semis/transfer",
+                appUrl: `#/semis/transfer?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
             }
         ]
@@ -98,8 +103,9 @@ export const sideBarData = (currentAcademicYear: string) : SideBarItemProps[] =>
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Enrollment",
-                route: `enrollment?sectionType=staff&academicYear=${currentAcademicYear}`,
-                appUrl: "#/semis/enrollment",
+                // route: `enrollment?sectionType=staff&academicYear=${currentAcademicYear}`,
+                route: "/semis/enrollment",
+                appUrl: `#/semis/enrollment?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
             },
             {
@@ -109,8 +115,9 @@ export const sideBarData = (currentAcademicYear: string) : SideBarItemProps[] =>
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Attendance",
-                route: `attendance?sectionType=staff&academicYear=${currentAcademicYear}`,
-                appUrl: "#/semis/attendance",
+                // route: `attendance?sectionType=staff&academicYear=${currentAcademicYear}`,
+                route: "/semis/attendance",
+                appUrl: `#/semis/attendance?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
             },
             {
@@ -120,8 +127,9 @@ export const sideBarData = (currentAcademicYear: string) : SideBarItemProps[] =>
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Transfer",
-                route: `transfer?sectionType=staff&academicYear=${currentAcademicYear}`,
-                appUrl: "#/semis/transfer",
+                // route: `transfer?sectionType=staff&academicYear=${currentAcademicYear}`,
+                route: "/semis/transfer",
+                appUrl: `#/semis/transfer?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
             }
         ]

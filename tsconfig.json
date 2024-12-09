@@ -17,7 +17,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx", // Para React 17+ (ou "react" para versões mais antigas)
+    "jsx": "react-jsx"
   },
   "include": [
     "src"

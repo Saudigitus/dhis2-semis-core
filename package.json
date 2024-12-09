@@ -23,7 +23,8 @@
     "@emotion/styled": "^11.13.5",
     "@mui/icons-material": "^6.1.10",
     "@mui/material": "^6.1.10",
-    "dhis2-semis-components": "^0.6.2-alpha.10",
-    "react-router-dom": "^7.0.2"
+    "dhis2-semis-components": "^0.6.2-alpha.8",
+    "react-router-dom": "^7.0.2",
+    "dhis-semis-enrollment": "file:node_modules/dhis2-semis-enrollment"
   }
 }

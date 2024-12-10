@@ -12,13 +12,13 @@ const Home = () => {
 
   return (
     <div>
-      <DashboardCard icon={enrollmentImage} contents={[{label:"Enrollment"}]} actions={[{
-        icon:<MenuIcon/>,
-        label:"List Enrollment",
+      <DashboardCard icon={enrollmentImage} contents={[{ label: "Enrollment" }]} actions={[{
+        icon: <MenuIcon />,
+        label: "List Enrollment",
         onAction() {
           navigate('enrollments')
         },
-      }]}/>
+      }]} />
     </div>
   )
 }

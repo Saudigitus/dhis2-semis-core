@@ -9,7 +9,7 @@ const WithSideBarLayout = () => {
     return (
         <div className={style.LayoutContainer}>
             <aside className={style.AsideContainer}>
-                {/* <SideBar sideBarData={menuData} /> */}
+                <SideBar sideBarData={menuData} />
             </aside>
             <main className={style.MainContentContainer}>
                 <Outlet />

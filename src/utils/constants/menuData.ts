@@ -1,3 +1,4 @@
+import { NavigateFunction } from "react-router-dom"
 import home from "../../assets/images/sidebar/home.svg"
 import gauge from "../../assets/images/sidebar/gauge.svg"
 import glyph from "../../assets/images/sidebar/Glyph.svg"
@@ -8,7 +9,7 @@ import fileDocument from "../../assets/images/sidebar/file-document.svg"
 import { SideBarItemProps } from "dhis2-semis-components/dist/declarations/types/sideBar/SideBarTypes"
 
 
-export const menuData = (currentAcademicYear: string): SideBarItemProps[] => ([
+export const menuData = (currentAcademicYear: string, navigate: NavigateFunction): SideBarItemProps[] => ([
     {
         title: "Navigation",
         displayInMenu: true,
@@ -23,6 +24,7 @@ export const menuData = (currentAcademicYear: string): SideBarItemProps[] => ([
                 route: `/semis`,
                 appUrl: "#/semis",
                 active: false,
+                action: () => navigate("/")
             }
         ]
     },
@@ -37,10 +39,10 @@ export const menuData = (currentAcademicYear: string): SideBarItemProps[] => ([
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Enrollment",
-                // route: `semis/enrollment`,
                 route: "/semis/enrollment",
-                appUrl: `#/semis/enrollment?sectionType=student&academicYear=${currentAcademicYear}`,
+                appUrl: `#/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
+                action: () => navigate(`/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`)
             },
             {
                 icon: glyph,
@@ -49,10 +51,10 @@ export const menuData = (currentAcademicYear: string): SideBarItemProps[] => ([
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Attendance",
-                // route: `attendance?sectionType=student&academicYear=${currentAcademicYear}`,
                 route: "/semis/attendance",
                 appUrl: `#/semis/attendance?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
+                action: () => navigate(`/semis/attendance?sectionType=student&academicYear=${currentAcademicYear}`)
             },
             {
                 icon: fileDocument,
@@ -61,10 +63,10 @@ export const menuData = (currentAcademicYear: string): SideBarItemProps[] => ([
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Performance",
-                // route: `performance?sectionType=student&academicYear=${currentAcademicYear}`,
                 route: "/semis/performance",
                 appUrl: `#/semis/performance?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
+                action: () => navigate(`/semis/performance?sectionType=student&academicYear=${currentAcademicYear}`)
             },
             {
                 icon: gauge,
@@ -73,10 +75,10 @@ export const menuData = (currentAcademicYear: string): SideBarItemProps[] => ([
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Final-Result",
-                // route: `final-result?sectionType=student&academicYear=${currentAcademicYear}`,
                 route: "/semis/final-result",
                 appUrl: `#/semis/final-result?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
+                action: () => navigate(`/semis/final-result?sectionType=student&academicYear=${currentAcademicYear}`)
             },
             {
                 icon: logOut,
@@ -85,10 +87,10 @@ export const menuData = (currentAcademicYear: string): SideBarItemProps[] => ([
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Transfer",
-                // route: `transfer?sectionType=student&academicYear=${currentAcademicYear}`,
                 route: "/semis/transfer",
                 appUrl: `#/semis/transfer?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
+                action: () => navigate(`/semis/transfer?sectionType=student&academicYear=${currentAcademicYear}`)
             }
         ]
     },
@@ -103,10 +105,10 @@ export const menuData = (currentAcademicYear: string): SideBarItemProps[] => ([
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Enrollment",
-                // route: `enrollment?sectionType=staff&academicYear=${currentAcademicYear}`,
                 route: "/semis/enrollment",
-                appUrl: `#/semis/enrollment?sectionType=student&academicYear=${currentAcademicYear}`,
+                appUrl: `#/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
+                action: () => navigate(`/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`)
             },
             {
                 icon: glyph,
@@ -115,10 +117,10 @@ export const menuData = (currentAcademicYear: string): SideBarItemProps[] => ([
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Attendance",
-                // route: `attendance?sectionType=staff&academicYear=${currentAcademicYear}`,
                 route: "/semis/attendance",
                 appUrl: `#/semis/attendance?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
+                action: () => navigate(`/semis/attendance?sectionType=student&academicYear=${currentAcademicYear}`)
             },
             {
                 icon: logOut,
@@ -127,10 +129,10 @@ export const menuData = (currentAcademicYear: string): SideBarItemProps[] => ([
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Transfer",
-                // route: `transfer?sectionType=staff&academicYear=${currentAcademicYear}`,
                 route: "/semis/transfer",
                 appUrl: `#/semis/transfer?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
+                action: () => navigate(`/semis/transfer?sectionType=student&academicYear=${currentAcademicYear}`)
             }
         ]
     }

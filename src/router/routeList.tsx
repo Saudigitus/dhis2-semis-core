@@ -1,5 +1,4 @@
 import Home from "../pages/home";
-import { EnrollmentsPage } from "dhis-semis-enrollment";
 
 export default function RouteList() {
     return [
@@ -9,7 +8,7 @@ export default function RouteList() {
         },
         {
             path: "/semis/enrollments",
-            component: <EnrollmentsPage />
+            component: <span>Enrollments</span>
         },
         {
             path: "/semis/attendance",

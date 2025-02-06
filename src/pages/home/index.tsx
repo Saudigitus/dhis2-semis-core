@@ -4,11 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const { dataStoreValues } = useDataStoreKey()
-  const { programsValues } = useProgramsKeys()
   const navigate = useNavigate()
-
-  console.log(dataStoreValues[0], "dataStoreValues", programsValues[0])
 
   return (
     <div>

@@ -39,7 +39,7 @@ export const menuData = (currentAcademicYear: string, navigate: NavigateFunction
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Enrollment",
-                route: "/semis/enrollment",
+                route: "/semis/enrollment?sectionType=student&academicYear=${currentAcademicYear}",
                 appUrl: `#/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
                 action: () => navigate(`/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`)

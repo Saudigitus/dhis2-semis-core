@@ -1,4 +1,5 @@
 import Home from "../pages/home";
+// import { EnrollmentPage } from "dhis2-semis-enrollment";
 
 export default function RouteList() {
     return [

@@ -1,25 +1,27 @@
-import { DashboardCard, useDataStoreKey, useProgramsKeys } from "dhis2-semis-components"
+import { DashboardCard, WithPadding } from "dhis2-semis-components"
 import enrollmentImage from "../../assets/images/home/enrollment.png"
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from "react-router-dom";
+import DashboardLayout from "../../components/dashboardLayout";
 
 const Home = () => {
-  const { dataStoreValues } = useDataStoreKey()
-  const { programsValues } = useProgramsKeys()
   const navigate = useNavigate()
-
-  console.log(dataStoreValues[0], "dataStoreValues", programsValues[0])
+  const currentAcademicYear = "2025"
 
   return (
-    <div>
-      <DashboardCard icon={enrollmentImage} contents={[{ label: "Enrollment" }]} actions={[{
-        icon: <MenuIcon />,
-        label: "List Enrollment",
-        onAction() {
-          navigate('enrollments')
-        },
-      }]} />
-    </div>
+    <>
+      <DashboardLayout title="Students">
+        <DashboardCard icon={enrollmentImage} contents={[{ label: "Enrollment" }]} actions={[
+          {
+            icon: <MenuIcon />,
+            label: "List Enrollment",
+            onAction() {
+              navigate(`/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`)
+            }
+          }
+        ]} />
+      </DashboardLayout>
+    </>
   )
 }
 

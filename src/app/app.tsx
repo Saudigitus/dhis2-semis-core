@@ -3,9 +3,9 @@ import Router from "../router/router"
 
 const App = () => {
   return (
-      <AppWrapper dataStoreKey="semis/values">
-        <Router />
-      </AppWrapper>
+    <AppWrapper dataStoreKey="semis/values">
+      <Router />
+    </AppWrapper>
   )
 }
 

@@ -29,7 +29,7 @@ export const menuData = (currentAcademicYear: string, navigate: NavigateFunction
         ]
     },
     {
-        title: "Student",
+        title: "Students",
         displayInMenu: true,
         subItems: [
             {

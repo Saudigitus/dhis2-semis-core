@@ -2471,7 +2471,7 @@
   resolved "https://registry.npmjs.org/@dhis2/ui-icons/-/ui-icons-9.15.0.tgz"
   integrity sha512-SEgzWN+YEpV/zQxb7tPL4/qog+0irfM7Oy5OOd4h1jMx7UVroRhsOMJUPpG0L1MyKL7gmsAUg2Z3pa9KN5EFKw==
 
-"@dhis2/ui@^10.1.7":
+"@dhis2/ui@^10.1.7", "@dhis2/ui@^9.14.0":
   version "10.1.11"
   resolved "https://registry.npmjs.org/@dhis2/ui/-/ui-10.1.11.tgz"
   integrity sha512-U2DH/qaXvDaHtFYH79617R5Y1SotDYRI2WmTiAybFBS52nwPHUrIClugfPXWqz/P7lkxbYwcJ9pcalPZL298Pw==
@@ -2524,61 +2524,6 @@
     "@dhis2/ui-constants" "10.1.11"
     "@dhis2/ui-forms" "10.1.11"
     "@dhis2/ui-icons" "10.1.11"
-    prop-types "^15.7.2"
-
-"@dhis2/ui@^9.14.0":
-  version "9.15.0"
-  resolved "https://registry.npmjs.org/@dhis2/ui/-/ui-9.15.0.tgz"
-  integrity sha512-f5EHKepHPWOyLQzscCskMUwFmjgUPzKJdqEV/9myo3F/1TgJ+u8PEAW4gYNPFt8595qtSB7J1wwozMPUhDFEmA==
-  dependencies:
-    "@dhis2-ui/alert" "9.15.0"
-    "@dhis2-ui/box" "9.15.0"
-    "@dhis2-ui/button" "9.15.0"
-    "@dhis2-ui/calendar" "9.15.0"
-    "@dhis2-ui/card" "9.15.0"
-    "@dhis2-ui/center" "9.15.0"
-    "@dhis2-ui/checkbox" "9.15.0"
-    "@dhis2-ui/chip" "9.15.0"
-    "@dhis2-ui/cover" "9.15.0"
-    "@dhis2-ui/css" "9.15.0"
-    "@dhis2-ui/divider" "9.15.0"
-    "@dhis2-ui/field" "9.15.0"
-    "@dhis2-ui/file-input" "9.15.0"
-    "@dhis2-ui/header-bar" "9.15.0"
-    "@dhis2-ui/help" "9.15.0"
-    "@dhis2-ui/input" "9.15.0"
-    "@dhis2-ui/intersection-detector" "9.15.0"
-    "@dhis2-ui/label" "9.15.0"
-    "@dhis2-ui/layer" "9.15.0"
-    "@dhis2-ui/legend" "9.15.0"
-    "@dhis2-ui/loader" "9.15.0"
-    "@dhis2-ui/logo" "9.15.0"
-    "@dhis2-ui/menu" "9.15.0"
-    "@dhis2-ui/modal" "9.15.0"
-    "@dhis2-ui/node" "9.15.0"
-    "@dhis2-ui/notice-box" "9.15.0"
-    "@dhis2-ui/organisation-unit-tree" "9.15.0"
-    "@dhis2-ui/pagination" "9.15.0"
-    "@dhis2-ui/popover" "9.15.0"
-    "@dhis2-ui/popper" "9.15.0"
-    "@dhis2-ui/portal" "9.15.0"
-    "@dhis2-ui/radio" "9.15.0"
-    "@dhis2-ui/required" "9.15.0"
-    "@dhis2-ui/segmented-control" "9.15.0"
-    "@dhis2-ui/select" "9.15.0"
-    "@dhis2-ui/selector-bar" "9.15.0"
-    "@dhis2-ui/sharing-dialog" "9.15.0"
-    "@dhis2-ui/switch" "9.15.0"
-    "@dhis2-ui/tab" "9.15.0"
-    "@dhis2-ui/table" "9.15.0"
-    "@dhis2-ui/tag" "9.15.0"
-    "@dhis2-ui/text-area" "9.15.0"
-    "@dhis2-ui/tooltip" "9.15.0"
-    "@dhis2-ui/transfer" "9.15.0"
-    "@dhis2-ui/user-avatar" "9.15.0"
-    "@dhis2/ui-constants" "9.15.0"
-    "@dhis2/ui-forms" "9.15.0"
-    "@dhis2/ui-icons" "9.15.0"
     prop-types "^15.7.2"
 
 "@dhis2/ui@^9.15.0":
@@ -3442,6 +3387,11 @@
   version "4.34.5"
   resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.34.5.tgz"
   integrity sha512-SkCIXLGk42yldTcH8UXh++m0snVxp9DLf4meb1mWm0lC8jzxjFBwSLGtUSeLgQDsC05iBaIhyjNX46DlByrApQ==
+
+"@rollup/rollup-linux-x64-musl@4.34.5":
+  version "4.34.5"
+  resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.34.5.tgz"
+  integrity sha512-iUcH3FBtBN2/Ce0rI84suRhD0+bB5BVEffqOwsGaX5py5TuYLOQa7S7oVBP0NKtB5rub3i9IvZtMXiD96l5v0A==
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -5814,10 +5764,10 @@ detect-port@^1.3.0:
     address "^1.0.1"
     debug "4"
 
-dhis2-semis-components@^0.6.2-alpha.119, dhis2-semis-components@^0.6.2-alpha.125:
-  version "0.6.2-alpha.127"
-  resolved "https://registry.npmjs.org/dhis2-semis-components/-/dhis2-semis-components-0.6.2-alpha.127.tgz"
-  integrity sha512-w3BausAxB1nspa8QdZqocnhIqvlZJ2Y7zynOHM9NSKuXirWDDKtspsMQJmYyV7+2oIOtuDgYDUdFhpKq2Z0x+Q==
+dhis2-semis-components@^0.6.2-alpha.119, dhis2-semis-components@^0.6.2-alpha.130:
+  version "0.6.2-alpha.130"
+  resolved "https://registry.npmjs.org/dhis2-semis-components/-/dhis2-semis-components-0.6.2-alpha.130.tgz"
+  integrity sha512-r9jg5xulWn+fjaPwKptbeXiI5wn2lhlzYUQ6aF1oGxQpADaGqVGQ7aRDk56jlhpq60LZWt+jRGrNceTLRs0Z/A==
   dependencies:
     "@date-io/date-fns" "1.3.13"
     "@dhis2-ui/selector-bar" "^10.1.8"
@@ -5834,7 +5784,7 @@ dhis2-semis-components@^0.6.2-alpha.119, dhis2-semis-components@^0.6.2-alpha.125
     classnames "^2.5.1"
     copy-files "^0.1.0"
     date-fns "2.29.3"
-    dhis2-semis-functions "^0.0.4-alpha.33"
+    dhis2-semis-functions "^0.0.4-alpha.32"
     dhis2-semis-types "^1.3.7"
     exceljs "^4.4.0"
     file-saver "^2.0.5"
@@ -11028,7 +10978,7 @@ selfsigned@^2.1.1:
     "@emotion/styled" "^11.13.5"
     "@mui/icons-material" "^6.1.10"
     "@mui/material" "^6.1.10"
-    dhis2-semis-components "^0.6.2-alpha.125"
+    dhis2-semis-components "^0.6.2-alpha.129"
     dhis2-semis-enrollment "^1.0.1-alpha.6"
     dhis2-semis-functions "^0.0.4-alpha.33"
     react-router-dom "^6.14.1"
@@ -11674,7 +11624,7 @@ style-loader@^3.3.1:
   resolved "https://registry.npmjs.org/style-loader/-/style-loader-3.3.4.tgz"
   integrity sha512-0WqXzrsMTyb8yjZJHDqwmnwRJvhALK9LfRtRc6B4UTWe8AijYLZYZ9thuJTZc2VfQWINADW/j+LiJnfy2RoC1w==
 
-styled-jsx@^4.0.1:
+styled-jsx@^4.0.1, styled-jsx@^5.1.6:
   version "4.0.1"
   resolved "https://registry.npmjs.org/styled-jsx/-/styled-jsx-4.0.1.tgz"
   integrity sha512-Gcb49/dRB1k8B4hdK8vhW27Rlb2zujCk1fISrizCcToIs+55B4vmUM0N9Gi4nnVfFZWe55jRdWpAqH1ldAKWvQ==
@@ -11687,13 +11637,6 @@ styled-jsx@^4.0.1:
     string-hash "1.1.3"
     stylis "3.5.4"
     stylis-rule-sheet "0.0.10"
-
-styled-jsx@^5.1.6:
-  version "5.1.6"
-  resolved "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz"
-  integrity sha512-qSVyDTeMotdvQYoHWLNGwRFJHC+i+ZvdBRYosOFgC+Wg1vx4frN2/RG/NA7SYqqvKNLf39P2LSRA2pu6n0XYZA==
-  dependencies:
-    client-only "0.0.1"
 
 stylehacks@^5.1.1:
   version "5.1.1"

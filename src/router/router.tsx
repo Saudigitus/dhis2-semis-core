@@ -1,13 +1,13 @@
-import { HashRouter, Navigate, Route, Routes} from 'react-router-dom';
 import RouteList from './routeList';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import WithSideBarLayout from '../layout/sidebarLayout/withSideBarLayout';
-// import { EnrollmentsPage } from 'dhis2-semis-enrollment';
+import { EnrollmentsPage } from 'dhis2-semis-enrollment';
 
 export default function Router() {
     return (
         <HashRouter>
-             <Routes>
-                <Route path='/' element={<Navigate to="semis" replace />} />
+            <Routes>
+                <Route path='/' element={<Navigate to="/semis" replace />} />
                 <Route path='/semis' element={<WithSideBarLayout />}>
                     {
                         RouteList().map((route, index) => (
@@ -18,9 +18,10 @@ export default function Router() {
                             />
                         ))
                     }
+                    {/* Adicionando EnrollmentsPage corretamente dentro do layout */}
+                    <Route path="enrollment" element={<EnrollmentsPage />} />
                 </Route>
             </Routes>
-            {/* <EnrollmentsPage/> */}
         </HashRouter>
-    )
+    );
 }

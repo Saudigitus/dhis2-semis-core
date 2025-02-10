@@ -1,4 +1,4 @@
-import { WithPadding } from "dhis2-semis-components"
+import { WithPadding } from "dhis2-semis-components";
 import style from "./dashboardLayout.module.css";
 import { FC, ReactNode } from "react";
 

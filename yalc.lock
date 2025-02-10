@@ -1,9 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "dhis2-semis-enrollment": {
-      "signature": "afdad789433047ed3b081f20cd4dd8db",
-      "file": true
-    }
-  }
-}

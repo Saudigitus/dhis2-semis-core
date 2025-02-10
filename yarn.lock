@@ -2471,7 +2471,7 @@
   resolved "https://registry.npmjs.org/@dhis2/ui-icons/-/ui-icons-9.15.0.tgz"
   integrity sha512-SEgzWN+YEpV/zQxb7tPL4/qog+0irfM7Oy5OOd4h1jMx7UVroRhsOMJUPpG0L1MyKL7gmsAUg2Z3pa9KN5EFKw==
 
-"@dhis2/ui@^10.1.7", "@dhis2/ui@^9.14.0", "@dhis2/ui@>=10.1.7":
+"@dhis2/ui@^10.1.7", "@dhis2/ui@^9.14.0", "@dhis2/ui@^9.15.0", "@dhis2/ui@>=10.1.7":
   version "10.1.12"
   resolved "https://registry.npmjs.org/@dhis2/ui/-/ui-10.1.12.tgz"
   integrity sha512-t9KjsRHz7IibcSyFbDp01iuu+m5e0EcUQ7iifs3YTg/4N/w1u1rV7+rMn1TzDPftT/bjX1svVYlFQjgiklan0w==
@@ -2524,61 +2524,6 @@
     "@dhis2/ui-constants" "10.1.12"
     "@dhis2/ui-forms" "10.1.12"
     "@dhis2/ui-icons" "10.1.12"
-    prop-types "^15.7.2"
-
-"@dhis2/ui@^9.15.0":
-  version "9.15.0"
-  resolved "https://registry.npmjs.org/@dhis2/ui/-/ui-9.15.0.tgz"
-  integrity sha512-f5EHKepHPWOyLQzscCskMUwFmjgUPzKJdqEV/9myo3F/1TgJ+u8PEAW4gYNPFt8595qtSB7J1wwozMPUhDFEmA==
-  dependencies:
-    "@dhis2-ui/alert" "9.15.0"
-    "@dhis2-ui/box" "9.15.0"
-    "@dhis2-ui/button" "9.15.0"
-    "@dhis2-ui/calendar" "9.15.0"
-    "@dhis2-ui/card" "9.15.0"
-    "@dhis2-ui/center" "9.15.0"
-    "@dhis2-ui/checkbox" "9.15.0"
-    "@dhis2-ui/chip" "9.15.0"
-    "@dhis2-ui/cover" "9.15.0"
-    "@dhis2-ui/css" "9.15.0"
-    "@dhis2-ui/divider" "9.15.0"
-    "@dhis2-ui/field" "9.15.0"
-    "@dhis2-ui/file-input" "9.15.0"
-    "@dhis2-ui/header-bar" "9.15.0"
-    "@dhis2-ui/help" "9.15.0"
-    "@dhis2-ui/input" "9.15.0"
-    "@dhis2-ui/intersection-detector" "9.15.0"
-    "@dhis2-ui/label" "9.15.0"
-    "@dhis2-ui/layer" "9.15.0"
-    "@dhis2-ui/legend" "9.15.0"
-    "@dhis2-ui/loader" "9.15.0"
-    "@dhis2-ui/logo" "9.15.0"
-    "@dhis2-ui/menu" "9.15.0"
-    "@dhis2-ui/modal" "9.15.0"
-    "@dhis2-ui/node" "9.15.0"
-    "@dhis2-ui/notice-box" "9.15.0"
-    "@dhis2-ui/organisation-unit-tree" "9.15.0"
-    "@dhis2-ui/pagination" "9.15.0"
-    "@dhis2-ui/popover" "9.15.0"
-    "@dhis2-ui/popper" "9.15.0"
-    "@dhis2-ui/portal" "9.15.0"
-    "@dhis2-ui/radio" "9.15.0"
-    "@dhis2-ui/required" "9.15.0"
-    "@dhis2-ui/segmented-control" "9.15.0"
-    "@dhis2-ui/select" "9.15.0"
-    "@dhis2-ui/selector-bar" "9.15.0"
-    "@dhis2-ui/sharing-dialog" "9.15.0"
-    "@dhis2-ui/switch" "9.15.0"
-    "@dhis2-ui/tab" "9.15.0"
-    "@dhis2-ui/table" "9.15.0"
-    "@dhis2-ui/tag" "9.15.0"
-    "@dhis2-ui/text-area" "9.15.0"
-    "@dhis2-ui/tooltip" "9.15.0"
-    "@dhis2-ui/transfer" "9.15.0"
-    "@dhis2-ui/user-avatar" "9.15.0"
-    "@dhis2/ui-constants" "9.15.0"
-    "@dhis2/ui-forms" "9.15.0"
-    "@dhis2/ui-icons" "9.15.0"
     prop-types "^15.7.2"
 
 "@emotion/babel-plugin@^11.13.5":
@@ -3077,25 +3022,7 @@
   dependencies:
     "@babel/runtime" "^7.26.0"
 
-"@mui/material@^5.16.14":
-  version "5.16.14"
-  resolved "https://registry.npmjs.org/@mui/material/-/material-5.16.14.tgz"
-  integrity sha512-eSXQVCMKU2xc7EcTxe/X/rC9QsV2jUe8eLM3MUCPYbo6V52eCE436akRIvELq/AqZpxx2bwkq7HC0cRhLB+yaw==
-  dependencies:
-    "@babel/runtime" "^7.23.9"
-    "@mui/core-downloads-tracker" "^5.16.14"
-    "@mui/system" "^5.16.14"
-    "@mui/types" "^7.2.15"
-    "@mui/utils" "^5.16.14"
-    "@popperjs/core" "^2.11.8"
-    "@types/react-transition-group" "^4.4.10"
-    clsx "^2.1.0"
-    csstype "^3.1.3"
-    prop-types "^15.8.1"
-    react-is "^19.0.0"
-    react-transition-group "^4.4.5"
-
-"@mui/material@^6.1.10", "@mui/material@^6.2.0", "@mui/material@^6.4.3":
+"@mui/material@^5.16.14", "@mui/material@^6.1.10", "@mui/material@^6.2.0", "@mui/material@^6.4.3":
   version "6.4.3"
   resolved "https://registry.npmjs.org/@mui/material/-/material-6.4.3.tgz"
   integrity sha512-ubtQjplbWneIEU8Y+4b2VA0CDBlyH5I3AmVFGmsLyDe/bf0ubxav5t11c8Afem6rkSFWPlZA2DilxmGka1xiKQ==
@@ -4018,7 +3945,7 @@ acorn-walk@^8.0.0:
   dependencies:
     acorn "^8.11.0"
 
-"acorn@^6 || ^7 || ^8", acorn@^6.0.0, "acorn@^6.0.0 || ^7.0.0 || ^8.0.0", "acorn@^6.1.0 || ^7 || ^8":
+"acorn@^6 || ^7 || ^8", acorn@^6.0.0, "acorn@^6.0.0 || ^7.0.0 || ^8.0.0", "acorn@^6.1.0 || ^7 || ^8", acorn@^8.14.0:
   version "6.4.2"
   resolved "https://registry.npmjs.org/acorn/-/acorn-6.4.2.tgz"
   integrity sha512-XtGIhXwF8YM8bJhGxG5kXgjkEuNGLTkoYqVE+KMR+aspr4KGYmKYg7yUe3KghyQ9yheNwLnjmzh/7+gfDBmHCQ==
@@ -4039,11 +3966,6 @@ acorn@^8.11.0:
   integrity sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==
 
 acorn@^8.12.1:
-  version "8.14.0"
-  resolved "https://registry.npmjs.org/acorn/-/acorn-8.14.0.tgz"
-  integrity sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==
-
-acorn@^8.14.0:
   version "8.14.0"
   resolved "https://registry.npmjs.org/acorn/-/acorn-8.14.0.tgz"
   integrity sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==
@@ -5789,9 +5711,10 @@ dhis2-semis-components@^0.6.2-alpha.130:
     xlsx "^0.18.5"
     zod "^3.23.8"
 
-"dhis2-semis-enrollment@file:.yalc/dhis2-semis-enrollment":
-  version "1.0.1-alpha.13"
-  resolved "file:.yalc/dhis2-semis-enrollment"
+dhis2-semis-enrollment@^1.0.1-alpha.14:
+  version "1.0.1-alpha.14"
+  resolved "https://registry.npmjs.org/dhis2-semis-enrollment/-/dhis2-semis-enrollment-1.0.1-alpha.14.tgz"
+  integrity sha512-M1kxukJq6TznqtTuG0CCA2ocDqrygW0hM8OmVxfCZLKpN0MYZoFdhcX6ibz4jwqL/I5eLZyyfRUfsBeAc4vrsg==
   dependencies:
     "@dhis2/app-runtime" "^3.13.0"
     "@dhis2/ui" "^9.15.0"

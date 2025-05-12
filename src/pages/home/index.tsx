@@ -18,6 +18,13 @@ const Home = () => {
             onAction() {
               navigate(`/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`)
             }
+          },
+          {
+            icon: <MenuIcon />,
+            label: "List Enrollment",
+            onAction() {
+              navigate(`/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`)
+            }
           }
         ]} />
       </DashboardLayout>

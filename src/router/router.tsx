@@ -2,6 +2,7 @@ import RouteList from './routeList';
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import WithSideBarLayout from '../layout/sidebarLayout/withSideBarLayout';
 import { EnrollmentPage } from 'dhis2-semis-enrollment';
+import { FinalResult } from 'dhis2-semis-final-result';
 
 export default function Router() {
     return (
@@ -19,6 +20,7 @@ export default function Router() {
                         ))
                     }
                     <Route path="/semis/enrollments" element={<EnrollmentPage />} />
+                    <Route path="/semis/final-result" element={<FinalResult />} />
                 </Route>
             </Routes>
         </HashRouter>

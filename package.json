@@ -11,24 +11,26 @@
     "deploy": "d2-app-scripts deploy"
   },
   "devDependencies": {
-    "@dhis2/cli-app-scripts": "^12.3.0",
-    "@types/css-modules": "^1.0.5",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
+    "@dhis2/cli-app-scripts": "12.3.0",
+    "@types/css-modules": "1.0.5",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
     "typescript": "*"
   },
   "dependencies": {
-    "@dhis2/app-runtime": "^3.12.0",
-    "@emotion/react": "^11.13.5",
-    "@emotion/styled": "^11.13.5",
-    "@mui/icons-material": "^6.1.10",
-    "@mui/material": "^6.1.10",
-    "dhis2-semis-components": "^0.6.3-alpha.36",
-    "dhis2-semis-enrollment": "1.0.1-alpha.24",
+    "@dhis2/app-runtime": "3.12.0",
+    "@emotion/react": "11.13.5",
+    "@emotion/styled": "11.13.5",
+    "@mui/icons-material": "6.1.10",
+    "@mui/material": "6.1.10",
+    "dhis2-semis-components": "0.6.3-alpha.36",
+    "dhis2-semis-enrollment": "1.0.1-alpha.25",
     "dhis2-semis-final-result": "1.0.0-alpha.4",
-    "dhis2-semis-functions": "^0.0.4-alpha.33",
-    "react-router-dom": "^6.29.0",
-    "recoil": "^0.7.7",
+    "dhis2-semis-attendance": "1.0.0-alpha.1",
+    "dhis2-semis-transfer": "1.0.0-alpha.1",
+    "dhis2-semis-functions": "0.0.5-alpha.61",
+    "react-router-dom": "6.29.0",
+    "recoil": "0.7.7",
     "semis-core": "file:"
   }
 }

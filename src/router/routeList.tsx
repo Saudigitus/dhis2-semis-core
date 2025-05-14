@@ -3,6 +3,7 @@ import { EnrollmentPage } from "dhis2-semis-enrollment";
 import { App as Attendance } from "dhis2-semis-attendance"
 import { FinalResult } from "dhis2-semis-final-result"
 import { Transfer } from "dhis2-semis-transfer"
+import { Reenrollment } from "dhis2-semis-staff-reenroll"
 
 export default function RouteList() {
     return [
@@ -29,6 +30,10 @@ export default function RouteList() {
         {
             path: "/semis/final-result",
             component: <FinalResult />
+        },
+        {
+            path: "/semis/re-enroll",
+            component: <Reenrollment />
         }
     ];
 }

@@ -9,7 +9,7 @@ const WithSideBarLayout = () => {
     return (
         <div className={style.LayoutContainer}>
             <aside className={style.AsideContainer}>
-                <SideBar collapsed={false} sideBarData={menuData} />
+                <SideBar sideBarBtnPosition="top-offset" collapsed={false} sideBarData={menuData} />
             </aside>
             <main className={style.MainContentContainer}>
                 <Outlet />

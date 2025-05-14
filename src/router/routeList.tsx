@@ -7,7 +7,7 @@ import { Transfer } from "dhis2-semis-transfer"
 export default function RouteList() {
     return [
         {
-            path: "/semis/",
+            path: "/semis",
             component: <Home />
         },
         {

@@ -1,15 +1,20 @@
 import { NavigateFunction } from "react-router-dom"
-import home from "../../assets/images/sidebar/home.svg"
-import gauge from "../../assets/images/sidebar/gauge.svg"
-import glyph from "../../assets/images/sidebar/Glyph.svg"
-import logOut from "../../assets/images/sidebar/log-out.svg"
-import listAdd from "../../assets/images/sidebar/listAdd.svg"
-import userGroup from "../../assets/images/sidebar/user-group.svg"
-import fileDocument from "../../assets/images/sidebar/file-document.svg"
+import home from "../../../assets/images/sidebar/home.svg"
+import gauge from "../../../assets/images/sidebar/gauge.svg"
+import glyph from "../../../assets/images/sidebar/Glyph.svg"
+import logOut from "../../../assets/images/sidebar/log-out.svg"
+import listAdd from "../../../assets/images/sidebar/listAdd.svg"
+import userGroup from "../../../assets/images/sidebar/user-group.svg"
+import fileDocument from "../../../assets/images/sidebar/file-document.svg"
 import { SideBarItemProps } from "dhis2-semis-components/dist/declarations/types/sideBar/SideBarTypes"
+import { DataStoreProps } from "dhis2-semis-types"
+import { subItemRoute } from "../../common/menu/subItemRoute"
 
+type menuDataParams = {
+    currentAcademicYear: string, navigate: NavigateFunction, locationParms: string, filterDataElements: DataStoreProps[0]["filters"]
+}
 
-export const menuData = (currentAcademicYear: string, navigate: NavigateFunction): SideBarItemProps[] => ([
+export const menuData = ({ currentAcademicYear, navigate, locationParms, filterDataElements }: menuDataParams): SideBarItemProps[] => ([
     {
         title: "Navigation",
         displayInMenu: true,
@@ -42,7 +47,7 @@ export const menuData = (currentAcademicYear: string, navigate: NavigateFunction
                 route: "/semis/enrollment?sectionType=student&academicYear=${currentAcademicYear}",
                 appUrl: `#/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
-                action: () => navigate(`/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`)
+                action: () => navigate(`/semis/enrollments?${subItemRoute(locationParms, 'student', filterDataElements)}`)
             },
             {
                 icon: glyph,
@@ -54,7 +59,7 @@ export const menuData = (currentAcademicYear: string, navigate: NavigateFunction
                 route: "/semis/attendance",
                 appUrl: `#/semis/attendance?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
-                action: () => navigate(`/semis/attendance?sectionType=student&academicYear=${currentAcademicYear}`)
+                action: () => navigate(`/semis/attendance?${subItemRoute(locationParms, 'student', filterDataElements)}`)
             },
             {
                 icon: fileDocument,
@@ -66,7 +71,7 @@ export const menuData = (currentAcademicYear: string, navigate: NavigateFunction
                 route: "/semis/performance",
                 appUrl: `#/semis/performance?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
-                action: () => navigate(`/semis/performance?sectionType=student&academicYear=${currentAcademicYear}`)
+                action: () => navigate(`/semis/performance?${subItemRoute(locationParms, 'student', filterDataElements)}`)
             },
             {
                 icon: gauge,
@@ -78,7 +83,7 @@ export const menuData = (currentAcademicYear: string, navigate: NavigateFunction
                 route: "/semis/final-result",
                 appUrl: `#/semis/final-result?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
-                action: () => navigate(`/semis/final-result?sectionType=student&academicYear=${currentAcademicYear}`)
+                action: () => navigate(`/semis/final-result?${subItemRoute(locationParms, 'student', filterDataElements)}`)
             },
             {
                 icon: logOut,
@@ -90,7 +95,7 @@ export const menuData = (currentAcademicYear: string, navigate: NavigateFunction
                 route: "/semis/transfer",
                 appUrl: `#/semis/transfer?sectionType=student&academicYear=${currentAcademicYear}`,
                 active: false,
-                action: () => navigate(`/semis/transfer?sectionType=student&academicYear=${currentAcademicYear}`)
+                action: () => navigate(`/semis/transfer?${subItemRoute(locationParms, 'student', filterDataElements)}`)
             }
         ]
     },
@@ -106,9 +111,9 @@ export const menuData = (currentAcademicYear: string, navigate: NavigateFunction
                 disabled: false,
                 appName: "SEMIS-Enrollment",
                 route: "/semis/enrollment",
-                appUrl: `#/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`,
+                appUrl: `#/semis/enrollments?sectionType=staff&academicYear=${currentAcademicYear}`,
                 active: false,
-                action: () => navigate(`/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`)
+                action: () => navigate(`/semis/enrollments?${subItemRoute(locationParms, 'staff', filterDataElements)}`)
             },
             {
                 icon: glyph,
@@ -118,9 +123,9 @@ export const menuData = (currentAcademicYear: string, navigate: NavigateFunction
                 disabled: false,
                 appName: "SEMIS-Attendance",
                 route: "/semis/attendance",
-                appUrl: `#/semis/attendance?sectionType=student&academicYear=${currentAcademicYear}`,
+                appUrl: `#/semis/attendance?sectionType=staff&academicYear=${currentAcademicYear}`,
                 active: false,
-                action: () => navigate(`/semis/attendance?sectionType=student&academicYear=${currentAcademicYear}`)
+                action: () => navigate(`/semis/attendance?${subItemRoute(locationParms, 'staff', filterDataElements)}`)
             },
             {
                 icon: logOut,
@@ -130,10 +135,22 @@ export const menuData = (currentAcademicYear: string, navigate: NavigateFunction
                 disabled: false,
                 appName: "SEMIS-Transfer",
                 route: "/semis/transfer",
-                appUrl: `#/semis/transfer?sectionType=student&academicYear=${currentAcademicYear}`,
+                appUrl: `#/semis/transfer?sectionType=staff&academicYear=${currentAcademicYear}`,
                 active: false,
-                action: () => navigate(`/semis/transfer?sectionType=student&academicYear=${currentAcademicYear}`)
-            }
+                action: () => navigate(`/semis/transfer?${subItemRoute(locationParms, 'staff', filterDataElements)}`)
+            },
+            {
+                icon: gauge,
+                displayInMenu: true,
+                label: "Staff Re-enroll",
+                badgeInfo: "",
+                disabled: false,
+                appName: "SEMIS-re-enroll",
+                route: "/semis/final-result",
+                appUrl: `#/semis/final-result?sectionType=staff&academicYear=${currentAcademicYear}`,
+                active: false,
+                action: () => navigate(`/semis/final-result?${subItemRoute(locationParms, 'staff', filterDataElements)}`)
+            },
         ]
     }
 ])

@@ -28,13 +28,13 @@ export const menuData = ({ currentAcademicYear, navigate, locationParms, filterD
                 appName: "SEMIS",
                 route: `/semis`,
                 appUrl: "#/semis",
-                active: false,
-                action: () => navigate("/")
+                active: true,
+                action: () => navigate("/semis")
             }
         ]
     },
     {
-        title: "Students",
+        title: "Student",
         displayInMenu: true,
         subItems: [
             {
@@ -44,9 +44,9 @@ export const menuData = ({ currentAcademicYear, navigate, locationParms, filterD
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Enrollment",
-                route: "/semis/enrollment?sectionType=student&academicYear=${currentAcademicYear}",
+                route: "/semis/enrollments",
                 appUrl: `#/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`,
-                active: false,
+                active: true,
                 action: () => navigate(`/semis/enrollments?${subItemRoute(locationParms, 'student', filterDataElements)}`)
             },
             {
@@ -58,7 +58,7 @@ export const menuData = ({ currentAcademicYear, navigate, locationParms, filterD
                 appName: "SEMIS-Attendance",
                 route: "/semis/attendance",
                 appUrl: `#/semis/attendance?sectionType=student&academicYear=${currentAcademicYear}`,
-                active: false,
+                active: true,
                 action: () => navigate(`/semis/attendance?${subItemRoute(locationParms, 'student', filterDataElements)}`)
             },
             {
@@ -110,7 +110,7 @@ export const menuData = ({ currentAcademicYear, navigate, locationParms, filterD
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Enrollment",
-                route: "/semis/enrollment",
+                route: "/semis/enrollments",
                 appUrl: `#/semis/enrollments?sectionType=staff&academicYear=${currentAcademicYear}`,
                 active: false,
                 action: () => navigate(`/semis/enrollments?${subItemRoute(locationParms, 'staff', filterDataElements)}`)

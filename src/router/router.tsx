@@ -1,6 +1,6 @@
 import RouteList from './routeList';
+import WithSideBarLayout from '../layout/withSideBarLayout';
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
-import WithSideBarLayout from '../layout/sidebarLayout/withSideBarLayout';
 
 export default function Router() {
     return (

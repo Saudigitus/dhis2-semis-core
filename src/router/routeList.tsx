@@ -4,6 +4,7 @@ import { App as Attendance } from "dhis2-semis-attendance"
 import { FinalResult } from "dhis2-semis-final-result"
 import { Transfer } from "dhis2-semis-transfer"
 import { Reenrollment } from "dhis2-semis-staff-reenroll"
+import { Performance } from "dhis2-semis-performance"
 
 export default function RouteList() {
     return [
@@ -21,7 +22,7 @@ export default function RouteList() {
         },
         {
             path: "/semis/performance",
-            component: <></>
+            component: <Performance/>
         },
         {
             path: "/semis/transfer",

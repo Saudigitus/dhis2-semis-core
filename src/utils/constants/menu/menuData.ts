@@ -46,8 +46,8 @@ export const menuData = ({ currentAcademicYear, navigate, locationParms, filterD
                 appName: "SEMIS-Enrollment",
                 route: "/semis/enrollments",
                 appUrl: `#/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`,
-                active: true,
-                action: () => navigate(`/semis/enrollments?${subItemRoute(locationParms, 'student', filterDataElements)}`)
+                active: false,
+                action: () => navigate(`/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}&${subItemRoute(locationParms, 'student', filterDataElements)}`)
             },
             {
                 icon: glyph,

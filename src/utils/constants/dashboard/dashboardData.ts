@@ -20,7 +20,7 @@ const staffCards = [
 ];
 
 const dashboardData = [
-    { key: 0, title: "Students", cards: studentCards },
+    { key: 0, title: "Student", cards: studentCards },
     { key: 1, title: "Staff", cards: staffCards }
 ]
 

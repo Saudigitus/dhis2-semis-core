@@ -45,9 +45,9 @@ export const menuData = ({ currentAcademicYear, navigate, locationParms, filterD
                 disabled: false,
                 appName: "SEMIS-Enrollment",
                 route: "/semis/enrollments",
-                appUrl: `#/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}`,
+                appUrl: `#/semis/enrollments`,
                 active: false,
-                action: () => navigate(`/semis/enrollments?sectionType=student&academicYear=${currentAcademicYear}&${subItemRoute(locationParms, 'student', filterDataElements)}`)
+                action: () => navigate(`/semis/enrollments?${subItemRoute(locationParms, 'student', filterDataElements)}`)
             },
             {
                 icon: glyph,
@@ -57,7 +57,7 @@ export const menuData = ({ currentAcademicYear, navigate, locationParms, filterD
                 disabled: false,
                 appName: "SEMIS-Attendance",
                 route: "/semis/attendance",
-                appUrl: `#/semis/attendance?sectionType=student&academicYear=${currentAcademicYear}`,
+                appUrl: `#/semis/attendance`,
                 active: true,
                 action: () => navigate(`/semis/attendance?${subItemRoute(locationParms, 'student', filterDataElements)}`)
             },
@@ -69,7 +69,7 @@ export const menuData = ({ currentAcademicYear, navigate, locationParms, filterD
                 disabled: false,
                 appName: "SEMIS-Performance",
                 route: "/semis/performance",
-                appUrl: `#/semis/performance?sectionType=student&academicYear=${currentAcademicYear}`,
+                appUrl: `#/semis/performance`,
                 active: false,
                 action: () => navigate(`/semis/performance?${subItemRoute(locationParms, 'student', filterDataElements)}`)
             },
@@ -81,7 +81,7 @@ export const menuData = ({ currentAcademicYear, navigate, locationParms, filterD
                 disabled: false,
                 appName: "SEMIS-Final-Result",
                 route: "/semis/final-result",
-                appUrl: `#/semis/final-result?sectionType=student&academicYear=${currentAcademicYear}`,
+                appUrl: `#/semis/final-result`,
                 active: false,
                 action: () => navigate(`/semis/final-result?${subItemRoute(locationParms, 'student', filterDataElements)}`)
             },
@@ -93,7 +93,7 @@ export const menuData = ({ currentAcademicYear, navigate, locationParms, filterD
                 disabled: false,
                 appName: "SEMIS-Transfer",
                 route: "/semis/transfer",
-                appUrl: `#/semis/transfer?sectionType=student&academicYear=${currentAcademicYear}`,
+                appUrl: `#/semis/transfer`,
                 active: false,
                 action: () => navigate(`/semis/transfer?${subItemRoute(locationParms, 'student', filterDataElements)}`)
             }
@@ -111,7 +111,7 @@ export const menuData = ({ currentAcademicYear, navigate, locationParms, filterD
                 disabled: false,
                 appName: "SEMIS-Enrollment",
                 route: "/semis/enrollments",
-                appUrl: `#/semis/enrollments?sectionType=staff&academicYear=${currentAcademicYear}`,
+                appUrl: `#/semis/enrollments`,
                 active: false,
                 action: () => navigate(`/semis/enrollments?${subItemRoute(locationParms, 'staff', filterDataElements)}`)
             },
@@ -123,7 +123,7 @@ export const menuData = ({ currentAcademicYear, navigate, locationParms, filterD
                 disabled: false,
                 appName: "SEMIS-Attendance",
                 route: "/semis/attendance",
-                appUrl: `#/semis/attendance?sectionType=staff&academicYear=${currentAcademicYear}`,
+                appUrl: `#/semis/attendance`,
                 active: false,
                 action: () => navigate(`/semis/attendance?${subItemRoute(locationParms, 'staff', filterDataElements)}`)
             },
@@ -135,7 +135,7 @@ export const menuData = ({ currentAcademicYear, navigate, locationParms, filterD
                 disabled: false,
                 appName: "SEMIS-Transfer",
                 route: "/semis/transfer",
-                appUrl: `#/semis/transfer?sectionType=staff&academicYear=${currentAcademicYear}`,
+                appUrl: `#/semis/transfer`,
                 active: false,
                 action: () => navigate(`/semis/transfer?${subItemRoute(locationParms, 'staff', filterDataElements)}`)
             },
@@ -147,7 +147,7 @@ export const menuData = ({ currentAcademicYear, navigate, locationParms, filterD
                 disabled: false,
                 appName: "SEMIS-re-enroll",
                 route: "/semis/re-enroll",
-                appUrl: `#/semis/re-enroll?sectionType=staff&academicYear=${currentAcademicYear}`,
+                appUrl: `#/semis/re-enroll`,
                 active: false,
                 action: () => navigate(`/semis/re-enroll?${subItemRoute(locationParms, 'staff', filterDataElements)}`)
             },

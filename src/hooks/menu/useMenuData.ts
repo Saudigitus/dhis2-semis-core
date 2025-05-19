@@ -4,16 +4,13 @@ import { useGetSectionTypeLabel } from "dhis2-semis-functions"
 import { menuData } from "../../utils/constants/menu/menuData";
 import { formatMenuData } from "../../utils/common/menu/formatMenuData";
 
+/** TODO - Config menu items visibility*/
 const useMenuData = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { sectionName } = useGetSectionTypeLabel()
-  const { filters, defaults } = useDataStoreKey({ sectionType: sectionName });
+  const { filters, defaults } = useDataStoreKey({ sectionType: sectionName ?? "" }) ?? [];
 
-  /**
-   * TODO
-   * - Config menu items visibility
-   */
 
   return {
     menuData: formatMenuData({

@@ -1,23 +1,19 @@
+import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import DashboardLayout from "../../components/dashboardLayout";
 import { DashboardCard, WithPadding } from "dhis2-semis-components";
 import { dashboardData } from "../../utils/constants/dashboard/dashboardData";
-import { Box } from "@mui/material";
 
 const Home = () => {
   const navigate = useNavigate();
-  const currentAcademicYear = "2025";
 
-  const makeAction = (path: string) => ({
+  const makeAction = (path: string, title: string) => ({
     icon: <MenuIcon />,
     label: `List ${path.replace("-", " ")}`,
     onAction: () =>
-      navigate(
-        `/semis/${path}?sectionType=student&academicYear=${currentAcademicYear}`
-      ),
+      navigate(`/semis/${path}?sectionType=${title.toLocaleLowerCase()}`),
   });
-
 
   return (
     <Box height={"93vh"}>
@@ -33,7 +29,7 @@ const Home = () => {
                         key={label}
                         icon={icon}
                         contents={[{ label }]}
-                        actions={[makeAction(path)]}
+                        actions={[makeAction(path, title)]}
                       />
                     ))
                   }

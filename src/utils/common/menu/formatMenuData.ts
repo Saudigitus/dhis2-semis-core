@@ -23,7 +23,7 @@ function findMenuWithActivePath({ menuData, location, sectionType }: findMenuWit
                 menuSubItem.active = Boolean(
                     menuSubItem.route === location.pathname && (
                         menuItem.title !== "Navigation" ?
-                            menuItem.title.toLocaleLowerCase() === sectionType.toLocaleLowerCase()
+                            menuItem.title.toLocaleLowerCase() === sectionType?.toLocaleLowerCase()
                             : true
                     )
                 )

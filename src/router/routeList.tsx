@@ -29,6 +29,10 @@ export default function RouteList() {
             component: <Transfer />
         },
         {
+            path: "/semis/transfer-execute",
+            component: <Transfer />
+        },
+        {
             path: "/semis/final-result",
             component: <FinalResult />
         },

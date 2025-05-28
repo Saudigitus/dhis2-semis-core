@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom"
+import LayoutWrapper from "./layoutWrapper"
 import { useMenuData } from "../hooks/menu/useMenuData"
 import { SideBar, SideBarLayout } from "dhis2-semis-components"
-import LayoutWrapper from "./layoutWrapper"
 
 const WithSideBarLayout = () => {
     const { menuData } = useMenuData()

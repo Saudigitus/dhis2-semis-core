@@ -5,6 +5,7 @@ import { FinalResult } from "dhis2-semis-final-result"
 import { Transfer } from "dhis2-semis-transfer"
 import { Reenrollment } from "dhis2-semis-staff-reenroll"
 import { Performance } from "dhis2-semis-performance"
+import { EnrollmentPage as TransferExecute } from "dhis2-semis-transfer-execute"
 
 export default function RouteList() {
     return [
@@ -30,7 +31,7 @@ export default function RouteList() {
         },
         {
             path: "/semis/transfer-execute",
-            component: <Transfer />
+            component: <TransferExecute />
         },
         {
             path: "/semis/final-result",

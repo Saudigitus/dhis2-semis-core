@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
-import DashboardLayout from "../../components/dashboardLayout";
 import { DashboardCard, WithPadding } from "dhis2-semis-components";
+import DashboardLayout from "../../components/dashboard/dashboardLayout";
 import { dashboardData } from "../../utils/constants/dashboard/dashboardData";
 
 const Home = () => {

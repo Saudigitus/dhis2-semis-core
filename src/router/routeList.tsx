@@ -28,6 +28,10 @@ export default function RouteList() {
         //     path: "/semis/transfer",
         //     component: <Transfer />
         // },
+        // {
+        //     path: "/semis/transfer-execute",
+        //     component: <TransferExecute />
+        // },
         {
             path: "/semis/final-result",
             component: <FinalResult />

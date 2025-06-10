@@ -9,7 +9,7 @@ const useMenuData = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { sectionName } = useGetSectionTypeLabel()
-  const { filters, defaults } = useDataStoreKey({ sectionType: sectionName ?? "" }) ?? [];
+  const { filters } = useDataStoreKey({ sectionType: sectionName ?? "" }) ?? [];
 
 
   return {
@@ -17,9 +17,9 @@ const useMenuData = () => {
       appsList: [], location,
       sectionType: sectionName,
       menuData: menuData({
+        pathname: location.pathname,
         filterDataElements: filters, navigate,
-        locationParms: location?.search.slice(1),
-        currentAcademicYear: defaults?.currentAcademicYear,
+        locationParams: location?.search.slice(1),
       }),
     }),
   };

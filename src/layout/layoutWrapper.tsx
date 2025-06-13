@@ -12,7 +12,13 @@ const LayoutWrapper = ({ children }: { children: ReactElement }) => {
     useEffect(() => {
         if (pathname !== "/semis" && sectionType) {
             if (!academicYear || academicYear.trim() === "") {
-                add("academicYear", defaults?.currentAcademicYear)
+                // add("academicYear", defaults?.currentAcademicYear)
+
+                //set timeout to allow the url to update for 500 milliseconds
+
+                setTimeout(() => {
+                    add("academicYear", defaults?.currentAcademicYear)
+                }, 100)
             }
         }
     }, [defaults, academicYear])

@@ -6,7 +6,6 @@ import logOut from "../../../assets/images/sidebar/log-out.svg"
 import listAdd from "../../../assets/images/sidebar/listAdd.svg"
 import userGroup from "../../../assets/images/sidebar/user-group.svg"
 import fileDocument from "../../../assets/images/sidebar/file-document.svg"
-import { SideBarItemProps } from "dhis2-semis-components/dist/declarations/types/sideBar/SideBarTypes"
 import { DataStoreProps } from "dhis2-semis-types"
 import { subItemRoute } from "../../common/menu/subItemRoute"
 
@@ -14,7 +13,7 @@ type menuDataParams = {
     pathname: string, navigate: NavigateFunction, locationParams: string, filterDataElements: DataStoreProps[0]["filters"]
 }
 
-export const menuData = ({ pathname, navigate, locationParams, filterDataElements }: menuDataParams): SideBarItemProps[] => ([
+export const menuData = ({ pathname, navigate, locationParams, filterDataElements }: menuDataParams): any[] => ([
     {
         title: "Navigation",
         displayInMenu: true,

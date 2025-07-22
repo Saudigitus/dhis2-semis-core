@@ -5,6 +5,7 @@ import InitializeWrapper from "../components/wrapper/InitializeWrapper"
 
 const App = () => {
   const { baseUrl } = useConfig()
+  
   return (
     <AppWrapper
       baseUrl={baseUrl}

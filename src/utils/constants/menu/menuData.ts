@@ -6,6 +6,9 @@ import logOut from "../../../assets/images/sidebar/log-out.svg"
 import listAdd from "../../../assets/images/sidebar/listAdd.svg"
 import userGroup from "../../../assets/images/sidebar/user-group.svg"
 import fileDocument from "../../../assets/images/sidebar/file-document.svg"
+import callendar from "../../../assets/images/sidebar/callendar.svg"
+import configurations from "../../../assets/images/sidebar/configurations.svg"
+
 import { DataStoreProps } from "dhis2-semis-types"
 import { subItemRoute } from "../../common/menu/subItemRoute"
 
@@ -25,6 +28,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS",
+                id: "home",
                 route: `/semis`,
                 appUrl: "#/semis",
                 active: true,
@@ -43,6 +47,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Enrollment",
+                id: "registration",
                 route: "/semis/enrollments",
                 appUrl: `#/semis/enrollments`,
                 active: false,
@@ -55,6 +60,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Attendance",
+                id: "attendance",
                 route: "/semis/attendance",
                 appUrl: `#/semis/attendance`,
                 active: true,
@@ -67,6 +73,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Performance",
+                id: "performance",
                 route: "/semis/performance",
                 appUrl: `#/semis/performance`,
                 active: false,
@@ -79,6 +86,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Final-Result",
+                id: "final-result",
                 route: "/semis/final-result",
                 appUrl: `#/semis/final-result`,
                 active: false,
@@ -91,6 +99,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Transfer",
+                id: "transfer",
                 route: "/semis/transfer",
                 appUrl: `#/semis/transfer`,
                 active: false,
@@ -109,6 +118,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Enrollment",
+                id: "registration",
                 route: "/semis/enrollments",
                 appUrl: `#/semis/enrollments`,
                 active: false,
@@ -121,6 +131,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Attendance",
+                id: "attendance",
                 route: "/semis/attendance",
                 appUrl: `#/semis/attendance`,
                 active: false,
@@ -133,6 +144,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-Transfer",
+                id: "transfer",
                 route: "/semis/transfer",
                 appUrl: `#/semis/transfer`,
                 active: false,
@@ -145,11 +157,50 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                 badgeInfo: "",
                 disabled: false,
                 appName: "SEMIS-re-enroll",
+                id: "reenroll",
                 route: "/semis/re-enroll",
                 appUrl: `#/semis/re-enroll`,
                 active: false,
                 action: () => navigate(`/semis/re-enroll?${subItemRoute(locationParams, 'staff', filterDataElements, pathname)}`)
             },
+        ]
+    },
+    {
+        title: "Callendar",
+        displayInMenu: true,
+        subItems: [
+            {
+                icon: callendar,
+                displayInMenu: true,
+                label: "School callendar",
+                badgeInfo: "",
+                disabled: false,
+                appName: "School-Callendar",
+                id: "",
+                route: "/semis/enrollments",
+                appUrl: `#/semis/enrollments`,
+                active: false,
+                action: () => navigate(`/semis/enrollments?${subItemRoute(locationParams, 'staff', filterDataElements, pathname)}`)
+            }
+        ]
+    },
+    {
+        title: "",
+        displayInMenu: true,
+        subItems: [
+            {
+                icon: configurations,
+                displayInMenu: true,
+                label: "Configurations",
+                badgeInfo: "",
+                disabled: false,
+                appName: "Semis-configurations",
+                id: "",
+                route: "/semis/configuration",
+                appUrl: `#/semis/configuration`,
+                active: false,
+                action: () => navigate(`/semis/configuration?${subItemRoute(locationParams, 'student', filterDataElements, pathname)}`)
+            }
         ]
     }
 ])

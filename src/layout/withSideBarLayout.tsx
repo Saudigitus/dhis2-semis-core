@@ -13,6 +13,7 @@ const WithSideBarLayout = () => {
                     collapsed={false}
                     sideBarData={menuData}
                     sideBarBtnPosition="top-offset"
+                    // stickLastItemToBottom={true}
                 />
             }
         >

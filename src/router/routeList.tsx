@@ -6,6 +6,7 @@ import { Transfer } from "dhis2-semis-transfer"
 import { Reenrollment } from "dhis2-semis-staff-reenroll"
 import { Performance } from "dhis2-semis-performance"
 import { TransferExecute } from "dhis2-semis-transfer-execute"
+import { ConfigirationsPage } from "dhis2-semis-configuration";
 
 export default function RouteList() {
     return [
@@ -23,7 +24,7 @@ export default function RouteList() {
         },
         {
             path: "/semis/performance",
-            component: <Performance/>
+            component: <Performance />
         },
         {
             path: "/semis/transfer",
@@ -40,6 +41,10 @@ export default function RouteList() {
         {
             path: "/semis/re-enroll",
             component: <Reenrollment />
-        }
+        },
+        {
+            path: "/semis/configuration",
+            component: <ConfigirationsPage />
+        },
     ];
 }

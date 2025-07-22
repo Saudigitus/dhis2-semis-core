@@ -3,16 +3,16 @@ import { useNavigate } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import { DashboardCard, WithPadding } from "dhis2-semis-components";
 import DashboardLayout from "../../components/dashboard/dashboardLayout";
-import { dashboardData } from "../../utils/constants/dashboard/dashboardData";
+import { useMenuData } from "../../hooks/menu/useMenuData";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { homePageData } = useMenuData()
 
   const makeAction = (path: string, title: string) => ({
     icon: <MenuIcon />,
     label: `List ${path.replace("-", " ")}`,
-    onAction: () =>
-      navigate(`/semis/${path}?sectionType=${title.toLocaleLowerCase()}`),
+    onAction: () => navigate(`/semis/${path}?sectionType=${title.toLocaleLowerCase()}`),
   });
 
   return (
@@ -20,11 +20,11 @@ const Home = () => {
       <WithPadding p="2rem">
         <>
           {
-            dashboardData?.map(({ title, cards }) => {
+            homePageData?.map(({ title, subItems }: any) => {
               return (
                 <DashboardLayout title={title} >
                   {
-                    cards.map(({ label, icon, path }) => (
+                    subItems.map(({ label, icon, path }: any) => (
                       <DashboardCard
                         key={label}
                         icon={icon}

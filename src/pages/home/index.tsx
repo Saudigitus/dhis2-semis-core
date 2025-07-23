@@ -1,13 +1,21 @@
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
-import { DashboardCard, WithPadding } from "dhis2-semis-components";
+import { DashboardCard, DataStoreState, WithPadding } from "dhis2-semis-components";
 import DashboardLayout from "../../components/dashboard/dashboardLayout";
 import { useMenuData } from "../../hooks/menu/useMenuData";
+import { updateObject } from "../../utils/constants/valuesFormatter/valuesFormatter";
+import { values } from "../../utils/constants/values/values";
+import { useRecoilValue } from "recoil";
+import { useEffect, useState } from "react";
+import AlertWithActions from "../../components/alert/alertWithActions";
 
 const Home = () => {
   const navigate = useNavigate();
   const { homePageData } = useMenuData()
+  const [open, setOpen] = useState<boolean>(true)
+  const dataStore = useRecoilValue(DataStoreState)
+  const { convert, hasSameStructure } = updateObject(values, dataStore)
 
   const makeAction = (path: string, title: string) => ({
     icon: <MenuIcon />,
@@ -15,8 +23,15 @@ const Home = () => {
     onAction: () => navigate(`/semis/${path}?sectionType=${title.toLocaleLowerCase()}`),
   });
 
+  useEffect(() => {
+    if (!hasSameStructure(values, dataStore)) {
+      setOpen(true)
+    }
+  }, [])
+
   return (
     <Box height={"93vh"}>
+      {open && <AlertWithActions open={open} setOpen={setOpen} />}
       <WithPadding p="2rem">
         <>
           {

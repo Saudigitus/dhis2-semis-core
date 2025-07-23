@@ -37,16 +37,20 @@ const useMenuData = () => {
 
       copy[index].subItems = filteredSubItems
     }
-    
+
     return copy?.filter(x => x?.subItems?.length > 0)
   }
 
   useEffect(() => {
-    const sideBarData = updateData(menuDataArray)
-    const initialPageData = updateData(structuredClone(dashboardData))
-console.log(dataStoreData)
-    updatedHomePageData(initialPageData)
-    updateMenuData(sideBarData)
+    if (dataStoreData?.length > 0) {
+      const sideBarData = updateData(menuDataArray)
+      const initialPageData = updateData(structuredClone(dashboardData))
+      updatedHomePageData(initialPageData)
+      updateMenuData(sideBarData)
+    } else {
+      updatedHomePageData([dashboardData[dashboardData?.length - 1]])
+      updateMenuData(menuDataArray?.filter(x => x.title != 'Staff' && x.title != 'Student'))
+    }
   }, [dataStoreData])
 
   return {

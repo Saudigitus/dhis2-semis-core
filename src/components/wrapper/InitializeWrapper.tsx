@@ -4,8 +4,9 @@ import { RulesEngineWrapper } from 'dhis2-semis-functions'
 
 function InitializeWrapper({ children }: { children: React.ReactNode }) {
   const programs = useProgramsKeys()
+
   return (
-    <RulesEngineWrapper programs={[programs?.map((program) => program.id).join(',')]}>
+    <RulesEngineWrapper programs={[programs?.map((program) => program.id)?.join(',')]}>
       {children}
     </RulesEngineWrapper>
   )

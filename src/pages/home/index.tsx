@@ -4,18 +4,22 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { DashboardCard, DataStoreState, WithPadding } from "dhis2-semis-components";
 import DashboardLayout from "../../components/dashboard/dashboardLayout";
 import { useMenuData } from "../../hooks/menu/useMenuData";
-import { updateObject } from "../../utils/constants/valuesFormatter/valuesFormatter";
+import { validateAndConvertArrayAgainstReference } from "../../utils/constants/valuesFormatter/valuesFormatter";
 import { values } from "../../utils/constants/values/values";
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { useEffect, useState } from "react";
 import AlertWithActions from "../../components/alert/alertWithActions";
+import { NoticeBox } from "@dhis2/ui";
+import { Center } from "@dhis2/ui";
+import { ValidationSchema } from "../../schemas/validation/validationSchema";
 
 const Home = () => {
   const navigate = useNavigate();
-  const { homePageData } = useMenuData()
-  const [open, setOpen] = useState<boolean>(true)
+  const [open, setOpen] = useState<boolean>(false)
+  const [validation, setValidation] = useRecoilState(ValidationSchema)
   const dataStore = useRecoilValue(DataStoreState)
-  const { convert, hasSameStructure } = updateObject(values, dataStore)
+  const { homePageData } = useMenuData()
+  const { errors, isValid, converted } = validateAndConvertArrayAgainstReference(dataStore, values as unknown as any)
 
   const makeAction = (path: string, title: string) => ({
     icon: <MenuIcon />,
@@ -24,14 +28,28 @@ const Home = () => {
   });
 
   useEffect(() => {
-    if (!hasSameStructure(values, dataStore)) {
+    if (!isValid) {
+      setValidation({ valid: false, converted: converted, deniedConversion: false })
       setOpen(true)
+    } else {
+      setValidation((prev) => ({ ...prev, valid: true }))
     }
   }, [])
 
   return (
     <Box height={"93vh"}>
-      {open && <AlertWithActions open={open} setOpen={setOpen} />}
+      {open && <AlertWithActions setValidation={setValidation} validation={validation} open={open} setOpen={setOpen} />}
+
+      {
+        validation.deniedConversion == true && <div style={{ marginTop: "20px" }} >
+          <Center>
+            <NoticeBox warning title={`Invalid configurations!`}>
+              The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!
+            </NoticeBox>
+          </Center>
+        </div>
+      }
+
       <WithPadding p="2rem">
         <>
           {

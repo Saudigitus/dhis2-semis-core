@@ -6,8 +6,10 @@ import { formatMenuData } from "../../utils/common/menu/formatMenuData";
 import { useRecoilValue } from "recoil";
 import { useEffect, useState } from "react";
 import { dashboardData } from "../../utils/constants/dashboard/dashboardData";
+import { ValidationSchema } from "../../schemas/validation/validationSchema";
 
 const useMenuData = () => {
+  const validation = useRecoilValue(ValidationSchema)
   const location = useLocation();
   const navigate = useNavigate();
   const { sectionName } = useGetSectionTypeLabel()
@@ -23,35 +25,47 @@ const useMenuData = () => {
   })
 
   const updateData = (dadosBrutos: any[]) => {
-    let copy = [...dadosBrutos]
+    let copy = [...dadosBrutos];
 
     for (const element of dataStoreData) {
-      const index = copy?.findIndex(x => x.title.toLowerCase() === element.key)
-      if (index === -1) continue
+      const index = copy.findIndex(x => x.title?.toLowerCase() === element.key);
+      if (index === -1) continue;
 
-      const originalSubItems = copy[index].subItems
+      const originalSubItems = copy[index].subItems ?? [];
       const filteredSubItems = originalSubItems.filter((subItem: any) => {
-        const key = subItem.id
-        return (element as unknown as any)[key]?.enabled === true
-      })
+        const key = subItem.id;
+        return (element as any)[key]?.enabled === true;
+      });
 
-      copy[index].subItems = filteredSubItems
+      copy[index].subItems = filteredSubItems;
     }
 
-    return copy?.filter(x => x?.subItems?.length > 0)
-  }
+    copy = copy.filter(item => {
+      const title = item.title?.toLowerCase()
+      if (title === "student" || title === "staff") {
+        return dataStoreData.some(data => data.key === title)
+      }
+      return true
+    })
+
+    return copy.filter(item => item.subItems?.length > 0);
+  };
 
   useEffect(() => {
-    if (dataStoreData?.length > 0) {
+    if (dataStoreData?.length > 0 && validation.valid != false) {
       const sideBarData = updateData(menuDataArray)
       const initialPageData = updateData(structuredClone(dashboardData))
       updatedHomePageData(initialPageData)
-      updateMenuData(sideBarData)
+      updateMenuData(formatMenuData({
+        appsList: [], location,
+        sectionType: sectionName,
+        menuData: sideBarData
+      }))
     } else {
       updatedHomePageData([dashboardData[dashboardData?.length - 1]])
       updateMenuData(menuDataArray?.filter(x => x.title != 'Staff' && x.title != 'Student'))
     }
-  }, [dataStoreData])
+  }, [dataStoreData, validation.valid])
 
   return {
     menuData: formatMenuData({

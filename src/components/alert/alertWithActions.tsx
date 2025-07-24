@@ -1,16 +1,10 @@
 import { Alert, AlertTitle, Backdrop, Button } from "@mui/material"
 import usePostDataStore from "../../hooks/dataStore/usePostDataStore"
-import { updateObject } from "../../utils/constants/valuesFormatter/valuesFormatter"
-import { DataStoreState } from "dhis2-semis-components"
-import { useRecoilValue } from "recoil"
-import { values } from "../../utils/constants/values/values"
 import { Center } from "@dhis2/ui"
 import { CircularLoader } from "@dhis2/ui"
 
-export default function AlertWithActions({ setOpen, open }: { open: boolean, setOpen: (args: boolean) => void }) {
+export default function AlertWithActions({ setValidation, setOpen, open, validation }: { setValidation: (args: any) => void, validation: any, open: boolean, setOpen: (args: boolean) => void }) {
     const { createDataStore, loading } = usePostDataStore()
-    const dataStore = useRecoilValue(DataStoreState)
-    const { convert } = updateObject(values, dataStore)
 
     return (
         <Backdrop
@@ -29,15 +23,19 @@ export default function AlertWithActions({ setOpen, open }: { open: boolean, set
                     <span style={{ marginRight: "40px" }} >The configurations found are not compatible with this version of SEMIS, would you like to convert?</span>
                     <Button
                         onClick={async () => {
-                            const converted = convert()
-                            await createDataStore(converted)
+                            await createDataStore({ data: validation.converted })
+                            setValidation({ valid: true, deniedConversion: false })
+                            setOpen(false)
                         }}
                         color="error"
                         size="small"
                     >
                         Yes
                     </Button>
-                    <Button onClick={() => setOpen(false)} color="primary" size="small">
+                    <Button onClick={() => {
+                        setValidation({ valid: false, deniedConversion: true })
+                        setOpen(false)
+                    }} color="primary" size="small">
                         No
                     </Button>
                 </Alert>}

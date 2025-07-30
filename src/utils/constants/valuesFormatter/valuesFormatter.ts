@@ -14,7 +14,6 @@ export const validateAndConvertArrayAgainstReference = (
     const converted: AnyObject[] = [];
 
     for (const item of input) {
-        // Check required root-level keys
         const requiredKeys = ["key", "program", "registration"];
         for (const reqKey of requiredKeys) {
             if (!(reqKey in item)) {
@@ -34,19 +33,19 @@ export const validateAndConvertArrayAgainstReference = (
             registration: { ...refItem.registration },
         };
 
-        // Step 3.6: Add absenteeism if attendance exists and absenteeism is missing
         if (item.attendance && !item.absenteeism && refItem.absenteeism) {
             output.absenteeism = { ...refItem.absenteeism };
         }
 
-        // Step 3.5: Add reenroll if staff has registration and reenroll is missing
         if (
             item.key === "staff" &&
             "registration" in item &&
-            !("reenroll" in item) &&
-            "reenroll" in refItem
+            !("reenroll" in item)
         ) {
-            output.reenroll = { ...refItem.reenroll };
+            if ("reenroll" in refItem) {
+                output.reenroll = { ...refItem.reenroll };
+                errors.push(`Missing 'reenroll' for key 'staff'`);
+            }
         }
 
         for (const key of Object.keys(item)) {

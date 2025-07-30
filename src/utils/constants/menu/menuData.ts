@@ -180,7 +180,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                 appName: "SEMIS-Calendar",
                 route: `/semis/school-calendar`,
                 appUrl: "#/semis/school-calendar",
-                active: true,
+                active: false,
                 action: () => navigate("/semis/school-calendar")
             }
         ]

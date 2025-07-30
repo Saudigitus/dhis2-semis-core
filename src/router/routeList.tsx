@@ -7,6 +7,7 @@ import { Reenrollment } from "dhis2-semis-staff-reenroll"
 import { Performance } from "dhis2-semis-performance"
 import { TransferExecute } from "dhis2-semis-transfer-execute"
 import { ConfigirationsPage } from "dhis2-semis-configuration";
+// import { Calendar } from "dhis2-semis-school-callendar"
 
 export default function RouteList() {
     return [
@@ -48,7 +49,7 @@ export default function RouteList() {
         },
         {
             path: "/semis/school-calendar",
-            component: <>School Calendar</>
+            component: <></>
         }
     ];
 }

@@ -24,7 +24,7 @@ const Home = () => {
   const makeAction = (path: string, title: string) => ({
     icon: <MenuIcon />,
     label: `List ${path.replace("-", " ")}`,
-    onAction: () => navigate(`/semis/${path}?sectionType=${title.toLocaleLowerCase()}`),
+    onAction: () => title != "Configurations" ? navigate(`/semis/${path}?sectionType=${title.toLocaleLowerCase()}`) : navigate(`/semis/${path}`),
   });
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const Home = () => {
         </div>
       }
 
-      <WithPadding p="2rem">
+      <WithPadding p="1rem">
         <>
           {
             homePageData?.map(({ title, subItems }: any) => {

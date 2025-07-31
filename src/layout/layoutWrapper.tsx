@@ -1,27 +1,21 @@
 import { useLocation } from "react-router-dom"
 import { ReactElement, useEffect } from "react"
 import { useUrlParams } from "dhis2-semis-functions"
-import { useDataStoreKey, WithPadding } from "dhis2-semis-components"
+import { useSchoolCalendar, WithPadding } from "dhis2-semis-components"
 
 const LayoutWrapper = ({ children }: { children: ReactElement }) => {
     const { pathname } = useLocation()
     const { add, urlParameters } = useUrlParams()
     const { academicYear, sectionType } = urlParameters()
-    const { defaults } = useDataStoreKey({ sectionType: sectionType as "staff" | "student" }) ?? []
+    const { defaults } = useSchoolCalendar()
 
     useEffect(() => {
-        if (pathname !== "/semis" && sectionType) {
-            if (!academicYear || academicYear.trim() === "") {
-                // add("academicYear", defaults?.currentAcademicYear)
-
-                //set timeout to allow the url to update for 500 milliseconds
-
-                setTimeout(() => {
-                    add("academicYear", defaults?.currentAcademicYear)
-                }, 100)
-            }
+        if (pathname !== "/semis" && sectionType && (!academicYear || academicYear.trim() === "")) {
+            setTimeout(() => {
+                add("academicYear", defaults?.academicYear)
+            }, 50)
         }
-    }, [defaults, academicYear])
+    }, [defaults, academicYear, pathname])
 
 
     if (!sectionType && pathname !== "/semis") {

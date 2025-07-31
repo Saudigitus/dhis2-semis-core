@@ -11,22 +11,26 @@ const QUERY: any = {
         importStrategy: 'CREATE_AND_UPDATE'
     }
 }
+const type: any = 'update'
 
-export default function usePostDataStore() {
+export default function usePostDataStore({ keySpace }: { keySpace: any }) {
     const engine = useDataEngine()
     const [error, setError] = useState<boolean>()
     const [loading, setLoading] = useState<boolean>(false)
     const { show, hide } = useShowAlerts()
-    const { error: errorInGet, getDataStore } = useDataStore({ keySpace: 'dataStore/semis/values', setLoading })
 
     const createDataStore = async ({ data }: { data: any }) => {
         setLoading(true)
-        await engine.mutate(QUERY, {
-            variables: {
-                data
-            },
+        await engine.mutate(
+            {
+                resource: keySpace,
+                type: type,
+                data: data,
+                params: {
+                    importStrategy: 'CREATE_AND_UPDATE'
+                }
+            }, {
             onComplete: async () => {
-                await getDataStore(false)
                 show({ message: "Configuration updated successfully!", type: { success: true } })
             },
             onError: () => {
@@ -39,6 +43,8 @@ export default function usePostDataStore() {
                 setTimeout(hide, 5000);
             }
         })
+
+
     }
     return { createDataStore, loading, error }
 }

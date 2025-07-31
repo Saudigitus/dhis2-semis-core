@@ -19,7 +19,7 @@ const Home = () => {
   const [validation, setValidation] = useRecoilState(ValidationSchema)
   const dataStore = useRecoilValue(DataStoreState)
   const { homePageData } = useMenuData()
-  const { errors, isValid, converted } = validateAndConvertArrayAgainstReference(dataStore, values as unknown as any)
+  const { errors, isValid, converted, academicYear } = validateAndConvertArrayAgainstReference(dataStore, values as unknown as any)
 
   const makeAction = (path: string, title: string) => ({
     icon: <MenuIcon />,
@@ -29,7 +29,7 @@ const Home = () => {
 
   useEffect(() => {
     if (!isValid) {
-      setValidation({ valid: false, converted: converted, deniedConversion: false })
+      setValidation({ valid: false, converted: converted, deniedConversion: false, year: academicYear })
       setOpen(true)
     } else {
       setValidation((prev) => ({ ...prev, valid: true }))

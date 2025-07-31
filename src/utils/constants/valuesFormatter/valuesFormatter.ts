@@ -4,14 +4,13 @@ interface ValidationResult {
     isValid: boolean;
     errors: string[];
     converted: AnyObject[];
+    academicYear: any
 }
 
-export const validateAndConvertArrayAgainstReference = (
-    input: AnyObject[],
-    reference: AnyObject[]
-): ValidationResult => {
+export const validateAndConvertArrayAgainstReference = (input: AnyObject[], reference: AnyObject[]): ValidationResult => {
     const errors: string[] = [];
     const converted: AnyObject[] = [];
+    let academicYear: string = ""
 
     for (const item of input) {
         const requiredKeys = ["key", "program", "registration"];
@@ -20,7 +19,7 @@ export const validateAndConvertArrayAgainstReference = (
                 errors.push(`Missing required field '${reqKey}' in object: ${JSON.stringify(item)}`);
             }
         }
-
+        academicYear = item?.registration?.academicYear
         const refItem = reference.find(r => r.key === item.key);
         if (!refItem) {
             errors.push(`Missing reference for key '${item.key}'`);
@@ -79,5 +78,6 @@ export const validateAndConvertArrayAgainstReference = (
         isValid: errors.length === 0,
         errors,
         converted,
+        academicYear
     };
 };

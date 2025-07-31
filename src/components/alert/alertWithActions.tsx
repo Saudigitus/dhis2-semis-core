@@ -2,16 +2,21 @@ import { Alert, AlertTitle, Backdrop, Button } from "@mui/material"
 import usePostDataStore from "../../hooks/dataStore/usePostDataStore"
 import { Center } from "@dhis2/ui"
 import { CircularLoader } from "@dhis2/ui"
+import { useDataStore } from "dhis2-semis-components"
+import { useState } from "react"
 
 export default function AlertWithActions({ setValidation, setOpen, open, validation }: { setValidation: (args: any) => void, validation: any, open: boolean, setOpen: (args: boolean) => void }) {
-    const { createDataStore, loading } = usePostDataStore()
+    const { createDataStore, loading } = usePostDataStore({ keySpace: 'dataStore/semis/values' })
+    const { createDataStore: createSchoolCalendar, loading: loadingCalendar } = usePostDataStore({ keySpace: 'dataStore/semis/schoolCalendar' })
+    const [lodingGet, setLoading] = useState(false)
+    const { error: errorInGet, getDataStore } = useDataStore({ keySpace: 'dataStore/semis/values', setLoading })
 
     return (
         <Backdrop
             sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
             open={open}
         >
-            {loading ?
+            {(loading || lodingGet || loadingCalendar) ?
                 <Center>
                     <CircularLoader />
                 </Center>
@@ -24,6 +29,10 @@ export default function AlertWithActions({ setValidation, setOpen, open, validat
                     <Button
                         onClick={async () => {
                             await createDataStore({ data: validation.converted })
+                            await createSchoolCalendar({
+                                data: { academinYear: validation?.year, defaults: { academicYear: "" }, schoolCalendar: [] }
+                            })
+                            await getDataStore(false)
                             setValidation({ valid: true, deniedConversion: false })
                             setOpen(false)
                         }}

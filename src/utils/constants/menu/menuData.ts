@@ -166,16 +166,16 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
         ]
     },
     {
-        title: "Callendar",
+        title: "Calendar",
         displayInMenu: true,
         subItems: [
             {
                 icon: callendar,
                 displayInMenu: true,
-                label: "School callendar",
+                label: "School calendar",
                 badgeInfo: "",
                 disabled: false,
-                appName: "School-Callendar",
+                appName: "School-Calendar",
                 id: "",
                 route: "/semis/enrollments",
                 appUrl: `#/semis/enrollments`,

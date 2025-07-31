@@ -12,8 +12,8 @@ const WithSideBarLayout = () => {
                 <SideBar
                     collapsed={false}
                     sideBarData={menuData}
+                    stickLastItemToBottom={false}
                     sideBarBtnPosition="top-offset"
-                    // stickLastItemToBottom={true}
                 />
             }
         >

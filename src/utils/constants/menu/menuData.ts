@@ -5,9 +5,9 @@ import glyph from "../../../assets/images/sidebar/Glyph.svg"
 import logOut from "../../../assets/images/sidebar/log-out.svg"
 import listAdd from "../../../assets/images/sidebar/listAdd.svg"
 import userGroup from "../../../assets/images/sidebar/user-group.svg"
+import settings from "../../../assets/images/sidebar/settings.svg"
 import fileDocument from "../../../assets/images/sidebar/file-document.svg"
 import callendar from "../../../assets/images/sidebar/callendar.svg"
-import configurations from "../../../assets/images/sidebar/configurations.svg"
 
 import { DataStoreProps } from "dhis2-semis-types"
 import { subItemRoute } from "../../common/menu/subItemRoute"
@@ -166,21 +166,20 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
         ]
     },
     {
-        title: "Calendar",
+        title: "Admin",
         displayInMenu: true,
         subItems: [
             {
                 icon: callendar,
                 displayInMenu: true,
-                label: "School calendar",
+                label: "School Calendar",
                 badgeInfo: "",
                 disabled: false,
-                appName: "School-Calendar",
-                id: "",
-                route: "/semis/enrollments",
-                appUrl: `#/semis/enrollments`,
+                appName: "SEMIS-Calendar",
+                route: `/semis/school-calendar`,
+                appUrl: "#/semis/school-calendar",
                 active: false,
-                action: () => navigate(`/semis/enrollments?${subItemRoute(locationParams, 'staff', filterDataElements, pathname)}`)
+                action: () => navigate("/semis/school-calendar")
             }
         ]
     },
@@ -189,7 +188,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
         displayInMenu: true,
         subItems: [
             {
-                icon: configurations,
+                icon: settings,
                 displayInMenu: true,
                 label: "Configurations",
                 badgeInfo: "",
@@ -199,7 +198,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                 route: "/semis/configuration",
                 appUrl: `#/semis/configuration`,
                 active: false,
-                action: () => navigate(`/semis/configuration?${subItemRoute(locationParams, 'student', filterDataElements, pathname)}`)
+                action: () => navigate(`/semis/configuration`)
             }
         ]
     }

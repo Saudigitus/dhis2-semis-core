@@ -3,20 +3,25 @@ import usePostDataStore from "../../hooks/dataStore/usePostDataStore"
 import { Center } from "@dhis2/ui"
 import { CircularLoader } from "@dhis2/ui"
 import { useDataStore } from "dhis2-semis-components"
-import { useState } from "react"
 
-export default function AlertWithActions({ setValidation, setOpen, open, validation }: { setValidation: (args: any) => void, validation: any, open: boolean, setOpen: (args: boolean) => void }) {
-    const { createDataStore, loading } = usePostDataStore({ keySpace: 'dataStore/semis/values' })
-    const { createDataStore: createSchoolCalendar, loading: loadingCalendar } = usePostDataStore({ keySpace: 'dataStore/semis/schoolCalendar' })
-    const [lodingGet, setLoading] = useState(false)
-    const { error: errorInGet, getDataStore } = useDataStore({ keySpace: 'dataStore/semis/values', setLoading })
+interface AlertWithActionsProps {
+    open: boolean;
+    setOpen: (open: boolean) => void;
+    validation: { converted: any; year: string };
+    setValidation: (validation: { valid: boolean; deniedConversion: boolean }) => void;
+}
+
+export default function AlertWithActions({ setValidation, setOpen, open, validation }: AlertWithActionsProps) {
+    const { createDataStore, loading } = usePostDataStore({ keySpace: "dataStore/semis/values" })
+    const { error: errorInGet, getDataStore } = useDataStore({ keySpace: "dataStore/semis/values" })
+    const { createDataStore: createSchoolCalendar, loading: loadingCalendar } = usePostDataStore({ keySpace: "dataStore/semis/schoolCalendar" })
 
     return (
         <Backdrop
             sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
             open={open}
         >
-            {(loading || lodingGet || loadingCalendar) ?
+            {(loading || loadingCalendar) ?
                 <Center>
                     <CircularLoader />
                 </Center>

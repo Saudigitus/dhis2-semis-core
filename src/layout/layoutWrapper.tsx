@@ -5,9 +5,9 @@ import { useSchoolCalendar, WithPadding } from "dhis2-semis-components"
 
 const LayoutWrapper = ({ children }: { children: ReactElement }) => {
     const { pathname } = useLocation()
+    const { defaults } = useSchoolCalendar()
     const { add, urlParameters } = useUrlParams()
     const { academicYear, sectionType } = urlParameters()
-    const { defaults } = useSchoolCalendar()
 
     useEffect(() => {
         if (pathname !== "/semis" && sectionType && (!academicYear || academicYear.trim() === "")) {

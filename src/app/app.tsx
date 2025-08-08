@@ -8,9 +8,10 @@ const App = () => {
 
   return (
     <AppWrapper
+      validate={false}
       baseUrl={baseUrl}
-      dataStoreKey="dataStore/semis/values"
-      // validate={true}
+      dataStoreKey={"dataStore/semis/values"}
+      schoolCalendarKey={"dataStore/semis/schoolCalendar"}
     >
       <InitializeWrapper>
         <Router />

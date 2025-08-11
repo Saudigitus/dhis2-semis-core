@@ -3,12 +3,13 @@ import usePostDataStore from "../../hooks/dataStore/usePostDataStore"
 import { Center } from "@dhis2/ui"
 import { CircularLoader } from "@dhis2/ui"
 import { useDataStore } from "dhis2-semis-components"
+import { DataStoreValidationSchemaType } from "../../schemas/validation/validationSchema"
 
 interface AlertWithActionsProps {
     open: boolean;
     setOpen: (open: boolean) => void;
-    validation: { converted: any; year: string };
-    setValidation: (validation: { valid: boolean; deniedConversion: boolean }) => void;
+    validation: DataStoreValidationSchemaType;
+    setValidation: (validation: DataStoreValidationSchemaType) => void;
 }
 
 export default function AlertWithActions({ setValidation, setOpen, open, validation }: AlertWithActionsProps) {

@@ -13,9 +13,9 @@ const LayoutWrapper = ({ children }: { children: ReactElement }) => {
         if (pathname !== "/semis" && sectionType && (!academicYear || academicYear.trim() === "")) {
             setTimeout(() => {
                 add("academicYear", defaults?.academicYear)
-            }, 50)
+            }, 100)
         }
-    }, [defaults, academicYear, pathname])
+    }, [pathname])
 
     if (!sectionType && (pathname !== "/semis" && pathname !== "/semis/configuration" && !pathname.includes('/semis/school-calendar'))) {
         return (

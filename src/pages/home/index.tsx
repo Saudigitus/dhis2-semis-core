@@ -27,6 +27,7 @@ const Home = () => {
     onAction: () => title != "Configurations" ? navigate(`/semis/${path}?sectionType=${title.toLocaleLowerCase()}`) : navigate(`/semis/${path}`),
   });
 
+  console.log(errors, isValid, converted,'jshdfjshdjsd')
   useEffect(() => {
     if (!isValid) {
       setValidation({ valid: false, converted: converted, deniedConversion: false, year: academicYear })

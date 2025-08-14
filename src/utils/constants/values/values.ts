@@ -5,100 +5,89 @@ export const values = [
         },
         "performance": {
             "enabled": false,
-            "programStages": [
-                {
-                    "programStage": "mBEhR2M4DRQ"
-                },
-                {
-                    "programStage": "aDmsN3qemOA"
-                },
-                {
-                    "programStage": "rZGdcch2PCh"
-                }
-            ]
+            "programStages": []
         },
         "attendance": {
-            "absenceReason": "oLUMMT84ILM",
+            "absenceReason": "",
             "enabled": false,
-            "lastUpdate": "2025-07-23T12:02:26.324Z",
-            "programStage": "Ljyrr3cktAr",
-            "status": "d0MKWRNGv0a",
+            "lastUpdate": "",
+            "programStage": "",
+            "status": "",
             "statusOptions": [
                 {
-                    "ConfigKey": "presentCode",
-                    "code": "present",
-                    "color": "#81C784",
-                    "icon": "correct_blue_fill",
-                    "key": "present"
+                    "ConfigKey": "",
+                    "code": "",
+                    "color": "",
+                    "icon": "",
+                    "key": ""
                 },
                 {
-                    "ConfigKey": "absentCode",
-                    "code": "absent",
-                    "color": "#E57373",
-                    "icon": "wrong_red_fill",
-                    "key": "absent"
+                    "ConfigKey": "",
+                    "code": "",
+                    "color": "",
+                    "icon": "",
+                    "key": ""
                 },
                 {
-                    "ConfigKey": "lateCode",
-                    "code": "late",
-                    "color": "#f4fb71ff",
-                    "icon": "correct_blue_fill",
-                    "key": "late"
+                    "ConfigKey": "",
+                    "code": "",
+                    "color": "",
+                    "icon": "",
+                    "key": ""
                 }
             ]
         },
         "defaults": {
             "allowSearching": false,
-            "defaultOrder": "gz8w04YBSS0:asc"
+            "defaultOrder": ""
         },
         "filters": {
             "dataElements": [
                 {
-                    "code": "grade",
-                    "dataElement": "kNNoif9gASf",
-                    "label": "grade",
+                    "code": "",
+                    "dataElement": "",
+                    "label": "",
                     "order": 1,
-                    "ulrParam": "grade"
+                    "ulrParam": ""
                 },
                 {
-                    "code": "class",
-                    "dataElement": "RhABRLO2Fae",
-                    "label": "section",
+                    "code": "",
+                    "dataElement": "",
+                    "label": "",
                     "order": 3,
-                    "ulrParam": "class"
+                    "ulrParam": ""
                 }
             ]
         },
         "final-result": {
             "enabled": false,
-            "lastUpdate": "2025-07-23T12:05:22.061Z",
-            "programStage": "hcrjYJ6Yl5F",
-            "status": "bsyU0WFfskG"
+            "lastUpdate": "",
+            "programStage": "",
+            "status": ""
         },
         "key": "student",
-        "program": "wQaiD2V27Dp",
+        "program": "",
         "registration": {
-            "academicYear": "iDSrFrrVgmX",
             "enabled": false,
-            "grade": "kNNoif9gASf",
-            "lastUpdate": "2025-07-23T11:47:24.820Z",
-            "programStage": "Ni2qsy2WJn4",
-            "section": "RhABRLO2Fae"
+            "grade": "",
+            "lastUpdate": "",
+            "programStage": "",
+            "section": ""
         },
         "socio-economics": {
-            "programStage": "Wi3KEZ7C3w9"
+            "programStage": ""
         },
-        "trackedEntityType": "eMLK4VQm3Kj",
+        "trackedEntityType": "",
         "transfer": {
-            "approvedCode": "Approved",
-            "destinySchool": "kQbquG7UivM",
+            "approvedCode": "",
+            "destinySchool": "",
             "enabled": false,
-            "lastUpdate": "2025-07-23T12:05:07.178Z",
-            "originSchool": "kQbquG7UivM",
-            "penddingCode": "Pending",
-            "programStage": "uewAr6TmLkw",
-            "reprovedCode": "Reproved",
-            "status": "YnwITieplwy"
+            "lastUpdate": "",
+            "originSchool": "",
+            "penddingCode": "",
+            "programStage": "",
+            "reprovedCode": "",
+            "status": ""
         }
     },
     {
@@ -106,81 +95,83 @@ export const values = [
             "enabled": false
         },
         "attendance": {
-            "absenceReason": "oLUMMT84ILM",
+            "absenceReason": "",
             "enabled": false,
-            "lastUpdate": "2025-07-23T12:06:01.605Z",
-            "programStage": "ErFJy0ODhrF",
-            "status": "d0MKWRNGv0a",
+            "lastUpdate": "",
+            "programStage": "",
+            "status": "",
             "statusOptions": [
                 {
-                    "ConfigKey": "presentCode",
-                    "code": "present",
-                    "color": "#81C784",
-                    "icon": "correct_blue_fill",
-                    "key": "present"
+                    "ConfigKey": "",
+                    "code": "",
+                    "color": "",
+                    "icon": "",
+                    "key": ""
                 },
                 {
-                    "ConfigKey": "absentCode",
-                    "code": "absent",
-                    "color": "#E57373",
-                    "icon": "wrong_red_fill",
-                    "key": "absent"
+                    "ConfigKey": "",
+                    "code": "",
+                    "color": "",
+                    "icon": "",
+                    "key": ""
                 },
                 {
-                    "ConfigKey": "lateCode",
-                    "code": "late",
-                    "color": "#f4fb71ff",
-                    "icon": "correct_blue_fill",
-                    "key": "late"
+                    "ConfigKey": "",
+                    "code": "",
+                    "color": "",
+                    "icon": "",
+                    "key": ""
                 }
             ]
         },
         "defaults": {
             "allowSearching": false,
-            "defaultOrder": "undefined:undefined"
+            "defaultOrder": ""
         },
         "filters": {
             "dataElements": [
                 {
-                    "code": "class",
-                    "dataElement": "EuzOMK1tTNv",
-                    "label": "typeOfStaff",
+                    "code": "",
+                    "dataElement": "",
+                    "label": "",
                     "order": 0,
-                    "ulrParam": "class"
+                    "ulrParam": ""
                 },
                 {
-                    "code": "grade",
-                    "dataElement": "gXBJIHjcwiH",
-                    "label": "employmentType",
+                    "code": "",
+                    "dataElement": "",
+                    "label": "",
                     "order": 2,
-                    "ulrParam": "grade"
+                    "ulrParam": ""
                 }
             ]
         },
+        "socio-economics": {
+            "programStage": ""
+        },
         "key": "staff",
-        "program": "rmuGQ7kBQBU",
+        "program": "",
         "registration": {
-            "academicYear": "iDSrFrrVgmX",
             "enabled": false,
-            "grade": "EuzOMK1tTNv",
-            "lastUpdate": "2025-07-23T12:05:43.229Z",
-            "programStage": "bQxV9SA61IG",
-            "section": "gXBJIHjcwiH"
+            "grade": "",
+            "lastUpdate": "",
+            "programStage": "",
+            "section": ""
         },
         "reenroll": {
-            enabled: false
+            "enabled": false
         },
-        "trackedEntityType": "EmSCvAyT8T0",
+        "trackedEntityType": "",
         "transfer": {
-            "approvedCode": "Approved",
-            "destinySchool": "D8cYfexBFfG",
+            "approvedCode": "",
+            "destinySchool": "",
             "enabled": false,
-            "lastUpdate": "2025-07-23T12:06:21.614Z",
-            "originSchool": "D8cYfexBFfG",
-            "penddingCode": "Pending",
-            "programStage": "G8S9o9DL3hI",
-            "reprovedCode": "Reproved",
-            "status": "vpE9A9biU05"
+            "lastUpdate": "",
+            "originSchool": "",
+            "penddingCode": "",
+            "programStage": "",
+            "reprovedCode": "",
+            "status": ""
         }
     }
 ]

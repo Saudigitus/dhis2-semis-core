@@ -22,7 +22,7 @@ const staffCards = [
 ];
 
 const configurations = [
-    { label: "School callendar", icon: schoolCallendar, path: "school-calendar" },
+    { label: "School Calendar", icon: schoolCallendar, path: "school-calendar" },
     { label: "Configurations", icon: settings, path: "configuration" },
 ];
 

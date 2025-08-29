@@ -7,8 +7,10 @@ import { useRecoilValue } from "recoil";
 import { useEffect, useState } from "react";
 import { dashboardData } from "../../utils/constants/dashboard/dashboardData";
 import { ValidationSchema } from "../../schemas/validation/validationSchema";
+import { UrlParamsState } from "../../schemas/urlParams/paramSchema";
 
 const useMenuData = () => {
+  const ulrParams = useRecoilValue(UrlParamsState)
   const validation = useRecoilValue(ValidationSchema)
   const location = useLocation();
   const navigate = useNavigate();
@@ -22,7 +24,10 @@ const useMenuData = () => {
     filterDataElements: filters,
     navigate,
     locationParams: location?.search.slice(1),
+    urlHistory:ulrParams?.split("?")[1]
   })
+
+  console.log(ulrParams?.split("?")[1],"dssd")
 
   const updateData = (dadosBrutos: any[]) => {
     let copy = [...dadosBrutos];
@@ -43,7 +48,7 @@ const useMenuData = () => {
     copy = copy.filter(item => {
       const title = item.title?.toLowerCase()
       if (title === "student" || title === "staff") {
-        return dataStoreData.some(data => data.key === title)
+        return dataStoreData.some((data: any) => data.key === title)
       }
       return true
     })

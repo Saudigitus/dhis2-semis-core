@@ -1,6 +1,6 @@
-import { DataStoreState, useDataStoreKey } from "dhis2-semis-components";
+import { DataStoreState, useDataStoreKey, useSchoolCalendarKey } from "dhis2-semis-components";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useGetSectionTypeLabel } from "dhis2-semis-functions"
+import { useGetSectionTypeLabel, useUrlParams } from "dhis2-semis-functions"
 import { menuData } from "../../utils/constants/menu/menuData";
 import { formatMenuData } from "../../utils/common/menu/formatMenuData";
 import { useRecoilValue } from "recoil";
@@ -11,7 +11,10 @@ import { UrlParamsState } from "../../schemas/urlParams/paramSchema";
 
 const useMenuData = () => {
   const ulrParams = useRecoilValue(UrlParamsState)
+  const { useQuery } = useUrlParams()
+  const academicYear = useQuery.get("academicYear")
   const validation = useRecoilValue(ValidationSchema)
+  const schoolCalendar = useSchoolCalendarKey()
   const location = useLocation();
   const navigate = useNavigate();
   const { sectionName } = useGetSectionTypeLabel()
@@ -24,10 +27,9 @@ const useMenuData = () => {
     filterDataElements: filters,
     navigate,
     locationParams: location?.search.slice(1),
-    urlHistory:ulrParams?.split("?")[1]
+    savedParams: ulrParams?.split("?")?.[1],
+    academicYear: academicYear ?? schoolCalendar?.defaults?.academicYear
   })
-
-  console.log(ulrParams?.split("?")[1],"dssd")
 
   const updateData = (dadosBrutos: any[]) => {
     let copy = [...dadosBrutos];
@@ -70,7 +72,7 @@ const useMenuData = () => {
       updatedHomePageData([dashboardData[dashboardData?.length - 1]])
       updateMenuData(menuDataArray?.filter(x => x.title != 'Staff' && x.title != 'Student'))
     }
-  }, [dataStoreData, validation.valid])
+  }, [dataStoreData, validation.valid, ulrParams])
 
   return {
     menuData: formatMenuData({

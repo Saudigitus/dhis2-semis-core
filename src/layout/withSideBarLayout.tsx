@@ -9,24 +9,32 @@ import { useUrlParams } from "dhis2-semis-functions"
 
 const WithSideBarLayout = () => {
     const { menuData } = useMenuData()
-    const location = useLocation();
-    const { useQuery } = useUrlParams();
+    const { useQuery } = useUrlParams()
     const sectionType = useQuery.get("sectionType")
-    const setUrlParams = useSetRecoilState(UrlParamsState);
-    const prevSearchRef = useRef(location.pathname);
+    const location = useLocation()
+    const isFirstRender = useRef(true);
+    const prevSearchRef = useRef(location.search);
+    const prevPathRef = useRef(location.pathname);
+    const prevSectionTypeRef = useRef(sectionType)
+    const setURLParam = useSetRecoilState(UrlParamsState)
 
     useEffect(() => {
-        if (prevSearchRef.current === location.pathname) {
-            console.log(prevSearchRef.current , location.pathname)
-            setUrlParams(location.search);
+        if (isFirstRender.current) {
+            isFirstRender.current = false;
+            return;
         }
-        prevSearchRef.current = location.pathname;
-    }, [location.search]);
 
-    useEffect(() => {
-        console.log("first dsds")
-        setUrlParams(null);
-    }, [sectionType])
+        if ((location.search != prevSearchRef.current)
+            && (location.pathname == prevPathRef.current)
+            && (prevSectionTypeRef.current == sectionType)) {
+            setURLParam(location.search)
+            prevSearchRef.current = location.search;
+        } else if (prevSectionTypeRef.current != sectionType) {
+            setURLParam(null)
+        }
+        prevSectionTypeRef.current = sectionType
+        prevPathRef.current = location.pathname;
+    }, [location.search, location.pathname, sectionType]);
 
     return (
         <SideBarLayout

@@ -16,7 +16,7 @@ const Validator = () => {
 
     useEffect(() => {
         if (!isValid) {
-            setValidation({ valid: false, converted: converted, deniedConversion: false, year: academicYear })
+            setValidation({ valid: true, converted: converted, deniedConversion: false, year: academicYear })
             setOpen(true)
         } else {
             setValidation((prev: any) => ({ ...prev, valid: true }))

@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
-import { DashboardCard, WithPadding } from "dhis2-semis-components";
+import { DashboardCard, useSchoolCalendarKey, WithPadding } from "dhis2-semis-components";
 import DashboardLayout from "../../components/dashboard/dashboardLayout";
 import { useMenuData } from "../../hooks/menu/useMenuData";
 import Validator from "../../components/validator/Validator";
@@ -9,17 +9,20 @@ import Validator from "../../components/validator/Validator";
 const Home = () => {
   const navigate = useNavigate();
   const { homePageData } = useMenuData()
+  const schoolCalendar = useSchoolCalendarKey()
+
+  const defaultAcademicYear = schoolCalendar?.defaults?.academicYear ?? ""
 
   const makeAction = (path: string, title: string) => ({
     icon: <MenuIcon />,
     label: `List ${path.replace("-", " ")}`,
-    onAction: () => title != "Configurations" ? navigate(`/semis/${path}?sectionType=${title.toLocaleLowerCase()}`) : navigate(`/semis/${path}`),
+    onAction: () => title != "Configurations" ? navigate(`/semis/${path}?sectionType=${title.toLocaleLowerCase()}&academicYear=${defaultAcademicYear}`) : navigate(`/semis/${path}`),
   });
 
   return (
     <Box height={"93vh"}>
       <WithPadding p="1rem">
-        <Validator/>
+        <Validator />
         <>
           {
             homePageData?.map(({ title, subItems }: any) => {

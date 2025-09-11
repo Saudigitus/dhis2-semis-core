@@ -1,6 +1,6 @@
 import { DataStoreState, useDataStoreKey, useSchoolCalendarKey } from "dhis2-semis-components";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useGetSectionTypeLabel, useUrlParams } from "dhis2-semis-functions"
+import { useGetSectionTypeLabel, UserInfoState, useUrlParams } from "dhis2-semis-functions"
 import { menuData } from "../../utils/constants/menu/menuData";
 import { formatMenuData } from "../../utils/common/menu/formatMenuData";
 import { useRecoilValue } from "recoil";
@@ -22,6 +22,8 @@ const useMenuData = () => {
   const dataStoreData = useRecoilValue(DataStoreState)
   const [updatedMenuData, updateMenuData] = useState<any>([])
   const [homePageData, updatedHomePageData] = useState<any>([])
+  const userInfoState = useRecoilValue(UserInfoState)
+
   let menuDataArray = menuData({
     pathname: location.pathname,
     filterDataElements: filters,
@@ -47,13 +49,14 @@ const useMenuData = () => {
       copy[index].subItems = filteredSubItems;
     }
 
-    copy = copy.filter(item => {
-      const title = item.title?.toLowerCase()
-      if (title === "student" || title === "staff") {
-        return dataStoreData.some((data: any) => data.key === title)
-      }
-      return true
-    })
+    //hide admin title if no user doesnt have superuser authority
+    const indexConfigurations = copy.findIndex(x => x.title?.toLowerCase() === "configurations");
+
+    //hide admin title if no user doesnt have superuser authority
+    if (!userInfoState?.authorities?.includes("ALL")) {
+      copy[indexConfigurations].displayInMenu = false;
+      copy[indexConfigurations].subItems = [];
+    }
 
     return copy.filter(item => item.subItems?.length > 0);
   };

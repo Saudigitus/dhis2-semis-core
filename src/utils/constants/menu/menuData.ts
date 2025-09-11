@@ -172,7 +172,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
             ]
         },
         {
-            title: "Admin",
+            title: "Configurations",
             displayInMenu: true,
             subItems: [
                 {
@@ -186,13 +186,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                     appUrl: "#/semis/school-calendar",
                     active: false,
                     action: () => navigate("/semis/school-calendar")
-                }
-            ]
-        },
-        {
-            title: "",
-            displayInMenu: true,
-            subItems: [
+                },
                 {
                     icon: settings,
                     displayInMenu: true,

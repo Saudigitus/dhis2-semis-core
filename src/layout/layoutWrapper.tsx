@@ -1,13 +1,14 @@
 import { useLocation } from "react-router-dom"
-import { ReactElement, useEffect } from "react"
+import { ReactElement } from "react"
 import { useUrlParams } from "dhis2-semis-functions"
-import { useSchoolCalendar, WithPadding } from "dhis2-semis-components"
+import {  WithPadding } from "dhis2-semis-components"
 
 const LayoutWrapper = ({ children }: { children: ReactElement }) => {
     const { pathname } = useLocation()
-    const { defaults } = useSchoolCalendar()
+    // const { defaults } = useSchoolCalendar()
     const { add, urlParameters } = useUrlParams()
     const { academicYear, sectionType } = urlParameters()
+
 
     useEffect(() => {
         if (pathname !== "/semis" && sectionType && (!academicYear || academicYear.trim() === "")) {

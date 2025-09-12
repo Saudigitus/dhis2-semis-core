@@ -1,15 +1,20 @@
-import { DataStoreState, useDataStoreKey } from "dhis2-semis-components";
+import { DataStoreState, useDataStoreKey, useSchoolCalendarKey } from "dhis2-semis-components";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useGetSectionTypeLabel } from "dhis2-semis-functions"
+import { useGetSectionTypeLabel, UserInfoState, useUrlParams } from "dhis2-semis-functions"
 import { menuData } from "../../utils/constants/menu/menuData";
 import { formatMenuData } from "../../utils/common/menu/formatMenuData";
 import { useRecoilValue } from "recoil";
 import { useEffect, useState } from "react";
 import { dashboardData } from "../../utils/constants/dashboard/dashboardData";
 import { ValidationSchema } from "../../schemas/validation/validationSchema";
+import { UrlParamsState } from "../../schemas/urlParams/paramSchema";
 
 const useMenuData = () => {
+  const ulrParams = useRecoilValue(UrlParamsState)
+  const { useQuery } = useUrlParams()
+  const academicYear = useQuery.get("academicYear")
   const validation = useRecoilValue(ValidationSchema)
+  const schoolCalendar = useSchoolCalendarKey()
   const location = useLocation();
   const navigate = useNavigate();
   const { sectionName } = useGetSectionTypeLabel()
@@ -17,11 +22,15 @@ const useMenuData = () => {
   const dataStoreData = useRecoilValue(DataStoreState)
   const [updatedMenuData, updateMenuData] = useState<any>([])
   const [homePageData, updatedHomePageData] = useState<any>([])
+  const userInfoState = useRecoilValue(UserInfoState)
+
   let menuDataArray = menuData({
     pathname: location.pathname,
     filterDataElements: filters,
     navigate,
     locationParams: location?.search.slice(1),
+    savedParams: ulrParams?.split("?")?.[1],
+    academicYear: academicYear ?? schoolCalendar?.defaults?.academicYear
   })
 
   const updateData = (dadosBrutos: any[]) => {
@@ -40,13 +49,14 @@ const useMenuData = () => {
       copy[index].subItems = filteredSubItems;
     }
 
-    copy = copy.filter(item => {
-      const title = item.title?.toLowerCase()
-      if (title === "student" || title === "staff") {
-        return dataStoreData.some(data => data.key === title)
-      }
-      return true
-    })
+    //hide admin title if no user doesnt have superuser authority
+    const indexConfigurations = copy.findIndex(x => x.title?.toLowerCase() === "configurations");
+
+    //hide admin title if no user doesnt have superuser authority
+    if (!userInfoState?.authorities?.includes("ALL")) {
+      copy[indexConfigurations].displayInMenu = false;
+      copy[indexConfigurations].subItems = [];
+    }
 
     return copy.filter(item => item.subItems?.length > 0);
   };
@@ -65,7 +75,7 @@ const useMenuData = () => {
       updatedHomePageData([dashboardData[dashboardData?.length - 1]])
       updateMenuData(menuDataArray?.filter(x => x.title != 'Staff' && x.title != 'Student'))
     }
-  }, [dataStoreData, validation.valid])
+  }, [dataStoreData, validation.valid, ulrParams])
 
   return {
     menuData: formatMenuData({

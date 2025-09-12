@@ -1,6 +1,6 @@
 import { DataStoreProps } from "dhis2-semis-types";
 
-export const subItemRoute = (location: string, sectionType: string, filterDataElements?: DataStoreProps[0]["filters"], pathname?: string) => {
+export const subItemRoute = (location: string, sectionType: string, academicYear: any, filterDataElements?: DataStoreProps[0]["filters"], pathname?: string) => {
     let newLocation: string
 
     if (location) {
@@ -13,11 +13,15 @@ export const subItemRoute = (location: string, sectionType: string, filterDataEl
         }
 
         newLocation = removeModulesQueryParams(newLocation, pathname ?? "");
+    } else { newLocation = `sectionType=${sectionType}` }
+
+    const url = new URLSearchParams(newLocation);
+
+    if (!url.has("academicYear")) {
+        url.set("academicYear", academicYear.toString());
     }
 
-    else newLocation = `sectionType=${sectionType}`
-
-    return newLocation.toString();
+    return url.toString();
 };
 
 function removeQueryParam(queryString: string, paramToRemove: string) {

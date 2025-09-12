@@ -52,10 +52,20 @@ const useMenuData = () => {
     //hide admin title if no user doesnt have superuser authority
     const indexConfigurations = copy.findIndex(x => x.title?.toLowerCase() === "configurations");
 
-    //hide admin title if no user doesnt have superuser authority
-    if (!userInfoState?.authorities?.includes("ALL")) {
+    // Determine if the user has superuser authority
+    const isSuperUser = userInfoState?.authorities?.includes("ALL");
+
+    if (!isSuperUser) {
+      // Hide Admin title if the user does not have superuser authority
       copy[indexConfigurations].displayInMenu = false;
       copy[indexConfigurations].subItems = [];
+    } else {
+      // If no academic year is defined, remove "SEMIS-Calendar"
+      if (schoolCalendar.defaults?.academicYear) {
+        copy[indexConfigurations].subItems = copy[indexConfigurations].subItems.filter(
+          (subItem: any) => subItem.id != "school-calendar"
+        );
+      }
     }
 
     return copy.filter(item => item.subItems?.length > 0);

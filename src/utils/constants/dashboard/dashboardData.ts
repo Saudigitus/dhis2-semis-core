@@ -23,7 +23,7 @@ const staffCards = [
 
 const configurations = [
     { label: "Configurations", icon: settings, path: "configuration" },
-    { label: "School callendar", icon: schoolCallendar, path: "school-calendar" }
+    { label: "School calendar", icon: schoolCallendar, path: "school-calendar", id: "school-calendar" }
 ];
 
 const dashboardData = [

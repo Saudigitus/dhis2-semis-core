@@ -9,6 +9,15 @@ const LayoutWrapper = ({ children }: { children: ReactElement }) => {
     const { add, urlParameters } = useUrlParams()
     const { academicYear, sectionType } = urlParameters()
 
+
+    useEffect(() => {
+        if (pathname !== "/semis" && sectionType && (!academicYear || academicYear.trim() === "")) {
+            setTimeout(() => {
+                add("academicYear", defaults?.academicYear)
+            }, 100)
+        }
+    }, [pathname])
+
     if (!sectionType && (pathname !== "/semis" && pathname !== "/semis/configuration" && !pathname.includes('/semis/school-calendar'))) {
         return (
             <WithPadding style={{ display: "grid", height: "100%", placeItems: "center" }}>

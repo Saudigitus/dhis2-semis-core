@@ -35,10 +35,12 @@ export default function AlertWithActions({ setValidation, setOpen, open, validat
                     <Button
                         onClick={async () => {
                             await createDataStore({ data: validation.converted })
-                            await createSchoolCalendar({
-                                data: { academinYear: validation?.year, defaults: { academicYear: "" }, schoolCalendar: [] }
-                            })
-                            await getDataStore("dataStore/semis/values")
+                            if (validation?.year)
+                                await createSchoolCalendar({
+                                    data: { academinYear: validation?.year, defaults: { academicYear: "" }, schoolCalendar: [] }
+                                })
+
+                             await getDataStore("dataStore/semis/values")
                             setValidation({ valid: true, deniedConversion: false })
                             setOpen(false)
                         }}

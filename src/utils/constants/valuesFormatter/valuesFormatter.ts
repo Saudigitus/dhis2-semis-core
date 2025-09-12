@@ -4,13 +4,37 @@ interface ValidationResult {
     isValid: boolean;
     errors: string[];
     converted: AnyObject[];
-    academicYear: any
+    academicYear: any;
 }
+
+// Função auxiliar para validar chaves de objetos aninhados
+const validateNestedKeys = (
+    inputObj: AnyObject,
+    refObj: AnyObject,
+    parentKey: string,
+    errors: string[]
+) => {
+    for (const key of Object.keys(inputObj)) {
+        if (!(key in refObj)) {
+            errors.push(`Unexpected key '${key}' in ${parentKey} for object with key '${inputObj.key || "unknown"}'`);
+        } else if (
+            typeof inputObj[key] === "object" &&
+            inputObj[key] !== null &&
+            !Array.isArray(inputObj[key]) &&
+            typeof refObj[key] === "object" &&
+            refObj[key] !== null &&
+            !Array.isArray(refObj[key])
+        ) {
+            // Recursivamente valida objetos aninhados
+            validateNestedKeys(inputObj[key], refObj[key], `${parentKey}.${key}`, errors);
+        }
+    }
+};
 
 export const validateAndConvertArrayAgainstReference = (input: AnyObject[], reference: AnyObject[]): ValidationResult => {
     const errors: string[] = [];
     const converted: AnyObject[] = [];
-    let academicYear: string = ""
+    let academicYear: string = "";
 
     for (const item of input) {
         const requiredKeys = ["key", "program", "registration"];
@@ -19,7 +43,8 @@ export const validateAndConvertArrayAgainstReference = (input: AnyObject[], refe
                 errors.push(`Missing required field '${reqKey}' in object: ${JSON.stringify(item)}`);
             }
         }
-        academicYear = item?.registration?.academicYear
+        academicYear = item?.registration?.academicYear || "";
+
         const refItem = reference.find(r => r.key === item.key);
         if (!refItem) {
             errors.push(`Missing reference for key '${item.key}'`);
@@ -28,9 +53,16 @@ export const validateAndConvertArrayAgainstReference = (input: AnyObject[], refe
 
         const output: AnyObject = {
             key: item.key,
-            program: refItem.program,
-            registration: { ...refItem.registration },
+            program: item.program,
+            registration: {
+                ...Object.fromEntries(Object.entries(item.registration).filter(([k]) => k in refItem.registration)),
+            },
         };
+
+        // Valida chaves no objeto registration
+        if (item.registration && refItem.registration) {
+            validateNestedKeys(item.registration, refItem.registration, "registration", errors);
+        }
 
         if (item.attendance && !item.absenteeism && refItem.absenteeism) {
             output.absenteeism = { ...refItem.absenteeism };
@@ -61,8 +93,12 @@ export const validateAndConvertArrayAgainstReference = (input: AnyObject[], refe
                 ) {
                     output[key] = {
                         ...refValue,
-                        ...inputValue,
+                        ...Object.fromEntries(Object.entries(inputValue).filter(([k]) => k in refValue)),
                     };
+
+                    if (key !== "registration") {
+                        validateNestedKeys(inputValue, refValue, key, errors);
+                    }
                 } else {
                     output[key] = inputValue;
                 }
@@ -78,6 +114,6 @@ export const validateAndConvertArrayAgainstReference = (input: AnyObject[], refe
         isValid: errors.length === 0,
         errors,
         converted,
-        academicYear
+        academicYear,
     };
 };

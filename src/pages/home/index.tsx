@@ -19,6 +19,16 @@ const Home = () => {
     onAction: () => title != "Configurations" ? navigate(`/semis/${path}?sectionType=${title.toLocaleLowerCase()}&academicYear=${defaultAcademicYear}`) : navigate(`/semis/${path}`),
   });
 
+
+  useEffect(() => {
+    if (!isValid) {
+      setValidation({ valid: false, converted: converted, deniedConversion: false, year: academicYear })
+      setOpen(true)
+    } else {
+      setValidation((prev) => ({ ...prev, valid: true }))
+    }
+  }, [])
+
   return (
     <Box height={"93vh"}>
       <WithPadding p="1rem">

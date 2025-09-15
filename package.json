@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "set \"NODE_OPTIONS=--max-old-space-size=8192\" && d2-app-scripts build --no-verify",
-    "start": "d2-app-scripts start --proxy  https://emis.dhis2.org/startracker",
+    "start": "d2-app-scripts start --proxy  https://dhis2.mineduc.gov.rw/training",
     "test": "d2-app-scripts test",
     "deploy": "d2-app-scripts deploy"
   },
@@ -27,9 +27,9 @@
     "@mui/material": "7.1.0",
     "acorn": "^8.14.1",
     "dhis2-semis-attendance": "1.0.0-alpha.29",
-    "dhis2-semis-components": "0.6.7-alpha.50",
+    "dhis2-semis-components": "0.6.7-alpha.59",
     "dhis2-semis-configuration": "1.0.0-alpha.32",
-    "dhis2-semis-enrollment": "1.0.1-alpha.68",
+    "dhis2-semis-enrollment": "1.0.1-alpha.72",
     "dhis2-semis-final-result": "1.0.0-alpha.31",
     "dhis2-semis-functions": "0.0.7-alpha.24",
     "dhis2-semis-performance": "1.0.0-alpha.26",

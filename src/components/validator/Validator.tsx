@@ -16,7 +16,7 @@ const Validator = () => {
 
     useEffect(() => {
         if (!isValid) {
-            setValidation({ valid: true, converted: converted, deniedConversion: false, year: academicYear })
+            setValidation({ valid: false, converted: converted, deniedConversion: false, year: academicYear })
             setOpen(true)
         } else {
             setValidation((prev: any) => ({ ...prev, valid: true }))
@@ -40,7 +40,7 @@ const Validator = () => {
                 </NoticeBox>
             }
 
-            {/* {open && <AlertWithActions setValidation={setValidation} validation={validation} open={open} setOpen={setOpen} />}
+            {open && <AlertWithActions setValidation={setValidation} validation={validation} open={open} setOpen={setOpen} />}
 
             {
                 validation.deniedConversion == true &&
@@ -49,7 +49,7 @@ const Validator = () => {
                         The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!
                     </NoticeBox>
                 </div>
-            } */}
+            }
         </WithPadding>
     )
 }

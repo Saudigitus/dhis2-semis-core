@@ -37,7 +37,7 @@ export default function AlertWithActions({ setValidation, setOpen, open, validat
                             await createDataStore({ data: validation.converted })
                             if (validation?.year)
                                 await createSchoolCalendar({
-                                    data: { academinYear: validation?.year, defaults: { academicYear: "" }, schoolCalendar: [] }
+                                    data: { academicYear: validation?.year, defaults: { academicYear: "" }, schoolCalendar: [] }
                                 })
 
                              await getDataStore("dataStore/semis/values")

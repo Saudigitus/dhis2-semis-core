@@ -6,7 +6,7 @@ import {  WithPadding } from "dhis2-semis-components"
 const LayoutWrapper = ({ children }: { children: ReactElement }) => {
     const { pathname } = useLocation()
     const { urlParameters } = useUrlParams()
-    const { sectionType } = urlParameters()
+    const { sectionType } = urlParameters
 
     if (!sectionType && (pathname !== "/semis" && pathname !== "/semis/configuration" && !pathname.includes('/semis/school-calendar'))) {
         return (

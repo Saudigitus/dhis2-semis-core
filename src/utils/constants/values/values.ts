@@ -4,6 +4,7 @@ export const values = [
             "enabled": false
         },
         "performance": {
+            "lastUpdate": "",
             "enabled": false,
             "programStages": []
         },
@@ -67,6 +68,7 @@ export const values = [
         },
         "key": "student",
         "program": "",
+        "lastUpdate": "",
         "registration": {
             "enabled": false,
             "grade": "",
@@ -87,7 +89,30 @@ export const values = [
             "penddingCode": "",
             "programStage": "",
             "reprovedCode": "",
-            "status": ""
+            "status": "",
+            "statusOptions": [
+                {
+                    "ConfigKey": "",
+                    "code": "",
+                    "color": "",
+                    "icon": "",
+                    "key": ""
+                },
+                {
+                    "ConfigKey": "",
+                    "code": "",
+                    "color": "",
+                    "icon": "",
+                    "key": ""
+                },
+                {
+                    "ConfigKey": "",
+                    "code": "",
+                    "color": "",
+                    "icon": "",
+                    "key": ""
+                }
+            ]
         }
     },
     {
@@ -149,6 +174,7 @@ export const values = [
         "socio-economics": {
             "programStage": ""
         },
+        "lastUpdate": "",
         "key": "staff",
         "program": "",
         "registration": {
@@ -171,7 +197,30 @@ export const values = [
             "penddingCode": "",
             "programStage": "",
             "reprovedCode": "",
-            "status": ""
+            "status": "",
+            "statusOptions": [
+                {
+                    "ConfigKey": "",
+                    "code": "",
+                    "color": "",
+                    "icon": "",
+                    "key": ""
+                },
+                {
+                    "ConfigKey": "",
+                    "code": "",
+                    "color": "",
+                    "icon": "",
+                    "key": ""
+                },
+                {
+                    "ConfigKey": "",
+                    "code": "",
+                    "color": "",
+                    "icon": "",
+                    "key": ""
+                }
+            ]
         }
     }
 ]

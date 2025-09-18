@@ -177,6 +177,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
             subItems: [
                 {
                     icon: callendar,
+                    id: "school-calendar",
                     displayInMenu: true,
                     label: "School Calendar",
                     badgeInfo: "",

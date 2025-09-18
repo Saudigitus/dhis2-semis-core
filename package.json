@@ -27,7 +27,7 @@
     "@mui/material": "7.1.0",
     "acorn": "^8.14.1",
     "dhis2-semis-attendance": "1.0.0-alpha.29",
-    "dhis2-semis-components": "0.6.7-alpha.50",
+    "dhis2-semis-components": "0.6.8-alpha.3",
     "dhis2-semis-configuration": "1.0.0-alpha.32",
     "dhis2-semis-enrollment": "1.0.1-alpha.68",
     "dhis2-semis-final-result": "1.0.0-alpha.31",

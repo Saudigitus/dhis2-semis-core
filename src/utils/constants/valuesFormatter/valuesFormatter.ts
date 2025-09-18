@@ -5,6 +5,7 @@ interface ValidationResult {
     errors: string[];
     converted: AnyObject[];
     academicYear: any;
+    currentAcademicYear: any;
 }
 
 // Função auxiliar para validar chaves de objetos aninhados
@@ -35,14 +36,16 @@ export const validateAndConvertArrayAgainstReference = (input: AnyObject[], refe
     const errors: string[] = [];
     const converted: AnyObject[] = [];
     let academicYear: string = "";
+    let currentAcademicYear: string = "";
 
     for (const item of input) {
-        const requiredKeys = ["key", "program", "registration"];
+        const requiredKeys = ["key", "program", "registration", "defaults"];
         for (const reqKey of requiredKeys) {
             if (!(reqKey in item)) {
                 errors.push(`Missing required field '${reqKey}' in object: ${JSON.stringify(item)}`);
             }
         }
+        currentAcademicYear = item?.defaults?.currentAcademicYear || "";
         academicYear = item?.registration?.academicYear || "";
 
         const refItem = reference.find(r => r.key === item.key);
@@ -115,5 +118,6 @@ export const validateAndConvertArrayAgainstReference = (input: AnyObject[], refe
         errors,
         converted,
         academicYear,
+        currentAcademicYear
     };
 };

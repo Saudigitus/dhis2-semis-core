@@ -10,13 +10,13 @@ import { values } from "../../utils/constants/values/values";
 const Validator = () => {
     const dataStore: any = useRecoilValue(DataStoreState)
     const [open, setOpen] = useState<boolean>(false)
-    const { errors, isValid, converted, academicYear } = validateAndConvertArrayAgainstReference(dataStore, values as unknown as any)
+    const { errors, isValid, converted, academicYear, currentAcademicYear } = validateAndConvertArrayAgainstReference(dataStore, values as unknown as any)
     const { dataStoreStatus } = useDataStoreStatus()
     const [validation, setValidation] = useRecoilState<any>(ValidationSchema)
 
     useEffect(() => {
         if (!isValid) {
-            setValidation({ valid: true, converted: converted, deniedConversion: false, year: academicYear })
+            setValidation({ valid: true, converted: converted, deniedConversion: false, year: academicYear, currentAcademicYear: currentAcademicYear })
             setOpen(true)
         } else {
             setValidation((prev: any) => ({ ...prev, valid: true }))

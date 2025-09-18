@@ -40,7 +40,7 @@ const Validator = () => {
                 </NoticeBox>
             }
 
-            {/* {open && <AlertWithActions setValidation={setValidation} validation={validation} open={open} setOpen={setOpen} />}
+            {open && <AlertWithActions setValidation={setValidation} validation={validation} open={open} setOpen={setOpen} />}
 
             {
                 validation.deniedConversion == true &&
@@ -49,7 +49,7 @@ const Validator = () => {
                         The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!
                     </NoticeBox>
                 </div>
-            } */}
+            }
         </WithPadding>
     )
 }

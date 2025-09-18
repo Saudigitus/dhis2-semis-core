@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom"
 import { ReactElement } from "react"
 import { useUrlParams } from "dhis2-semis-functions"
-import {  WithPadding } from "dhis2-semis-components"
+import { WithPadding } from "dhis2-semis-components"
 
 const LayoutWrapper = ({ children }: { children: ReactElement }) => {
     const { pathname } = useLocation()

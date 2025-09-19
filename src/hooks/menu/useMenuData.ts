@@ -61,7 +61,7 @@ const useMenuData = () => {
       copy[indexConfigurations].subItems = [];
     } else {
       // If no academic year is defined, remove "SEMIS-Calendar"
-      if (!schoolCalendar.defaults?.academicYear) {
+      if (!schoolCalendar?.academicYear) {
         copy[indexConfigurations].subItems = copy[indexConfigurations].subItems.filter(
           (subItem: any) => subItem.id != "school-calendar"
         );

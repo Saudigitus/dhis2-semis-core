@@ -49,6 +49,14 @@ const useMenuData = () => {
       copy[index].subItems = filteredSubItems;
     }
 
+    for (const element of copy) {
+      // if this position not exist in dataStoreData, hide all subitems minus configurations and navigation
+      const index = dataStoreData.findIndex(x => x.key?.toLowerCase() === element.title?.toLowerCase());
+      if (index === -1 && element.title?.toLowerCase() !== "configurations" && element.title?.toLowerCase() !== "navigation") {
+        element.subItems = [];
+      }
+    }
+
     //hide admin title if no user doesnt have superuser authority
     const indexConfigurations = copy.findIndex(x => x.title?.toLowerCase() === "configurations");
 

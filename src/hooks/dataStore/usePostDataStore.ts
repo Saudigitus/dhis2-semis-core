@@ -1,16 +1,15 @@
 import { useShowAlerts } from "dhis2-semis-functions"
 import { useDataEngine } from "@dhis2/app-runtime"
 import { useState } from "react"
-import { useDataStore } from "dhis2-semis-components"
 
-const QUERY: any = {
-    resource: `dataStore/semis/values`,
-    type: "update",
-    data: ({ data }: any) => data,
-    params: {
-        importStrategy: 'CREATE_AND_UPDATE'
-    }
-}
+// const QUERY: any = {
+//     resource: `dataStore/semis/values`,
+//     type: "update",
+//     data: ({ data }: any) => data,
+//     params: {
+//         importStrategy: 'CREATE_AND_UPDATE'
+//     }
+// }
 const type: any = 'update'
 
 export default function usePostDataStore({ keySpace }: { keySpace: any }) {

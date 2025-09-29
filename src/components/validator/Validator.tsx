@@ -24,7 +24,7 @@ const Validator = () => {
     }, [])
 
     return (
-        <WithPadding p="10px 30px">
+        <WithPadding p={Boolean(dataStoreStatus?.not_found_config || dataStoreStatus?.not_found_calendar || validation.deniedConversion) ? "10px 30px" : "0px"}>
             {
                 dataStoreStatus?.not_found_config &&
                 <div style={{ marginBottom: "8px" }}>

@@ -23,7 +23,7 @@ const validateNestedKeys = (
             inputObj[key] !== null &&
             // !Array.isArray(inputObj[key]) &&
             typeof refObj[key] === "object" &&
-            refObj[key] !== null 
+            refObj[key] !== null
         ) {
             // Recursivamente valida objetos aninhados
             validateNestedKeys(inputObj[key], refObj[key], `${parentKey}.${key}`, errors);
@@ -103,14 +103,11 @@ export const validateAndConvertArrayAgainstReference = (
         }
 
         for (const key of Object.keys(item)) {
-            // if (requiredKeys.includes(key)) continue;
-
             if (key in refItem) {
                 const refValue = refItem[key];
                 const inputValue = item[key];
 
                 if (typeof refValue === 'object' && refValue !== null) {
-                    // merge profundo para qualquer tipo (objeto ou array)
                     output[key] = mergeDeep(refValue, inputValue);
 
                     if (key !== 'registration') {
@@ -121,6 +118,12 @@ export const validateAndConvertArrayAgainstReference = (
                 }
             } else {
                 errors.push(`Unexpected key '${key}' in object with key '${item.key}'`);
+            }
+        }
+
+        for (const key of Object.keys(refItem)) {
+            if (!(key in item)) {
+                output[key] = refItem[key];
             }
         }
 

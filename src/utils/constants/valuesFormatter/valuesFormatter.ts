@@ -102,18 +102,6 @@ export const validateAndConvertArrayAgainstReference = (
             output.absenteeism = { ...refItem.absenteeism };
         }
 
-        if (
-            item.key === 'staff' &&
-            'registration' in item &&
-            !('reenroll' in item)
-        ) {
-            if ('reenroll' in refItem) {
-                output.reenroll = { ...refItem.reenroll };
-                errors.push(`Missing 'reenroll' for key 'staff'`);
-            }
-        }
-
-        console.log(item)
         for (const key of Object.keys(item)) {
             // if (requiredKeys.includes(key)) continue;
 

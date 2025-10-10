@@ -184,8 +184,11 @@ export const values = [
             "programStage": "",
             "section": ""
         },
-        "reenroll": {
-            "enabled": false
+        "final-result": {
+            "enabled": false,
+            "lastUpdate": "",
+            "programStage": "",
+            "status": ""
         },
         "trackedEntityType": "",
         "transfer": {

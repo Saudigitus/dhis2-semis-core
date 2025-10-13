@@ -163,12 +163,12 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                     badgeInfo: "",
                     disabled: false,
                     appName: "SEMIS-re-enroll",
-                    id: "reenroll",
+                    id: "final-result",
                     route: "/semis/re-enroll",
                     appUrl: `#/semis/re-enroll`,
                     active: false,
                     action: () => navigate(`/semis/re-enroll?${subItemRoute(locationParams, 'staff', academicYear, filterDataElements, pathname)}`)
-                },
+                }
             ]
         },
         {

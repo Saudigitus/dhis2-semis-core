@@ -18,7 +18,7 @@ const staffCards = [
     { label: "Staff registry", id: "registration", icon: enrollmentImage, path: "enrollments" },
     { label: "Attendance", id: "attendance", icon: attendanceImage, path: "attendance" },
     { label: "Transfer", id: "transfer", icon: transferImage, path: "transfer" },
-    { label: "Re-enroll", id: "reenroll", icon: resultImage, path: "re-enroll" },
+    { label: "Re-enroll", id: "final-result", icon: resultImage, path: "re-enroll" },
 ];
 
 const configurations = [

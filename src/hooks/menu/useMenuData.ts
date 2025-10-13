@@ -24,6 +24,7 @@ const useMenuData = () => {
   const [homePageData, updatedHomePageData] = useState<any>([])
   const userInfoState = useRecoilValue(UserInfoState)
 
+
   let menuDataArray = menuData({
     pathname: location.pathname,
     filterDataElements: filters,

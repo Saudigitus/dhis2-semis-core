@@ -16,21 +16,21 @@ export const values = [
             "status": "",
             "statusOptions": [
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
                     "color": "",
                     "icon": "",
                     "key": ""
                 },
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
                     "color": "",
                     "icon": "",
                     "key": ""
                 },
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
                     "color": "",
                     "icon": "",
@@ -81,35 +81,26 @@ export const values = [
         },
         "trackedEntityType": "",
         "transfer": {
-            "approvedCode": "",
             "destinySchool": "",
             "enabled": false,
             "lastUpdate": "",
             "originSchool": "",
-            "penddingCode": "",
             "programStage": "",
-            "reprovedCode": "",
             "status": "",
             "statusOptions": [
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
-                    "color": "",
+                    "key": ""
+                },
+                {
+                    "configKey": "",
                     "icon": "",
                     "key": ""
                 },
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
-                    "color": "",
-                    "icon": "",
-                    "key": ""
-                },
-                {
-                    "ConfigKey": "",
-                    "code": "",
-                    "color": "",
-                    "icon": "",
                     "key": ""
                 }
             ]
@@ -127,21 +118,21 @@ export const values = [
             "status": "",
             "statusOptions": [
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
                     "color": "",
                     "icon": "",
                     "key": ""
                 },
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
                     "color": "",
                     "icon": "",
                     "key": ""
                 },
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
                     "color": "",
                     "icon": "",
@@ -203,24 +194,18 @@ export const values = [
             "status": "",
             "statusOptions": [
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
-                    "color": "",
-                    "icon": "",
                     "key": ""
                 },
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
-                    "color": "",
-                    "icon": "",
                     "key": ""
                 },
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
-                    "color": "",
-                    "icon": "",
                     "key": ""
                 }
             ]

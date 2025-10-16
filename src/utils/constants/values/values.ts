@@ -6,7 +6,11 @@ export const values = [
         "performance": {
             "lastUpdate": "",
             "enabled": false,
-            "programStages": []
+            "programStages": [
+                {
+                    "programStage": ""
+                }
+            ]
         },
         "attendance": {
             "absenceReason": "",
@@ -16,26 +20,12 @@ export const values = [
             "status": "",
             "statusOptions": [
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
                     "color": "",
                     "icon": "",
                     "key": ""
                 },
-                {
-                    "ConfigKey": "",
-                    "code": "",
-                    "color": "",
-                    "icon": "",
-                    "key": ""
-                },
-                {
-                    "ConfigKey": "",
-                    "code": "",
-                    "color": "",
-                    "icon": "",
-                    "key": ""
-                }
             ]
         },
         "defaults": {
@@ -51,13 +41,6 @@ export const values = [
                     "order": 1,
                     "ulrParam": ""
                 },
-                {
-                    "code": "",
-                    "dataElement": "",
-                    "label": "",
-                    "order": 3,
-                    "ulrParam": ""
-                }
             ]
         },
         "final-result": {
@@ -89,24 +72,8 @@ export const values = [
             "status": "",
             "statusOptions": [
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
-                    "color": "",
-                    "icon": "",
-                    "key": ""
-                },
-                {
-                    "ConfigKey": "",
-                    "code": "",
-                    "color": "",
-                    "icon": "",
-                    "key": ""
-                },
-                {
-                    "ConfigKey": "",
-                    "code": "",
-                    "color": "",
-                    "icon": "",
                     "key": ""
                 }
             ]
@@ -124,21 +91,21 @@ export const values = [
             "status": "",
             "statusOptions": [
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
                     "color": "",
                     "icon": "",
                     "key": ""
                 },
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
                     "color": "",
                     "icon": "",
                     "key": ""
                 },
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
                     "color": "",
                     "icon": "",
@@ -197,24 +164,18 @@ export const values = [
             "status": "",
             "statusOptions": [
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
-                    "color": "",
-                    "icon": "",
                     "key": ""
                 },
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
-                    "color": "",
-                    "icon": "",
                     "key": ""
                 },
                 {
-                    "ConfigKey": "",
+                    "configKey": "",
                     "code": "",
-                    "color": "",
-                    "icon": "",
                     "key": ""
                 }
             ]

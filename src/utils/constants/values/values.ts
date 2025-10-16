@@ -81,14 +81,11 @@ export const values = [
         },
         "trackedEntityType": "",
         "transfer": {
-            "approvedCode": "",
             "destinySchool": "",
             "enabled": false,
             "lastUpdate": "",
             "originSchool": "",
-            "penddingCode": "",
             "programStage": "",
-            "reprovedCode": "",
             "status": "",
             "statusOptions": [
                 {
@@ -192,14 +189,11 @@ export const values = [
         },
         "trackedEntityType": "",
         "transfer": {
-            "approvedCode": "",
             "destinySchool": "",
             "enabled": false,
             "lastUpdate": "",
             "originSchool": "",
-            "penddingCode": "",
             "programStage": "",
-            "reprovedCode": "",
             "status": "",
             "statusOptions": [
                 {

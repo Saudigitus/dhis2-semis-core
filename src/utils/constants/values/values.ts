@@ -6,7 +6,11 @@ export const values = [
         "performance": {
             "lastUpdate": "",
             "enabled": false,
-            "programStages": []
+            "programStages": [
+                {
+                    "programStage": ""
+                }
+            ]
         },
         "attendance": {
             "absenceReason": "",
@@ -22,20 +26,6 @@ export const values = [
                     "icon": "",
                     "key": ""
                 },
-                {
-                    "configKey": "",
-                    "code": "",
-                    "color": "",
-                    "icon": "",
-                    "key": ""
-                },
-                {
-                    "configKey": "",
-                    "code": "",
-                    "color": "",
-                    "icon": "",
-                    "key": ""
-                }
             ]
         },
         "defaults": {
@@ -51,13 +41,6 @@ export const values = [
                     "order": 1,
                     "ulrParam": ""
                 },
-                {
-                    "code": "",
-                    "dataElement": "",
-                    "label": "",
-                    "order": 3,
-                    "ulrParam": ""
-                }
             ]
         },
         "final-result": {
@@ -88,16 +71,6 @@ export const values = [
             "programStage": "",
             "status": "",
             "statusOptions": [
-                {
-                    "configKey": "",
-                    "code": "",
-                    "key": ""
-                },
-                {
-                    "configKey": "",
-                    "icon": "",
-                    "key": ""
-                },
                 {
                     "configKey": "",
                     "code": "",
@@ -183,14 +156,11 @@ export const values = [
         },
         "trackedEntityType": "",
         "transfer": {
-            "approvedCode": "",
             "destinySchool": "",
             "enabled": false,
             "lastUpdate": "",
             "originSchool": "",
-            "penddingCode": "",
             "programStage": "",
-            "reprovedCode": "",
             "status": "",
             "statusOptions": [
                 {

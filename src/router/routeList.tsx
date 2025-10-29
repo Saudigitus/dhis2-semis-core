@@ -1,9 +1,9 @@
+import i18n from "@dhis2/d2-i18n";
 import Home from "../pages/home";
 import { EnrollmentPage } from "dhis2-semis-enrollment";
 import { App as Attendance } from "dhis2-semis-attendance"
 import { FinalResult } from "dhis2-semis-final-result"
 import { Transfer } from "dhis2-semis-transfer"
-import { Reenrollment } from "dhis2-semis-staff-reenroll"
 import { Performance } from "dhis2-semis-performance"
 import { TransferExecute } from "dhis2-semis-transfer-execute"
 import { ConfigirationsPage } from "dhis2-semis-configuration";
@@ -13,43 +13,43 @@ export default function RouteList() {
     return [
         {
             path: "/semis",
-            component: <Home />
+            component: <Home i18n={i18n} />
         },
         {
             path: "/semis/enrollments",
-            component: <EnrollmentPage />
+            component: <EnrollmentPage i18n={i18n} />
         },
         {
             path: "/semis/attendance",
-            component: <Attendance />
+            component: <Attendance i18n={i18n} />
         },
         {
             path: "/semis/performance",
-            component: <Performance />
+            component: <Performance i18n={i18n} />
         },
         {
             path: "/semis/transfer",
-            component: <Transfer />
+            component: <Transfer i18n={i18n} />
         },
         {
             path: "/semis/transfer-execute",
-            component: <TransferExecute />
+            component: <TransferExecute i18n={i18n} />
         },
         {
             path: "/semis/final-result",
-            component: <FinalResult />
+            component: <FinalResult i18n={i18n} />
         },
         {
             path: "/semis/re-enroll",
-            component: <FinalResult />
+            component: <FinalResult i18n={i18n} />
         },
         {
             path: "/semis/configuration",
-            component: <ConfigirationsPage />
+            component: <ConfigirationsPage i18n={i18n} />
         },
         {
             path: "/semis/school-calendar/*",
-            component: <SchoolCalendar />
+            component: <SchoolCalendar i18n={i18n} />
         }
     ];
 }

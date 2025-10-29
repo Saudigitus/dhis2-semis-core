@@ -22,7 +22,7 @@ export function validateNestedKeys(
 
         if (!(key in refObj)) {
             errors.push(
-              `The key '${key}' is missing in '${parentKey}' for the object with key '${inputObj.key || "unknown"}`
+                `The key '${key}' is missing in '${parentKey}' for the object with key '${inputObj.key || "unknown"}`
             );
             continue;
         }
@@ -49,16 +49,13 @@ export function validateNestedKeys(
 }
 
 
-export function mergeDeep(ref: any, input: any): any {
+export function mergeDeep(ref: any, input: any, errors: any[]): any {
 
-    if (typeof ref !== 'object' || ref === null || ref?.length == 0) {
+    if (typeof ref !== 'object' || ref === null || ref?.length == 0)
         return input !== undefined ? input : ref;
-    }
 
     if (Array.isArray(ref)) {
-        if (Array.isArray(input)) {
-            return input.map((item) => mergeDeep(ref[0], item));
-        }
+        if (Array.isArray(input)) return input.map((item) => mergeDeep(ref[0], item, errors));
 
         return ref;
     }
@@ -67,7 +64,11 @@ export function mergeDeep(ref: any, input: any): any {
     const allKeys = new Set([...Object.keys(ref), ...Object.keys(input || {})]);
 
     for (const key of allKeys) {
-        merged[key] = mergeDeep(ref[key], input?.[key]);
+        if (!Object.keys(input || {})?.some(x => x == key)) errors.push(
+            `Missing required field '${key}' in object: ${JSON.stringify(input)}`
+        )
+
+        merged[key] = mergeDeep(ref[key], input?.[key], errors);
     }
 
     return merged;
@@ -107,8 +108,8 @@ export const validateAndConvertArrayAgainstReference = (
             registration: {
                 ...Object.fromEntries(
                     Object.entries(item.registration).filter(([k]) => k in refItem.registration)
-                ),
-            },
+                )
+            }
         };
 
         if (item.registration && refItem.registration) {
@@ -125,11 +126,9 @@ export const validateAndConvertArrayAgainstReference = (
                 const inputValue = item[key];
 
                 if (typeof refValue === 'object' && refValue !== null) {
-                    output[key] = mergeDeep(refValue, inputValue);
+                    output[key] = mergeDeep(refValue, inputValue, errors);
 
                     if (key !== 'registration') {
-                        console.log(key, inputValue, inputValue)
-
                         validateNestedKeys(inputValue, inputValue, key, errors);
                     }
                 } else {
@@ -140,10 +139,9 @@ export const validateAndConvertArrayAgainstReference = (
             }
         }
 
+
         for (const key of Object.keys(refItem)) {
-            if (!(key in item)) {
-                output[key] = refItem[key];
-            }
+            if (!(key in item)) output[key] = refItem[key];
         }
 
         converted.push(output);

@@ -47,7 +47,8 @@ export const values = [
             "enabled": false,
             "lastUpdate": "",
             "programStage": "",
-            "status": ""
+            "status": "",
+            "validStatusValue": []
         },
         "key": "student",
         "program": "",
@@ -97,20 +98,6 @@ export const values = [
                     "icon": "",
                     "key": ""
                 },
-                {
-                    "configKey": "",
-                    "code": "",
-                    "color": "",
-                    "icon": "",
-                    "key": ""
-                },
-                {
-                    "configKey": "",
-                    "code": "",
-                    "color": "",
-                    "icon": "",
-                    "key": ""
-                }
             ]
         },
         "defaults": {
@@ -123,16 +110,9 @@ export const values = [
                     "code": "",
                     "dataElement": "",
                     "label": "",
-                    "order": 0,
+                    "order": 1,
                     "ulrParam": ""
                 },
-                {
-                    "code": "",
-                    "dataElement": "",
-                    "label": "",
-                    "order": 2,
-                    "ulrParam": ""
-                }
             ]
         },
         "socio-economics": {
@@ -152,7 +132,8 @@ export const values = [
             "enabled": false,
             "lastUpdate": "",
             "programStage": "",
-            "status": ""
+            "status": "",
+            "validStatusValue": []
         },
         "trackedEntityType": "",
         "transfer": {
@@ -163,16 +144,6 @@ export const values = [
             "programStage": "",
             "status": "",
             "statusOptions": [
-                {
-                    "configKey": "",
-                    "code": "",
-                    "key": ""
-                },
-                {
-                    "configKey": "",
-                    "code": "",
-                    "key": ""
-                },
                 {
                     "configKey": "",
                     "code": "",

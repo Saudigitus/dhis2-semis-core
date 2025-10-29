@@ -104,6 +104,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                     label: "Transfer",
                     badgeInfo: "",
                     disabled: false,
+                    activationRoutes: ['/semis/transfer', '/semis/transfer-execute'],
                     appName: "SEMIS-Transfer",
                     id: "transfer",
                     route: "/semis/transfer",
@@ -151,6 +152,7 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                     disabled: false,
                     appName: "SEMIS-Transfer",
                     id: "transfer",
+                    activationRoutes: ['/semis/transfer', '/semis/transfer-execute'],
                     route: "/semis/transfer",
                     appUrl: `#/semis/transfer`,
                     active: false,
@@ -163,12 +165,12 @@ export const menuData = ({ pathname, navigate, locationParams, filterDataElement
                     badgeInfo: "",
                     disabled: false,
                     appName: "SEMIS-re-enroll",
-                    id: "reenroll",
+                    id: "final-result",
                     route: "/semis/re-enroll",
                     appUrl: `#/semis/re-enroll`,
                     active: false,
                     action: () => navigate(`/semis/re-enroll?${subItemRoute(locationParams, 'staff', academicYear, filterDataElements, pathname)}`)
-                },
+                }
             ]
         },
         {

@@ -24,6 +24,7 @@ const useMenuData = () => {
   const [homePageData, updatedHomePageData] = useState<any>([])
   const userInfoState = useRecoilValue(UserInfoState)
 
+
   let menuDataArray = menuData({
     pathname: location.pathname,
     filterDataElements: filters,
@@ -68,7 +69,7 @@ const useMenuData = () => {
       copy[indexConfigurations].displayInMenu = false;
       copy[indexConfigurations].subItems = [];
     } else {
-      // If no academic year is defined, remove "SEMIS-Calendar"
+      // If no academic year defined, remove "SEMIS-Calendar"
       if (!schoolCalendar?.academicYear) {
         copy[indexConfigurations].subItems = copy[indexConfigurations].subItems.filter(
           (subItem: any) => subItem.id != "school-calendar"

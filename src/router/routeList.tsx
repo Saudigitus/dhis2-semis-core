@@ -41,7 +41,7 @@ export default function RouteList() {
         },
         {
             path: "/semis/re-enroll",
-            component: <Reenrollment />
+            component: <FinalResult />
         },
         {
             path: "/semis/configuration",

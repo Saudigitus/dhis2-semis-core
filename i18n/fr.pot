@@ -1,0 +1,152 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"POT-Creation-Date: 2025-10-29T12:53:43.072Z\n"
+"PO-Revision-Date: 2025-10-29T12:53:43.072Z\n"
+
+msgid "Navigation"
+msgstr "Navigation"
+
+msgid "Home"
+msgstr "Accueil"
+
+msgid "Student"
+msgstr "Étudiant"
+
+msgid "Enrollment"
+msgstr "Inscription"
+
+msgid "Attendance"
+msgstr "Présence"
+
+msgid "Performance"
+msgstr "Performance"
+
+msgid "Final result"
+msgstr "Résultat final"
+
+msgid "Transfer"
+msgstr "Transfert"
+
+msgid "Staff"
+msgstr "Personnel"
+
+msgid "Staff registry"
+msgstr "Registre du personnel"
+
+msgid "Staff Re-enroll"
+msgstr "Réinscription du personnel"
+
+msgid "Configurations"
+msgstr "Configurations"
+
+msgid "School Calendar"
+msgstr "Calendrier scolaire"
+
+msgid "attendance_title"
+msgstr "Absences"
+
+msgid "Ref"
+msgstr "Réf"
+
+msgid "School"
+msgstr "École"
+
+msgid "No Label"
+msgstr "Aucun label"
+
+msgid "Academic year"
+msgstr "Année académique"
+
+msgid "Select a academic year"
+msgstr "Sélectionnez une année académique"
+
+msgid "Perform Promotion"
+msgstr "Effectuer la promotion"
+
+msgid "WARNING"
+msgstr "AVERTISSEMENT"
+
+msgid "rows will be affected"
+msgstr "lignes seront affectées"
+
+msgid ""
+"No one will be able to access this program. Add some Organisation Units to "
+"the access list."
+msgstr ""
+"Personne ne pourra accéder à ce programme. Ajoutez des Unités Organisationnelles à "
+"la liste d'accès."
+
+msgid "Student promotion"
+msgstr "Promotion des étudiants"
+
+msgid "View history"
+msgstr "Afficher l'historique"
+
+msgid "Fill in at least 1 attribute to search."
+msgstr "Remplissez au moins 1 attribut pour rechercher."
+
+msgid "Results found for"
+msgstr "Résultats trouvés pour"
+
+msgid "search"
+msgstr "recherche"
+
+msgid "No"
+msgstr "Non"
+
+msgid "found"
+msgstr "trouvé"
+
+msgid "Continue serching or click"
+msgstr "Continuez la recherche ou cliquez"
+
+msgid "Register new"
+msgstr "Enregistrer nouveau"
+
+msgid "if you want to register as a new"
+msgstr "si vous voulez vous enregistrer comme un nouveau"
+
+msgid "Close"
+msgstr "Fermer"
+
+msgid "rows selected"
+msgstr "lignes sélectionnées"
+
+msgid "Columns to show in the table"
+msgstr "Colonnes à afficher dans le tableau"
+
+msgid "Table Columns"
+msgstr "Colonnes du tableau"
+
+msgid "Save"
+msgstr "Enregistrer"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Click to open in new tab"
+msgstr "Cliquez pour ouvrir dans un nouvel onglet"
+
+msgid "Rows per page"
+msgstr "Lignes par page"
+
+msgid "Page"
+msgstr "Page"
+
+msgid "Previous Page"
+msgstr "Page précédente"
+
+msgid "Next Page"
+msgstr "Page suivante"
+
+msgid "No data to display"
+msgstr "Aucune donnée à afficher"
+
+msgctxt "Date"
+msgid "Enrollment"
+msgstr "Date d'inscription"

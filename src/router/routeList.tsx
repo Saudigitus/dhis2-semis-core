@@ -1,4 +1,3 @@
-import i18n from "@dhis2/d2-i18n";
 import Home from "../pages/home";
 import { EnrollmentPage } from "dhis2-semis-enrollment";
 import { App as Attendance } from "dhis2-semis-attendance"
@@ -8,48 +7,49 @@ import { Performance } from "dhis2-semis-performance"
 import { TransferExecute } from "dhis2-semis-transfer-execute"
 import { ConfigirationsPage } from "dhis2-semis-configuration";
 import { SchoolCalendar } from "dhis2-semis-school-callendar"
+import i18n from "../locales/index.js";
 
 export default function RouteList() {
     return [
         {
             path: "/semis",
-            component: <Home i18n={i18n} />
+            component: <Home />
         },
         {
             path: "/semis/enrollments",
-            component: <EnrollmentPage i18n={i18n} />
+            component: <EnrollmentPage />
         },
         {
             path: "/semis/attendance",
-            component: <Attendance i18n={i18n} />
+            component: <Attendance i18n={i18n}/>
         },
         {
             path: "/semis/performance",
-            component: <Performance i18n={i18n} />
+            component: <Performance />
         },
         {
             path: "/semis/transfer",
-            component: <Transfer i18n={i18n} />
+            component: <Transfer />
         },
         {
             path: "/semis/transfer-execute",
-            component: <TransferExecute i18n={i18n} />
+            component: <TransferExecute />
         },
         {
             path: "/semis/final-result",
-            component: <FinalResult i18n={i18n} />
+            component: <FinalResult i18n={i18n}/>
         },
         {
             path: "/semis/re-enroll",
-            component: <FinalResult i18n={i18n} />
+            component: <FinalResult i18n={i18n}/>
         },
         {
             path: "/semis/configuration",
-            component: <ConfigirationsPage i18n={i18n} />
+            component: <ConfigirationsPage />
         },
         {
             path: "/semis/school-calendar/*",
-            component: <SchoolCalendar i18n={i18n} />
+            component: <SchoolCalendar />
         }
     ];
 }

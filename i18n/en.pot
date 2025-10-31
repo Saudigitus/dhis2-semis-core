@@ -5,8 +5,13 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2025-10-31T13:17:13.520Z\n"
 "PO-Revision-Date: 2025-10-31T13:17:13.521Z\n"
+=======
+"POT-Creation-Date: 2025-10-31T12:32:41.202Z\n"
+"PO-Revision-Date: 2025-10-31T12:32:41.203Z\n"
+>>>>>>> dc2b854a5a34e2147ed5f650df1764245828dc9f
 
 msgid "Enrollment"
 msgstr "Enrollment"
@@ -35,20 +40,20 @@ msgstr "Configurations"
 msgid "School Calendar"
 msgstr "School Calendar"
 
-msgid "Student"
-msgstr "Student"
-
-msgid "Staff"
-msgstr "Staff"
-
 msgid "Navigation"
 msgstr "Navigation"
 
 msgid "Home"
 msgstr "Home"
 
+msgid "Student"
+msgstr "Student"
+
 msgid "Final result"
 msgstr "Final result"
+
+msgid "Staff"
+msgstr "Staff"
 
 msgid "Staff Re-enroll"
 msgstr "Staff Re-enroll"

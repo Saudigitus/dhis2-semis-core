@@ -14,10 +14,10 @@ const Home = () => {
 
   const defaultAcademicYear = schoolCalendar?.defaults?.academicYear ?? ""
 
-  const makeAction = (path: string, title: string) => ({
+  const makeAction = (path: string, sectionId: string) => ({
     icon: <MenuIcon />,
     label: i18n.t(`List ${path.replace("-", " ")}`),
-    onAction: () => title != "Configurations" ? navigate(`/semis/${path}?sectionType=${title.toLocaleLowerCase()}&academicYear=${defaultAcademicYear}`) : navigate(`/semis/${path}`),
+    onAction: () => sectionId != "configurations" ? navigate(`/semis/${path}?sectionType=${sectionId}&academicYear=${defaultAcademicYear}`) : navigate(`/semis/${path}`),
   });
 
   return (
@@ -26,7 +26,7 @@ const Home = () => {
         <Validator />
         <>
           {
-            homePageData?.map(({ title, subItems }: any) => {
+            homePageData?.map(({ title, subItems, id }: any) => {
               return (
                 <DashboardLayout title={title} >
                   {
@@ -35,7 +35,7 @@ const Home = () => {
                         key={label}
                         icon={icon}
                         contents={[{ label }]}
-                        actions={[makeAction(path, title)]}
+                        actions={[makeAction(path, id)]}
                       />
                     ))
                   }

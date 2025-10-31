@@ -17,31 +17,31 @@ export default function RouteList() {
         },
         {
             path: "/semis/enrollments",
-            component: <EnrollmentPage />
+            component: <EnrollmentPage i18n={i18n} />
         },
         {
             path: "/semis/attendance",
-            component: <Attendance i18n={i18n}/>
+            component: <Attendance i18n={i18n} />
         },
         {
             path: "/semis/performance",
-            component: <Performance />
+            component: <Performance i18n={i18n} />
         },
         {
             path: "/semis/transfer",
-            component: <Transfer />
+            component: <Transfer i18n={i18n} />
         },
         {
             path: "/semis/transfer-execute",
-            component: <TransferExecute />
+            component: <TransferExecute i18n={i18n} />
         },
         {
             path: "/semis/final-result",
-            component: <FinalResult i18n={i18n}/>
+            component: <FinalResult i18n={i18n} />
         },
         {
             path: "/semis/re-enroll",
-            component: <FinalResult i18n={i18n}/>
+            component: <FinalResult i18n={i18n} />
         },
         {
             path: "/semis/configuration",
@@ -49,7 +49,7 @@ export default function RouteList() {
         },
         {
             path: "/semis/school-calendar/*",
-            component: <SchoolCalendar />
+            component: <SchoolCalendar i18n={i18n} />
         }
     ];
 }

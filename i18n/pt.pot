@@ -150,3 +150,329 @@ msgstr "Nenhum dado a exibir"
 msgctxt "Date"
 msgid "Enrollment"
 msgstr "Data de inscrição"
+
+
+msgid "You need to select students first"
+msgstr "Você precisa selecionar os estudantes primeiro"
+
+msgid "Assing attendace"
+msgstr "Atribuir presença"
+
+msgid "Disable multi attendance mode"
+msgstr "Desativar modo de presença múltipla"
+
+msgid ""
+"It will assign the same attendance status to all visible students in the "
+"table"
+msgstr ""
+"Isto atribuirá o mesmo estado de presença a todos os estudantes visíveis na "
+"tabela"
+
+msgid "Mark all as present"
+msgstr "Marcar todos como presentes"
+
+msgid "Warning"
+msgstr "Aviso"
+
+msgid "Students will be affected"
+msgstr "Os estudantes serão afetados"
+
+msgid "The chosen attendance status will be assigned to the selected students"
+msgstr "O estado de presença escolhido será atribuído aos estudantes selecionados"
+
+msgid "Attendance"
+msgstr "Presença"
+
+msgid "Bulk attendance"
+msgstr "Presenças em massa"
+
+msgid "Unknown error"
+msgstr "Erro desconhecido"
+
+msgid "Please select an organisation unit before"
+msgstr "Por favor, selecione uma unidade organizacional primeiro"
+
+msgid "Take attendance"
+msgstr "Registrar presença"
+
+msgid "View attendance records"
+msgstr "Ver registos de presença"
+
+msgid "Please select all filters"
+msgstr "Por favor, selecione todos os filtros"
+
+msgid "All listed students will be affected"
+msgstr "Todos os estudantes listados serão afetados"
+
+msgid "The present attendance status will be assigned to all students"
+msgstr "O estado de presença atual será atribuído a todos os estudantes"
+
+msgid "Are you sure you want to mark all as present?"
+msgstr "Tem certeza de que deseja marcar todos como presentes?"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Yes im sure"
+msgstr "Sim, tenho certeza"
+
+msgid "Attendance title"
+msgstr "Título da presença"
+
+msgid "Selected date"
+msgstr "Data selecionada"
+
+msgid "Hide reason of absense"
+msgstr "Ocultar motivo da ausência"
+
+msgid "View teason of absense"
+msgstr "Ver motivo da ausência"
+
+msgid "Export {{section}} attendances"
+msgstr "Exportar presenças de {{section}}"
+
+msgid "Import {{section}} attendances"
+msgstr "Importar presenças de {{section}}"
+
+msgid "student"
+msgstr "estudante"
+
+msgid "staff"
+msgstr "funcionário"
+
+msgid "Select the Organization unit you want to view data"
+msgstr "Selecione a unidade organizacional que deseja visualizar os dados"
+
+msgid "Use global filters(Class, Grade and Academic Year)"
+msgstr "Use os filtros globais (Turma, Grau e Ano Letivo)"
+
+msgid "Follow the instructions to proceed"
+msgstr "Siga as instruções para continuar"
+
+
+msgid "Bulk Performance"
+msgstr "Notas em Massa"
+
+msgid "Import Performance"
+msgstr "Importar notas"
+
+msgid "Export students performace"
+msgstr "Exportar notas dos estudantes"
+
+msgid "Please select an organisation unit before"
+msgstr "Por favor, selecione uma unidade organizacional antes"
+
+msgid "Disable Edition Mode"
+msgstr "Desativar Modo de Edição"
+
+msgid "Allow Edit Mode"
+msgstr "Permitir Modo de Edição"
+
+msgid "Please select all filters"
+msgstr "Por favor, selecione todos os filtros"
+
+msgid "SEMIS-Performance"
+msgstr "SEMIS-Performance"
+
+msgid "Select the Organization unit you want to view data"
+msgstr "Selecione a unidade organizacional que deseja visualizar os dados"
+
+msgid "Use global filters(Class, Grade and Academic Year)"
+msgstr "Use os filtros globais (Turma, Classe e Ano Letivo)"
+
+msgid "Performance"
+msgstr "Performance"""
+
+msgid "Unknown error"
+msgstr "Erro desconhecido"
+
+msgid "Enroll new {{section}}"
+msgstr "Inscrever novo {{section}}"
+
+msgid "Bulk Enrollment"
+msgstr "Inscrição em massa"
+
+msgid "Update existing {{section}}"
+msgstr "Atualizar {{section}} existente"
+
+msgid "Bulk Enrollment Update"
+msgstr "Atualização de inscrições em massa"
+
+msgid "Export Empty Template"
+msgstr "Exportar modelo vazio"
+
+msgid "Export Existing {{section}}"
+msgstr "Exportar {{section}} existente"
+
+msgid "Please select an organisation unit before"
+msgstr "Por favor, selecione uma unidade organizacional antes"
+
+msgid "Enroll {{section}}"
+msgstr "Inscrever {{section}}"
+
+msgid "Please select all filters"
+msgstr "Por favor, selecione todos os filtros"
+
+msgid "Bulk enrollment"
+msgstr "Inscrição em massa"
+
+msgid "Enrollment Deletion"
+msgstr "Eliminação de inscrição"
+
+msgid "Could not conclude the opertation."
+msgstr "Não foi possível concluir a operação."
+
+msgid "Operation concluded successfully"
+msgstr "Operação concluída com sucesso"
+
+msgid "Single {{section}} Enrollment {{mode}}"
+msgstr "Inscrição única de {{section}} {{mode}}"
+
+msgid "Update"
+msgstr "Atualizar"
+
+msgid "Edition"
+msgstr "Edição"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "SEMIS-Enrollment"
+msgstr "SEMIS-Inscrição"
+
+msgid "Follow the instructions to proceed"
+msgstr "Siga as instruções para continuar"
+
+msgid "Select the Organization unit you want to view data"
+msgstr "Selecione a unidade organizacional cuja informação deseja visualizar"
+
+msgid "Use global filters(Class, Grade and Academic Year)"
+msgstr "Use os filtros globais (Turma, Nível e Ano letivo)"
+
+msgid "Enrollments"
+msgstr "Inscrições"
+
+msgid "Staff"
+msgstr "Funcionário"
+
+msgid "Student"
+msgstr "Estudante"
+
+msgid "student"
+msgstr "estudante"
+
+msgid "staff"
+msgstr "funcionário"
+
+
+msgid "Please select an organisation unit before"
+msgstr "Por favor, selecione uma unidade organizacional antes"
+
+msgid "Perform transfer"
+msgstr "Realizar transferência"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Confirm"
+msgstr "Confirmar"
+
+msgid "Attention"
+msgstr "Atenção"
+
+msgid "This action will transfer this {{section}} into this school."
+msgstr "Esta ação transferirá este(a) {{section}} para esta escola."
+
+msgid "You are about to reject the {{section}} transfer to this school."
+msgstr "Você está prestes a rejeitar a transferência deste(a) {{section}} para esta escola."
+
+msgid "Are you sure you want to approve the transfer of "
+msgstr "Tem certeza de que deseja aprovar a transferência de "
+
+msgid "from"
+msgstr "de"
+
+msgid "to"
+msgstr "para"
+
+msgid "Are you sure you want to reject the transfer of"
+msgstr "Tem certeza de que deseja rejeitar a transferência de"
+
+msgid "Transfer Approval"
+msgstr "Aprovação de Transferência"
+
+msgid "Incoming transfer"
+msgstr "Transferência de entrada"
+
+msgid "Outgoing transfer"
+msgstr "Transferência de saída"
+
+msgid "SEMIS - Transfer"
+msgstr "SEMIS - Transferência"
+
+msgid "Select the Organization unit you want to view data"
+msgstr "Selecione a unidade organizacional que deseja visualizar os dados"
+
+msgid "Use global filters(Class, Grade and Academic Year)"
+msgstr "Use os filtros globais (Turma, Classe e Ano Letivo)"
+
+msgid "Transfers"
+msgstr "Transferências"
+
+msgid "Resquest time"
+msgstr "Hora da solicitação"
+
+msgid "student"
+msgstr "estudante"
+
+msgid "staff"
+msgstr "funcionário"
+
+
+msgid "Please select an organisation unit before"
+msgstr "Por favor, selecione uma unidade organizacional antes"
+
+msgid "Select at least one row."
+msgstr "Selecione pelo menos uma linha."
+
+msgid "Execute transfer"
+msgstr "Executar transferência"
+
+msgid "Transfer request sent successfully"
+msgstr "Pedido de transferência enviado com sucesso"
+
+msgid "Please fill all required fields"
+msgstr "Por favor, preencha todos os campos obrigatórios"
+
+msgid "Request transfer"
+msgstr "Solicitar transferência"
+
+msgid "WARNING!"
+msgstr "AVISO!"
+
+msgid "rows will be affected"
+msgstr "linhas serão afetadas"
+
+msgid "Perform transfer"
+msgstr "Realizar transferência"
+
+msgid "Select the destination school"
+msgstr "Selecione a escola de destino"
+
+msgid "Perform Transfer"
+msgstr "Realizar Transferência"
+
+msgid "SEMIS-Transfer-Execute"
+msgstr "SEMIS-Transfer-Execute"
+
+msgid "Follow the instructions to proceed"
+msgstr "Siga as instruções para prosseguir"
+
+msgid "Select the Organization unit you want to view data"
+msgstr "Selecione a unidade organizacional que deseja visualizar os dados"
+
+msgid "Use global filters(Class, Grade and Academic Year)"
+msgstr "Use os filtros globais (Turma, Classe e Ano Letivo)"
+
+msgid "Transfer Execute"
+msgstr "Executar Transferência"

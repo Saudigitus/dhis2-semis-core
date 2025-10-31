@@ -58,7 +58,6 @@ const useMenuData = () => {
       }
     }
 
-    console.log(copy)
     //hide admin title if no user doesnt have superuser authority
     const indexConfigurations = copy.findIndex(x => x.id === "configurations");
 

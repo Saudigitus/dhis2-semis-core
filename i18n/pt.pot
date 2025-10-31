@@ -151,7 +151,6 @@ msgctxt "Date"
 msgid "Enrollment"
 msgstr "Data de inscrição"
 
-
 msgid "You need to select students first"
 msgstr "Você precisa selecionar os estudantes primeiro"
 
@@ -249,7 +248,6 @@ msgstr "Use os filtros globais (Turma, Grau e Ano Letivo)"
 msgid "Follow the instructions to proceed"
 msgstr "Siga as instruções para continuar"
 
-
 msgid "Bulk Performance"
 msgstr "Notas em Massa"
 
@@ -259,32 +257,17 @@ msgstr "Importar notas"
 msgid "Export students performace"
 msgstr "Exportar notas dos estudantes"
 
-msgid "Please select an organisation unit before"
-msgstr "Por favor, selecione uma unidade organizacional antes"
-
 msgid "Disable Edition Mode"
 msgstr "Desativar Modo de Edição"
 
 msgid "Allow Edit Mode"
 msgstr "Permitir Modo de Edição"
 
-msgid "Please select all filters"
-msgstr "Por favor, selecione todos os filtros"
-
 msgid "SEMIS-Performance"
 msgstr "SEMIS-Performance"
 
-msgid "Select the Organization unit you want to view data"
-msgstr "Selecione a unidade organizacional que deseja visualizar os dados"
-
-msgid "Use global filters(Class, Grade and Academic Year)"
-msgstr "Use os filtros globais (Turma, Classe e Ano Letivo)"
-
 msgid "Performance"
-msgstr "Performance"""
-
-msgid "Unknown error"
-msgstr "Erro desconhecido"
+msgstr "Performance"
 
 msgid "Enroll new {{section}}"
 msgstr "Inscrever novo {{section}}"
@@ -304,14 +287,8 @@ msgstr "Exportar modelo vazio"
 msgid "Export Existing {{section}}"
 msgstr "Exportar {{section}} existente"
 
-msgid "Please select an organisation unit before"
-msgstr "Por favor, selecione uma unidade organizacional antes"
-
 msgid "Enroll {{section}}"
 msgstr "Inscrever {{section}}"
-
-msgid "Please select all filters"
-msgstr "Por favor, selecione todos os filtros"
 
 msgid "Bulk enrollment"
 msgstr "Inscrição em massa"
@@ -340,39 +317,11 @@ msgstr "Eliminar"
 msgid "SEMIS-Enrollment"
 msgstr "SEMIS-Inscrição"
 
-msgid "Follow the instructions to proceed"
-msgstr "Siga as instruções para continuar"
-
-msgid "Select the Organization unit you want to view data"
-msgstr "Selecione a unidade organizacional cuja informação deseja visualizar"
-
-msgid "Use global filters(Class, Grade and Academic Year)"
-msgstr "Use os filtros globais (Turma, Nível e Ano letivo)"
-
 msgid "Enrollments"
 msgstr "Inscrições"
 
-msgid "Staff"
-msgstr "Funcionário"
-
-msgid "Student"
-msgstr "Estudante"
-
-msgid "student"
-msgstr "estudante"
-
-msgid "staff"
-msgstr "funcionário"
-
-
-msgid "Please select an organisation unit before"
-msgstr "Por favor, selecione uma unidade organizacional antes"
-
 msgid "Perform transfer"
 msgstr "Realizar transferência"
-
-msgid "Cancel"
-msgstr "Cancelar"
 
 msgid "Confirm"
 msgstr "Confirmar"
@@ -410,27 +359,11 @@ msgstr "Transferência de saída"
 msgid "SEMIS - Transfer"
 msgstr "SEMIS - Transferência"
 
-msgid "Select the Organization unit you want to view data"
-msgstr "Selecione a unidade organizacional que deseja visualizar os dados"
-
-msgid "Use global filters(Class, Grade and Academic Year)"
-msgstr "Use os filtros globais (Turma, Classe e Ano Letivo)"
-
 msgid "Transfers"
 msgstr "Transferências"
 
 msgid "Resquest time"
 msgstr "Hora da solicitação"
-
-msgid "student"
-msgstr "estudante"
-
-msgid "staff"
-msgstr "funcionário"
-
-
-msgid "Please select an organisation unit before"
-msgstr "Por favor, selecione uma unidade organizacional antes"
 
 msgid "Select at least one row."
 msgstr "Selecione pelo menos uma linha."
@@ -450,12 +383,6 @@ msgstr "Solicitar transferência"
 msgid "WARNING!"
 msgstr "AVISO!"
 
-msgid "rows will be affected"
-msgstr "linhas serão afetadas"
-
-msgid "Perform transfer"
-msgstr "Realizar transferência"
-
 msgid "Select the destination school"
 msgstr "Selecione a escola de destino"
 
@@ -465,18 +392,8 @@ msgstr "Realizar Transferência"
 msgid "SEMIS-Transfer-Execute"
 msgstr "SEMIS-Transfer-Execute"
 
-msgid "Follow the instructions to proceed"
-msgstr "Siga as instruções para prosseguir"
-
-msgid "Select the Organization unit you want to view data"
-msgstr "Selecione a unidade organizacional que deseja visualizar os dados"
-
-msgid "Use global filters(Class, Grade and Academic Year)"
-msgstr "Use os filtros globais (Turma, Classe e Ano Letivo)"
-
 msgid "Transfer Execute"
 msgstr "Executar Transferência"
-
 
 msgid "WARNING"
 msgstr "AVISO"
@@ -671,3 +588,184 @@ msgstr "aluno"
 
 msgid "students"
 msgstr "alunos"
+msgid "Data registered successfully"
+msgstr "Dados registrados com sucesso"
+
+msgid "Start Date"
+msgstr "Data de Início"
+
+msgid "End Date"
+msgstr "Data de Término"
+
+msgid "Are you sure?"
+msgstr "Tem certeza?"
+
+msgid "This will delete the selected data"
+msgstr "Isso excluirá os dados selecionados"
+
+msgid "Disagree"
+msgstr "Cancelar"
+
+msgid "Agree"
+msgstr "Confirmar"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Off day registered successfully"
+msgstr "Dia de folga registrado com sucesso"
+
+msgid "To register new off day, please fill out the form"
+msgstr "Para registrar um novo dia de folga, por favor preencha o formulário"
+
+msgid "Off Day Details"
+msgstr "Detalhes do Dia de Folga"
+
+msgid "Option saved successfully."
+msgstr "Opção salva com sucesso."
+
+msgid "To register new option, please fill out the form"
+msgstr "Para registrar uma nova opção, por favor preencha o formulário"
+
+msgid "School calendar updated successfully"
+msgstr "Calendário escolar atualizado com sucesso"
+
+msgid "To register new school calendar, please fill out the form"
+msgstr "Para registrar um novo calendário escolar, por favor preencha o formulário"
+
+msgid "New Off Day"
+msgstr "Novo Dia de Folga"
+
+msgid "No off day registered yet"
+msgstr "Nenhum dia de folga registrado ainda"
+
+msgid "Non School Day Register"
+msgstr "Registro de Dia Não Escolar"
+
+msgid "Add School Term"
+msgstr "Adicionar Período Escolar"
+
+msgid "No school term registered yet"
+msgstr "Nenhum período escolar registrado ainda"
+
+msgid "Default academic year updated successfully"
+msgstr "Ano letivo padrão atualizado com sucesso"
+
+msgid "Add new school calendar"
+msgstr "Adicionar novo calendário escolar"
+
+msgid "Add new option"
+msgstr "Adicionar nova opção"
+
+msgid "New Academc Year Option"
+msgstr "Nova Opção de Ano Letivo"
+
+msgid ""
+"No academic year configuration found. Please, ensure the data element is "
+"configured correctly."
+msgstr ""
+"Nenhuma configuração de ano letivo encontrada. Por favor, certifique-se de que o elemento de dados está "
+"configurado corretamente."
+
+msgid ""
+"Error fetching academic years. Please, make sure the configured academic "
+"year exists."
+msgstr ""
+"Erro ao buscar anos letivos. Por favor, certifique-se de que o ano letivo "
+"configurado existe."
+
+msgid "Not configured"
+msgstr "Não configurado"
+
+msgid "Label"
+msgstr "Rótulo"
+
+msgid "Default Academic Year"
+msgstr "Ano Letivo Padrão"
+
+msgid "Set as Default"
+msgstr "Definir como Padrão"
+
+msgid "View Details"
+msgstr "Ver Detalhes"
+
+msgid "General Details"
+msgstr "Detalhes Gerais"
+
+msgid "School Terms"
+msgstr "Períodos Escolares"
+
+msgid "Non School Days"
+msgstr "Dias Não Escolares"
+
+msgid "Back to list"
+msgstr "Voltar à lista"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Non-Schoolday Type"
+msgstr "Tipo de Dia Não Escolar"
+
+msgid "Public Holiday"
+msgstr "Feriado Público"
+
+msgid "Special Events"
+msgstr "Eventos Especiais"
+
+msgid "Event"
+msgstr "Evento"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Code"
+msgstr "Código"
+
+msgid "Code you configuration"
+msgstr "Código da sua configuração"
+
+msgid "Description"
+msgstr "Descrição"
+
+msgid "Description you configuration"
+msgstr "Descrição da sua configuração"
+
+msgid "Start date"
+msgstr "Data de início"
+
+msgid "End date"
+msgstr "Data de término"
+
+msgid "description"
+msgstr "descrição"
+
+msgid "Period"
+msgstr "Período"
+
+msgid "School days"
+msgstr "Dias letivos"
+
+msgid "Monday"
+msgstr "Segunda-feira"
+
+msgid "Tuesday"
+msgstr "Terça-feira"
+
+msgid "Wednesday"
+msgstr "Quarta-feira"
+
+msgid "Thursday"
+msgstr "Quinta-feira"
+
+msgid "Friday"
+msgstr "Sexta-feira"
+
+msgid "Saturday"
+msgstr "Sábado"
+
+msgid "Sunday"
+msgstr "Domingo"

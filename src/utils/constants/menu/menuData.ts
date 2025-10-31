@@ -32,6 +32,7 @@ export const menuData = ({
   return [
     {
       title: i18n.t("Navigation"),
+      id: "navigation",
       displayInMenu: true,
       subItems: [
         {
@@ -51,6 +52,7 @@ export const menuData = ({
     },
     {
       title: i18n.t("Student"),
+      id: "student",
       displayInMenu: true,
       subItems: [
         {
@@ -168,6 +170,7 @@ export const menuData = ({
     },
     {
       title: i18n.t("Staff"),
+      id: "staff",
       displayInMenu: true,
       subItems: [
         {
@@ -263,6 +266,7 @@ export const menuData = ({
     },
     {
       title: i18n.t("Configurations"),
+      id: "configurations",
       displayInMenu: true,
       subItems: [
         {

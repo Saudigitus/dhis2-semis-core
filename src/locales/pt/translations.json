@@ -33,7 +33,6 @@
     "Register new": "Registrar novo",
     "if you want to register as a new": "se você quiser registrar como um novo",
     "Close": "Fechar",
-    "rows selected": "linhas selecionadas",
     "Columns to show in the table": "Colunas a serem exibidas na tabela",
     "Table Columns": "Colunas da tabela",
     "Save": "Salvar",
@@ -44,5 +43,14 @@
     "Previous Page": "Página anterior",
     "Next Page": "Próxima página",
     "No data to display": "Nenhum dado a exibir",
-    "Enrollment_Date": "Data de inscrição"
+    "Enrollment_Date": "Data de inscrição",
+    "Search by": "Pesquisar por",
+    "Cancel": "Cancelar",
+    "Select": "Selecionar",
+    "More Filters": "Mais filtros",
+    "rows selected": "linhas selecionadas",
+    "Search for a": "Pesquisar por",
+    "Select a": "Selecione",
+    "Search for a school": "Pesquisar por uma escola",
+    "Submit": "Submeter"
 }

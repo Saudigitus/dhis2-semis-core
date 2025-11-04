@@ -45,7 +45,7 @@ export default function RouteList() {
         },
         {
             path: "/semis/configuration",
-            component: <ConfigirationsPage />
+            component: <ConfigirationsPage i18n={i18n}/>
         },
         {
             path: "/semis/school-calendar/*",

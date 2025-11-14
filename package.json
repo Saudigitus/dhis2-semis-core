@@ -7,7 +7,7 @@
   "scripts": {
     "build": "set \"NODE_OPTIONS=--max-old-space-size=8192\" && d2-app-scripts build --no-verify",
     "build-unix": "node --max-old-space-size=8096 ./node_modules/.bin/d2-app-scripts build --no-verify",
-    "start": "d2-app-scripts start --proxy  https://emis.dhis2.org/startracker",
+    "start": "d2-app-scripts start --proxy  https://emistraining.dhis2nigeria.org.ng/semis2",
     "test": "d2-app-scripts test",
     "deploy": "d2-app-scripts deploy"
   },
@@ -28,7 +28,7 @@
     "@mui/icons-material": "7.1.0",
     "@mui/material": "7.1.0",
     "acorn": "^8.14.1",
-    "dhis2-semis-components": "0.6.8-alpha.36",
+    "dhis2-semis-components": "2.0.5",
     "dhis2-semis-attendance": "1.0.0-alpha.43",
     "dhis2-semis-configuration": "1.0.0-alpha.44",
     "dhis2-semis-enrollment": "1.0.2-alpha.9",

@@ -1,13 +1,13 @@
 {
   "name": "semis",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "",
   "license": "BSD-3-Clause",
   "private": true,
   "scripts": {
     "build": "set \"NODE_OPTIONS=--max-old-space-size=8192\" && d2-app-scripts build --no-verify",
     "build-unix": "node --max-old-space-size=8096 ./node_modules/.bin/d2-app-scripts build --no-verify",
-    "start": "d2-app-scripts start --proxy  https://emistraining.dhis2nigeria.org.ng/semis2",
+    "start": "d2-app-scripts start --proxy  https://emis.dhis2.org/demo",
     "test": "d2-app-scripts test",
     "deploy": "d2-app-scripts deploy"
   },
@@ -28,10 +28,10 @@
     "@mui/icons-material": "7.1.0",
     "@mui/material": "7.1.0",
     "acorn": "^8.14.1",
-    "dhis2-semis-components": "2.0.5",
+    "dhis2-semis-components": "2.0.8",
     "dhis2-semis-attendance": "1.0.0-alpha.43",
     "dhis2-semis-configuration": "1.0.0-alpha.44",
-    "dhis2-semis-enrollment": "1.0.2-alpha.9",
+    "dhis2-semis-enrollment": "1.0.2-alpha.10",
     "dhis2-semis-final-result": "1.0.0-alpha.45",
     "dhis2-semis-functions": "0.0.7-alpha.56",
     "dhis2-semis-performance": "1.0.0-alpha.31",

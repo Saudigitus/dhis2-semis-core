@@ -34,6 +34,8 @@ const useMenuData = () => {
     academicYear: academicYear ?? schoolCalendar?.defaults?.academicYear
   })
 
+  console.log(menuDataArray, 'menuDataArray');
+
   const updateData = (dadosBrutos: any[]) => {
     let copy = [...dadosBrutos];
 

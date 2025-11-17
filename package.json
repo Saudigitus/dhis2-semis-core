@@ -28,7 +28,7 @@
     "@mui/icons-material": "7.1.0",
     "@mui/material": "7.1.0",
     "acorn": "^8.14.1",
-    "dhis2-semis-components": "2.0.8",
+    "dhis2-semis-components": "2.0.12",
     "dhis2-semis-attendance": "1.0.0-alpha.43",
     "dhis2-semis-configuration": "1.0.0-alpha.44",
     "dhis2-semis-enrollment": "1.0.2-alpha.10",

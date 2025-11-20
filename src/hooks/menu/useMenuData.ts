@@ -1,4 +1,4 @@
-import { DataStoreState, useDataStoreKey, useSchoolCalendarKey } from "dhis2-semis-components";
+import { DataStoreState, useDataStoreKey, useSchoolCalendarKey, SchoolCalendarData } from "dhis2-semis-components";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useGetSectionTypeLabel, UserInfoState, useUrlParams } from "dhis2-semis-functions"
 import { menuData } from "../../utils/constants/menu/menuData";
@@ -40,7 +40,7 @@ const useMenuData = () => {
     for (const element of dataStoreData) {
       const index = copy.findIndex(x => x.id === element.key);
       if (index === -1) continue;
-      
+
       const originalSubItems = copy[index].subItems ?? [];
       const filteredSubItems = originalSubItems.filter((subItem: any) => {
         const key = subItem.id;
@@ -94,7 +94,7 @@ const useMenuData = () => {
       updatedHomePageData([dashboardData[dashboardData?.length - 1]])
       updateMenuData(menuDataArray?.filter(x => x.id != 'staff' && x.id != 'student'))
     }
-  }, [dataStoreData, validation.valid, ulrParams])
+  }, [dataStoreData, schoolCalendar, validation.valid, ulrParams])
 
   return {
     menuData: formatMenuData({

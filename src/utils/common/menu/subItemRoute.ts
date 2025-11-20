@@ -17,8 +17,8 @@ export const subItemRoute = (location: string, sectionType: string, academicYear
 
     const url = new URLSearchParams(newLocation);
 
-    if (!url.has("academicYear")) {
-        url.set("academicYear", academicYear.toString());
+    if (!url.has("academicYear") && academicYear) {
+        url.set("academicYear", academicYear?.toString());
     }
 
     return url.toString();

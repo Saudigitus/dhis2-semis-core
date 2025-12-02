@@ -48,7 +48,8 @@ export const values = [
             "lastUpdate": "",
             "programStage": "",
             "status": "",
-            "validStatusValue": []
+            "validStatusValue": [],
+            "dropoutStatusValues": []
         },
         "key": "student",
         "program": "",

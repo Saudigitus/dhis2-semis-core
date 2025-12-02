@@ -870,6 +870,9 @@ msgstr "Lista de estados de resultado final que permitem promoção do aluno"
 msgid "Promotable Status"
 msgstr "Estado Promovível"
 
+msgid "Dropout Status"
+msgstr "Estado de abandono escolar"
+
 msgid "Allow multi selection of program stage"
 msgstr "Permitir seleção múltipla de estágio de programa"
 
@@ -1014,8 +1017,8 @@ msgstr "Configurações Padrão"
 msgid "Final Result Details"
 msgstr "Detalhes do Resultado Final"
 
-msgid "Promotion Criteria"
-msgstr "Critérios de Promoção"
+msgid "Promotion & Dropout Criteria"
+msgstr "Critérios de promoção e abandono escolar"
 
 msgid "Performance details"
 msgstr "Detalhes de Desempenho"

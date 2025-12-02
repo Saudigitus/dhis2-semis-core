@@ -870,6 +870,9 @@ msgstr "Liste des statuts de résultat final permettant la promotion de l’él�
 msgid "Promotable Status"
 msgstr "Statut promouvable"
 
+msgid "Dropout Status"
+msgstr "Statut d'abandon scolaire"
+
 msgid "Allow multi selection of program stage"
 msgstr "Autoriser la sélection multiple d’étape de programme"
 
@@ -1014,8 +1017,8 @@ msgstr "Configurations par défaut"
 msgid "Final Result Details"
 msgstr "Détails du résultat final"
 
-msgid "Promotion Criteria"
-msgstr "Critères de promotion"
+msgid "Promotion & Dropout Criteria"
+msgstr "Critères de promotion et d'abandon"
 
 msgid "Performance details"
 msgstr "Détails de performance"

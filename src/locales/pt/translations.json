@@ -272,6 +272,7 @@
     "Final result status": "Estado do resultado final",
     "List of final result status that allows student promotion": "Lista de estados de resultado final que permitem promoção do aluno",
     "Promotable Status": "Estado Promovível",
+    "Dropout Status": "Estado de abandono escolar",
     "Allow multi selection of program stage": "Permitir seleção múltipla de estágio de programa",
     "Performance/marks Program Stages": "Estágios de Programa de Desempenho/Notas",
     "Tracker Program": "Programa de Rastreamento",
@@ -315,7 +316,7 @@
     "Select a program to follow and config the registration details": "Selecione um programa para acompanhar e configurar os detalhes de matrícula",
     "Default Configurations": "Configurações Padrão",
     "Final Result Details": "Detalhes do Resultado Final",
-    "Promotion Criteria": "Critérios de Promoção",
+    "Promotion & Dropout Criteria": "Critérios de promoção e abandono escolar",
     "Performance details": "Detalhes de Desempenho",
     "Transfer Details": "Detalhes da Transferência",
     "Transfer Status Details": "Detalhes do Estado da Transferência"

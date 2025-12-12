@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"POT-Creation-Date: 2025-10-31T06:53:58.245Z\n"
+"PO-Revision-Date: 2025-10-31T06:53:58.245Z\n"
+
+msgid "Bulk Performance"
+msgstr "Notas em Massa"
+
+msgid "Import Performance"
+msgstr "Importar notas"
+
+msgid "Export students performace"
+msgstr "Exportar notas dos estudantes"
+
+msgid "Please select an organisation unit before"
+msgstr "Por favor, selecione uma unidade organizacional antes"
+
+msgid "Disable Edition Mode"
+msgstr "Desativar Modo de Edição"
+
+msgid "Allow Edit Mode"
+msgstr "Permitir Modo de Edição"
+
+msgid "Please select all filters"
+msgstr "Por favor, selecione todos os filtros"
+
+msgid "SEMIS-Performance"
+msgstr "SEMIS-Performance"
+
+msgid "Select the Organization unit you want to view data"
+msgstr "Selecione a unidade organizacional que deseja visualizar os dados"
+
+msgid "Use global filters(Class, Grade and Academic Year)"
+msgstr "Use os filtros globais (Turma, Classe e Ano Letivo)"
+
+msgid "Performance"
+msgstr "Performance"""

@@ -1,0 +1,68 @@
+/* ========== Summary Cards styles ============== */
+.success {
+    border: solid 1px #4CAF50;
+    background-color: #F4FBF4;
+    width: 160px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.warning {
+    border: solid 1px #ffca3a;
+    background-color: #ffd5492e;
+    width: 160px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.error {
+    border: solid 1px #DEA9A7;
+    background-color: #FFECE7;
+    width: 160px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.updated {
+    border: solid 1px #FFEB3B;
+    background-color: #ffeb3b3b;
+    width: 160px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.secondary {
+    border: solid 1px #616161;
+    background-color: rgba(145, 145, 145, 0.144);
+    width: 160px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.success h5,
+.error h5,
+.updated h5,
+.secondary h5 {
+    text-align: center;
+}

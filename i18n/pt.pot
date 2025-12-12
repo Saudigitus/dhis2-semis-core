@@ -1,0 +1,1030 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"POT-Creation-Date: 2025-10-29T12:24:30.181Z\n"
+"PO-Revision-Date: 2025-10-29T12:24:30.182Z\n"
+
+msgid "Navigation"
+msgstr "Navegação"
+
+msgid "Home"
+msgstr "Início"
+
+msgid "Student"
+msgstr "Aluno"
+
+msgid "Enrollment"
+msgstr "Matrícula"
+
+msgid "Attendance"
+msgstr "Presença"
+
+msgid "Performance"
+msgstr "Performance"
+
+msgid "Final result"
+msgstr "Resultado final"
+
+msgid "Transfer"
+msgstr "Transferência"
+
+msgid "Staff"
+msgstr "Equipe"
+
+msgid "Staff registry"
+msgstr "Registro de equipe"
+
+msgid "Staff Re-enroll"
+msgstr "Rematrícula de equipe"
+
+msgid "Configurations"
+msgstr "Configurações"
+
+msgid "School Calendar"
+msgstr "Calendário escolar"
+
+msgid "attendance_title"
+msgstr "Faltas"
+
+msgid "Ref"
+msgstr "Ref"
+
+msgid "School"
+msgstr "Escola"
+
+msgid "No Label"
+msgstr "Sem etiqueta"
+
+msgid "Academic year"
+msgstr "Ano acadêmico"
+
+msgid "Select a academic year"
+msgstr "Selecione um ano acadêmico"
+
+msgid "Perform Promotion"
+msgstr "Realizar promoção"
+
+msgid "WARNING"
+msgstr "AVISO"
+
+msgid "rows will be affected"
+msgstr "linhas serão afetadas"
+
+msgid ""
+"No one will be able to access this program. Add some Organisation Units to "
+"the access list."
+msgstr ""
+"Ninguém poderá acessar este programa. Adicione algumas Unidades Organizacionais à "
+"lista de acesso."
+
+msgid "Student promotion"
+msgstr "Promoção de aluno"
+
+msgid "View history"
+msgstr "Ver histórico"
+
+msgid "Fill in at least 1 attribute to search."
+msgstr "Preencha pelo menos 1 atributo para pesquisar."
+
+msgid "Results found for"
+msgstr "Resultados encontrados para"
+
+msgid "search"
+msgstr "pesquisa"
+
+msgid "No"
+msgstr "Não"
+
+msgid "found"
+msgstr "encontrado"
+
+msgid "Continue serching or click"
+msgstr "Continue pesquisando ou clique"
+
+msgid "Register new"
+msgstr "Registrar novo"
+
+msgid "if you want to register as a new"
+msgstr "se você quiser registrar como um novo"
+
+msgid "Close"
+msgstr "Fechar"
+
+msgid "rows selected"
+msgstr "linhas selecionadas"
+
+msgid "Columns to show in the table"
+msgstr "Colunas a serem exibidas na tabela"
+
+msgid "Table Columns"
+msgstr "Colunas da tabela"
+
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Actions"
+msgstr "Ações"
+
+msgid "Click to open in new tab"
+msgstr "Clique para abrir em uma nova aba"
+
+msgid "Rows per page"
+msgstr "Linhas por página"
+
+msgid "Page"
+msgstr "Página"
+
+msgid "Previous Page"
+msgstr "Página anterior"
+
+msgid "Next Page"
+msgstr "Próxima página"
+
+msgid "No data to display"
+msgstr "Nenhum dado a exibir"
+
+msgctxt "Date"
+msgid "Enrollment"
+msgstr "Data de inscrição"
+
+msgid "You need to select students first"
+msgstr "Você precisa selecionar os estudantes primeiro"
+
+msgid "Assing attendace"
+msgstr "Atribuir presença"
+
+msgid "Disable multi attendance mode"
+msgstr "Desativar modo de presença múltipla"
+
+msgid ""
+"It will assign the same attendance status to all visible students in the "
+"table"
+msgstr ""
+"Isto atribuirá o mesmo estado de presença a todos os estudantes visíveis na "
+"tabela"
+
+msgid "Mark all as present"
+msgstr "Marcar todos como presentes"
+
+msgid "Warning"
+msgstr "Aviso"
+
+msgid "Students will be affected"
+msgstr "Os estudantes serão afetados"
+
+msgid "The chosen attendance status will be assigned to the selected students"
+msgstr "O estado de presença escolhido será atribuído aos estudantes selecionados"
+
+msgid "Bulk attendance"
+msgstr "Presenças em massa"
+
+msgid "Unknown error"
+msgstr "Erro desconhecido"
+
+msgid "Please select an organisation unit before"
+msgstr "Por favor, selecione uma unidade organizacional primeiro"
+
+msgid "Take attendance"
+msgstr "Registrar presença"
+
+msgid "View attendance records"
+msgstr "Ver registos de presença"
+
+msgid "Please select all filters"
+msgstr "Por favor, selecione todos os filtros"
+
+msgid "All listed students will be affected"
+msgstr "Todos os estudantes listados serão afetados"
+
+msgid "The present attendance status will be assigned to all students"
+msgstr "O estado de presença atual será atribuído a todos os estudantes"
+
+msgid "Are you sure you want to mark all as present?"
+msgstr "Tem certeza de que deseja marcar todos como presentes?"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Yes im sure"
+msgstr "Sim, tenho certeza"
+
+msgid "Attendance title"
+msgstr "Título da presença"
+
+msgid "Selected date"
+msgstr "Data selecionada"
+
+msgid "Hide reason of absense"
+msgstr "Ocultar motivo da ausência"
+
+msgid "View teason of absense"
+msgstr "Ver motivo da ausência"
+
+msgid "Export {{section}} attendances"
+msgstr "Exportar presenças de {{section}}"
+
+msgid "Import {{section}} attendances"
+msgstr "Importar presenças de {{section}}"
+
+msgid "student"
+msgstr "estudante"
+
+msgid "staff"
+msgstr "funcionário"
+
+msgid "Select the Organization unit you want to view data"
+msgstr "Selecione a unidade organizacional que deseja visualizar os dados"
+
+msgid "Use global filters(Class, Grade and Academic Year)"
+msgstr "Use os filtros globais (Turma, Grau e Ano Letivo)"
+
+msgid "Follow the instructions to proceed"
+msgstr "Siga as instruções para continuar"
+
+msgid "Bulk Performance"
+msgstr "Notas em Massa"
+
+msgid "Import Performance"
+msgstr "Importar notas"
+
+msgid "Export students performace"
+msgstr "Exportar notas dos estudantes"
+
+msgid "Disable Edition Mode"
+msgstr "Desativar Modo de Edição"
+
+msgid "Allow Edit Mode"
+msgstr "Permitir Modo de Edição"
+
+msgid "SEMIS-Performance"
+msgstr "SEMIS-Performance"
+
+msgid "Enroll new {{section}}"
+msgstr "Inscrever novo {{section}}"
+
+msgid "Bulk Enrollment"
+msgstr "Inscrição em massa"
+
+msgid "Update existing {{section}}"
+msgstr "Atualizar {{section}} existente"
+
+msgid "Bulk Enrollment Update"
+msgstr "Atualização de inscrições em massa"
+
+msgid "Export Empty Template"
+msgstr "Exportar modelo vazio"
+
+msgid "Export Existing {{section}}"
+msgstr "Exportar {{section}} existente"
+
+msgid "Enroll {{section}}"
+msgstr "Inscrever {{section}}"
+
+msgid "Bulk enrollment"
+msgstr "Inscrição em massa"
+
+msgid "Enrollment Deletion"
+msgstr "Eliminação de inscrição"
+
+msgid "Could not conclude the opertation."
+msgstr "Não foi possível concluir a operação."
+
+msgid "Operation concluded successfully"
+msgstr "Operação concluída com sucesso"
+
+msgid "Single {{section}} Enrollment {{mode}}"
+msgstr "Inscrição única de {{section}} {{mode}}"
+
+msgid "Update"
+msgstr "Atualizar"
+
+msgid "Edition"
+msgstr "Edição"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "SEMIS-Enrollment"
+msgstr "SEMIS-Inscrição"
+
+msgid "Enrollments"
+msgstr "Inscrições"
+
+msgid "Perform transfer"
+msgstr "Realizar transferência"
+
+msgid "Confirm"
+msgstr "Confirmar"
+
+msgid "Attention"
+msgstr "Atenção"
+
+msgid "This action will transfer this {{section}} into this school."
+msgstr "Esta ação transferirá este(a) {{section}} para esta escola."
+
+msgid "You are about to reject the {{section}} transfer to this school."
+msgstr "Você está prestes a rejeitar a transferência deste(a) {{section}} para esta escola."
+
+msgid "Are you sure you want to approve the transfer of "
+msgstr "Tem certeza de que deseja aprovar a transferência de "
+
+msgid "from"
+msgstr "de"
+
+msgid "to"
+msgstr "para"
+
+msgid "Are you sure you want to reject the transfer of"
+msgstr "Tem certeza de que deseja rejeitar a transferência de"
+
+msgid "Transfer Approval"
+msgstr "Aprovação de Transferência"
+
+msgid "Incoming transfer"
+msgstr "Transferência de entrada"
+
+msgid "Outgoing transfer"
+msgstr "Transferência de saída"
+
+msgid "SEMIS - Transfer"
+msgstr "SEMIS - Transferência"
+
+msgid "Transfers"
+msgstr "Transferências"
+
+msgid "Resquest time"
+msgstr "Hora da solicitação"
+
+msgid "Select at least one row."
+msgstr "Selecione pelo menos uma linha."
+
+msgid "Execute transfer"
+msgstr "Executar transferência"
+
+msgid "Transfer request sent successfully"
+msgstr "Pedido de transferência enviado com sucesso"
+
+msgid "Please fill all required fields"
+msgstr "Por favor, preencha todos os campos obrigatórios"
+
+msgid "Request transfer"
+msgstr "Solicitar transferência"
+
+msgid "WARNING!"
+msgstr "AVISO!"
+
+msgid "Select the destination school"
+msgstr "Selecione a escola de destino"
+
+msgid "Perform Transfer"
+msgstr "Realizar Transferência"
+
+msgid "SEMIS-Transfer-Execute"
+msgstr "SEMIS-Transfer-Execute"
+
+msgid "Transfer Execute"
+msgstr "Executar Transferência"
+
+msgid ""
+"Configuration error. ValidStatusValue not set in DataStore for "
+"{{sectionType}}"
+msgstr ""
+"Erro de configuração. ValidStatusValue não definido no DataStore para "
+"{{sectionType}}"
+
+msgid "Error loading organization units"
+msgstr "Erro ao carregar unidades organizacionais"
+
+msgid "Failed to load accessible organization units"
+msgstr "Falha ao carregar unidades organizacionais acessíveis"
+
+msgid "No accessible organization units"
+msgstr "Nenhuma unidade organizacional acessível"
+
+msgid ""
+"You do not have data-entry access to any organization units. Contact your "
+"administrator to grant you the necessary permissions"
+msgstr ""
+"Você não tem acesso de entrada de dados em nenhuma unidade organizacional. "
+"Contate seu administrador para conceder as permissões necessárias"
+
+msgid "Registering School"
+msgstr "Cadastrando Escola"
+
+msgid "Enrollment date"
+msgstr "Data de matrícula"
+
+msgid "Number of Students"
+msgstr "Número de Alunos"
+
+msgid "Maximum number of students supported for each file"
+msgstr "Número máximo de alunos suportado por arquivo"
+
+msgid "SEMIS-Staff-Re-enrollment"
+msgstr "SEMIS - Rematrícula de Funcionários"
+
+msgid "Use global filters(Type of Staff, Employment Type and Academic Year)"
+msgstr "Use filtros globais (Tipo de Funcionário, Tipo de Contrato e Ano Letivo)"
+
+msgid "SEMIS-Final-Result"
+msgstr "SEMIS - Resultado Final"
+
+msgid "Staff Re-enrollment"
+msgstr "Rematrícula de Funcionários"
+
+msgid "Final Results"
+msgstr "Resultados Finais"
+
+msgid "Terminated"
+msgstr "Encerrado"
+
+msgid "Dropout"
+msgstr "Evasão"
+
+msgid "Assign re-enrollment status"
+msgstr "Atribuir status de rematrícula"
+
+msgid "Assign final result"
+msgstr "Atribuir resultado final"
+
+msgid "Perform re-enrollment"
+msgstr "Realizar rematrícula"
+
+msgid "Perform promotion"
+msgstr "Realizar promoção"
+
+msgid "Bulk Staff Re-enrollment"
+msgstr "Rematrícula em Massa de Funcionários"
+
+msgid "Bulk Final Result"
+msgstr "Resultado Final em Massa"
+
+msgid "Assign Re-enrollment Status"
+msgstr "Atribuir Status de Rematrícula"
+
+msgid "Assign Final Result"
+msgstr "Atribuir Resultado Final"
+
+msgid "Perform Re-enrollment"
+msgstr "Realizar Rematrícula"
+
+msgid "Perform Promotion"
+msgstr "Realizar Promoção"
+
+msgid "Staff re-enrollment"
+msgstr "Rematrícula de funcionários"
+
+msgid "Staff Re-enrollment Status"
+msgstr "Status de Rematrícula de Funcionários"
+
+msgid "Staff re-enrollment status"
+msgstr "Status de rematrícula de funcionários"
+
+msgid "Student final result"
+msgstr "Resultado final do aluno"
+
+msgid "Some selected staff have no re-enrollment status or were not re-enrolled."
+msgstr "Alguns funcionários selecionados não possuem status de rematrícula ou não foram rematriculados."
+
+msgid "Some selected students have no final result or were not promoted."
+msgstr "Alguns alunos selecionados não possuem resultado final ou não foram promovidos."
+
+msgid "Please select type of staff and employment type"
+msgstr "Por favor, selecione o tipo de funcionário e o tipo de contrato"
+
+msgid "Please select section and grade"
+msgstr "Por favor, selecione a turma e a série"
+
+msgid "Re-enrolled staff"
+msgstr "Funcionários rematriculados"
+
+msgid "Promoted students"
+msgstr "Alunos promovidos"
+
+msgid "Not re-enrolled staff"
+msgstr "Funcionários não rematriculados"
+
+msgid "No promoted students"
+msgstr "Nenhum aluno promovido"
+
+msgid "Staff Re-enrollment Summary"
+msgstr "Resumo da Rematrícula de Funcionários"
+
+msgid "Students Promotion Summary"
+msgstr "Resumo da Promoção de Alunos"
+
+msgid "Staff re-enrollment preview"
+msgstr "Pré-visualização da rematrícula de funcionários"
+
+msgid "Students promotion preview"
+msgstr "Pré-visualização da promoção de alunos"
+
+msgid ""
+"The following staff were not re-enrolled. They already exist on the "
+"selected academic year"
+msgstr ""
+"Os seguintes funcionários não foram rematriculados. Eles já existem no "
+"ano letivo selecionado"
+
+msgid ""
+"The following students were not promoted. They already exist on the "
+"selected academic year"
+msgstr ""
+"Os seguintes alunos não foram promovidos. Eles já existem no "
+"ano letivo selecionado"
+
+msgid "Export Staff Re-enrollment"
+msgstr "Exportar Rematrícula de Funcionários"
+
+msgid "Export Final Result"
+msgstr "Exportar Resultado Final"
+
+msgid "students"
+msgstr "alunos"
+
+msgid "Data registered successfully"
+msgstr "Dados registrados com sucesso"
+
+msgid "Start Date"
+msgstr "Data de Início"
+
+msgid "End Date"
+msgstr "Data de Término"
+
+msgid "Are you sure?"
+msgstr "Tem certeza?"
+
+msgid "This will delete the selected data"
+msgstr "Isso excluirá os dados selecionados"
+
+msgid "Disagree"
+msgstr "Cancelar"
+
+msgid "Agree"
+msgstr "Confirmar"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Off day registered successfully"
+msgstr "Dia de folga registrado com sucesso"
+
+msgid "To register new off day, please fill out the form"
+msgstr "Para registrar um novo dia de folga, por favor preencha o formulário"
+
+msgid "Off Day Details"
+msgstr "Detalhes do Dia de Folga"
+
+msgid "Option saved successfully."
+msgstr "Opção salva com sucesso."
+
+msgid "To register new option, please fill out the form"
+msgstr "Para registrar uma nova opção, por favor preencha o formulário"
+
+msgid "School calendar updated successfully"
+msgstr "Calendário escolar atualizado com sucesso"
+
+msgid "To register new school calendar, please fill out the form"
+msgstr "Para registrar um novo calendário escolar, por favor preencha o formulário"
+
+msgid "New Off Day"
+msgstr "Novo Dia de Folga"
+
+msgid "No off day registered yet"
+msgstr "Nenhum dia de folga registrado ainda"
+
+msgid "Non School Day Register"
+msgstr "Registro de Dia Não Escolar"
+
+msgid "Add School Term"
+msgstr "Adicionar Período Escolar"
+
+msgid "No school term registered yet"
+msgstr "Nenhum período escolar registrado ainda"
+
+msgid "Default academic year updated successfully"
+msgstr "Ano letivo padrão atualizado com sucesso"
+
+msgid "Add new school calendar"
+msgstr "Adicionar novo calendário escolar"
+
+msgid "Add new option"
+msgstr "Adicionar nova opção"
+
+msgid "New Academc Year Option"
+msgstr "Nova Opção de Ano Letivo"
+
+msgid ""
+"No academic year configuration found. Please, ensure the data element is "
+"configured correctly."
+msgstr ""
+"Nenhuma configuração de ano letivo encontrada. Por favor, certifique-se de que o elemento de dados está "
+"configurado corretamente."
+
+msgid ""
+"Error fetching academic years. Please, make sure the configured academic "
+"year exists."
+msgstr ""
+"Erro ao buscar anos letivos. Por favor, certifique-se de que o ano letivo "
+"configurado existe."
+
+msgid "Not configured"
+msgstr "Não configurado"
+
+msgid "Label"
+msgstr "Rótulo"
+
+msgid "Default Academic Year"
+msgstr "Ano Letivo Padrão"
+
+msgid "Set as Default"
+msgstr "Definir como Padrão"
+
+msgid "View Details"
+msgstr "Ver Detalhes"
+
+msgid "General Details"
+msgstr "Detalhes Gerais"
+
+msgid "School Terms"
+msgstr "Períodos Escolares"
+
+msgid "Non School Days"
+msgstr "Dias Não Escolares"
+
+msgid "Back to list"
+msgstr "Voltar à lista"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Non-Schoolday Type"
+msgstr "Tipo de Dia Não Escolar"
+
+msgid "Public Holiday"
+msgstr "Feriado Público"
+
+msgid "Special Events"
+msgstr "Eventos Especiais"
+
+msgid "Event"
+msgstr "Evento"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Code"
+msgstr "Código"
+
+msgid "Code you configuration"
+msgstr "Código da sua configuração"
+
+msgid "Description"
+msgstr "Descrição"
+
+msgid "Description you configuration"
+msgstr "Descrição da sua configuração"
+
+msgid "Start date"
+msgstr "Data de início"
+
+msgid "End date"
+msgstr "Data de término"
+
+msgid "description"
+msgstr "descrição"
+
+msgid "Period"
+msgstr "Período"
+
+msgid "School days"
+msgstr "Dias letivos"
+
+msgid "Monday"
+msgstr "Segunda-feira"
+
+msgid "Tuesday"
+msgstr "Terça-feira"
+
+msgid "Wednesday"
+msgstr "Quarta-feira"
+
+msgid "Thursday"
+msgstr "Quinta-feira"
+
+msgid "Friday"
+msgstr "Sexta-feira"
+
+msgid "Saturday"
+msgstr "Sábado"
+
+msgid "Sunday"
+msgstr "Domingo"
+
+msgid "Select"
+msgstr "Selecionar"
+
+msgid "More Filters"
+msgstr "Mais filtros"
+
+msgid "Search for a"
+msgstr "Pesquisar por"
+
+msgid "Select a"
+msgstr "Selecione"
+
+msgid "Search for a school"
+msgstr "Pesquisar por uma escola"
+
+msgid "Submit"
+msgstr "Submeter"
+
+msgid "SELECT DATE"
+msgstr "SELECIONE DATA"
+
+msgid "OK"
+msgstr "Continuar"
+
+msgid "CANCEL"
+msgstr "CANCELAR"
+
+msgid "Enrollment_Date"
+msgstr "Data de inscrição"
+
+msgid "Select a school"
+msgstr "Selecione uma escola"
+
+msgid "Search by"
+msgstr "Pesquisar por"
+
+msgid "Configurations saved successfuly"
+msgstr "Configurações salvas com sucesso"
+
+msgid "Unable to save data"
+msgstr "Não foi possível salvar os dados"
+
+msgid "{{name}}"
+msgstr "{{name}}"
+
+msgid "{{section}} Configuration"
+msgstr "Configuração de {{section}}"
+
+msgid "{{section}} {{key}} enabled successfully"
+msgstr "{{section}} {{key}} ativado com sucesso"
+
+msgid "{{section}} {{key}} disabled successfully"
+msgstr "{{section}} {{key}} desativado com sucesso"
+
+msgid ""
+"This module contain general configuration and it's required for semis to "
+"work properly"
+msgstr ""
+"Este módulo contém configurações gerais e é necessário para que o SEMIS "
+"funcione corretamente"
+
+msgid "Configure {{label}}"
+msgstr "Configurar {{label}}"
+
+msgid "Cannot configure {{label}} before configuring {{registrationLabel}}"
+msgstr "Não é possível configurar {{label}} antes de configurar {{registrationLabel}}"
+
+msgid "Disable"
+msgstr "Desativar"
+
+msgid "Enable"
+msgstr "Ativar"
+
+msgid "You must configure this module first to enable it"
+msgstr "Você deve configurar este módulo primeiro para ativá-lo"
+
+msgid "{{section}}"
+msgstr "{{section}}"
+
+msgid "Data Element with option sets"
+msgstr "Elemento de dados com conjunto de opções"
+
+msgid "Reason of absence"
+msgstr "Motivo da ausência"
+
+msgid "option sets"
+msgstr "conjuntos de opções"
+
+msgid "Absent Code"
+msgstr "Código de Ausente"
+
+msgid "Late Code"
+msgstr "Código de Atraso"
+
+msgid "Leave Code"
+msgstr "Código de Licença"
+
+msgid "Present Code"
+msgstr "Código de Presente"
+
+msgid "Repeatable Program Stage"
+msgstr "Estágio de Programa Repetível"
+
+msgid "Attendance Program Stage"
+msgstr "Estágio de Programa de Presença"
+
+msgid "Attendance Status"
+msgstr "Estado de Presença"
+
+msgid "Allow Searching"
+msgstr "Permitir Pesquisa"
+
+msgid "Default order by"
+msgstr "Ordenar por padrão"
+
+msgid "Order as"
+msgstr "Ordenar como"
+
+msgid "asc"
+msgstr "crescente"
+
+msgid "desc"
+msgstr "decrescente"
+
+msgid "Non-Repeatable Program Stage"
+msgstr "Estágio de Programa Não Repetível"
+
+msgid "Final Result Program Stage"
+msgstr "Estágio de Programa de Resultado Final"
+
+msgid "Data Element"
+msgstr "Elemento de Dados"
+
+msgid "Final result status"
+msgstr "Estado do resultado final"
+
+msgid "List of final result status that allows student promotion"
+msgstr "Lista de estados de resultado final que permitem promoção do aluno"
+
+msgid "Promotable Status"
+msgstr "Estado Promovível"
+
+msgid "Dropout Status"
+msgstr "Estado de abandono escolar"
+
+msgid "Allow multi selection of program stage"
+msgstr "Permitir seleção múltipla de estágio de programa"
+
+msgid "Performance/marks Program Stages"
+msgstr "Estágios de Programa de Desempenho/Notas"
+
+msgid "Tracker Program"
+msgstr "Programa de Rastreamento"
+
+msgid "Student Program"
+msgstr "Programa de Aluno"
+
+msgid "Data Element with Option Sets"
+msgstr "Elemento de Dados com Conjuntos de Opções"
+
+msgid "Academic Year"
+msgstr "Ano Letivo"
+
+msgid "Grade"
+msgstr "Série/Ano"
+
+msgid "The name that should appear in the global filters"
+msgstr "O nome que deve aparecer nos filtros globais"
+
+msgid "Grade filter name"
+msgstr "Nome do filtro de série"
+
+msgid "Non-repeatable ProgramStage"
+msgstr "Estágio de Programa Não Repetível"
+
+msgid "Registration Program Stage"
+msgstr "Estágio de Programa de Matrícula"
+
+msgid "Data optionally with Option Sets"
+msgstr "Dados opcionalmente com Conjuntos de Opções"
+
+msgid "Class/Section"
+msgstr "Turma/Seção"
+
+msgid "Section filter name"
+msgstr "Nome do filtro de turma"
+
+msgid "Non-repeateable ProgramStage"
+msgstr "Estágio de Programa Não Repetível"
+
+msgid "Socio-economics Program Stage"
+msgstr "Estágio de Programa Socioeconômico"
+
+msgid "Organisation Unit Data Element"
+msgstr "Elemento de Dados de Unidade Organizacional"
+
+msgid "Destiny School"
+msgstr "Escola de Destino"
+
+msgid "Origin School"
+msgstr "Escola de Origem"
+
+msgid "Program Stage"
+msgstr "Estágio de Programa"
+
+msgid "Transfer Status"
+msgstr "Estado da Transferência"
+
+msgid "Approved Code"
+msgstr "Código de Aprovado"
+
+msgid "Pedding Code"
+msgstr "Código de Pendente"
+
+msgid "Reproved Code"
+msgstr "Código de Reprovado"
+
+msgid "List of final result status that allows staff promotion"
+msgstr "Lista de estados de resultado final que permitem promoção do funcionário"
+
+msgid "Staff Program"
+msgstr "Programa de Funcionário"
+
+msgid "Employment type"
+msgstr "Tipo de vínculo empregatício"
+
+msgid "Employment type filter name"
+msgstr "Nome do filtro de tipo de vínculo"
+
+msgid "Repeatable ProgramStage"
+msgstr "Estágio de Programa Repetível"
+
+msgid "Type of staff"
+msgstr "Tipo de funcionário"
+
+msgid "Type of staff filter name"
+msgstr "Nome do filtro de tipo de funcionário"
+
+msgid "Enrollment"
+msgstr "Matrícula"
+
+msgid "Attendance"
+msgstr "Presença"
+
+msgid "Performance"
+msgstr "Desempenho"
+
+msgid "Transfer"
+msgstr "Transferência"
+
+msgid "Final Result"
+msgstr "Resultado Final"
+
+msgid "Staff registry"
+msgstr "Registro de Funcionário"
+
+msgid "Re-enroll"
+msgstr "Rematrícula"
+
+msgid "Program Details"
+msgstr "Detalhes do Programa"
+
+msgid "Attendance General Details"
+msgstr "Detalhes Gerais de Presença"
+
+msgid "Attendance Statuses Details"
+msgstr "Detalhes dos Estados de Presença"
+
+msgid "Registration Details"
+msgstr "Detalhes da Matrícula"
+
+msgid "If you don't use socio-economic module, please leave this field blanck"
+msgstr "Se você não utiliza o módulo socioeconômico, deixe este campo em branco"
+
+msgid "Select a program to follow and config the socio economic details"
+msgstr "Selecione um programa para acompanhar e configurar os detalhes socioeconômicos"
+
+msgid "Socio Economic Details"
+msgstr "Detalhes Socioeconômicos"
+
+msgid "Select a program to follow and config the registration details"
+msgstr "Selecione um programa para acompanhar e configurar os detalhes de matrícula"
+
+msgid "Default Configurations"
+msgstr "Configurações Padrão"
+
+msgid "Final Result Details"
+msgstr "Detalhes do Resultado Final"
+
+msgid "Promotion & Dropout Criteria"
+msgstr "Critérios de promoção e abandono escolar"
+
+msgid "Performance details"
+msgstr "Detalhes de Desempenho"
+
+msgid "Transfer Details"
+msgstr "Detalhes da Transferência"
+
+msgid "Transfer Status Details"
+msgstr "Detalhes do Estado da Transferência"

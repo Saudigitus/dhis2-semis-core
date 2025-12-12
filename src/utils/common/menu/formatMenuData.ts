@@ -18,12 +18,12 @@ type findMenuWithActivePathParams = {
 
 function findMenuWithActivePath({ menuData, location, sectionType }: findMenuWithActivePathParams): SideBarItemProps[] {
     menuData
-        ?.map((menuItem: SideBarItemProps) => menuItem.subItems
+        ?.map((menuItem: any) => menuItem.subItems
             ?.map((menuSubItem: any) => {
                 return menuSubItem.active = Boolean(
                     (menuSubItem.route === location.pathname || menuSubItem?.activationRoutes?.includes(location.pathname)) && (
-                        menuItem.title !== "Navigation" && menuItem.title !== "Configurations" && menuItem.title !== "" ?
-                            menuItem.title.toLocaleLowerCase() === sectionType?.toLocaleLowerCase()
+                        menuItem.id !== "navigation" && menuItem.id !== "configurations" && menuItem.title !== "" ?
+                            menuItem.id === sectionType?.toLocaleLowerCase()
                             : true
                     )
                 )

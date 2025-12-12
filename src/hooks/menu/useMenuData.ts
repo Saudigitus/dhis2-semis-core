@@ -1,4 +1,4 @@
-import { DataStoreState, useDataStoreKey, useSchoolCalendarKey } from "dhis2-semis-components";
+import { DataStoreState, useDataStoreKey, useSchoolCalendarKey, SchoolCalendarData } from "dhis2-semis-components";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useGetSectionTypeLabel, UserInfoState, useUrlParams } from "dhis2-semis-functions"
 import { menuData } from "../../utils/constants/menu/menuData";
@@ -38,7 +38,7 @@ const useMenuData = () => {
     let copy = [...dadosBrutos];
 
     for (const element of dataStoreData) {
-      const index = copy.findIndex(x => x.title?.toLowerCase() === element.key);
+      const index = copy.findIndex(x => x.id === element.key);
       if (index === -1) continue;
 
       const originalSubItems = copy[index].subItems ?? [];
@@ -52,14 +52,14 @@ const useMenuData = () => {
 
     for (const element of copy) {
       // if this position not exist in dataStoreData, hide all subitems minus configurations and navigation
-      const index = dataStoreData.findIndex(x => x.key?.toLowerCase() === element.title?.toLowerCase());
-      if (index === -1 && element.title?.toLowerCase() !== "configurations" && element.title?.toLowerCase() !== "navigation") {
+      const index = dataStoreData.findIndex(x => x.key?.toLowerCase() === element.id);
+      if (index === -1 && element.id !== "configurations" && element.id !== "navigation") {
         element.subItems = [];
       }
     }
 
     //hide admin title if no user doesnt have superuser authority
-    const indexConfigurations = copy.findIndex(x => x.title?.toLowerCase() === "configurations");
+    const indexConfigurations = copy.findIndex(x => x.id === "configurations");
 
     // Determine if the user has superuser authority
     const isSuperUser = userInfoState?.authorities?.includes("ALL");
@@ -92,9 +92,9 @@ const useMenuData = () => {
       }))
     } else {
       updatedHomePageData([dashboardData[dashboardData?.length - 1]])
-      updateMenuData(menuDataArray?.filter(x => x.title != 'Staff' && x.title != 'Student'))
+      updateMenuData(menuDataArray?.filter(x => x.id != 'staff' && x.id != 'student'))
     }
-  }, [dataStoreData, validation.valid, ulrParams])
+  }, [dataStoreData, schoolCalendar, validation.valid, ulrParams])
 
   return {
     menuData: formatMenuData({

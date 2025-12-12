@@ -1,5 +1,11 @@
 const config = {
     type: 'app',
+    i18n: {
+        paths: [
+            'src',
+            'node_modules/dhis2-semis-attendance/src',
+        ],
+    },
     name: 'SEMIS',
     description: "SEMIS",
 

@@ -5,6 +5,7 @@ import { DashboardCard, useSchoolCalendarKey, WithPadding } from "dhis2-semis-co
 import DashboardLayout from "../../components/dashboard/dashboardLayout";
 import { useMenuData } from "../../hooks/menu/useMenuData";
 import Validator from "../../components/validator/Validator";
+import i18n from "../../locales/index.js";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -13,10 +14,10 @@ const Home = () => {
 
   const defaultAcademicYear = schoolCalendar?.defaults?.academicYear ?? ""
 
-  const makeAction = (path: string, title: string) => ({
+  const makeAction = (path: string, sectionId: string) => ({
     icon: <MenuIcon />,
-    label: `List ${path.replace("-", " ")}`,
-    onAction: () => title != "Configurations" ? navigate(`/semis/${path}?sectionType=${title.toLocaleLowerCase()}&academicYear=${defaultAcademicYear}`) : navigate(`/semis/${path}`),
+    label: i18n.t(`List ${path.replace("-", " ")}`),
+    onAction: () => sectionId != "configurations" ? navigate(`/semis/${path}?sectionType=${sectionId}&academicYear=${defaultAcademicYear}`) : navigate(`/semis/${path}`),
   });
 
   return (
@@ -25,7 +26,7 @@ const Home = () => {
         <Validator />
         <>
           {
-            homePageData?.map(({ title, subItems }: any) => {
+            homePageData?.map(({ title, subItems, id }: any) => {
               return (
                 <DashboardLayout title={title} >
                   {
@@ -34,7 +35,7 @@ const Home = () => {
                         key={label}
                         icon={icon}
                         contents={[{ label }]}
-                        actions={[makeAction(path, title)]}
+                        actions={[makeAction(path, id)]}
                       />
                     ))
                   }

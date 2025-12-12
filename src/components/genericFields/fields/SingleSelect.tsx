@@ -1,0 +1,73 @@
+import { TextField } from "@mui/material";
+import { Autocomplete } from "@mui/material";
+import React from "react";
+import { useField, type FieldRenderProps } from "react-final-form";
+import ErrorIcon from '@mui/icons-material/Error';
+import styles from "./fields.module.css"
+import { useRecoilState } from "recoil";
+import { onSubmitClicked } from "../../../schema/formOnSubmitClicked";
+import { AutoCompleteProps } from "../../../types/form/GenericFieldsTypes";
+
+const OptionSetAutocomplete = (props: any) => {
+  const { input }: FieldRenderProps<any, HTMLElement> = useField(props.name);
+  const [cliked] = useRecoilState<boolean>(onSubmitClicked);
+
+  const options = (props?.options?.optionSet?.options != null)
+    ? props?.options.optionSet?.options.map((option: { value: string, label: string }) => ({
+      value: option.value,
+      label: option.label
+    }))
+    : [];
+
+  return (
+    <div className={styles["auto-complete__container"]}>
+      <Autocomplete
+        {...props}
+        options={options}
+        fullWidth
+        closeIcon={null}
+        className={styles["auto-complete__component"]}
+        disabled={props.disabled}
+        getOptionLabel={(option: any) => option.label}
+        getOptionSelected={(option, value) => option.value === value.value}
+        value={options?.find((element: { value: string }) => element.value === input.value) ?? null}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            variant="outlined"
+            placeholder={props?.Placeholder ?? "Select an option"}
+            label={props?.labelName ?? "Select an option"}
+            error={(cliked && (input.value === "") && props?.required) || false}
+            helperText={(cliked && input.value === "" && (Boolean(props?.required))) && "Please provide a value"}
+            size="small"
+            InputProps={{
+              ...params.InputProps,
+              style: {
+                backgroundColor: "#fff"
+              }
+            }}
+          />
+
+        )}
+        onChange={(_, value: any) => {
+          input.onChange(value?.value);
+        }}
+      />
+      {
+        (cliked && input.value === "" && (Boolean(props?.required))) && <div className={styles["alert-icon__area"]}>
+          <ErrorIcon />
+        </div>
+      }
+    </div>
+  );
+};
+
+function SingleSelectField(props: AutoCompleteProps) {
+  return (
+    <div>
+      <OptionSetAutocomplete {...props} name={props.name} />
+    </div>
+  );
+}
+
+export default SingleSelectField;

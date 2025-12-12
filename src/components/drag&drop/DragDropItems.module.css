@@ -1,0 +1,23 @@
+.container {
+    height: 45px;
+    display: flex !important;
+    align-items: center !important;
+    padding: 4px 0;
+    background-color: #fff;
+    justify-content: space-between !important;
+    border-bottom: solid 1px #cecece;
+}
+
+.container div {
+    width: max-content !important;
+} 
+
+.iconContainer {
+    float: right !important;
+    margin-top: 10px;
+}
+
+.title {
+    margin: 5px -10px 14px -10px;
+    font-weight: 500;
+}

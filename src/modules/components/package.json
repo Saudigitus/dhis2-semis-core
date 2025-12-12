@@ -1,14 +1,14 @@
 {
   "name": "dhis2-semis-components",
   "version": "2.0.60",
-  "main": "dist/index.js",
+  "main": "src/index.ts",
   "private": false,
-  "types": "dist/declarations/index.d.ts",
+  "types": "src/declarations/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.js",
-      "types": "./dist/declarations/index.d.ts"
+      "require": "./src/index.ts",
+      "import": "./src/index.ts",
+      "types": "./src/declarations/index.ts"
     }
   },
   "repository": "https://github.com/Saudigitus/dhis2-semis-components.git",

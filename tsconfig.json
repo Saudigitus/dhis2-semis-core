@@ -18,9 +18,17 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": ".",
     "paths": {
-      "@modules/*": ["src/modules/*"],
-      "@libs/*": ["src/libs/*"]
+      "dhis2-semis-components": [
+        "src/modules/components"
+      ],
+      "dhis2-semis-functions": [
+        "src/modules/functions"
+      ],
+      "dhis2-semis-types": [
+        "src/modules/types"
+      ],
     }
   },
   "include": [

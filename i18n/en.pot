@@ -5,8 +5,293 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-12-15T06:47:07.586Z\n"
-"PO-Revision-Date: 2025-12-15T06:47:07.586Z\n"
+"POT-Creation-Date: 2025-12-15T12:30:53.952Z\n"
+"PO-Revision-Date: 2025-12-15T12:30:53.953Z\n"
+
+msgid "Assing final result"
+msgstr "Assing final result"
+
+msgid "WARNING! {{size}} rows will be affected"
+msgstr "WARNING! {{size}} rows will be affected"
+
+msgid ""
+"No one will be able to access this program. Add some Organisation Units to "
+"the access list."
+msgstr ""
+"No one will be able to access this program. Add some Organisation Units to "
+"the access list."
+
+msgid "Final Results"
+msgstr "Final Results"
+
+msgid "Student final result"
+msgstr "Student final result"
+
+msgid "Assign Final Result"
+msgstr "Assign Final Result"
+
+msgid "Ref"
+msgstr "Ref"
+
+msgid "School"
+msgstr "School"
+
+msgid "Error message"
+msgstr "Error message"
+
+msgid "Dry Run"
+msgstr "Dry Run"
+
+msgid "Import data"
+msgstr "Import data"
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Errors were found!"
+msgstr "Errors were found!"
+
+msgid "No errors!"
+msgstr "No errors!"
+
+msgid "Erros were found, please review your file!"
+msgstr "Erros were found, please review your file!"
+
+msgid "Invalid records were found, please review your file!"
+msgstr "Invalid records were found, please review your file!"
+
+msgid "Occurred errors during the import process, please review your file!"
+msgstr "Occurred errors during the import process, please review your file!"
+
+msgid "Date imported successfully!"
+msgstr "Date imported successfully!"
+
+msgid ""
+"No errors were found during dry run process, you can proceed with the "
+"import."
+msgstr ""
+"No errors were found during dry run process, you can proceed with the "
+"import."
+
+msgid ""
+"No errors were found during file validation process, you can proceed with "
+"the dry run/import."
+msgstr ""
+"No errors were found during file validation process, you can proceed with "
+"the dry run/import."
+
+msgid "Summary"
+msgstr "Summary"
+
+msgid "Summary by tracker type"
+msgstr "Summary by tracker type"
+
+msgid "New Records"
+msgstr "New Records"
+
+msgid "Invalid Records"
+msgstr "Invalid Records"
+
+msgid "Imported Records"
+msgstr "Imported Records"
+
+msgid "Updated Records"
+msgstr "Updated Records"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Total rows"
+msgstr "Total rows"
+
+msgid "Error reports"
+msgstr "Error reports"
+
+msgid "No records to display!"
+msgstr "No records to display!"
+
+msgid "Export Data Details"
+msgstr "Export Data Details"
+
+msgid "Details"
+msgstr "Details"
+
+msgid "This file will allow the import of new student data into the system."
+msgstr "This file will allow the import of new student data into the system."
+
+msgid "Export progress"
+msgstr "Export progress"
+
+msgid "Import progress"
+msgstr "Import progress"
+
+msgid "Exporting {{module}} data"
+msgstr "Exporting {{module}} data"
+
+msgid "Importing {{module}} data"
+msgstr "Importing {{module}} data"
+
+msgid "Select an item"
+msgstr "Select an item"
+
+msgid "SELECT DATE"
+msgstr "SELECT DATE"
+
+msgid "CANCEL"
+msgstr "CANCEL"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Drag & drop files or browse"
+msgstr "Drag & drop files or browse"
+
+msgid "No files selected"
+msgstr "No files selected"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Continue"
+msgstr "Continue"
+
+msgid "Update"
+msgstr "Update"
+
+msgid "Restore"
+msgstr "Restore"
+
+msgid "More Filters"
+msgstr "More Filters"
+
+msgid "Enter text"
+msgstr "Enter text"
+
+msgid "Submit"
+msgstr "Submit"
+
+msgid "Choose File"
+msgstr "Choose File"
+
+msgid "Remove"
+msgstr "Remove"
+
+msgid "Search for a school"
+msgstr "Search for a school"
+
+msgid "No Label"
+msgstr "No Label"
+
+msgid "Select a"
+msgstr "Select a"
+
+msgid "item"
+msgstr "item"
+
+msgid "Search for a"
+msgstr "Search for a"
+
+msgid "Academic year"
+msgstr "Academic year"
+
+msgid "Select a academic year"
+msgstr "Select a academic year"
+
+msgid "Select a school"
+msgstr "Select a school"
+
+msgid "Perform Promotion"
+msgstr "Perform Promotion"
+
+msgid "WARNING"
+msgstr "WARNING"
+
+msgid "rows will be affected"
+msgstr "rows will be affected"
+
+msgid "Student promotion"
+msgstr "Student promotion"
+
+msgid "Enrollment History"
+msgstr "Enrollment History"
+
+msgid "This {{section}} is already enrolled for this year."
+msgstr "This {{section}} is already enrolled for this year."
+
+msgid "New enrollment"
+msgstr "New enrollment"
+
+msgid "No enrollments found."
+msgstr "No enrollments found."
+
+msgid "View history"
+msgstr "View history"
+
+msgid "Register new"
+msgstr "Register new"
+
+msgid "Fill in at least 1 attribute to search."
+msgstr "Fill in at least 1 attribute to search."
+
+msgid "Search by"
+msgstr "Search by"
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Results found for"
+msgstr "Results found for"
+
+msgid "search"
+msgstr "search"
+
+msgid "No"
+msgstr "No"
+
+msgid "found"
+msgstr "found"
+
+msgid "Continue serching or click"
+msgstr "Continue serching or click"
+
+msgid "if you want to register as a new"
+msgstr "if you want to register as a new"
+
+msgid "rows selected"
+msgstr "rows selected"
+
+msgid "Select columns"
+msgstr "Select columns"
+
+msgid "Columns to show in the table"
+msgstr "Columns to show in the table"
+
+msgid "Table Columns"
+msgstr "Table Columns"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Click to open in new tab"
+msgstr "Click to open in new tab"
+
+msgid "Rows per page"
+msgstr "Rows per page"
+
+msgid "Page"
+msgstr "Page"
+
+msgid "Previous Page"
+msgstr "Previous Page"
+
+msgid "Next Page"
+msgstr "Next Page"
+
+msgid "No data to display"
+msgstr "No data to display"
 
 msgid "Uncomplete attendance"
 msgstr "Uncomplete attendance"
@@ -55,9 +340,6 @@ msgstr "Please select all filters"
 
 msgid "All listed students will be affected"
 msgstr "All listed students will be affected"
-
-msgid "Cancel"
-msgstr "Cancel"
 
 msgid "Yes im sure"
 msgstr "Yes im sure"
@@ -390,9 +672,6 @@ msgstr "Operation concluded successfully"
 msgid "Single {{section}} Enrollment {{mode}}"
 msgstr "Single {{section}} Enrollment {{mode}}"
 
-msgid "Update"
-msgstr "Update"
-
 msgid "Edition"
 msgstr "Edition"
 
@@ -404,12 +683,6 @@ msgstr "SEMIS-Enrollment"
 
 msgid "Enrollments"
 msgstr "Enrollments"
-
-msgid "WARNING"
-msgstr "WARNING"
-
-msgid "rows will be affected"
-msgstr "rows will be affected"
 
 msgid ""
 "No one will be able to access this program. Add some Organisation Units to "
@@ -465,9 +738,6 @@ msgstr "SEMIS-Final-Result"
 msgid "Staff Re-enrollment"
 msgstr "Staff Re-enrollment"
 
-msgid "Final Results"
-msgstr "Final Results"
-
 msgid "Terminated"
 msgstr "Terminated"
 
@@ -495,29 +765,17 @@ msgstr "Bulk Final Result"
 msgid "Assign Re-enrollment Status"
 msgstr "Assign Re-enrollment Status"
 
-msgid "Assign Final Result"
-msgstr "Assign Final Result"
-
 msgid "Perform Re-enrollment"
 msgstr "Perform Re-enrollment"
 
-msgid "Perform Promotion"
-msgstr "Perform Promotion"
-
 msgid "Staff re-enrollment"
 msgstr "Staff re-enrollment"
-
-msgid "Student promotion"
-msgstr "Student promotion"
 
 msgid "Staff Re-enrollment Status"
 msgstr "Staff Re-enrollment Status"
 
 msgid "Staff re-enrollment status"
 msgstr "Staff re-enrollment status"
-
-msgid "Student final result"
-msgstr "Student final result"
 
 msgid "Some selected staff have no re-enrollment status or were not re-enrolled."
 msgstr "Some selected staff have no re-enrollment status or were not re-enrolled."
@@ -602,9 +860,6 @@ msgstr "Allow Edit Mode"
 msgid "SEMIS-Performance"
 msgstr "SEMIS-Performance"
 
-msgid "Save"
-msgstr "Save"
-
 msgid "Off day registered successfully"
 msgstr "Off day registered successfully"
 
@@ -628,261 +883,6 @@ msgstr "To register new school calendar, please fill out the form"
 
 msgid "Data registered successfully"
 msgstr "Data registered successfully"
-
-msgid "Assing final result"
-msgstr "Assing final result"
-
-msgid "WARNING! {{size}} rows will be affected"
-msgstr "WARNING! {{size}} rows will be affected"
-
-msgid ""
-"No one will be able to access this program. Add some Organisation Units to "
-"the access list."
-msgstr ""
-"No one will be able to access this program. Add some Organisation Units to "
-"the access list."
-
-msgid "Ref"
-msgstr "Ref"
-
-msgid "School"
-msgstr "School"
-
-msgid "Error message"
-msgstr "Error message"
-
-msgid "Dry Run"
-msgstr "Dry Run"
-
-msgid "Import data"
-msgstr "Import data"
-
-msgid "Close"
-msgstr "Close"
-
-msgid "Errors were found!"
-msgstr "Errors were found!"
-
-msgid "No errors!"
-msgstr "No errors!"
-
-msgid "Erros were found, please review your file!"
-msgstr "Erros were found, please review your file!"
-
-msgid "Invalid records were found, please review your file!"
-msgstr "Invalid records were found, please review your file!"
-
-msgid "Occurred errors during the import process, please review your file!"
-msgstr "Occurred errors during the import process, please review your file!"
-
-msgid "Date imported successfully!"
-msgstr "Date imported successfully!"
-
-msgid ""
-"No errors were found during dry run process, you can proceed with the "
-"import."
-msgstr ""
-"No errors were found during dry run process, you can proceed with the "
-"import."
-
-msgid ""
-"No errors were found during file validation process, you can proceed with "
-"the dry run/import."
-msgstr ""
-"No errors were found during file validation process, you can proceed with "
-"the dry run/import."
-
-msgid "Summary"
-msgstr "Summary"
-
-msgid "Summary by tracker type"
-msgstr "Summary by tracker type"
-
-msgid "New Records"
-msgstr "New Records"
-
-msgid "Invalid Records"
-msgstr "Invalid Records"
-
-msgid "Imported Records"
-msgstr "Imported Records"
-
-msgid "Updated Records"
-msgstr "Updated Records"
-
-msgid "Error"
-msgstr "Error"
-
-msgid "Total rows"
-msgstr "Total rows"
-
-msgid "Error reports"
-msgstr "Error reports"
-
-msgid "No records to display!"
-msgstr "No records to display!"
-
-msgid "Export Data Details"
-msgstr "Export Data Details"
-
-msgid "Details"
-msgstr "Details"
-
-msgid "This file will allow the import of new student data into the system."
-msgstr "This file will allow the import of new student data into the system."
-
-msgid "Export progress"
-msgstr "Export progress"
-
-msgid "Import progress"
-msgstr "Import progress"
-
-msgid "Exporting {{module}} data"
-msgstr "Exporting {{module}} data"
-
-msgid "Importing {{module}} data"
-msgstr "Importing {{module}} data"
-
-msgid "Select an item"
-msgstr "Select an item"
-
-msgid "SELECT DATE"
-msgstr "SELECT DATE"
-
-msgid "CANCEL"
-msgstr "CANCEL"
-
-msgid "OK"
-msgstr "OK"
-
-msgid "Drag & drop files or browse"
-msgstr "Drag & drop files or browse"
-
-msgid "No files selected"
-msgstr "No files selected"
-
-msgid "Continue"
-msgstr "Continue"
-
-msgid "Restore"
-msgstr "Restore"
-
-msgid "More Filters"
-msgstr "More Filters"
-
-msgid "Enter text"
-msgstr "Enter text"
-
-msgid "Submit"
-msgstr "Submit"
-
-msgid "Choose File"
-msgstr "Choose File"
-
-msgid "Remove"
-msgstr "Remove"
-
-msgid "Search for a school"
-msgstr "Search for a school"
-
-msgid "No Label"
-msgstr "No Label"
-
-msgid "Select a"
-msgstr "Select a"
-
-msgid "item"
-msgstr "item"
-
-msgid "Search for a"
-msgstr "Search for a"
-
-msgid "Academic year"
-msgstr "Academic year"
-
-msgid "Select a academic year"
-msgstr "Select a academic year"
-
-msgid "Select a school"
-msgstr "Select a school"
-
-msgid "Enrollment History"
-msgstr "Enrollment History"
-
-msgid "This {{section}} is already enrolled for this year."
-msgstr "This {{section}} is already enrolled for this year."
-
-msgid "New enrollment"
-msgstr "New enrollment"
-
-msgid "No enrollments found."
-msgstr "No enrollments found."
-
-msgid "View history"
-msgstr "View history"
-
-msgid "Register new"
-msgstr "Register new"
-
-msgid "Fill in at least 1 attribute to search."
-msgstr "Fill in at least 1 attribute to search."
-
-msgid "Search by"
-msgstr "Search by"
-
-msgid "Search"
-msgstr "Search"
-
-msgid "Results found for"
-msgstr "Results found for"
-
-msgid "search"
-msgstr "search"
-
-msgid "No"
-msgstr "No"
-
-msgid "found"
-msgstr "found"
-
-msgid "Continue serching or click"
-msgstr "Continue serching or click"
-
-msgid "if you want to register as a new"
-msgstr "if you want to register as a new"
-
-msgid "rows selected"
-msgstr "rows selected"
-
-msgid "Select columns"
-msgstr "Select columns"
-
-msgid "Columns to show in the table"
-msgstr "Columns to show in the table"
-
-msgid "Table Columns"
-msgstr "Table Columns"
-
-msgid "Actions"
-msgstr "Actions"
-
-msgid "Click to open in new tab"
-msgstr "Click to open in new tab"
-
-msgid "Rows per page"
-msgstr "Rows per page"
-
-msgid "Page"
-msgstr "Page"
-
-msgid "Previous Page"
-msgstr "Previous Page"
-
-msgid "Next Page"
-msgstr "Next Page"
-
-msgid "No data to display"
-msgstr "No data to display"
 
 msgid "Configurations"
 msgstr "Configurations"

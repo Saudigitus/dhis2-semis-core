@@ -9,7 +9,8 @@
     "build-unix": "node --max-old-space-size=8096 ./node_modules/.bin/d2-app-scripts build --no-verify",
     "start": "d2-app-scripts start --proxy  https://emis.dhis2.org/startracker",
     "test": "d2-app-scripts test",
-    "deploy": "d2-app-scripts deploy"
+    "deploy": "d2-app-scripts deploy",
+"push-enrollment": "git add src/apps/enrollment && git commit -m \"%%npm_config_msg%%\" && git push && git subtree push --prefix=src/apps/enrollment https://github.com/Saudigitus/dhis2-semis-enrollment.git staging"
   },
   "devDependencies": {
     "@dhis2/cli-app-scripts": "12.3.0",

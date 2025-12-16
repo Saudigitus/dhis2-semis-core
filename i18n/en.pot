@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-12-16T10:58:10.060Z\n"
-"PO-Revision-Date: 2025-12-16T10:58:10.060Z\n"
+"POT-Creation-Date: 2025-12-16T13:25:27.315Z\n"
+"PO-Revision-Date: 2025-12-16T13:25:27.315Z\n"
 
 msgid "Assing final result"
 msgstr "Assing final result"
@@ -958,6 +958,81 @@ msgstr "Saturday"
 
 msgid "Sunday"
 msgstr "Sunday"
+
+msgid "Perform transfer"
+msgstr "Perform transfer"
+
+msgid "Confirm"
+msgstr "Confirm"
+
+msgid "Attention"
+msgstr "Attention"
+
+msgid "This action will transfer this {{section}} into this school."
+msgstr "This action will transfer this {{section}} into this school."
+
+msgid "You are about to reject the {{section}} transfer to this school."
+msgstr "You are about to reject the {{section}} transfer to this school."
+
+msgid "Are you sure you want to approve the transfer of "
+msgstr "Are you sure you want to approve the transfer of "
+
+msgid "from"
+msgstr "from"
+
+msgid "to"
+msgstr "to"
+
+msgid "Are you sure you want to reject the transfer of"
+msgstr "Are you sure you want to reject the transfer of"
+
+msgid "Transfer Approval"
+msgstr "Transfer Approval"
+
+msgid "Incoming transfer"
+msgstr "Incoming transfer"
+
+msgid "Outgoing transfer"
+msgstr "Outgoing transfer"
+
+msgid "SEMIS - Transfer"
+msgstr "SEMIS - Transfer"
+
+msgid "Transfers"
+msgstr "Transfers"
+
+msgid "Resquest time"
+msgstr "Resquest time"
+
+msgid "Select at least one row."
+msgstr "Select at least one row."
+
+msgid "Execute transfer"
+msgstr "Execute transfer"
+
+msgid "Transfer request sent successfully"
+msgstr "Transfer request sent successfully"
+
+msgid "Please fill all required fields"
+msgstr "Please fill all required fields"
+
+msgid "Request transfer"
+msgstr "Request transfer"
+
+msgid "WARNING!"
+msgstr "WARNING!"
+
+msgid "Select the destination school"
+msgstr "Select the destination school"
+
+msgid "Perform Transfer"
+msgstr "Perform Transfer"
+
+msgid "SEMIS-Transfer-Execute"
+msgstr "SEMIS-Transfer-Execute"
+
+msgid "Transfer Execute"
+msgstr "Transfer Execute"
 
 msgid "Configurations"
 msgstr "Configurations"

@@ -55,6 +55,7 @@
     "@mui/x-date-pickers": "^7.0.0",
     "exceljs": "^4.4.0",
     "file-saver": "^2.0.5",
-    "react18-json-view": "0.2.9"
+    "react18-json-view": "0.2.9",
+    "react-icons": "^5.5.0"
   }
 }

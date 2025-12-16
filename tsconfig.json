@@ -45,9 +45,9 @@
         "src/modules/final-result/src"
       ],
       "dhis2-semis-transfer-execute": [
-        "src/modules/transfer/src"
+        "src/modules/transfer-execute/src"
       ],
-      "dhis2-semis-configuration": [
+      "dhis2-semis-configurations": [
         "src/modules/configurations/src"
       ],
       "dhis2-semis-school-calendar": [

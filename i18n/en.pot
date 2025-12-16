@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-12-16T09:45:35.175Z\n"
-"PO-Revision-Date: 2025-12-16T09:45:35.175Z\n"
+"POT-Creation-Date: 2025-12-16T10:09:40.292Z\n"
+"PO-Revision-Date: 2025-12-16T10:09:40.292Z\n"
 
 msgid "Assing final result"
 msgstr "Assing final result"
@@ -292,6 +292,9 @@ msgstr "Next Page"
 
 msgid "No data to display"
 msgstr "No data to display"
+
+msgid "Hello {{name}}"
+msgstr "Hello {{name}}"
 
 msgid "Uncomplete attendance"
 msgstr "Uncomplete attendance"

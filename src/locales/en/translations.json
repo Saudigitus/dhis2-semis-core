@@ -90,6 +90,7 @@
     "Previous Page": "Previous Page",
     "Next Page": "Next Page",
     "No data to display": "No data to display",
+    "Hello {{name}}": "Hello {{name}}",
     "Uncomplete attendance": "Uncomplete attendance",
     "Complete attendance": "Complete attendance",
     "Mark all as": "Mark all as",

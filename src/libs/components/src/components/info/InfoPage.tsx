@@ -10,7 +10,6 @@ export default function InfoPage(props: InfoTypes) {
         <div className={styles.containerInit}>
             <Paper elevation={1} className={styles.paperInit}>
                 {title && <Text label={title} type='title' weight={fontWeigth} />}
-                Edson Nhancale
                 {
                     sections.map((section) => {
                         return (

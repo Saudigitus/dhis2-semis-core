@@ -1,0 +1,74 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"POT-Creation-Date: 2025-10-31T08:35:52.045Z\n"
+"PO-Revision-Date: 2025-10-31T08:35:52.045Z\n"
+"Language: pt\n"
+"Content-Language: pt-BR\n"
+
+msgid "Please select an organisation unit before"
+msgstr "Por favor, selecione uma unidade organizacional antes"
+
+msgid "Perform transfer"
+msgstr "Realizar transferência"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Confirm"
+msgstr "Confirmar"
+
+msgid "Attention"
+msgstr "Atenção"
+
+msgid "This action will transfer this {{section}} into this school."
+msgstr "Esta ação transferirá este(a) {{section}} para esta escola."
+
+msgid "You are about to reject the {{section}} transfer to this school."
+msgstr "Você está prestes a rejeitar a transferência deste(a) {{section}} para esta escola."
+
+msgid "Are you sure you want to approve the transfer of "
+msgstr "Tem certeza de que deseja aprovar a transferência de "
+
+msgid "from"
+msgstr "de"
+
+msgid "to"
+msgstr "para"
+
+msgid "Are you sure you want to reject the transfer of"
+msgstr "Tem certeza de que deseja rejeitar a transferência de"
+
+msgid "Transfer Approval"
+msgstr "Aprovação de Transferência"
+
+msgid "Incoming transfer"
+msgstr "Transferência de entrada"
+
+msgid "Outgoing transfer"
+msgstr "Transferência de saída"
+
+msgid "SEMIS - Transfer"
+msgstr "SEMIS - Transferência"
+
+msgid "Select the Organization unit you want to view data"
+msgstr "Selecione a unidade organizacional que deseja visualizar os dados"
+
+msgid "Use global filters(Class, Grade and Academic Year)"
+msgstr "Use os filtros globais (Turma, Classe e Ano Letivo)"
+
+msgid "Transfers"
+msgstr "Transferências"
+
+msgid "Resquest time"
+msgstr "Hora da solicitação"
+
+msgid "student"
+msgstr "estudante"
+
+msgid "staff"
+msgstr "funcionário"

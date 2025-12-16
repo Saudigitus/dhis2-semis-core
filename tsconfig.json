@@ -21,14 +21,26 @@
     "baseUrl": ".",
     "paths": {
       "dhis2-semis-components": [
-        "src/modules/components"
+        "src/libs/components/src"
       ],
       "dhis2-semis-functions": [
-        "src/modules/functions"
+        "src/libs/functions/src"
       ],
       "dhis2-semis-types": [
-        "src/modules/types"
+        "src/libs/types/src"
       ],
+      "dhis2-semis-enrollment": [
+        "src/modules/enrollment/src"
+      ],
+      "dhis2-semis-performance": [
+        "src/modules/performance/src"
+      ],
+      "@libs/*": [
+        "src/libs/*"
+      ],
+      "@modules/*": [
+        "src/modules/*"
+      ]
     }
   },
   "include": [

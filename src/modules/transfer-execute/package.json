@@ -54,9 +54,6 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "7.1.0",
     "@mui/material": "7.1.0",
-    "dhis2-semis-components": "*",
-    "dhis2-semis-functions": "*",
-    "dhis2-semis-types": "*",
     "recoil": "^0.7.7"
   },
   "dependencies": {

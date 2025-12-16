@@ -1,2 +1,2 @@
-import EnrollmentPage from './app/App'
-export { EnrollmentPage }
+import {Enrollment} from './pages/index'
+export { Enrollment }

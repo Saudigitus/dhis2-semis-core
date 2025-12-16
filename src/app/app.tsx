@@ -5,7 +5,7 @@ import InitializeWrapper from "../components/wrapper/InitializeWrapper"
 import i18n from "../locales"
 import { useEffect, useState } from "react"
 import { useCacheData } from "dhis2-semis-functions"
-import { AppWrapper } from "../libs/components/src/index"
+import { AppWrapper } from "dhis2-semis-components"
 
 const App = () => {
   const { baseUrl } = useConfig()

@@ -1,21 +1,24 @@
 import { defineConfig } from 'vite'
-import path from 'path'
+import { resolve } from 'path'
 
 export default defineConfig({
   resolve: {
     alias: {
-      'dhis2-semis-components': path.resolve(
+      'dhis2-semis-components': resolve(__dirname, 'src/libs/components/src'),
+      'dhis2-semis-types': resolve(__dirname, 'src/libs/types/src'),
+      'dhis2-semis-functions': resolve(__dirname, 'src/libs/functions/src'),
+
+      'dhis2-semis-enrollment': resolve(
         __dirname,
-        'src/libs/components/src'
+        'src/modules/enrollment/src'
       ),
-      'dhis2-semis-functions': path.resolve(
+      'dhis2-semis-performance': resolve(
         __dirname,
-        'src/libs/functions/src'
+        'src/modules/performance/src'
       ),
-      'dhis2-semis-types': path.resolve(
-        __dirname,
-        'src/libs/types/src'
-      ),
-    },
-  },
+
+      '@libs': resolve(__dirname, 'src/libs'),
+      '@modules': resolve(__dirname, 'src/modules')
+    }
+  }
 })

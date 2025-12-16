@@ -1,13 +1,15 @@
 import Home from "../pages/home";
 import { EnrollmentPage } from "dhis2-semis-enrollment";
-import { App as Attendance } from "dhis2-semis-attendance"
-import { FinalResult } from "dhis2-semis-final-result"
-import { Transfer } from "dhis2-semis-transfer"
-import { Performance } from "dhis2-semis-performance"
-import { TransferExecute } from "dhis2-semis-transfer"
-import { ConfigirationsPage } from "dhis2-semis-configuration";
-import { SchoolCalendar } from "dhis2-semis-school-calendar"
+// import { FinalResult } from "dhis2-semis-final-result"
+// import { Transfer } from "dhis2-semis-transfer"
+// import { Performance } from "dhis2-semis-performance"
+// import { Transfer as TransferExecute } from "dhis2-semis-transfer-execute"
+// import { ConfigirationsPage } from "dhis2-semis-configuration";
+// import { SchoolCalendar } from "dhis2-semis-school-calendar"
 import i18n from "../locales/index.js";
+import { FinalResult } from "dhis2-semis-final-result";
+import { ConfigirationsPage } from "dhis2-semis-configuration";
+import { SchoolCalendar } from "dhis2-semis-school-calendar";
 
 export default function RouteList() {
     return [
@@ -19,34 +21,34 @@ export default function RouteList() {
             path: "/semis/enrollments",
             component: <EnrollmentPage i18n={i18n} />
         },
-        {
-            path: "/semis/attendance",
-            component: <Attendance i18n={i18n} />
-        },
-        {
-            path: "/semis/performance",
-            component: <Performance i18n={i18n} />
-        },
-        {
-            path: "/semis/transfer",
-            component: <Transfer i18n={i18n} />
-        },
-        {
-            path: "/semis/transfer-execute",
-            component: <TransferExecute i18n={i18n} />
-        },
+        // {
+        //     path: "/semis/attendance",
+        //     component: <AttendancePage i18n={i18n} />
+        // },
+        // {
+        //     path: "/semis/performance",
+        //     component: <Performance i18n={i18n} />
+        // },
+        // {
+        //     path: "/semis/transfer",
+        //     component: <Transfer />
+        // },
+        // {
+        //     path: "/semis/transfer-execute",
+        //     component: <TransferExecute />
+        // },
         {
             path: "/semis/final-result",
             component: <FinalResult i18n={i18n} />
         },
-        {
-            path: "/semis/re-enroll",
-            component: <FinalResult i18n={i18n} />
-        },
-        {
-            path: "/semis/configuration",
-            component: <ConfigirationsPage i18n={i18n}/>
-        },
+        // {
+        //     path: "/semis/re-enroll",
+        //     component: <FinalResult i18n={i18n} />
+        // },
+        // {
+        //     path: "/semis/configuration",
+        //     component: <ConfigirationsPage i18n={i18n} />
+        // },
         {
             path: "/semis/school-calendar/*",
             component: <SchoolCalendar i18n={i18n} />

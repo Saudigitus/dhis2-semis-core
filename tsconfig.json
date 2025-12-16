@@ -45,7 +45,7 @@
         "src/modules/final-result/src"
       ],
       "dhis2-semis-transfer-execute": [
-        "src/modules/transfer-execute/src"
+        "src/modules/transfer/src"
       ],
       "dhis2-semis-configuration": [
         "src/modules/configurations/src"

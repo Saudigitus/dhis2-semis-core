@@ -4,7 +4,7 @@ import { App as Attendance } from "dhis2-semis-attendance"
 import { FinalResult } from "dhis2-semis-final-result"
 import { Transfer } from "dhis2-semis-transfer"
 import { Performance } from "dhis2-semis-performance"
-import { TransferExecute } from "dhis2-semis-transfer-execute"
+import { TransferExecute } from "dhis2-semis-transfer"
 import { ConfigirationsPage } from "dhis2-semis-configuration";
 import { SchoolCalendar } from "dhis2-semis-school-calendar"
 import i18n from "../locales/index.js";

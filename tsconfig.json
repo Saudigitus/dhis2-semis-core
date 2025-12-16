@@ -35,6 +35,24 @@
       "dhis2-semis-performance": [
         "src/modules/performance/src"
       ],
+      "dhis2-semis-attendance": [
+        "src/modules/attendance/src"
+      ],
+      "dhis2-semis-transfer": [
+        "src/modules/transfer/src"
+      ],
+      "dhis2-semis-final-result": [
+        "src/modules/final-result/src"
+      ],
+      "dhis2-semis-transfer-execute": [
+        "src/modules/transfer-execute/src"
+      ],
+      "dhis2-semis-configuration": [
+        "src/modules/configurations/src"
+      ],
+      "dhis2-semis-school-callendar": [
+        "src/modules/school-callendar/src"
+      ],
       "@libs/*": [
         "src/libs/*"
       ],

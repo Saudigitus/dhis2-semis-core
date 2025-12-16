@@ -6,7 +6,7 @@ import { Transfer } from "dhis2-semis-transfer"
 import { Performance } from "dhis2-semis-performance"
 import { TransferExecute } from "dhis2-semis-transfer-execute"
 import { ConfigirationsPage } from "dhis2-semis-configuration";
-import { SchoolCalendar } from "dhis2-semis-school-callendar"
+import { SchoolCalendar } from "dhis2-semis-school-calendar"
 import i18n from "../locales/index.js";
 
 export default function RouteList() {

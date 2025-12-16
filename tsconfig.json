@@ -50,8 +50,8 @@
       "dhis2-semis-configuration": [
         "src/modules/configurations/src"
       ],
-      "dhis2-semis-school-callendar": [
-        "src/modules/school-callendar/src"
+      "dhis2-semis-school-calendar": [
+        "src/modules/school-calendar/src"
       ],
       "@libs/*": [
         "src/libs/*"

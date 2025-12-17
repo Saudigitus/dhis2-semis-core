@@ -84,6 +84,7 @@ export default function Attendance({ i18n }: { i18n: D2I18n }) {
 
     return (
         <div style={{ height: "85vh" }}>
+            Edson Nhancale
             {
                 !(Boolean(schoolName) && Boolean(school) && areAllSelected()) ?
                     <InfoPageHolder i18n={i18n} />

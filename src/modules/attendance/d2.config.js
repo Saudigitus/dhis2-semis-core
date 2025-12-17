@@ -6,4 +6,6 @@ const config = {
         app: './src/app/App.tsx',
     },
 }  
+
+"Testing part"
 module.exports = config

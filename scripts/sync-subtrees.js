@@ -58,9 +58,9 @@ try {
             );
 
             console.log(`✅ ${subtree.folder} sincronizado`);
-        } catch {
+        } catch (err) {
             console.log(
-                `⚠️ Falha ao sincronizar ${subtree.folder} (branch '${currentBranch}' existe no remoto?)`
+                `⚠️ Falha ao sincronizar ${subtree.folder} (branch '${currentBranch}' existe no remoto?) ${err}`
             );
         }
     });

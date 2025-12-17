@@ -3,7 +3,7 @@
 const { execSync } = require('child_process');
 const path = require('path');
 
-// Evita loop infinito
+// Evita loop infinito causado por pushes internos do subtree
 if (process.env.SEMIS_SUBTREE_SYNC === '1') {
     process.exit(0);
 }
@@ -33,12 +33,12 @@ function getCurrentBranch() {
 }
 
 function getCommitMessage() {
-    // Pega a mensagem completa do último commit (HEAD)
     return runCommand('git log -1 --pretty=%B').trim();
 }
 
 function getChangedFiles() {
-    const output = runCommand('git diff-tree --no-commit-id --name-only -r HEAD');
+    // Compara o commit atual (HEAD) com o anterior (HEAD^)
+    const output = runCommand('git diff-tree --no-commit-id --name-only -r HEAD^..HEAD');
     return output
         .split('\n')
         .map(file => file.replace(/\\/g, '/'))
@@ -72,13 +72,16 @@ try {
     console.log(`📝 Mensagem do commit: "${commitMessage || '(vazio)'}"\n`);
 
     if (changedFiles.length === 0) {
-        console.log('ℹ️  Nenhum ficheiro alterado. Nada a sincronizar.');
+        console.log('ℹ️  Nenhum ficheiro alterado no commit. Nada a sincronizar.');
         process.exit(0);
     }
 
+    // Debug opcional (podes comentar)
+    // console.log('📄 Ficheiros alterados neste commit:', changedFiles);
+
     let hasAnySync = false;
 
-    // Define a variável para evitar loops antes de qualquer push
+    // Define variável para evitar loop antes dos pushes
     process.env.SEMIS_SUBTREE_SYNC = '1';
 
     for (const subtree of SUBTREES) {
@@ -90,32 +93,23 @@ try {
         hasAnySync = true;
         console.log(`🔄 Sincronizando subtree: ${subtree.folder}`);
 
-        // Se a branch ainda não existe no remoto, vamos criar com a mensagem correta
         const branchExists = remoteHasBranch(subtree.remote, currentBranch);
 
-        const pushCommand = [
-            'git subtree push',
-            `--prefix=${subtree.folder}`,
-            subtree.remote,
-            currentBranch,
-            // Força a reutilização da mensagem do commit original
-            `--message="${commitMessage.replace(/"/g, '\\"')}"`
-        ].join(' ');
+        const escapedMessage = commitMessage.replace(/"/g, '\\"');
+        const pushCommand = `git subtree push --prefix=${subtree.folder} ${subtree.remote} ${currentBranch} --message="${escapedMessage}"`;
 
         try {
             execSync(pushCommand, { stdio: 'inherit' });
-            console.log(`✅ ${subtree.folder} sincronizado com a mesma mensagem de commit\n`);
+            console.log(`✅ ${subtree.folder} sincronizado com sucesso\n`);
         } catch (error) {
             console.log(`❌ Falha ao sincronizar ${subtree.folder}`);
 
-            if (error.message.includes('no upstream configured') || !branchExists) {
-                console.log(`   💡 Dica: A branch '${currentBranch}' ainda não existe no módulo.`);
-                console.log(`      Execute manualmente uma vez para criar:\n`);
-                console.log(`      git subtree push --prefix=${subtree.folder} ${subtree.remote} ${currentBranch}\n`);
+            if (!branchExists || error.message.includes('no upstream')) {
+                console.log(`   💡 A branch '${currentBranch}' ainda não existe no remote.`);
+                console.log(`      Cria manualmente uma vez:\n      ${pushCommand.replace('--message="..."', '')}\n`);
             } else {
-                console.log(`   Código de erro: ${error.status}`);
+                console.log(`   Código de erro: ${error.status}\n`);
             }
-            console.log(''); // linha em branco
         }
     }
 
@@ -128,6 +122,5 @@ try {
     console.error(error.message || error);
     process.exit(1);
 } finally {
-    // Sempre limpa a variável de ambiente
     delete process.env.SEMIS_SUBTREE_SYNC;
 }

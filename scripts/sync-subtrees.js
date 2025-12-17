@@ -25,7 +25,7 @@ function tryPushSubtree(folder, repo, branch) {
   // 1) Tenta git subtree push normalmente (captura saída)
   try {
     console.log(`git push using: ${repo} ${branch}`);
-    const out = runCommand(`git subtree push --prefix=${folder} ${repo} ${branch}`, { env });
+    const out = runCommand(`git subtree push --prefix=${folder} ${repo} ${branch} dummy`, { env });
     // se chegar aqui, push foi exitoso
     process.stdout.write(out || '');
     console.log(`✅ ${folder} sincronizado (push padrão)`);

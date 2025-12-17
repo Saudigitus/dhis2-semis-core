@@ -10,7 +10,7 @@ if (process.env.SEMIS_SUBTREE_SYNC === '1') {
 
 const SUBTREES = [
     { folder: 'src/modules/attendance',           remote: 'https://github.com/Saudigitus/dhis2-semis-attendance.git' },
-    { folder: 'src/modules/enrollment',           remote: 'enrollment' }, // vai tentar resolver como remote ou usar como URL se falhar
+    { folder: 'src/modules/enrollment',           remote: 'https://github.com/Saudigitus/dhis2-semis-enrollment.git' }, // vai tentar resolver como remote ou usar como URL se falhar
     { folder: 'src/modules/final-result',         remote: 'https://github.com/Saudigitus/dhis2-semis-final-result.git' },
     { folder: 'src/modules/performance',          remote: 'https://github.com/Saudigitus/dhis2-semis-performance.git' },
     { folder: 'src/modules/school-calendar',      remote: 'https://github.com/Saudigitus/dhis2-semis-school-calendar.git' },

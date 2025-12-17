@@ -5,5 +5,5 @@ const config = {
     entryPoints: {
         app: './src/app/App.tsx',
     },
-}   
+}  
 module.exports = config

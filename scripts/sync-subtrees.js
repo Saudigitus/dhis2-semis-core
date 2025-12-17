@@ -3,7 +3,6 @@ const { execSync } = require('child_process');
 /**
  * Evita loop infinito:
  * git subtree push cria commits internos
- * que voltam a disparar o hook
  */
 if (process.env.SEMIS_SUBTREE_SYNC === '1') {
     process.exit(0);
@@ -21,7 +20,6 @@ const SUBTREES = [
 ];
 
 try {
-    // Branch atual
     const currentBranch = execSync('git rev-parse --abbrev-ref HEAD')
         .toString()
         .trim();
@@ -29,21 +27,21 @@ try {
     console.log('\n🌿 SEMIS | Sync automático de subtrees');
     console.log(`🌿 Branch: ${currentBranch}`);
 
-    // Ficheiros alterados no último commit
-    let diffOutput = '';
-    try {
-        diffOutput = execSync('git diff --name-only HEAD^ HEAD').toString();
-    } catch {
-        // Primeiro commit ou erro → sai silenciosamente
-        process.exit(0);
-    }
+    /**
+     * ✅ COMANDO CORRETO PARA HOOKS
+     */
+    const diffOutput = execSync(
+        'git diff-tree --no-commit-id --name-only -r HEAD'
+    ).toString();
 
     const changedFiles = diffOutput
         .split('\n')
         .map(f => f.replace(/\\/g, '/'))
         .filter(Boolean);
 
-    // Para cada subtree
+    // DEBUG (opcional, podes remover depois)
+    // console.log('📄 Ficheiros alterados:', changedFiles);
+
     SUBTREES.forEach(subtree => {
         const hasChanges = changedFiles.some(file =>
             file.startsWith(`${subtree.folder}/`)
@@ -54,23 +52,19 @@ try {
         console.log(`🔄 Sincronizando ${subtree.folder}`);
 
         try {
-            /**
-             * Windows-safe + cross-platform:
-             * cmd /c "set VAR=1 && comando"
-             */
             execSync(
                 `cmd /c "set SEMIS_SUBTREE_SYNC=1 && git subtree push --prefix=${subtree.folder} ${subtree.remote} ${currentBranch}"`,
                 { stdio: 'inherit' }
             );
 
             console.log(`✅ ${subtree.folder} sincronizado`);
-        } catch (err) {
+        } catch {
             console.log(
                 `⚠️ Falha ao sincronizar ${subtree.folder} (branch '${currentBranch}' existe no remoto?)`
             );
         }
     });
 
-} catch {
-    // Silencioso para não quebrar o commit
+} catch (err) {
+    console.log('⚠️ Erro inesperado no sync de subtrees', err);
 }

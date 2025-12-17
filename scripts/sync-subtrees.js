@@ -53,7 +53,7 @@ try {
 
         try {
             execSync(
-                `bash -c 'git add ${subtree.folder} && git subtree push --prefix=${subtree.folder} ${subtree.remote} ${currentBranch} dummy"`,
+                `cmd /c 'git add ${subtree.folder} && git subtree push --prefix=${subtree.folder} ${subtree.remote} ${currentBranch} dummy"`,
                 { stdio: 'inherit' }
             );
 

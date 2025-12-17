@@ -5,7 +5,7 @@ function MyApp() {
 
     return (
         <div>
-            "WELLCOME"
+            "WELLCOME "
         </div>
     )
 

@@ -10,7 +10,8 @@
     "start": "d2-app-scripts start --proxy  https://emis.dhis2.org/startracker",
     "test": "d2-app-scripts test",
     "deploy": "d2-app-scripts deploy",
-    "push-enrollment": "git add src/modules/enrollment && git commit -m \"%%npm_config_msg%%\" && git push && git subtree push --prefix=src/modules/enrollment https://github.com/Saudigitus/dhis2-semis-enrollment.git staging"
+    "push::enrollment": "bash -c 'git add src/modules/enrollment && git commit -m \"$1\" && git push && git subtree push --prefix=src/modules/enrollment enrollment \"$2\"' dummy",
+    "pull::enrollment": "bash -c 'git pull && git subtree pull --prefix=src/modules/enrollment enrollment \"$1\"' dummy"
   },
   "devDependencies": {
     "@dhis2/cli-app-scripts": "12.9.2",

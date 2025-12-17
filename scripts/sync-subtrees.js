@@ -10,7 +10,7 @@ if (process.env.SEMIS_SUBTREE_SYNC === '1') {
 
 const SUBTREES = [
     { folder: 'src/modules/attendance',           remote: 'https://github.com/Saudigitus/dhis2-semis-attendance.git' },
-    { folder: 'src/modules/enrollment',           remote: 'https://github.com/Saudigitus/dhis2-semis-enrollment.git' }, // vai tentar resolver como remote ou usar como URL se falhar
+    { folder: 'src/modules/enrollment',           remote: 'https://github.com/Saudigitus/dhis2-semis-enrollment.git' }, // URL completa
     { folder: 'src/modules/final-result',         remote: 'https://github.com/Saudigitus/dhis2-semis-final-result.git' },
     { folder: 'src/modules/performance',          remote: 'https://github.com/Saudigitus/dhis2-semis-performance.git' },
     { folder: 'src/modules/school-calendar',      remote: 'https://github.com/Saudigitus/dhis2-semis-school-calendar.git' },
@@ -22,13 +22,11 @@ function runCommand(cmd) {
     return execSync(cmd, { encoding: 'utf8' }).trim();
 }
 
-// Resolve remote: se for nome, pega a URL; se não, usa como está (URL direta)
 function resolveRemote(remoteArg) {
     try {
         return runCommand(`git config --get remote.${remoteArg}.url`);
     } catch {
-        // Se não for remote configurado, assume que é URL direta
-        return remoteArg;
+        return remoteArg; // Assume URL direta
     }
 }
 
@@ -45,48 +43,45 @@ try {
     console.log(`📄 Ficheiros alterados (${changedFiles.length}): ${changedFiles.join(', ')}\n`);
 
     if (changedFiles.length === 0) {
-        console.log('ℹ️  Nenhum ficheiro alterado. Nada a sincronizar.\n');
+        console.log('ℹ️  Nenhum ficheiro alterado.\n');
         process.exit(0);
     }
 
-    let hasAnySync = false;
+    let hasAnySyncAttempt = false;
     process.env.SEMIS_SUBTREE_SYNC = '1';
 
     for (const subtree of SUBTREES) {
         const prefix = path.normalize(subtree.folder) + path.sep;
-
         const hasChanges = changedFiles.some(file => file.startsWith(prefix));
         if (!hasChanges) continue;
 
-        hasAnySync = true;
+        hasAnySyncAttempt = true;
         console.log(`🔄 Sincronizando ${subtree.folder}...`);
 
         const remoteUrl = resolveRemote(subtree.remote);
-
         const pushCmd = `git subtree push --prefix="${subtree.folder}" ${remoteUrl} ${currentBranch}`;
 
         try {
             execSync(pushCmd, { stdio: 'inherit' });
-            console.log(`✅ ${subtree.folder} sincronizado com sucesso\n`);
+            console.log(`✅ ${subtree.folder} sincronizado (ou já atualizado)\n`);
         } catch (error) {
-            console.log(`❌ Falha ao sincronizar ${subtree.folder} (código: ${error.status})`);
-
-            if (error.status === 128) {
-                console.log(`   💡 Possíveis causas:`);
-                console.log(`      - Remote '${subtree.remote}' não configurado corretamente.`);
-                console.log(`      - Branch '${currentBranch}' ainda não existe no módulo remoto.`);
-                console.log(`      - Problemas de autenticação (SSH/HTTPS).`);
-                console.log(`\n      Comando manual sugerido:\n      ${pushCmd}\n`);
+            if (error.message.includes('no new revisions were found')) {
+                console.log(`ℹ️  ${subtree.folder} já está atualizado no remoto (nada a enviar)\n`);
+            } else {
+                console.log(`❌ Falha ao sincronizar ${subtree.folder} (código: ${error.status})`);
+                if (error.status === 128) {
+                    console.log(`   💡 Primeira sync da branch? Executa manualmente:\n      ${pushCmd}\n`);
+                }
             }
         }
     }
 
-    if (!hasAnySync) {
+    if (!hasAnySyncAttempt) {
         console.log('ℹ️  Nenhum subtree afetado por este commit.\n');
     }
 
 } catch (error) {
-    console.error('💥 Erro crítico no sync de subtrees:', error.message || error);
+    console.error('💥 Erro crítico:', error.message || error);
     process.exit(1);
 } finally {
     delete process.env.SEMIS_SUBTREE_SYNC;

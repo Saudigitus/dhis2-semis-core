@@ -1,5 +1,15 @@
 const { execSync } = require('child_process');
 
+/**
+ * Evita loop infinito:
+ * git subtree push cria commits internos
+ * que voltam a disparar o hook
+ */
+if (process.env.SEMIS_SUBTREE_SYNC === '1') {
+    process.exit(0);
+}
+
+// --- Configuração dos Subtrees ---
 const SUBTREES = [
     { folder: 'src/modules/attendance', remote: 'https://github.com/Saudigitus/dhis2-semis-attendance.git' },
     { folder: 'src/modules/enrollment', remote: 'https://github.com/Saudigitus/dhis2-semis-enrollment.git' },
@@ -11,39 +21,56 @@ const SUBTREES = [
 ];
 
 try {
-    const currentBranch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
+    // Branch atual
+    const currentBranch = execSync('git rev-parse --abbrev-ref HEAD')
+        .toString()
+        .trim();
 
-    // Proteção para primeiro commit
+    console.log('\n🌿 SEMIS | Sync automático de subtrees');
+    console.log(`🌿 Branch: ${currentBranch}`);
+
+    // Ficheiros alterados no último commit
     let diffOutput = '';
     try {
         diffOutput = execSync('git diff --name-only HEAD^ HEAD').toString();
     } catch {
+        // Primeiro commit ou erro → sai silenciosamente
         process.exit(0);
     }
 
-    const changedFiles = diffOutput.split('\n').map(f => f.replace(/\\/g, '/'));
+    const changedFiles = diffOutput
+        .split('\n')
+        .map(f => f.replace(/\\/g, '/'))
+        .filter(Boolean);
 
-    console.log(`\n🌿 SEMIS | Sync automático de subtrees`);
-    console.log(`🌿 Branch: ${currentBranch}`);
-
+    // Para cada subtree
     SUBTREES.forEach(subtree => {
-        const hasChanges = changedFiles.some(file => file.startsWith(subtree.folder));
+        const hasChanges = changedFiles.some(file =>
+            file.startsWith(`${subtree.folder}/`)
+        );
 
-        if (hasChanges) {
-            console.log(`🔄 Sincronizando ${subtree.folder}`);
+        if (!hasChanges) return;
 
-            try {
-                execSync(
-                    `git subtree push --prefix=${subtree.folder} ${subtree.remote} ${currentBranch}`,
-                    { stdio: 'inherit' }
-                );
-                console.log(`✅ ${subtree.folder} sincronizado`);
-            } catch {
-                console.log(`⚠️ Falha em ${subtree.folder} (branch existe no remoto?)`);
-            }
+        console.log(`🔄 Sincronizando ${subtree.folder}`);
+
+        try {
+            /**
+             * Windows-safe + cross-platform:
+             * cmd /c "set VAR=1 && comando"
+             */
+            execSync(
+                `cmd /c "set SEMIS_SUBTREE_SYNC=1 && git subtree push --prefix=${subtree.folder} ${subtree.remote} ${currentBranch}"`,
+                { stdio: 'inherit' }
+            );
+
+            console.log(`✅ ${subtree.folder} sincronizado`);
+        } catch (err) {
+            console.log(
+                `⚠️ Falha ao sincronizar ${subtree.folder} (branch '${currentBranch}' existe no remoto?)`
+            );
         }
     });
 
 } catch {
-    // silencioso
+    // Silencioso para não quebrar o commit
 }

@@ -1,22 +1,40 @@
 const { execSync } = require('child_process');
 
-/**
- * Evita loop infinito:
- * git subtree push cria commits internos
- */
+// Evita loop infinito do hook
 if (process.env.SEMIS_SUBTREE_SYNC === '1') {
     process.exit(0);
 }
 
 // --- Configuração dos Subtrees ---
 const SUBTREES = [
-    { folder: 'src/modules/attendance', remote: 'https://github.com/Saudigitus/dhis2-semis-attendance.git' },
-    { folder: 'src/modules/enrollment', remote: 'https://github.com/Saudigitus/dhis2-semis-enrollment.git' },
-    { folder: 'src/modules/final-result', remote: 'https://github.com/Saudigitus/dhis2-semis-final-result.git' },
-    { folder: 'src/modules/performance', remote: 'https://github.com/Saudigitus/dhis2-semis-performance.git' },
-    { folder: 'src/modules/school-calendar', remote: 'https://github.com/Saudigitus/dhis2-semis-school-calendar.git' },
-    { folder: 'src/modules/transfer', remote: 'https://github.com/Saudigitus/dhis2-semis-transfer.git' },
-    { folder: 'src/modules/transfer-execute', remote: 'https://github.com/Saudigitus/dhis2-semis-transfer-execute.git' }
+    {
+        folder: 'src/modules/attendance',
+        repo: 'https://github.com/Saudigitus/dhis2-semis-attendance.git',
+    },
+    {
+        folder: 'src/modules/enrollment',
+        repo: 'https://github.com/Saudigitus/dhis2-semis-enrollment.git',
+    },
+    {
+        folder: 'src/modules/final-result',
+        repo: 'https://github.com/Saudigitus/dhis2-semis-final-result.git',
+    },
+    {
+        folder: 'src/modules/performance',
+        repo: 'https://github.com/Saudigitus/dhis2-semis-performance.git',
+    },
+    {
+        folder: 'src/modules/school-calendar',
+        repo: 'https://github.com/Saudigitus/dhis2-semis-school-calendar.git',
+    },
+    {
+        folder: 'src/modules/transfer',
+        repo: 'https://github.com/Saudigitus/dhis2-semis-transfer.git',
+    },
+    {
+        folder: 'src/modules/transfer-execute',
+        repo: 'https://github.com/Saudigitus/dhis2-semis-transfer-execute.git',
+    },
 ];
 
 try {
@@ -27,9 +45,7 @@ try {
     console.log('\n🌿 SEMIS | Sync automático de subtrees');
     console.log(`🌿 Branch: ${currentBranch}`);
 
-    /**
-     * ✅ COMANDO CORRETO PARA HOOKS
-     */
+    // Detecta alterações no último commit, em qualquer subpasta do módulo
     const diffOutput = execSync(
         'git diff-tree --no-commit-id --name-only -r HEAD'
     ).toString();
@@ -39,12 +55,9 @@ try {
         .map(f => f.replace(/\\/g, '/'))
         .filter(Boolean);
 
-    // DEBUG (opcional, podes remover depois)
-    // console.log('📄 Ficheiros alterados:', changedFiles);
-
     SUBTREES.forEach(subtree => {
         const hasChanges = changedFiles.some(file =>
-            file.startsWith(`${subtree.folder}/`)
+            file.startsWith(subtree.folder + '/')
         );
 
         if (!hasChanges) return;
@@ -52,19 +65,26 @@ try {
         console.log(`🔄 Sincronizando ${subtree.folder}`);
 
         try {
+            // Windows safe: define variável de ambiente para evitar loop
             execSync(
-                `cmd /c "set SEMIS_SUBTREE_SYNC=1 && git subtree push --prefix=${subtree.folder} ${subtree.remote} ${currentBranch}"`,
+                `cmd /c "set SEMIS_SUBTREE_SYNC=1 && git subtree push --prefix=${subtree.folder} --squash ${subtree.repo} ${currentBranch}"`,
                 { stdio: 'inherit' }
             );
 
             console.log(`✅ ${subtree.folder} sincronizado`);
-        } catch {
-            console.log(
-                `⚠️ Falha ao sincronizar ${subtree.folder} (branch '${currentBranch}' existe no remoto?)`
-            );
+        } catch (err) {
+            // Trata "no new revisions" como info
+            if (err.stdout?.toString().includes('no new revisions') ||
+                err.message.includes('no new revisions')) {
+                console.log(`ℹ️ ${subtree.folder}: sem alterações novas para enviar`);
+            } else {
+                console.error(`❌ Falha ao sincronizar ${subtree.folder}`);
+                console.error(err.message);
+            }
         }
     });
 
 } catch (err) {
-    console.log('⚠️ Erro inesperado no sync de subtrees', err);
+    console.error('⚠️ Erro inesperado no sync de subtrees');
+    console.error(err);
 }

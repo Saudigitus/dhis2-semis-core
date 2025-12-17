@@ -53,7 +53,7 @@ try {
 
         try {
             execSync(
-                `cmd /c "set SEMIS_SUBTREE_SYNC=1 && git subtree push --prefix=${subtree.folder} ${subtree.remote} ${currentBranch} dummy"`,
+                `bash -c 'git add ${subtree.folder} && git subtree push --prefix=${subtree.folder} ${subtree.remote} ${currentBranch} dummy"`,
                 { stdio: 'inherit' }
             );
 

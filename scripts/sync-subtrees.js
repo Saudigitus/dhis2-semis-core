@@ -24,48 +24,48 @@ function runCommand(cmd) {
 
 try {
     const currentBranch = runCommand('git rev-parse --abbrev-ref HEAD');
-    const commitMessage = runCommand('git log -1 --pretty=%B').trim();
 
-    // Pega ficheiros alterados no ÚLTIMO commit
+    // Pega ficheiros alterados no último commit
     const changedFiles = runCommand('git diff-tree --no-commit-id --name-only -r HEAD')
         .split('\n')
-        .map(f => path.normalize(f.trim())) // Normaliza caminhos (Windows/Linux)
+        .map(f => path.normalize(f.trim()))
         .filter(Boolean);
 
     console.log('\n🌿 SEMIS | Sync automático de subtrees');
     console.log(`🌿 Branch: ${currentBranch}`);
-    console.log(`📝 Mensagem: "${commitMessage || '(vazio)'}"`);
     console.log(`📄 Ficheiros alterados (${changedFiles.length}): ${changedFiles.join(', ')}\n`);
 
+    if (changedFiles.length === 0) {
+        console.log('ℹ️  Nenhum ficheiro alterado. Nada a sincronizar.\n');
+        process.exit(0);
+    }
+
     let hasAnySync = false;
-    process.env.SEMIS_SUBTREE_SYNC = '1'; // Ativa proteção contra loop
+    process.env.SEMIS_SUBTREE_SYNC = '1'; // Protege contra loop
 
     for (const subtree of SUBTREES) {
-        // Garante barra no final e normaliza
         const prefix = path.normalize(subtree.folder) + path.sep;
 
         const hasChanges = changedFiles.some(file => file.startsWith(prefix));
-
-        if (!hasChanges) {
-            // console.log(`⏭️  Sem alterações em ${subtree.folder}`);
-            continue;
-        }
+        if (!hasChanges) continue;
 
         hasAnySync = true;
         console.log(`🔄 Sincronizando ${subtree.folder}...`);
 
-        const escapedMessage = commitMessage.replace(/"/g, '\\"');
-        const pushCmd = `git subtree push --prefix="${subtree.folder}" ${subtree.remote} ${currentBranch} --message="${escapedMessage}"`;
+        // Comando correto sem --message
+        const pushCmd = `git subtree push --prefix="${subtree.folder}" ${subtree.remote} ${currentBranch}`;
 
         try {
             execSync(pushCmd, { stdio: 'inherit' });
             console.log(`✅ ${subtree.folder} sincronizado com sucesso\n`);
         } catch (error) {
             console.log(`❌ Falha ao sincronizar ${subtree.folder} (código: ${error.status})`);
-            if (error.message.includes('no upstream') || error.message.includes('refspec')) {
-                console.log(`   💡 Primeira vez? Cria a branch manualmente:\n      ${pushCmd}\n`);
+
+            // Dica útil para primeira sincronização da branch
+            if (error.status === 128 && error.message.includes('fatal: refspec')) {
+                console.log(`   💡 Provavelmente a branch '${currentBranch}' ainda não existe no módulo.`);
+                console.log(`      Executa manualmente uma vez:\n      ${pushCmd}\n`);
             }
-            console.log('');
         }
     }
 

@@ -52,3 +52,4 @@
 	path = src/libs/functions
 	url = https://github.com/Saudigitus/dhis2-semis-customfunc.git
 	branch = develop
+	ignore = all

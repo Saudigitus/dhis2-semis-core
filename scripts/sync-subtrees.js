@@ -3,15 +3,14 @@
 const { execSync } = require('child_process');
 const path = require('path');
 
-// Evita loop infinito causado por commits internos do subtree
+// Evita loop infinito
 if (process.env.SEMIS_SUBTREE_SYNC === '1') {
     process.exit(0);
 }
 
-// ----------------------------- Configuração -----------------------------
 const SUBTREES = [
     { folder: 'src/modules/attendance',           remote: 'https://github.com/Saudigitus/dhis2-semis-attendance.git' },
-    { folder: 'src/modules/enrollment',           remote: 'https://github.com/Saudigitus/dhis2-semis-enrollment.git' },
+    { folder: 'src/modules/enrollment',           remote: 'https://github.com/Saudigitus/dhis2-semis-enrollment.git' }, // URL completa
     { folder: 'src/modules/final-result',         remote: 'https://github.com/Saudigitus/dhis2-semis-final-result.git' },
     { folder: 'src/modules/performance',          remote: 'https://github.com/Saudigitus/dhis2-semis-performance.git' },
     { folder: 'src/modules/school-calendar',      remote: 'https://github.com/Saudigitus/dhis2-semis-school-calendar.git' },
@@ -23,17 +22,24 @@ function runCommand(cmd) {
     return execSync(cmd, { encoding: 'utf8' }).trim();
 }
 
+function resolveRemote(remoteArg) {
+    try {
+        return runCommand(`git config --get remote.${remoteArg}.url`);
+    } catch {
+        return remoteArg; // Assume URL direta
+    }
+}
+
 try {
     const currentBranch = runCommand('git rev-parse --abbrev-ref HEAD');
 
-    // Ficheiros alterados neste commit
     const changedFiles = runCommand('git diff-tree --no-commit-id --name-only -r HEAD')
         .split('\n')
         .map(f => path.normalize(f.trim()))
         .filter(Boolean);
 
     console.log('\n🌿 SEMIS | Sync automático de subtrees');
-    console.log(`🌿 Branch atual: ${currentBranch}`);
+    console.log(`🌿 Branch: ${currentBranch}`);
     console.log(`📄 Ficheiros alterados (${changedFiles.length}): ${changedFiles.join(', ')}\n`);
 
     if (changedFiles.length === 0) {
@@ -41,40 +47,41 @@ try {
         process.exit(0);
     }
 
-    let hasAnyAttempt = false;
-    process.env.SEMIS_SUBTREE_SYNC = '1'; // Protege contra loop
+    let hasAnySyncAttempt = false;
+    process.env.SEMIS_SUBTREE_SYNC = '1';
 
     for (const subtree of SUBTREES) {
         const prefix = path.normalize(subtree.folder) + path.sep;
         const hasChanges = changedFiles.some(file => file.startsWith(prefix));
-
         if (!hasChanges) continue;
 
-        hasAnyAttempt = true;
-        console.log(`🔄 Sincronizando ${subtree.folder} (com --rejoin para garantir deteção de alterações)...`);
+        hasAnySyncAttempt = true;
+        console.log(`🔄 Sincronizando ${subtree.folder}...`);
 
-        // Comando com --rejoin para resolver casos de "no new revisions"
-        const pushCmd = `git subtree push --prefix="${subtree.folder}" --rejoin ${subtree.remote} ${currentBranch}`;
+        const remoteUrl = resolveRemote(subtree.remote);
+        const pushCmd = `git subtree push --prefix="${subtree.folder}" ${remoteUrl} ${currentBranch}`;
 
         try {
             execSync(pushCmd, { stdio: 'inherit' });
-            console.log(`✅ ${subtree.folder} sincronizado com sucesso\n`);
+            console.log(`✅ ${subtree.folder} sincronizado (ou já atualizado)\n`);
         } catch (error) {
             if (error.message.includes('no new revisions were found')) {
-                console.log(`ℹ️  ${subtree.folder} já está completamente atualizado no remoto\n`);
+                console.log(`ℹ️  ${subtree.folder} já está atualizado no remoto (nada a enviar)\n`);
             } else {
-                console.log(`❌ Erro ao sincronizar ${subtree.folder} (código: ${error.status})`);
-                console.log(`   💡 Tenta manualmente:\n   ${pushCmd}\n`);
+                console.log(`❌ Falha ao sincronizar ${subtree.folder} (código: ${error.status})`);
+                if (error.status === 128) {
+                    console.log(`   💡 Primeira sync da branch? Executa manualmente:\n      ${pushCmd}\n`);
+                }
             }
         }
     }
 
-    if (!hasAnyAttempt) {
+    if (!hasAnySyncAttempt) {
         console.log('ℹ️  Nenhum subtree afetado por este commit.\n');
     }
 
 } catch (error) {
-    console.error('💥 Erro crítico no script de sync:', error.message || error);
+    console.error('💥 Erro crítico:', error.message || error);
     process.exit(1);
 } finally {
     delete process.env.SEMIS_SUBTREE_SYNC;

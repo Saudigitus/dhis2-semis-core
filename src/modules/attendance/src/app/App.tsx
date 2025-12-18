@@ -9,7 +9,9 @@ import translation from '../locales/index'
 const App = ({ i18n }: { i18n: D2I18n }) => {
     const { baseUrl } = useConfig()
     const language = i18n == undefined ? translation : i18n
-  //just do it
+  //just do it again 
+  //and again
+  
     return (
         // <AppWrapper
         //     i18n={language}

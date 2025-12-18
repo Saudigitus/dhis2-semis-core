@@ -26,16 +26,27 @@ for entry in "${submodules[@]}"; do
     echo "✅ Submodule já existe em $path — ignorando"
   else
     echo "➕ Adicionando submodule: $repo -> $path (branch: ${branch:-default})"
-    
+
     if [ -n "$branch" ]; then
       git submodule add -b "$branch" "$repo" "$path"
     else
       git submodule add "$repo" "$path"
     fi
   fi
+
+  echo "🙈 Configurando Git para ignorar mudanças no submodule $path"
+
+  # Ignorar mudanças localmente
+  git config submodule."$path".ignore all
+
+  # Persistir no .gitmodules (para toda a equipa)
+  git config -f .gitmodules submodule."$path".ignore all
 done
 
 echo "📦 Inicializando e atualizando submodules..."
 git submodule update --init --recursive
+
+echo "📌 Submodules configurados para ignorar todas as alterações internas"
+echo "💾 Não se esqueça de commitar o .gitmodules!"
 
 echo "🎉 Todos os submodules foram adicionados com sucesso!"

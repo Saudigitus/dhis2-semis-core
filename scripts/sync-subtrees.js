@@ -53,31 +53,38 @@ try {
 
         const baseCmd = `git subtree push --prefix="${subtree.folder}" ${subtree.remote} ${currentBranch}`;
         let synced = false;
+        let lastError = null;
 
         // 1ª tentativa: com --rejoin
         try {
-            execSync(`${baseCmd} --rejoin`, { stdio: 'inherit' });
+            execSync(baseCmd + ' --rejoin', { stdio: 'inherit' });
             console.log(`✅ ${subtree.folder} sincronizado com sucesso (com --rejoin)\n`);
             synced = true;
-        } catch (err1) {
-            if (err1.message.includes('no new revisions were found')) {
+        } catch (error) {
+            lastError = error;
+            if (error.message.includes('no new revisions were found')) {
                 // 2ª tentativa: com --ignore-joins
-                console.log(`   ⚙️  --rejoin não encontrou alterações. Tentando com --ignore-joins...`);
+                console.log(`   ⚙️  --rejoin não detetou alterações. Tentando com --ignore-joins...`);
                 try {
-                    execSync(`${baseCmd} --ignore-joins`, { stdio: 'inherit' });
+                    execSync(baseCmd + ' --ignore-joins', { stdio: 'inherit' });
                     console.log(`✅ ${subtree.folder} sincronizado com sucesso (com --ignore-joins)\n`);
                     synced = true;
-                } catch (err2) {
-                    console.log(`❌ Falha ao sincronizar ${subtree.folder} mesmo com --ignore-joins`);
-                    console.log(`   💡 Executa manualmente para desbloquear:\n`);
+                } catch (innerError) {
+                    lastError = innerError;
+                    console.log(`❌ Falha mesmo com --ignore-joins em ${subtree.folder}`);
+                    console.log(`   💡 Executa manualmente para investigar:\n`);
                     console.log(`      ${baseCmd} --rejoin\n`);
                     console.log(`   ou\n`);
                     console.log(`      ${baseCmd} --ignore-joins\n\n`);
                 }
             } else {
-                console.log(`❌ Erro inesperado ao sincronizar ${subtree.folder} (com --rejoin)`);
-                console.log(`   Mensagem: ${err1.message.split('\n')[0]}\n`);
+                console.log(`❌ Erro inesperado ao sincronizar ${subtree.folder}`);
+                console.log(`   Comando: ${baseCmd} --rejoin\n`);
             }
+        }
+
+        if (!synced && lastError && !lastError.message.includes('no new revisions')) {
+            console.log(`   Detalhes do erro: ${lastError.message}\n`);
         }
     }
 

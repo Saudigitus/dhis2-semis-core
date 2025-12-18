@@ -7,7 +7,7 @@
 # -------------------------------------------------
 # Configuração
 # -------------------------------------------------
-SUBTREES="
+SUBTREES="\
 src/modules/attendance/src|https://github.com/Saudigitus/dhis2-semis-attendance.git
 src/modules/enrollment/src|https://github.com/Saudigitus/dhis2-semis-enrollment.git
 src/modules/final-result/src|https://github.com/Saudigitus/dhis2-semis-final-result.git
@@ -17,16 +17,13 @@ src/modules/transfer/src|https://github.com/Saudigitus/dhis2-semis-transfer.git
 src/modules/transfer-execute/src|https://github.com/Saudigitus/dhis2-semis-transfer-execute.git
 "
 
-# Branch alvo no repositório remoto
 TARGET_BRANCH="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo main)"
-
 CACHE_DIR=".git/subtree-cache"
 mkdir -p "$CACHE_DIR"
 
 # -------------------------------------------------
 # Funções
 # -------------------------------------------------
-
 get_changed_modules() {
     git diff-tree --no-commit-id --name-only -r HEAD | \
         grep '^src/modules/' | \
@@ -43,6 +40,7 @@ sync_module() {
     current_hash=$(git log -1 --format=%T -- "$folder" 2>/dev/null || echo "none")
     cached_hash=$(cat "$cache_file" 2>/dev/null || echo "")
 
+    # Verifica cache
     if [ "$current_hash" = "$cached_hash" ] && [ -n "$cached_hash" ]; then
         echo "✨ $module_name — sem alterações (cache)"
         return
@@ -51,48 +49,30 @@ sync_module() {
     temp_branch="subtree-$module_name-$(date +%s)"
 
     echo "🔄 Sincronizando $module_name → $TARGET_BRANCH"
-
     export SEMIS_SUBTREE_SYNC=1
 
-    # Tentativa rápida
-    if git subtree split \
-        --prefix="$folder" \
-        --branch="$temp_branch" \
-        --rejoin; then
-
-        if git push "$remote_url" "$temp_branch:$TARGET_BRANCH"; then
-            echo "✅ $module_name sincronizado (--rejoin)"
-            echo "$current_hash" > "$cache_file"
+    # Sempre usa --ignore-joins
+    if git subtree split --prefix="$folder" --branch="$temp_branch" --ignore-joins >/dev/null 2>&1; then
+        # Verifica se a branch temporária foi criada
+        if git show-ref --verify --quiet "refs/heads/$temp_branch"; then
+            if git push "$remote_url" "$temp_branch:$TARGET_BRANCH"; then
+                echo "✅ $module_name sincronizado (--ignore-joins)"
+                echo "$current_hash" > "$cache_file"
+            else
+                echo "❌ Falha ao push de $module_name"
+            fi
             git branch -D "$temp_branch" >/dev/null 2>&1
-            return
+        else
+            echo "⚠️ Nenhum commit novo em $module_name, pulando push"
         fi
-    fi
-
-    echo "↻ Fallback: regeneração completa (--ignore-joins)"
-
-    if git subtree split \
-        --prefix="$folder" \
-        --branch="$temp_branch" \
-        --ignore-joins && \
-       git push "$remote_url" "$temp_branch:$TARGET_BRANCH"; then
-
-        echo "✅ $module_name sincronizado (--ignore-joins)"
-        echo "$current_hash" > "$cache_file"
     else
-        echo "❌ Falha ao sincronizar $module_name"
-        echo "💡 Manual:"
-        echo "   git subtree split --prefix=$folder --ignore-joins --branch=temp"
-        echo "   git push $remote_url temp:$TARGET_BRANCH"
-        echo "   git branch -D temp"
+        echo "⚠️ Falha ao gerar subtree de $module_name"
     fi
-
-    git branch -D "$temp_branch" >/dev/null 2>&1
 }
 
 # -------------------------------------------------
 # Main
 # -------------------------------------------------
-
 changed_modules=$(get_changed_modules)
 
 echo ""

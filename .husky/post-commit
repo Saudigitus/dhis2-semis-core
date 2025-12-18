@@ -8,13 +8,13 @@
 # Configuração
 # -------------------------------------------------
 SUBTREES="
-src/modules/attendance|https://github.com/Saudigitus/dhis2-semis-attendance.git
-src/modules/enrollment|https://github.com/Saudigitus/dhis2-semis-enrollment.git
-src/modules/final-result|https://github.com/Saudigitus/dhis2-semis-final-result.git
-src/modules/performance|https://github.com/Saudigitus/dhis2-semis-performance.git
-src/modules/school-calendar|https://github.com/Saudigitus/dhis2-semis-school-calendar.git
-src/modules/transfer|https://github.com/Saudigitus/dhis2-semis-transfer.git
-src/modules/transfer-execute|https://github.com/Saudigitus/dhis2-semis-transfer-execute.git
+src/modules/attendance/src|https://github.com/Saudigitus/dhis2-semis-attendance.git
+src/modules/enrollment/src|https://github.com/Saudigitus/dhis2-semis-enrollment.git
+src/modules/final-result/src|https://github.com/Saudigitus/dhis2-semis-final-result.git
+src/modules/performance/src|https://github.com/Saudigitus/dhis2-semis-performance.git
+src/modules/school-calendar/src|https://github.com/Saudigitus/dhis2-semis-school-calendar.git
+src/modules/transfer/src|https://github.com/Saudigitus/dhis2-semis-transfer.git
+src/modules/transfer-execute/src|https://github.com/Saudigitus/dhis2-semis-transfer-execute.git
 "
 
 # Branch alvo no repositório remoto

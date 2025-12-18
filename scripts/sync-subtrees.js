@@ -3,7 +3,7 @@
 const { execSync } = require('child_process');
 const path = require('path');
 
-// Evita loop infinito
+// Evita loop infinito causado por commits internos do subtree
 if (process.env.SEMIS_SUBTREE_SYNC === '1') {
     process.exit(0);
 }
@@ -26,6 +26,7 @@ function runCommand(cmd) {
 try {
     const currentBranch = runCommand('git rev-parse --abbrev-ref HEAD');
 
+    // Ficheiros alterados neste commit
     const changedFiles = runCommand('git diff-tree --no-commit-id --name-only -r HEAD')
         .split('\n')
         .map(f => path.normalize(f.trim()))
@@ -41,50 +42,30 @@ try {
     }
 
     let hasAnyAttempt = false;
-    process.env.SEMIS_SUBTREE_SYNC = '1';
+    process.env.SEMIS_SUBTREE_SYNC = '1'; // Protege contra loop
 
     for (const subtree of SUBTREES) {
         const prefix = path.normalize(subtree.folder) + path.sep;
         const hasChanges = changedFiles.some(file => file.startsWith(prefix));
+
         if (!hasChanges) continue;
 
         hasAnyAttempt = true;
-        console.log(`🔄 Sincronizando ${subtree.folder}...`);
+        console.log(`🔄 Sincronizando ${subtree.folder} (com --rejoin para garantir deteção de alterações)...`);
 
-        const baseCmd = `git subtree push --prefix="${subtree.folder}" ${subtree.remote} ${currentBranch}`;
-        let synced = false;
-        let lastError = null;
+        // Comando com --rejoin para resolver casos de "no new revisions"
+        const pushCmd = `git subtree push --prefix="${subtree.folder}" --rejoin ${subtree.remote} ${currentBranch}`;
 
-        // 1ª tentativa: com --rejoin
         try {
-            execSync(baseCmd + ' --rejoin', { stdio: 'inherit' });
-            console.log(`✅ ${subtree.folder} sincronizado com sucesso (com --rejoin)\n`);
-            synced = true;
+            execSync(pushCmd, { stdio: 'inherit' });
+            console.log(`✅ ${subtree.folder} sincronizado com sucesso\n`);
         } catch (error) {
-            lastError = error;
             if (error.message.includes('no new revisions were found')) {
-                // 2ª tentativa: com --ignore-joins
-                console.log(`   ⚙️  --rejoin não detetou alterações. Tentando com --ignore-joins...`);
-                try {
-                    execSync(baseCmd + ' --ignore-joins', { stdio: 'inherit' });
-                    console.log(`✅ ${subtree.folder} sincronizado com sucesso (com --ignore-joins)\n`);
-                    synced = true;
-                } catch (innerError) {
-                    lastError = innerError;
-                    console.log(`❌ Falha mesmo com --ignore-joins em ${subtree.folder}`);
-                    console.log(`   💡 Executa manualmente para investigar:\n`);
-                    console.log(`      ${baseCmd} --rejoin\n`);
-                    console.log(`   ou\n`);
-                    console.log(`      ${baseCmd} --ignore-joins\n\n`);
-                }
+                console.log(`ℹ️  ${subtree.folder} já está completamente atualizado no remoto\n`);
             } else {
-                console.log(`❌ Erro inesperado ao sincronizar ${subtree.folder}`);
-                console.log(`   Comando: ${baseCmd} --rejoin\n`);
+                console.log(`❌ Erro ao sincronizar ${subtree.folder} (código: ${error.status})`);
+                console.log(`   💡 Tenta manualmente:\n   ${pushCmd}\n`);
             }
-        }
-
-        if (!synced && lastError && !lastError.message.includes('no new revisions')) {
-            console.log(`   Detalhes do erro: ${lastError.message}\n`);
         }
     }
 

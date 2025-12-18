@@ -20,7 +20,7 @@ const Enrollment = ({ i18n }: { i18n: D2I18n }) => {
         //     <HashRouter>
                 <Router i18n={i18n as unknown as any} />
         //     </HashRouter >
-        // </AppWrapper>  
+        // </AppWrapper>   
     )
 }
 

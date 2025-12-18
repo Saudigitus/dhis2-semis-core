@@ -98,7 +98,6 @@ sync_all() {
     echo ""
     
     # Processa em paralelo (máximo 3)
-    pids=""
     count=0
     max_parallel=3
     
@@ -108,19 +107,8 @@ sync_all() {
         # Verifica se mudou
         echo "$changed" | grep -q "^$folder$" || continue
         
-        # Paralelo
-        if [ $count -ge $max_parallel ]; then
-            fast_push "$folder" "$remote_name" "$branch"
-        else
-            fast_push "$folder" "$remote_name" "$branch" &
-            pids="$pids $!"
-            count=$((count + 1))
-        fi
-    done
-    
-    # Aguarda todos
-    for pid in $pids; do
-        wait $pid 2>/dev/null || true
+        # Executa sequencialmente (mais estável no Windows)
+        fast_push "$folder" "$remote_name" "$branch"
     done
     
     unset SEMIS_SUBTREE_SYNC
@@ -139,9 +127,6 @@ sync_all() {
         echo "  ⚠️  Alguns erros (não crítico)"
     fi
     echo ""
-} > "$LOG_FILE" 2>&1
-
-# Mostra resumo (não bloqueia)
-(sleep 0.5 && cat "$LOG_FILE") &
+} | tee "$LOG_FILE"
 
 exit 0

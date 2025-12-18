@@ -1,0 +1,135 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# ==================== CONFIG ====================
+SUBTREES=(
+    "src/modules/attendance|attendance"
+    "src/modules/enrollment|enrollment"
+    "src/modules/final-result|final-result"
+    "src/modules/performance|performance"
+    "src/modules/school-calendar|school-calendar"
+    "src/modules/transfer|transfer"
+    "src/modules/transfer-execute|transfer-execute"
+)
+
+CACHE_DIR=".git/subtree-cache"
+BRANCH=${1:-$(git rev-parse --abbrev-ref HEAD)}
+MAX_JOBS=4  # Sync paralelo
+
+# ==================== FUNÇÕES ====================
+setup_cache() {
+    mkdir -p "$CACHE_DIR"
+}
+
+# Push ultrarrápido com todas otimizações
+ultra_fast_push() {
+    local folder=$1
+    local remote_name=$2
+    local branch=$3
+    local remote_url="https://github.com/Saudigitus/dhis2-semis-$remote_name.git"
+    local split_branch="split-$remote_name"
+    local cache_file="$CACHE_DIR/$remote_name-$branch"
+    
+    printf "📦 %-25s" "$remote_name"
+    
+    # Verifica se há alterações neste subtree
+    if ! git diff --quiet HEAD~1 HEAD -- "$folder" 2>/dev/null; then
+        true  # Há alterações
+    else
+        echo "⏭️  Sem alterações"
+        return 0
+    fi
+    
+    # Obtém hash do último commit no subtree
+    local subtree_hash=$(git log -1 --format=%H -- "$folder" 2>/dev/null || echo "")
+    local cached_hash=$(cat "$cache_file" 2>/dev/null || echo "")
+    
+    # Cache hit
+    if [ "$subtree_hash" = "$cached_hash" ] && [ -n "$cached_hash" ]; then
+        echo "✨ Cache hit"
+        return 0
+    fi
+    
+    # Split com rejoin (cria cache interno do git)
+    if ! git subtree split --prefix="$folder" --branch="$split_branch" --rejoin >/dev/null 2>&1; then
+        echo "⚠️  Split falhou"
+        return 1
+    fi
+    
+    # Push com retry
+    local attempt=0
+    while [ $attempt -lt 2 ]; do
+        if git push -q "$remote_url" "$split_branch:$branch" 2>&1; then
+            echo "$subtree_hash" > "$cache_file"
+            echo "✅ Sincronizado"
+            git branch -D "$split_branch" >/dev/null 2>&1 || true
+            return 0
+        fi
+        attempt=$((attempt + 1))
+        sleep 0.5
+    done
+    
+    echo "❌ Push falhou"
+    return 1
+}
+
+# Sync paralelo
+parallel_sync() {
+    local pids=()
+    local failed=0
+    
+    for entry in "${SUBTREES[@]}"; do
+        IFS='|' read -r folder remote_name <<< "$entry"
+        
+        # Limita jobs paralelos
+        while [ ${#pids[@]} -ge $MAX_JOBS ]; do
+            for i in "${!pids[@]}"; do
+                if ! kill -0 "${pids[$i]}" 2>/dev/null; then
+                    wait "${pids[$i]}" || ((failed++))
+                    unset "pids[$i]"
+                fi
+            done
+            pids=("${pids[@]}")  # Reindex array
+            sleep 0.1
+        done
+        
+        # Executa em background
+        ultra_fast_push "$folder" "$remote_name" "$BRANCH" &
+        pids+=($!)
+    done
+    
+    # Aguarda todos
+    for pid in "${pids[@]}"; do
+        wait "$pid" || ((failed++))
+    done
+    
+    return $failed
+}
+
+# ==================== MAIN ====================
+main() {
+    echo "🚀 Sync Ultrarrápido | Branch: $BRANCH"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo ""
+    
+    setup_cache
+    
+    local start=$(date +%s)
+    
+    if parallel_sync; then
+        local end=$(date +%s)
+        local duration=$((end - start))
+        echo ""
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo "🎉 Completo em ${duration}s"
+    else
+        echo ""
+        echo "⚠️  Alguns subtrees falharam (verifica logs acima)"
+        exit 1
+    fi
+}
+
+# Trap para cleanup
+trap 'jobs -p | xargs -r kill 2>/dev/null' EXIT INT TERM
+
+main

@@ -10,7 +10,7 @@ import translator from '../locales/index';
 const MyApp = ({ i18n }: { i18n: D2I18n }) => {
     const { baseUrl } = useConfig()
     const translation: any = i18n ? i18n : translator
-
+ 
     return (
         // <AppWrapper
         //     baseUrl={baseUrl}

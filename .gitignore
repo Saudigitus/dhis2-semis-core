@@ -5,5 +5,5 @@ build
 .yalc
 .vscode
 .env
-src/modules
-src/libs
+/src/modules
+/src/libs

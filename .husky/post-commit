@@ -1,10 +1,12 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"  # Linha obrigatória no Husky v7+
+. "$(dirname "$0")/_/husky.sh"
 
 # Evita loop infinito
 [ "$SEMIS_SUBTREE_SYNC" = "1" ] && exit 0
 
-# --------------------- Configuração ---------------------
+# -------------------------------------------------
+# Configuração
+# -------------------------------------------------
 SUBTREES="
 src/modules/attendance|https://github.com/Saudigitus/dhis2-semis-attendance.git
 src/modules/enrollment|https://github.com/Saudigitus/dhis2-semis-enrollment.git
@@ -15,21 +17,26 @@ src/modules/transfer|https://github.com/Saudigitus/dhis2-semis-transfer.git
 src/modules/transfer-execute|https://github.com/Saudigitus/dhis2-semis-transfer-execute.git
 "
 
-CACHE_DIR=".git/subtree-cache"
-mkdir -p "$CACHE_DIR" 2>/dev/null
+# Branch alvo no repositório remoto
+TARGET_BRANCH="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo main)"
 
-# --------------------- Funções ---------------------
+CACHE_DIR=".git/subtree-cache"
+mkdir -p "$CACHE_DIR"
+
+# -------------------------------------------------
+# Funções
+# -------------------------------------------------
+
 get_changed_modules() {
-    git diff-tree --no-commit-id --name-only -r HEAD 2>/dev/null | \
-    grep '^src/modules/' | \
-    cut -d'/' -f1-3 | \
-    sort -u
+    git diff-tree --no-commit-id --name-only -r HEAD | \
+        grep '^src/modules/' | \
+        cut -d'/' -f1-3 | \
+        sort -u
 }
 
 sync_module() {
     folder="$1"
     remote_url="$2"
-    branch="$3"
     module_name=$(basename "$folder")
 
     cache_file="$CACHE_DIR/$module_name"
@@ -37,73 +44,83 @@ sync_module() {
     cached_hash=$(cat "$cache_file" 2>/dev/null || echo "")
 
     if [ "$current_hash" = "$cached_hash" ] && [ -n "$cached_hash" ]; then
-        echo "  ✨ $module_name (cache hit)"
-        return 0
+        echo "✨ $module_name — sem alterações (cache)"
+        return
     fi
 
-    temp_branch="subtree-split-$module_name-$(date +%s)"
+    temp_branch="subtree-$module_name-$(date +%s)"
 
-    echo "  🔄 Sincronizando $module_name..."
+    echo "🔄 Sincronizando $module_name → $TARGET_BRANCH"
 
-    synced=0
+    export SEMIS_SUBTREE_SYNC=1
 
-    # Tentativa 1: --rejoin (rápido)
-    if git subtree split --prefix="$folder" --branch="$temp_branch" --rejoin >/dev/null 2>&1 && \
-       git push "$remote_url" "$temp_branch:$branch" --quiet >/dev/null 2>&1; then
-        echo "  ✅ $module_name sincronizado (--rejoin)"
-        synced=1
-    fi
+    # Tentativa rápida
+    if git subtree split \
+        --prefix="$folder" \
+        --branch="$temp_branch" \
+        --rejoin; then
 
-    # Tentativa 2: se falhou, usa --ignore-joins
-    if [ "$synced" = "0" ]; then
-        echo "     ↻ Tentando regeneração completa (--ignore-joins)..."
-        if git subtree split --prefix="$folder" --branch="$temp_branch" --ignore-joins >/dev/null 2>&1 && \
-           git push "$remote_url" "$temp_branch:$branch" --quiet >/dev/null 2>&1; then
-            echo "  ✅ $module_name sincronizado (--ignore-joins)"
-            synced=1
+        if git push "$remote_url" "$temp_branch:$TARGET_BRANCH"; then
+            echo "✅ $module_name sincronizado (--rejoin)"
+            echo "$current_hash" > "$cache_file"
+            git branch -D "$temp_branch" >/dev/null 2>&1
+            return
         fi
     fi
 
-    git branch -D "$temp_branch" 2>/dev/null || true
+    echo "↻ Fallback: regeneração completa (--ignore-joins)"
 
-    if [ "$synced" = "1" ]; then
+    if git subtree split \
+        --prefix="$folder" \
+        --branch="$temp_branch" \
+        --ignore-joins && \
+       git push "$remote_url" "$temp_branch:$TARGET_BRANCH"; then
+
+        echo "✅ $module_name sincronizado (--ignore-joins)"
         echo "$current_hash" > "$cache_file"
     else
-        echo "  ℹ️  $module_name já atualizado ou primeira sync da branch"
-        echo "     💡 Comando manual:"
-        echo "        git subtree split --prefix=$folder --rejoin --branch=temp && git push $remote_url temp:$branch && git branch -D temp"
+        echo "❌ Falha ao sincronizar $module_name"
+        echo "💡 Manual:"
+        echo "   git subtree split --prefix=$folder --ignore-joins --branch=temp"
+        echo "   git push $remote_url temp:$TARGET_BRANCH"
+        echo "   git branch -D temp"
     fi
+
+    git branch -D "$temp_branch" >/dev/null 2>&1
 }
 
-# --------------------- Main ---------------------
-branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "HEAD")
+# -------------------------------------------------
+# Main
+# -------------------------------------------------
 
 changed_modules=$(get_changed_modules)
 
 echo ""
-echo "🌿 SEMIS | Sync automático de subtrees → $branch"
+echo "🌿 SEMIS | Subtree sync automático"
+echo "➡ Branch local : $(git rev-parse --abbrev-ref HEAD)"
+echo "➡ Branch remota: $TARGET_BRANCH"
+echo ""
 
 if [ -z "$changed_modules" ]; then
-    echo "  ℹ️  Nenhum módulo alterado"
+    echo "ℹ️ Nenhum módulo alterado"
     echo ""
     exit 0
 fi
 
-echo "  📂 Módulos alterados: $changed_modules"
+echo "📂 Módulos alterados:"
+echo "$changed_modules"
 echo ""
-
-export SEMIS_SUBTREE_SYNC=1
 
 for line in $SUBTREES; do
     folder=$(echo "$line" | cut -d'|' -f1)
     remote=$(echo "$line" | cut -d'|' -f2)
-    echo "$changed_modules" | grep -Fx "$folder" >/dev/null || continue
 
-    sync_module "$folder" "$remote" "$branch"
+    echo "$changed_modules" | grep -Fx "$folder" >/dev/null || continue
+    sync_module "$folder" "$remote"
     echo ""
 done
 
 unset SEMIS_SUBTREE_SYNC
 
-echo "  🎉 Sincronização terminada!"
+echo "🎉 Sincronização concluída!"
 echo ""

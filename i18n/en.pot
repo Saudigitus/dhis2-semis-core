@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-12-18T11:10:32.883Z\n"
-"PO-Revision-Date: 2025-12-18T11:10:32.883Z\n"
+"POT-Creation-Date: 2025-12-18T14:18:47.547Z\n"
+"PO-Revision-Date: 2025-12-18T14:18:47.547Z\n"
 
 msgid "Assing final result"
 msgstr "Assing final result"
@@ -38,30 +38,6 @@ msgstr "School"
 
 msgid "Error message"
 msgstr "Error message"
-
-msgid "New Records"
-msgstr "New Records"
-
-msgid "Invalid Records"
-msgstr "Invalid Records"
-
-msgid "Imported Records"
-msgstr "Imported Records"
-
-msgid "Updated Records"
-msgstr "Updated Records"
-
-msgid "Error"
-msgstr "Error"
-
-msgid "Total rows"
-msgstr "Total rows"
-
-msgid "Error reports"
-msgstr "Error reports"
-
-msgid "No records to display!"
-msgstr "No records to display!"
 
 msgid "Dry Run"
 msgstr "Dry Run"
@@ -110,6 +86,30 @@ msgstr "Summary"
 msgid "Summary by tracker type"
 msgstr "Summary by tracker type"
 
+msgid "New Records"
+msgstr "New Records"
+
+msgid "Invalid Records"
+msgstr "Invalid Records"
+
+msgid "Imported Records"
+msgstr "Imported Records"
+
+msgid "Updated Records"
+msgstr "Updated Records"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Total rows"
+msgstr "Total rows"
+
+msgid "Error reports"
+msgstr "Error reports"
+
+msgid "No records to display!"
+msgstr "No records to display!"
+
 msgid "Export Data Details"
 msgstr "Export Data Details"
 
@@ -155,14 +155,14 @@ msgstr "Cancel"
 msgid "Continue"
 msgstr "Continue"
 
-msgid "More Filters"
-msgstr "More Filters"
-
 msgid "Update"
 msgstr "Update"
 
 msgid "Restore"
 msgstr "Restore"
+
+msgid "More Filters"
+msgstr "More Filters"
 
 msgid "Enter text"
 msgstr "Enter text"
@@ -212,6 +212,18 @@ msgstr "rows will be affected"
 msgid "Student promotion"
 msgstr "Student promotion"
 
+msgid "Enrollment History"
+msgstr "Enrollment History"
+
+msgid "This {{section}} is already enrolled for this year."
+msgstr "This {{section}} is already enrolled for this year."
+
+msgid "New enrollment"
+msgstr "New enrollment"
+
+msgid "No enrollments found."
+msgstr "No enrollments found."
+
 msgid "View history"
 msgstr "View history"
 
@@ -244,18 +256,6 @@ msgstr "Continue serching or click"
 
 msgid "if you want to register as a new"
 msgstr "if you want to register as a new"
-
-msgid "Enrollment History"
-msgstr "Enrollment History"
-
-msgid "This {{section}} is already enrolled for this year."
-msgstr "This {{section}} is already enrolled for this year."
-
-msgid "New enrollment"
-msgstr "New enrollment"
-
-msgid "No enrollments found."
-msgstr "No enrollments found."
 
 msgid "rows selected"
 msgstr "rows selected"

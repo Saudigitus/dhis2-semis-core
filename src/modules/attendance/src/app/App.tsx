@@ -18,7 +18,7 @@ const App = ({ i18n }: { i18n: D2I18n }) => {
         //     schoolCalendarKey='dataStore/semis/schoolCalendar'
         // >
         //     <HashRouter>
-                <Router i18n={language} />
+                <Router i18n={i18n} />
         //     </HashRouter >
         // </AppWrapper>
     )

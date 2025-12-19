@@ -343,5 +343,7 @@
     "Home": "Home",
     "Final result": "Final result",
     "Staff Re-enroll": "Staff Re-enroll",
-    "Enrollment_Date": "Enrollment_Date"
+    "Enrollment_Date": "Enrollment_Date",
+    "__MANIFEST_APP_TITLE_Application title": "SEMIS",
+    "__MANIFEST_APP_DESCRIPTION_Application description": "SEMIS"
 }

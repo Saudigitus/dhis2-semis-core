@@ -10,12 +10,12 @@ This project was bootstrapped with [DHIS2 Application Platform](https://github.c
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Saudigitus/dhis2-emis-config
+   git clone https://github.com/Saudigitus/dhis2-semis-config
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd dhis2-emis-config
+   cd dhis2-semis-config
    ```
 
 3. Initialize and update the submodules:

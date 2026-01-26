@@ -1028,3 +1028,21 @@ msgstr "Detalhes da Transferência"
 
 msgid "Transfer Status Details"
 msgstr "Detalhes do Estado da Transferência"
+
+msgid "No configuration found!"
+msgstr "Nenhuma configuração encontrada!"
+
+msgid "Use semis configuration app to setup your semis workspace."
+msgstr "Use a aplicação de configuração do Semis para configurar o seu espaço de trabalho do Semis."
+
+msgid "School calendar configuration not found!"
+msgstr "Configuração do calendário escolar não encontrada!"
+
+msgid "Go to enrollment application and set value to academic year field."
+msgstr "Vá à aplicação de matrícula e defina o valor no campo «Ano académico»."
+
+msgid "Invalid configurations!"
+msgstr "Configurações inválidas!"
+
+msgid "The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!"
+msgstr "As configurações encontradas não são compatíveis com esta versão do SEMIS. Por favor, vá à aplicação de configurações abaixo e atualize as configurações!"

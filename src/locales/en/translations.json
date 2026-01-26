@@ -1,4 +1,9 @@
 {
+    "No configuration found!": "No configuration found!",
+    "Use semis configuration app to setup your semis workspace.": "Use semis configuration app to setup your semis workspace.",
+    "Go to enrollment application and set value to academic year field.": "Go to enrollment application and set value to academic year field.",
+    "Invalid configurations!": "Invalid configurations!",
+    "The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!": "The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!",
     "Assing final result": "Assing final result",
     "WARNING! {{size}} rows will be affected": "WARNING! {{size}} rows will be affected",
     "No one will be able to access this program. Add some Organisation Units to the access list.": "No one will be able to access this program. Add some Organisation Units to the access list.",

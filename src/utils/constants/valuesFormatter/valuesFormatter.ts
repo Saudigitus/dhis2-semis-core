@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 type AnyObject = Record<string, any>;
 
 interface ValidationResult {
@@ -74,84 +76,92 @@ export function mergeDeep(ref: any, input: any, errors: any[]): any {
     return merged;
 }
 
-export const validateAndConvertArrayAgainstReference = (
-    input: AnyObject[],
-    reference: AnyObject[]
-): ValidationResult => {
-    const errors: string[] = [];
-    const converted: AnyObject[] = [];
+export const useValidate = () => {
     let academicYear: string = '';
     let currentAcademicYear: string = '';
 
-    for (const item of input) {
-        const requiredKeys = ['key', 'program', 'registration', 'defaults'];
-        for (const reqKey of requiredKeys) {
-            if (!(reqKey in item)) {
-                errors.push(
-                    `Missing required field '${reqKey}' in object: ${JSON.stringify(item)}`
-                );
+    function validateAndConvertArrayAgainstReference(
+        input: AnyObject[],
+        reference: AnyObject[]
+    ): ValidationResult {
+        const errors: string[] = [];
+        const converted: AnyObject[] = [];
+        const inputCopy = [...(input?.length > 0 ? input : [{}, {}])]
+
+        for (const item of inputCopy) {
+
+            const requiredKeys = ['key', 'program', 'registration', 'defaults'];
+            for (const reqKey of requiredKeys) {
+                if (!(reqKey in item)) {
+                    errors.push(
+                        `Missing required field '${reqKey}' in object: ${JSON.stringify(item)}`
+                    );
+                }
             }
-        }
-        currentAcademicYear = item?.defaults?.currentAcademicYear || '';
-        academicYear = item?.registration?.academicYear || '';
+            currentAcademicYear = item?.defaults?.currentAcademicYear || '';
+            academicYear = item?.registration?.academicYear || '';
 
-        const refItem = reference.find(r => r.key === item.key);
-        if (!refItem) {
-            errors.push(`Missing reference for key '${item.key}'`);
-            continue;
-        }
-
-        const output: AnyObject = {
-            defaults: (item.defaults ?? reference.find(r => r.key === item.key)?.defaults) || {},
-            key: item.key,
-            program: item.program,
-            registration: {
-                ...Object.fromEntries(
-                    Object.entries(item.registration).filter(([k]) => k in refItem.registration)
-                )
+            const refItem = reference.find(r => r.key === item.key);
+            if (!refItem) {
+                errors.push(`Missing reference for key '${item.key}'`);
+                converted
+                continue;
             }
-        };
 
-        if (item.registration && refItem.registration) {
-            validateNestedKeys(item.registration, refItem.registration, 'registration', errors);
-        }
+            const output: AnyObject = {
+                defaults: (item.defaults ?? reference.find(r => r.key === item.key)?.defaults) || {},
+                key: item.key,
+                program: item.program,
+                registration: {
+                    ...Object.fromEntries(
+                        Object.entries(item.registration).filter(([k]) => k in refItem.registration)
+                    )
+                }
+            };
 
-        if (item.attendance && !item.absenteeism && refItem.absenteeism) {
-            output.absenteeism = { ...refItem.absenteeism };
-        }
+            if (item.registration && refItem.registration) {
+                validateNestedKeys(item.registration, refItem.registration, 'registration', errors);
+            }
 
-        for (const key of Object.keys(item)) {
-            if (key in refItem) {
-                const refValue = refItem[key];
-                const inputValue = item[key];
+            if (item.attendance && !item.absenteeism && refItem.absenteeism) {
+                output.absenteeism = { ...refItem.absenteeism };
+            }
 
-                if (typeof refValue === 'object' && refValue !== null) {
-                    output[key] = mergeDeep(refValue, inputValue, errors);
+            for (const key of Object.keys(item)) {
+                if (key in refItem) {
+                    const refValue = refItem[key];
+                    const inputValue = item[key];
 
-                    if (key !== 'registration') {
-                        validateNestedKeys(inputValue, inputValue, key, errors);
+                    if (typeof refValue === 'object' && refValue !== null) {
+                        output[key] = mergeDeep(refValue, inputValue, errors);
+
+                        if (key !== 'registration') {
+                            validateNestedKeys(inputValue, inputValue, key, errors);
+                        }
+                    } else {
+                        output[key] = inputValue;
                     }
                 } else {
-                    output[key] = inputValue;
+                    errors.push(`Unexpected key '${key}' in object with key '${item.key}'`);
                 }
-            } else {
-                errors.push(`Unexpected key '${key}' in object with key '${item.key}'`);
+
             }
+
+            for (const key of Object.keys(refItem)) {
+                if (!(key in item)) output[key] = refItem[key];
+            }
+
+            converted.push(output);
         }
 
-
-        for (const key of Object.keys(refItem)) {
-            if (!(key in item)) output[key] = refItem[key];
-        }
-
-        converted.push(output);
+        return {
+            isValid: errors?.length === 0,
+            errors,
+            converted: converted?.length > 0 ? converted : reference,
+            academicYear,
+            currentAcademicYear,
+        };
     }
 
-    return {
-        isValid: errors.length === 0,
-        errors,
-        converted,
-        academicYear,
-        currentAcademicYear,
-    };
+    return { validateAndConvertArrayAgainstReference }
 };

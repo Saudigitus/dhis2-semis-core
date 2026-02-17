@@ -1,13 +1,13 @@
 import Home from "../pages/home";
 import { EnrollmentPage } from "dhis2-semis-enrollment";
-import { App as Attendance } from "dhis2-semis-attendance"
-import { FinalResult } from "dhis2-semis-final-result"
 import { Transfer } from "dhis2-semis-transfer"
+import { TransferExecute} from "dhis2-semis-transfer-execute"
 import { Performance } from "dhis2-semis-performance"
-import { TransferExecute } from "dhis2-semis-transfer-execute"
-import { ConfigirationsPage } from "dhis2-semis-configuration";
-import { SchoolCalendar } from "dhis2-semis-school-callendar"
+import { ConfigirationsPage } from "dhis2-semis-configurations";
 import i18n from "../locales/index.js";
+import {App as AttendancePage} from "dhis2-semis-attendance";
+import { FinalResult } from "dhis2-semis-final-result";
+import { SchoolCalendar } from "dhis2-semis-school-calendar";
 
 export default function RouteList() {
     return [
@@ -21,7 +21,7 @@ export default function RouteList() {
         },
         {
             path: "/semis/attendance",
-            component: <Attendance i18n={i18n} />
+            component: <AttendancePage i18n={i18n} />
         },
         {
             path: "/semis/performance",
@@ -29,11 +29,11 @@ export default function RouteList() {
         },
         {
             path: "/semis/transfer",
-            component: <Transfer i18n={i18n} />
+            component: <Transfer i18n={i18n}/>
         },
         {
             path: "/semis/transfer-execute",
-            component: <TransferExecute i18n={i18n} />
+            component: <TransferExecute  i18n={i18n}/>
         },
         {
             path: "/semis/final-result",
@@ -45,7 +45,7 @@ export default function RouteList() {
         },
         {
             path: "/semis/configuration",
-            component: <ConfigirationsPage i18n={i18n}/>
+            component: <ConfigirationsPage i18n={i18n} />
         },
         {
             path: "/semis/school-calendar/*",

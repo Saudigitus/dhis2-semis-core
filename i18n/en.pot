@@ -5,14 +5,613 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-10-31T14:21:24.018Z\n"
-"PO-Revision-Date: 2025-10-31T14:21:24.019Z\n"
+"POT-Creation-Date: 2026-01-26T10:05:46.049Z\n"
+"PO-Revision-Date: 2026-01-26T10:05:46.050Z\n"
 
-msgid "Enrollment"
-msgstr "Enrollment"
+msgid "No configuration found!"
+msgstr "No configuration found!"
+
+msgid "Use semis configuration app to setup your semis workspace."
+msgstr "Use semis configuration app to setup your semis workspace."
+
+msgid "Go to Configuratios -> Enrollment application and set value to academic year field."
+msgstr "Go to Configuratios -> Enrollment application and set value to academic year field."
+
+msgid "Invalid configurations!"
+msgstr "Invalid configurations!"
+
+msgid ""
+"The configurations found are not compatible with this version of SEMIS, "
+"please go to configurations app below and update the configrations!"
+msgstr ""
+"The configurations found are not compatible with this version of SEMIS, "
+"please go to configurations app below and update the configrations!"
+
+msgid "Assing final result"
+msgstr "Assing final result"
+
+msgid "WARNING! {{size}} rows will be affected"
+msgstr "WARNING! {{size}} rows will be affected"
+
+msgid ""
+"No one will be able to access this program. Add some Organisation Units to "
+"the access list."
+msgstr ""
+"No one will be able to access this program. Add some Organisation Units to "
+"the access list."
+
+msgid "Final Results"
+msgstr "Final Results"
+
+msgid "Student final result"
+msgstr "Student final result"
+
+msgid "Assign Final Result"
+msgstr "Assign Final Result"
+
+msgid "Ref"
+msgstr "Ref"
+
+msgid "School"
+msgstr "School"
+
+msgid "Error message"
+msgstr "Error message"
+
+msgid "Dry Run"
+msgstr "Dry Run"
+
+msgid "Import data"
+msgstr "Import data"
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Errors were found!"
+msgstr "Errors were found!"
+
+msgid "No errors!"
+msgstr "No errors!"
+
+msgid "Erros were found, please review your file!"
+msgstr "Erros were found, please review your file!"
+
+msgid "Invalid records were found, please review your file!"
+msgstr "Invalid records were found, please review your file!"
+
+msgid "Occurred errors during the import process, please review your file!"
+msgstr "Occurred errors during the import process, please review your file!"
+
+msgid "Date imported successfully!"
+msgstr "Date imported successfully!"
+
+msgid ""
+"No errors were found during dry run process, you can proceed with the "
+"import."
+msgstr ""
+"No errors were found during dry run process, you can proceed with the "
+"import."
+
+msgid ""
+"No errors were found during file validation process, you can proceed with "
+"the dry run/import."
+msgstr ""
+"No errors were found during file validation process, you can proceed with "
+"the dry run/import."
+
+msgid "Summary"
+msgstr "Summary"
+
+msgid "Summary by tracker type"
+msgstr "Summary by tracker type"
+
+msgid "New Records"
+msgstr "New Records"
+
+msgid "Invalid Records"
+msgstr "Invalid Records"
+
+msgid "Imported Records"
+msgstr "Imported Records"
+
+msgid "Updated Records"
+msgstr "Updated Records"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Total rows"
+msgstr "Total rows"
+
+msgid "Error reports"
+msgstr "Error reports"
+
+msgid "No records to display!"
+msgstr "No records to display!"
+
+msgid "Export Data Details"
+msgstr "Export Data Details"
+
+msgid "Details"
+msgstr "Details"
+
+msgid "This file will allow the import of new student data into the system."
+msgstr "This file will allow the import of new student data into the system."
+
+msgid "Export progress"
+msgstr "Export progress"
+
+msgid "Import progress"
+msgstr "Import progress"
+
+msgid "Exporting {{module}} data"
+msgstr "Exporting {{module}} data"
+
+msgid "Importing {{module}} data"
+msgstr "Importing {{module}} data"
+
+msgid "Select an item"
+msgstr "Select an item"
+
+msgid "SELECT DATE"
+msgstr "SELECT DATE"
+
+msgid "CANCEL"
+msgstr "CANCEL"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Drag & drop files or browse"
+msgstr "Drag & drop files or browse"
+
+msgid "No files selected"
+msgstr "No files selected"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Continue"
+msgstr "Continue"
+
+msgid "Update"
+msgstr "Update"
+
+msgid "Restore"
+msgstr "Restore"
+
+msgid "More Filters"
+msgstr "More Filters"
+
+msgid "Enter text"
+msgstr "Enter text"
+
+msgid "Submit"
+msgstr "Submit"
+
+msgid "Choose File"
+msgstr "Choose File"
+
+msgid "Remove"
+msgstr "Remove"
+
+msgid "Search for a school"
+msgstr "Search for a school"
+
+msgid "No Label"
+msgstr "No Label"
+
+msgid "Select a"
+msgstr "Select a"
+
+msgid "item"
+msgstr "item"
+
+msgid "Search for a"
+msgstr "Search for a"
+
+msgid "Academic year"
+msgstr "Academic year"
+
+msgid "Select a academic year"
+msgstr "Select a academic year"
+
+msgid "Select a school"
+msgstr "Select a school"
+
+msgid "Perform Promotion"
+msgstr "Perform Promotion"
+
+msgid "WARNING"
+msgstr "WARNING"
+
+msgid "rows will be affected"
+msgstr "rows will be affected"
+
+msgid "Student promotion"
+msgstr "Student promotion"
+
+msgid "Enrollment History"
+msgstr "Enrollment History"
+
+msgid "This {{section}} is already enrolled for this year."
+msgstr "This {{section}} is already enrolled for this year."
+
+msgid "New enrollment"
+msgstr "New enrollment"
+
+msgid "No enrollments found."
+msgstr "No enrollments found."
+
+msgid "View history"
+msgstr "View history"
+
+msgid "Register new"
+msgstr "Register new"
+
+msgid "Fill in at least 1 attribute to search."
+msgstr "Fill in at least 1 attribute to search."
+
+msgid "Search by"
+msgstr "Search by"
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Results found for"
+msgstr "Results found for"
+
+msgid "search"
+msgstr "search"
+
+msgid "No"
+msgstr "No"
+
+msgid "found"
+msgstr "found"
+
+msgid "Continue serching or click"
+msgstr "Continue serching or click"
+
+msgid "if you want to register as a new"
+msgstr "if you want to register as a new"
+
+msgid "rows selected"
+msgstr "rows selected"
+
+msgid "Select columns"
+msgstr "Select columns"
+
+msgid "Columns to show in the table"
+msgstr "Columns to show in the table"
+
+msgid "Table Columns"
+msgstr "Table Columns"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Click to open in new tab"
+msgstr "Click to open in new tab"
+
+msgid "Rows per page"
+msgstr "Rows per page"
+
+msgid "Page"
+msgstr "Page"
+
+msgid "Previous Page"
+msgstr "Previous Page"
+
+msgid "Next Page"
+msgstr "Next Page"
+
+msgid "No data to display"
+msgstr "No data to display"
+
+msgid "Hello {{name}}"
+msgstr "Hello {{name}}"
+
+msgid "Uncomplete attendance"
+msgstr "Uncomplete attendance"
+
+msgid "Complete attendance"
+msgstr "Complete attendance"
+
+msgid "Mark all as"
+msgstr "Mark all as"
+
+msgid "Warning"
+msgstr "Warning"
+
+msgid "Students will be affected"
+msgstr "Students will be affected"
+
+msgid "The chosen attendance status will be assigned to the selected students"
+msgstr "The chosen attendance status will be assigned to the selected students"
 
 msgid "Attendance"
 msgstr "Attendance"
+
+msgid "Bulk attendance"
+msgstr "Bulk attendance"
+
+msgid "Unknown error"
+msgstr "Unknown error"
+
+msgid "Import {{section}} atendances"
+msgstr "Import {{section}} atendances"
+
+msgid "Export {{section}} atendances"
+msgstr "Export {{section}} atendances"
+
+msgid "Please select an organisation unit before"
+msgstr "Please select an organisation unit before"
+
+msgid "Take attendance"
+msgstr "Take attendance"
+
+msgid "View attendance records"
+msgstr "View attendance records"
+
+msgid "Please select all filters"
+msgstr "Please select all filters"
+
+msgid "All listed students will be affected"
+msgstr "All listed students will be affected"
+
+msgid "Yes im sure"
+msgstr "Yes im sure"
+
+msgid "Attendance title"
+msgstr "Attendance title"
+
+msgid "Selected date"
+msgstr "Selected date"
+
+msgid "Hide reason of absense"
+msgstr "Hide reason of absense"
+
+msgid "View reason of absense"
+msgstr "View reason of absense"
+
+msgid "SEMIS-Attendance"
+msgstr "SEMIS-Attendance"
+
+msgid "Follow the instructions to proceed"
+msgstr "Follow the instructions to proceed"
+
+msgid "Select the Organization unit you want to view data"
+msgstr "Select the Organization unit you want to view data"
+
+msgid "Use global filters(Class, Grade and Academic Year)"
+msgstr "Use global filters(Class, Grade and Academic Year)"
+
+msgid "Configurations saved successfuly"
+msgstr "Configurations saved successfuly"
+
+msgid "Unable to save data"
+msgstr "Unable to save data"
+
+msgid "{{name}}"
+msgstr "{{name}}"
+
+msgid "{{section}} Configuration"
+msgstr "{{section}} Configuration"
+
+msgid "{{section}} {{key}} enabled successfully"
+msgstr "{{section}} {{key}} enabled successfully"
+
+msgid "{{section}} {{key}} disabled successfully"
+msgstr "{{section}} {{key}} disabled successfully"
+
+msgid ""
+"This module contain general configuration and it's required for semis to "
+"work properly"
+msgstr ""
+"This module contain general configuration and it's required for semis to "
+"work properly"
+
+msgid "Configure {{label}}"
+msgstr "Configure {{label}}"
+
+msgid "Cannot configure {{label}} before configuring {{registrationLabel}}"
+msgstr "Cannot configure {{label}} before configuring {{registrationLabel}}"
+
+msgid "Disable"
+msgstr "Disable"
+
+msgid "Enable"
+msgstr "Enable"
+
+msgid "You must configure this module first to enable it"
+msgstr "You must configure this module first to enable it"
+
+msgid "{{section}}"
+msgstr "{{section}}"
+
+msgid "Data Element with option sets"
+msgstr "Data Element with option sets"
+
+msgid "Reason of absence"
+msgstr "Reason of absence"
+
+msgid "option sets"
+msgstr "option sets"
+
+msgid "Absent Code"
+msgstr "Absent Code"
+
+msgid "Late Code"
+msgstr "Late Code"
+
+msgid "Leave Code"
+msgstr "Leave Code"
+
+msgid "Present Code"
+msgstr "Present Code"
+
+msgid "Allow Attendance Status"
+msgstr "Allow Attendance Status"
+
+msgid "Event Program"
+msgstr "Event Program"
+
+msgid "Attendance Class Config Program"
+msgstr "Attendance Class Config Program"
+
+msgid "Non Repeatable Program Stage"
+msgstr "Non Repeatable Program Stage"
+
+msgid "Attendance Class Config Program Stage"
+msgstr "Attendance Class Config Program Stage"
+
+msgid "Attendance Status"
+msgstr "Attendance Status"
+
+msgid "Repeatable Program Stage"
+msgstr "Repeatable Program Stage"
+
+msgid "Attendance Program Stage"
+msgstr "Attendance Program Stage"
+
+msgid "Allow Searching"
+msgstr "Allow Searching"
+
+msgid "Default order by"
+msgstr "Default order by"
+
+msgid "Order as"
+msgstr "Order as"
+
+msgid "asc"
+msgstr "asc"
+
+msgid "desc"
+msgstr "desc"
+
+msgid "Non-Repeatable Program Stage"
+msgstr "Non-Repeatable Program Stage"
+
+msgid "Final Result Program Stage"
+msgstr "Final Result Program Stage"
+
+msgid "Data Element"
+msgstr "Data Element"
+
+msgid "Final result status"
+msgstr "Final result status"
+
+msgid "List of final result status that allows student promotion"
+msgstr "List of final result status that allows student promotion"
+
+msgid "Promotable Status"
+msgstr "Promotable Status"
+
+msgid "List of final result status that allows student dropout"
+msgstr "List of final result status that allows student dropout"
+
+msgid "Dropout Status"
+msgstr "Dropout Status"
+
+msgid "Allow multi selection of program stage"
+msgstr "Allow multi selection of program stage"
+
+msgid "Performance/marks Program Stages"
+msgstr "Performance/marks Program Stages"
+
+msgid "Tracker Program"
+msgstr "Tracker Program"
+
+msgid "Student Program"
+msgstr "Student Program"
+
+msgid "Data Element with Option Sets"
+msgstr "Data Element with Option Sets"
+
+msgid "Academic Year"
+msgstr "Academic Year"
+
+msgid "Grade"
+msgstr "Grade"
+
+msgid "The name that should appear in the global filters"
+msgstr "The name that should appear in the global filters"
+
+msgid "Grade filter name"
+msgstr "Grade filter name"
+
+msgid "Non-repeatable ProgramStage"
+msgstr "Non-repeatable ProgramStage"
+
+msgid "Registration Program Stage"
+msgstr "Registration Program Stage"
+
+msgid "Data optionally with Option Sets"
+msgstr "Data optionally with Option Sets"
+
+msgid "Class/Section"
+msgstr "Class/Section"
+
+msgid "Section filter name"
+msgstr "Section filter name"
+
+msgid "Non-repeateable ProgramStage"
+msgstr "Non-repeateable ProgramStage"
+
+msgid "Socio-economics Program Stage"
+msgstr "Socio-economics Program Stage"
+
+msgid "Organisation Unit  Data Element"
+msgstr "Organisation Unit  Data Element"
+
+msgid "Destiny School"
+msgstr "Destiny School"
+
+msgid "Origin School"
+msgstr "Origin School"
+
+msgid "Program Stage"
+msgstr "Program Stage"
+
+msgid "Transfer Status"
+msgstr "Transfer Status"
+
+msgid "Approved Code"
+msgstr "Approved Code"
+
+msgid "Pedding Code"
+msgstr "Pedding Code"
+
+msgid "Reproved Code"
+msgstr "Reproved Code"
+
+msgid "List of final result status that allows staff promotion"
+msgstr "List of final result status that allows staff promotion"
+
+msgid "Staff Program"
+msgstr "Staff Program"
+
+msgid "Employment type"
+msgstr "Employment type"
+
+msgid "Employment type filter name"
+msgstr "Employment type filter name"
+
+msgid "Repeatable ProgramStage"
+msgstr "Repeatable ProgramStage"
+
+msgid "Type of staff"
+msgstr "Type of staff"
+
+msgid "Type of staff filter name"
+msgstr "Type of staff filter name"
+
+msgid "Enrollment"
+msgstr "Enrollment"
 
 msgid "Performance"
 msgstr "Performance"
@@ -28,6 +627,449 @@ msgstr "Staff registry"
 
 msgid "Re-enroll"
 msgstr "Re-enroll"
+
+msgid "Program Details"
+msgstr "Program Details"
+
+msgid "Attendance General Details"
+msgstr "Attendance General Details"
+
+msgid "Attendance Statuses Details"
+msgstr "Attendance Statuses Details"
+
+msgid "Class Attendance Configuration"
+msgstr "Class Attendance Configuration"
+
+msgid "Registration Details"
+msgstr "Registration Details"
+
+msgid "If you don't use socio-economic module, please leave this field blanck"
+msgstr "If you don't use socio-economic module, please leave this field blanck"
+
+msgid "Select a program to follow and config the socio economic details"
+msgstr "Select a program to follow and config the socio economic details"
+
+msgid "Socio Economic Details"
+msgstr "Socio Economic Details"
+
+msgid "Select a program to follow and config the registration details"
+msgstr "Select a program to follow and config the registration details"
+
+msgid "Default Configurations"
+msgstr "Default Configurations"
+
+msgid "Final Result Details"
+msgstr "Final Result Details"
+
+msgid "Promotion & Dropout Criteria"
+msgstr "Promotion & Dropout Criteria"
+
+msgid "Performance details"
+msgstr "Performance details"
+
+msgid "Transfer Details"
+msgstr "Transfer Details"
+
+msgid "Transfer Status Details"
+msgstr "Transfer Status Details"
+
+msgid "Enroll new {{section}}"
+msgstr "Enroll new {{section}}"
+
+msgid "Bulk Enrollment"
+msgstr "Bulk Enrollment"
+
+msgid "Update existing {{section}}"
+msgstr "Update existing {{section}}"
+
+msgid "Bulk Enrollment Update"
+msgstr "Bulk Enrollment Update"
+
+msgid "Export Empty Template"
+msgstr "Export Empty Template"
+
+msgid "Export Existing {{section}}"
+msgstr "Export Existing {{section}}"
+
+msgid "Search by {{section}}"
+msgstr "Search by {{section}}"
+
+msgid "Enroll {{section}}"
+msgstr "Enroll {{section}}"
+
+msgid "Bulk enrollment"
+msgstr "Bulk enrollment"
+
+msgid "Enrollment Deletion"
+msgstr "Enrollment Deletion"
+
+msgid "Could not conclude the opertation."
+msgstr "Could not conclude the opertation."
+
+msgid "Operation concluded successfully"
+msgstr "Operation concluded successfully"
+
+msgid "Single {{section}} Enrollment {{mode}}"
+msgstr "Single {{section}} Enrollment {{mode}}"
+
+msgid "Edition"
+msgstr "Edition"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "SEMIS-Enrollment"
+msgstr "SEMIS-Enrollment"
+
+msgid "Enrollments"
+msgstr "Enrollments"
+
+msgid ""
+"No one will be able to access this program. Add some Organisation Units to "
+"the access list"
+msgstr ""
+"No one will be able to access this program. Add some Organisation Units to "
+"the access list"
+
+msgid ""
+"Configuration error. ValidStatusValue not set in DataStore for "
+"{{sectionType}}"
+msgstr ""
+"Configuration error. ValidStatusValue not set in DataStore for "
+"{{sectionType}}"
+
+msgid "Error loading organization units"
+msgstr "Error loading organization units"
+
+msgid "Failed to load accessible organization units"
+msgstr "Failed to load accessible organization units"
+
+msgid "No accessible organization units"
+msgstr "No accessible organization units"
+
+msgid ""
+"You do not have data-entry access to any organization units. Contact your "
+"administrator to grant you the necessary permissions"
+msgstr ""
+"You do not have data-entry access to any organization units. Contact your "
+"administrator to grant you the necessary permissions"
+
+msgid "Registering School"
+msgstr "Registering School"
+
+msgid "Enrollment date"
+msgstr "Enrollment date"
+
+msgid "Number of Students"
+msgstr "Number of Students"
+
+msgid "Maximum number of students supported for each file"
+msgstr "Maximum number of students supported for each file"
+
+msgid "SEMIS-Staff-Re-enrollment"
+msgstr "SEMIS-Staff-Re-enrollment"
+
+msgid "Use global filters(Type of Staff, Employment Type and Academic Year)"
+msgstr "Use global filters(Type of Staff, Employment Type and Academic Year)"
+
+msgid "SEMIS-Final-Result"
+msgstr "SEMIS-Final-Result"
+
+msgid "Staff Re-enrollment"
+msgstr "Staff Re-enrollment"
+
+msgid "Terminated"
+msgstr "Terminated"
+
+msgid "Dropout"
+msgstr "Dropout"
+
+msgid "Assign re-enrollment status"
+msgstr "Assign re-enrollment status"
+
+msgid "Assign final result"
+msgstr "Assign final result"
+
+msgid "Perform re-enrollment"
+msgstr "Perform re-enrollment"
+
+msgid "Perform promotion"
+msgstr "Perform promotion"
+
+msgid "Bulk Staff Re-enrollment"
+msgstr "Bulk Staff Re-enrollment"
+
+msgid "Bulk Final Result"
+msgstr "Bulk Final Result"
+
+msgid "Assign Re-enrollment Status"
+msgstr "Assign Re-enrollment Status"
+
+msgid "Perform Re-enrollment"
+msgstr "Perform Re-enrollment"
+
+msgid "Staff re-enrollment"
+msgstr "Staff re-enrollment"
+
+msgid "Staff Re-enrollment Status"
+msgstr "Staff Re-enrollment Status"
+
+msgid "Staff re-enrollment status"
+msgstr "Staff re-enrollment status"
+
+msgid "Some selected staff have no re-enrollment status or were not re-enrolled."
+msgstr "Some selected staff have no re-enrollment status or were not re-enrolled."
+
+msgid "Some selected students have no final result or were not promoted."
+msgstr "Some selected students have no final result or were not promoted."
+
+msgid "Please select type of staff and employment type"
+msgstr "Please select type of staff and employment type"
+
+msgid "Please select section and grade"
+msgstr "Please select section and grade"
+
+msgid "Re-enrolled staff"
+msgstr "Re-enrolled staff"
+
+msgid "Promoted students"
+msgstr "Promoted students"
+
+msgid "Not re-enrolled staff"
+msgstr "Not re-enrolled staff"
+
+msgid "No promoted students"
+msgstr "No promoted students"
+
+msgid "Staff Re-enrollment Summary"
+msgstr "Staff Re-enrollment Summary"
+
+msgid "Students Promotion Summary"
+msgstr "Students Promotion Summary"
+
+msgid "Staff re-enrollment preview"
+msgstr "Staff re-enrollment preview"
+
+msgid "Students promotion preview"
+msgstr "Students promotion preview"
+
+msgid ""
+"The following staff were not re-enrolled. They already exist on the "
+"selected academic year"
+msgstr ""
+"The following staff were not re-enrolled. They already exist on the "
+"selected academic year"
+
+msgid ""
+"The following students were not promoted. They already exist on the "
+"selected academic year"
+msgstr ""
+"The following students were not promoted. They already exist on the "
+"selected academic year"
+
+msgid "Export Staff Re-enrollment"
+msgstr "Export Staff Re-enrollment"
+
+msgid "Export Final Result"
+msgstr "Export Final Result"
+
+msgid "staff"
+msgstr "staff"
+
+msgid "student"
+msgstr "student"
+
+msgid "students"
+msgstr "students"
+
+msgid "Bulk Performance"
+msgstr "Bulk Performance"
+
+msgid "Import Performance"
+msgstr "Import Performance"
+
+msgid "Export students performace"
+msgstr "Export students performace"
+
+msgid "Disable Edition Mode"
+msgstr "Disable Edition Mode"
+
+msgid "Allow Edit Mode"
+msgstr "Allow Edit Mode"
+
+msgid "SEMIS-Performance"
+msgstr "SEMIS-Performance"
+
+msgid "Data registered successfully"
+msgstr "Data registered successfully"
+
+msgid "Start Date"
+msgstr "Start Date"
+
+msgid "End Date"
+msgstr "End Date"
+
+msgid "Are you sure?"
+msgstr "Are you sure?"
+
+msgid "This will delete the selected data"
+msgstr "This will delete the selected data"
+
+msgid "Disagree"
+msgstr "Disagree"
+
+msgid "Agree"
+msgstr "Agree"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Non-Schoolday Type"
+msgstr "Non-Schoolday Type"
+
+msgid "Public Holiday"
+msgstr "Public Holiday"
+
+msgid "Special Events"
+msgstr "Special Events"
+
+msgid "Event"
+msgstr "Event"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "Code you configuration"
+msgstr "Code you configuration"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Description you configuration"
+msgstr "Description you configuration"
+
+msgid "Start date"
+msgstr "Start date"
+
+msgid "End date"
+msgstr "End date"
+
+msgid "General Details"
+msgstr "General Details"
+
+msgid "description"
+msgstr "description"
+
+msgid "Period"
+msgstr "Period"
+
+msgid "School days"
+msgstr "School days"
+
+msgid "Monday"
+msgstr "Monday"
+
+msgid "Tuesday"
+msgstr "Tuesday"
+
+msgid "Wednesday"
+msgstr "Wednesday"
+
+msgid "Thursday"
+msgstr "Thursday"
+
+msgid "Friday"
+msgstr "Friday"
+
+msgid "Saturday"
+msgstr "Saturday"
+
+msgid "Sunday"
+msgstr "Sunday"
+
+msgid "Perform transfer"
+msgstr "Perform transfer"
+
+msgid "Confirm"
+msgstr "Confirm"
+
+msgid "Attention"
+msgstr "Attention"
+
+msgid "This action will transfer this {{section}} into this school."
+msgstr "This action will transfer this {{section}} into this school."
+
+msgid "You are about to reject the {{section}} transfer to this school."
+msgstr "You are about to reject the {{section}} transfer to this school."
+
+msgid "Are you sure you want to approve the transfer of "
+msgstr "Are you sure you want to approve the transfer of "
+
+msgid "from"
+msgstr "from"
+
+msgid "to"
+msgstr "to"
+
+msgid "Are you sure you want to reject the transfer of"
+msgstr "Are you sure you want to reject the transfer of"
+
+msgid "Transfer Approval"
+msgstr "Transfer Approval"
+
+msgid "Incoming transfer"
+msgstr "Incoming transfer"
+
+msgid "Outgoing transfer"
+msgstr "Outgoing transfer"
+
+msgid "SEMIS - Transfer"
+msgstr "SEMIS - Transfer"
+
+msgid "Transfers"
+msgstr "Transfers"
+
+msgid "Resquest time"
+msgstr "Resquest time"
+
+msgid "Select at least one row."
+msgstr "Select at least one row."
+
+msgid "Execute transfer"
+msgstr "Execute transfer"
+
+msgid "Transfer request sent successfully"
+msgstr "Transfer request sent successfully"
+
+msgid "Please fill all required fields"
+msgstr "Please fill all required fields"
+
+msgid "Request transfer"
+msgstr "Request transfer"
+
+msgid "WARNING!"
+msgstr "WARNING!"
+
+msgid "Select the destination school"
+msgstr "Select the destination school"
+
+msgid "Perform Transfer"
+msgstr "Perform Transfer"
+
+msgid "SEMIS-Transfer-Execute"
+msgstr "SEMIS-Transfer-Execute"
+
+msgid "Transfer Execute"
+msgstr "Transfer Execute"
 
 msgid "Configurations"
 msgstr "Configurations"
@@ -52,3 +1094,7 @@ msgstr "Final result"
 
 msgid "Staff Re-enroll"
 msgstr "Staff Re-enroll"
+
+msgctxt "Date"
+msgid "Enrollment"
+msgstr "Enrollment_Date"

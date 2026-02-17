@@ -17,7 +17,49 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "dhis2-semis-components": [
+        "src/libs/components/src"
+      ],
+      "dhis2-semis-functions": [
+        "src/libs/functions/src"
+      ],
+      "dhis2-semis-types": [
+        "src/libs/types/src"
+      ],
+      "dhis2-semis-enrollment": [
+        "src/modules/enrollment/src"
+      ],
+      "dhis2-semis-performance": [
+        "src/modules/performance/src"
+      ],
+      "dhis2-semis-attendance": [
+        "src/modules/attendance/src"
+      ],
+      "dhis2-semis-transfer": [
+        "src/modules/transfer/src"
+      ],
+      "dhis2-semis-final-result": [
+        "src/modules/final-result/src"
+      ],
+      "dhis2-semis-transfer-execute": [
+        "src/modules/transfer-execute/src"
+      ],
+      "dhis2-semis-configurations": [
+        "src/modules/configurations/src"
+      ],
+      "dhis2-semis-school-calendar": [
+        "src/modules/school-calendar/src"
+      ],
+      "@libs/*": [
+        "src/libs/*"
+      ],
+      "@modules/*": [
+        "src/modules/*"
+      ]
+    }
   },
   "include": [
     "src"

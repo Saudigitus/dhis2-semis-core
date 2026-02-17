@@ -29,7 +29,7 @@ export const menuData = ({
   filterDataElements,
   academicYear,
 }: menuDataParams): any[] => {
-  console.log(academicYear)
+
   return [
     {
       title: i18n.t("Navigation"),

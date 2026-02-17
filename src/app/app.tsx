@@ -1,20 +1,21 @@
 import Router from "../router/router"
 import { useConfig } from "@dhis2/app-runtime"
-import { AppWrapper } from "dhis2-semis-components"
+
 import InitializeWrapper from "../components/wrapper/InitializeWrapper"
 import i18n from "../locales"
 import { useEffect, useState } from "react"
 import { useCacheData } from "dhis2-semis-functions"
+import { AppWrapper } from "dhis2-semis-components"
 
 const App = () => {
   const { baseUrl } = useConfig()
   const { initializeDB } = useCacheData();
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const initAndSave = async () => {
       try {
-        await initializeDB(); 
+        await initializeDB();
         console.log('Data loaded successfully');
       } catch (error) {
         console.error('DB error:', error);
@@ -23,7 +24,7 @@ const App = () => {
       }
     };
     initAndSave();
-  }, []); 
+  }, []);
 
   if (loading) {
     return <span>{('Loading...')}</span>;

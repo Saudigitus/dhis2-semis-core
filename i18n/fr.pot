@@ -221,7 +221,7 @@ msgstr "Date sélectionnée"
 msgid "Hide reason of absense"
 msgstr "Masquer le motif d’absence"
 
-msgid "View teason of absense"
+msgid "View reason of absense"
 msgstr "Voir le motif d’absence"
 
 msgid "Export {{section}} attendances"
@@ -1028,3 +1028,21 @@ msgstr "Détails du transfert"
 
 msgid "Transfer Status Details"
 msgstr "Détails du statut de transfert"
+
+msgid "No configuration found!"
+msgstr "Aucune configuration trouvée !"
+
+msgid "Use semis configuration app to setup your semis workspace."
+msgstr "Utilisez l'application de configuration Semis pour configurer votre espace de travail Semis."
+
+msgid "School calendar configuration not found!"
+msgstr "Configuration du calendrier scolaire introuvable !"
+
+msgid "Go to Configuratios -> Enrollment application and set value to academic year field."
+msgstr "Allez dans Configurations -> Demande d'inscription et définissez la valeur dans le champ Année universitaire."
+
+msgid "Invalid configurations!"
+msgstr "Configurations non valides !"
+
+msgid "The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!"
+msgstr "Les configurations trouvées ne sont pas compatibles avec cette version de SEMIS. Veuillez vous rendre dans l'application de configurations ci-dessous et mettre à jour les configurations !"

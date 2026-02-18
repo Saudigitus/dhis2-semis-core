@@ -1,7 +1,7 @@
 {
     "No configuration found!": "No configuration found!",
     "Use semis configuration app to setup your semis workspace.": "Use semis configuration app to setup your semis workspace.",
-    "Go to enrollment application and set value to academic year field.": "Go to enrollment application and set value to academic year field.",
+    "Go to Configurations -> Enrollment application and set value to academic year field.": "Go to Configurations -> Enrollment application and set value to academic year field.",
     "Invalid configurations!": "Invalid configurations!",
     "The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!": "The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!",
     "Assing final result": "Assing final result",
@@ -25,15 +25,14 @@
     "No errors were found during dry run process, you can proceed with the import.": "No errors were found during dry run process, you can proceed with the import.",
     "No errors were found during file validation process, you can proceed with the dry run/import.": "No errors were found during file validation process, you can proceed with the dry run/import.",
     "Summary": "Summary",
-    "Summary by tracker type": "Summary by tracker type",
     "New Records": "New Records",
     "Invalid Records": "Invalid Records",
     "Imported Records": "Imported Records",
     "Updated Records": "Updated Records",
     "Error": "Error",
     "Total rows": "Total rows",
-    "Error reports": "Error reports",
     "No records to display!": "No records to display!",
+    "Errors": "Errors",
     "Export Data Details": "Export Data Details",
     "Details": "Details",
     "This file will allow the import of new student data into the system.": "This file will allow the import of new student data into the system.",
@@ -348,5 +347,7 @@
     "Home": "Home",
     "Final result": "Final result",
     "Staff Re-enroll": "Staff Re-enroll",
-    "Enrollment_Date": "Enrollment_Date"
+    "Enrollment_Date": "Enrollment_Date",
+    "__MANIFEST_APP_TITLE_Application title": "SEMIS",
+    "__MANIFEST_APP_DESCRIPTION_Application description": "SEMIS"
 }

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-01-26T10:05:46.049Z\n"
-"PO-Revision-Date: 2026-01-26T10:05:46.050Z\n"
+"POT-Creation-Date: 2026-02-16T09:41:34.839Z\n"
+"PO-Revision-Date: 2026-02-16T09:41:34.840Z\n"
 
 msgid "No configuration found!"
 msgstr "No configuration found!"
@@ -14,8 +14,12 @@ msgstr "No configuration found!"
 msgid "Use semis configuration app to setup your semis workspace."
 msgstr "Use semis configuration app to setup your semis workspace."
 
-msgid "Go to Configuratios -> Enrollment application and set value to academic year field."
-msgstr "Go to Configuratios -> Enrollment application and set value to academic year field."
+msgid ""
+"Go to Configurations -> Enrollment application and set value to academic "
+"year field."
+msgstr ""
+"Go to Configurations -> Enrollment application and set value to academic "
+"year field."
 
 msgid "Invalid configurations!"
 msgstr "Invalid configurations!"
@@ -102,9 +106,6 @@ msgstr ""
 msgid "Summary"
 msgstr "Summary"
 
-msgid "Summary by tracker type"
-msgstr "Summary by tracker type"
-
 msgid "New Records"
 msgstr "New Records"
 
@@ -123,11 +124,11 @@ msgstr "Error"
 msgid "Total rows"
 msgstr "Total rows"
 
-msgid "Error reports"
-msgstr "Error reports"
-
 msgid "No records to display!"
 msgstr "No records to display!"
+
+msgid "Errors"
+msgstr "Errors"
 
 msgid "Export Data Details"
 msgstr "Export Data Details"
@@ -1098,3 +1099,11 @@ msgstr "Staff Re-enroll"
 msgctxt "Date"
 msgid "Enrollment"
 msgstr "Enrollment_Date"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr "SEMIS"
+
+msgctxt "Application description"
+msgid "__MANIFEST_APP_DESCRIPTION"
+msgstr "SEMIS"

@@ -319,5 +319,11 @@
     "Promotion & Dropout Criteria": "Critères de promotion et d'abandon",
     "Performance details": "Détails de performance",
     "Transfer Details": "Détails du transfert",
-    "Transfer Status Details": "Détails du statut de transfert"
+    "Transfer Status Details": "Détails du statut de transfert",
+    "No configuration found!": "Aucune configuration trouvée !",
+    "Use semis configuration app to setup your semis workspace.": "Utilisez l'application de configuration Semis pour configurer votre espace de travail Semis.",
+    "School calendar configuration not found!": "Configuration du calendrier scolaire introuvable !",
+    "Go to Configuratios -> Enrollment application and set value to academic year field.": "Allez dans Configurations -> Demande d'inscription et définissez la valeur dans le champ Année universitaire.",
+    "Invalid configurations!": "Configurations non valides !",
+    "The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!": "Les configurations trouvées ne sont pas compatibles avec cette version de SEMIS. Veuillez vous rendre dans l'application de configurations ci-dessous et mettre à jour les configurations !"
 }

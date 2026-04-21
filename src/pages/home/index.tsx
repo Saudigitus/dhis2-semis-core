@@ -35,6 +35,7 @@ const Home = () => {
                         key={label}
                         icon={icon}
                         contents={[{ label }]}
+                        dataTest={path}
                         actions={[makeAction(path, id)]}
                       />
                     ))

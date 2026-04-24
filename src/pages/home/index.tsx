@@ -35,7 +35,7 @@ const Home = () => {
                         key={label}
                         icon={icon}
                         contents={[{ label }]}
-                        dataTest={path}
+                        dataTest={"card-" + label.toLocaleLowerCase() + "-" + title.toLocaleLowerCase() + "-home"}
                         actions={[makeAction(path, id)]}
                       />
                     ))

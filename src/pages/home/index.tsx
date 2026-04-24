@@ -15,7 +15,7 @@ const Home = () => {
   const defaultAcademicYear = schoolCalendar?.defaults?.academicYear ?? ""
 
   const makeAction = (path: string, sectionId: string) => ({
-    icon: <MenuIcon />,
+    icon: <MenuIcon data-test={`${path}-list-${sectionId}`}/>,
     label: i18n.t(`List ${path.replace("-", " ")}`),
     onAction: () => sectionId != "configurations" ? navigate(`/semis/${path}?sectionType=${sectionId}&academicYear=${defaultAcademicYear}`) : navigate(`/semis/${path}`),
   });

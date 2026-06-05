@@ -18,13 +18,23 @@ export function validateNestedKeys(
 ): void {
     if (!inputObj || !refObj) return;
 
+    // ✅ Keys no inputObj que NÃO existem no refObj (keys inválidas/extras)
     for (const key of Object.keys(inputObj)) {
+        if (!(key in refObj)) {
+            errors.push(
+                `The key '${key}' is not allowed in '${parentKey}' for the object with key '${inputObj.key || "unknown"}'`
+            );
+        }
+    }
+
+    // ✅ Keys no refObj que NÃO existem no inputObj (keys obrigatórias ausentes)
+    for (const key of Object.keys(refObj)) {
         const inputVal = inputObj[key];
         const refVal = refObj[key];
 
-        if (!(key in refObj)) {
+        if (!(key in inputObj)) {
             errors.push(
-                `The key '${key}' is missing in '${parentKey}' for the object with key '${inputObj.key || "unknown"}`
+                `The key '${key}' is missing in '${parentKey}' for the object with key '${inputObj.key || "unknown"}'`
             );
             continue;
         }
@@ -50,26 +60,21 @@ export function validateNestedKeys(
     }
 }
 
-
 export function mergeDeep(ref: any, input: any, errors: any[]): any {
-
     if (typeof ref !== 'object' || ref === null || ref?.length == 0)
         return input !== undefined ? input : ref;
 
     if (Array.isArray(ref)) {
         if (Array.isArray(input)) return input.map((item) => mergeDeep(ref[0], item, errors));
-
         return ref;
     }
 
     const merged: any = {};
-    const allKeys = new Set([...Object.keys(ref), ...Object.keys(input || {})]);
 
-    for (const key of allKeys) {
-        if (!Object.keys(input || {})?.some(x => x == key)) errors.push(
-            `Missing required field '${key}' in object: ${JSON.stringify(input)}`
-        )
-
+    for (const key of Object.keys(ref)) {
+        if (!input || !(key in input)) {
+            errors.push(`Missing required field '${key}' in object: ${JSON.stringify(input)}`);
+        }
         merged[key] = mergeDeep(ref[key], input?.[key], errors);
     }
 
@@ -101,7 +106,7 @@ export const useValidate = () => {
             currentAcademicYear = item?.defaults?.currentAcademicYear || '';
             academicYear = item?.registration?.academicYear || '';
 
-            const refItem = reference.find(r => r.key === item.key);
+            const refItem = reference?.find(r => r.key === item.key);
             if (!refItem) {
                 errors.push(`Missing reference for key '${item.key}'`);
                 converted

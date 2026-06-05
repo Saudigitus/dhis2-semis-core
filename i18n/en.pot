@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-02-16T09:41:34.839Z\n"
-"PO-Revision-Date: 2026-02-16T09:41:34.840Z\n"
+"POT-Creation-Date: 2026-06-05T06:30:27.137Z\n"
+"PO-Revision-Date: 2026-06-05T06:30:27.138Z\n"
 
 msgid "No configuration found!"
 msgstr "No configuration found!"
@@ -106,6 +106,15 @@ msgstr ""
 msgid "Summary"
 msgstr "Summary"
 
+msgid "Summary by tracker type"
+msgstr "Summary by tracker type"
+
+msgid "Error details"
+msgstr "Error details"
+
+msgid "Warning details"
+msgstr "Warning details"
+
 msgid "New Records"
 msgstr "New Records"
 
@@ -118,17 +127,17 @@ msgstr "Imported Records"
 msgid "Updated Records"
 msgstr "Updated Records"
 
-msgid "Error"
-msgstr "Error"
+msgid "Errors"
+msgstr "Errors"
+
+msgid "Warnings"
+msgstr "Warnings"
 
 msgid "Total rows"
 msgstr "Total rows"
 
 msgid "No records to display!"
 msgstr "No records to display!"
-
-msgid "Errors"
-msgstr "Errors"
 
 msgid "Export Data Details"
 msgstr "Export Data Details"
@@ -1099,11 +1108,3 @@ msgstr "Staff Re-enroll"
 msgctxt "Date"
 msgid "Enrollment"
 msgstr "Enrollment_Date"
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr "SEMIS"
-
-msgctxt "Application description"
-msgid "__MANIFEST_APP_DESCRIPTION"
-msgstr "SEMIS"

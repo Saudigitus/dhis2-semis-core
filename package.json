@@ -1,6 +1,6 @@
 {
   "name": "semis",
-  "version": "2.0.10",
+  "version": "2.0.12",
   "description": "",
   "license": "BSD-3-Clause",
   "private": true,
@@ -8,7 +8,7 @@
     "init": "bash script.sh",
     "build": "d2-app-scripts build --no-verify",
     "build-unix": "node --max-old-space-size=8096 ./node_modules/.bin/d2-app-scripts build --no-verify",
-    "start": "d2-app-scripts start --proxy https://emis.im.dhis2.org/dev42",
+    "start": "d2-app-scripts start --proxy https://ethiopia.waliku.org/ethiopia",
     "test": "d2-app-scripts test",
     "deploy": "d2-app-scripts deploy"
   },

@@ -2,7 +2,7 @@ import { Alert, AlertTitle, Backdrop, Button } from "@mui/material"
 import usePostDataStore from "../../hooks/dataStore/usePostDataStore"
 import { Center } from "@dhis2/ui"
 import { CircularLoader } from "@dhis2/ui"
-import { DataStoreState, useGetDataStore } from "dhis2-semis-components"
+import { DataStoreState, SchoolCalendarData, useGetDataStore } from "dhis2-semis-components"
 import { DataStoreValidationSchemaType } from "../../schemas/validation/validationSchema"
 import { useSetRecoilState } from "recoil"
 
@@ -18,6 +18,7 @@ export default function AlertWithActions({ setValidation, setOpen, open, validat
     const { createDataStore, loading } = usePostDataStore({ keySpace: "dataStore/semis/values" })
     const { createDataStore: createSchoolCalendar, loading: loadingCalendar } = usePostDataStore({ keySpace: "dataStore/semis/schoolCalendar" })
     const setDataStore = useSetRecoilState(DataStoreState)
+    const setSchoolCalendar = useSetRecoilState(SchoolCalendarData)
 
     return (
         <Backdrop
@@ -43,8 +44,11 @@ export default function AlertWithActions({ setValidation, setOpen, open, validat
                                 })
 
                             const updateDataStore = await getDataStore("dataStore/semis/values")
-
-                            console.log(updateDataStore)
+                            const updatedSchoolCalendar = await getDataStore("dataStore/semis/schoolCalendar")
+                           
+                            setSchoolCalendar(updatedSchoolCalendar)
+                            setDataStore(updateDataStore)
+                           
                             setValidation({ valid: true, deniedConversion: false })
                             setOpen(false)
                         }}

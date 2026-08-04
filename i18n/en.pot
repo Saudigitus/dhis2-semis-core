@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-08-03T09:43:40.651Z\n"
-"PO-Revision-Date: 2026-08-03T09:43:40.652Z\n"
+"POT-Creation-Date: 2026-08-04T09:35:42.533Z\n"
+"PO-Revision-Date: 2026-08-04T09:35:42.534Z\n"
 
 msgid "No configuration found!"
 msgstr "No configuration found!"
@@ -910,12 +910,6 @@ msgstr "Allow Edit Mode"
 msgid "SEMIS-Performance"
 msgstr "SEMIS-Performance"
 
-msgid "Sync to all schools"
-msgstr "Sync to all schools"
-
-msgid "Export as a PDF"
-msgstr "Export as a PDF"
-
 msgid "Data registered successfully"
 msgstr "Data registered successfully"
 
@@ -940,80 +934,11 @@ msgstr "Agree"
 msgid "Edit"
 msgstr "Edit"
 
-msgid "This name already exists"
-msgstr "This name already exists"
-
-msgid "This code already exists"
-msgstr "This code already exists"
-
-msgid "Filter Options"
-msgstr "Filter Options"
-
-msgid "Off day registered successfully"
-msgstr "Off day registered successfully"
-
-msgid "Off-days"
-msgstr "Off-days"
-
-msgid "Add new"
-msgstr "Add new"
-
 msgid "Date"
 msgstr "Date"
 
 msgid "Type"
 msgstr "Type"
-
-msgid "Description"
-msgstr "Description"
-
-msgid "Non-schoolday description"
-msgstr "Non-schoolday description"
-
-msgid "Non-school days"
-msgstr "Non-school days"
-
-msgid "Term 1"
-msgstr "Term 1"
-
-msgid "Term 2"
-msgstr "Term 2"
-
-msgid "Term 3"
-msgstr "Term 3"
-
-msgid "General details"
-msgstr "General details"
-
-msgid "School terms"
-msgstr "School terms"
-
-msgid "Non school days"
-msgstr "Non school days"
-
-msgid "Class days"
-msgstr "Class days"
-
-msgid "Start date"
-msgstr "Start date"
-
-msgid "End date"
-msgstr "End date"
-
-msgid "Exam days"
-msgstr "Exam days"
-
-msgid "Break days"
-msgstr "Break days"
-
-msgid "Back"
-msgstr "Back"
-
-msgid "School Calendar"
-msgstr "School Calendar"
-
-msgid "Loading..."
-msgstr "Loading..."
 
 msgid "Non-Schoolday Type"
 msgstr "Non-Schoolday Type"
@@ -1036,8 +961,23 @@ msgstr "Code"
 msgid "Code you configuration"
 msgstr "Code you configuration"
 
+msgid "Description"
+msgstr "Description"
+
 msgid "Description you configuration"
 msgstr "Description you configuration"
+
+msgid "Start date"
+msgstr "Start date"
+
+msgid "End date"
+msgstr "End date"
+
+msgid "General Details"
+msgstr "General Details"
+
+msgid "description"
+msgstr "description"
 
 msgid "Period"
 msgstr "Period"
@@ -1143,6 +1083,9 @@ msgstr "Transfer Execute"
 
 msgid "Configurations"
 msgstr "Configurations"
+
+msgid "School Calendar"
+msgstr "School Calendar"
 
 msgid "Student"
 msgstr "Student"

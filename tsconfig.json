@@ -53,6 +53,9 @@
       "dhis2-semis-school-calendar": [
         "src/modules/school-calendar/src"
       ],
+      "dhis2-semis-student-profile": [
+        "src/modules/student-profile/src"
+      ],
       "@libs/*": [
         "src/libs/*"
       ],

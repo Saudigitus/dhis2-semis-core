@@ -23,6 +23,7 @@ const viteConfig = defineConfig(async (configEnv) => {
                 'dhis2-semis-school-calendar': path.resolve(__dirname, './src/modules/school-calendar/src'),
                 'dhis2-semis-transfer': path.resolve(__dirname, './src/modules/transfer/src'),
                 'dhis2-semis-transfer-execute': path.resolve(__dirname, './src/modules/transfer-execute/src'),
+                'dhis2-semis-student-profile': path.resolve(__dirname, './src/modules/student-profile/src'),
             }
         },
 

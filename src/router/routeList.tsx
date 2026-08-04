@@ -8,6 +8,7 @@ import i18n from "../locales/index.js";
 import { App as AttendancePage } from "dhis2-semis-attendance";
 import { FinalResult } from "dhis2-semis-final-result";
 import { SchoolCalendar } from "dhis2-semis-school-calendar";
+import { App as StudentProfile } from "dhis2-semis-student-profile";
 import { useConfig } from "@dhis2/app-runtime";
 
 export default function RouteList() {
@@ -52,6 +53,10 @@ export default function RouteList() {
         {
             path: "/semis/school-calendar/*",
             component: <SchoolCalendar i18n={i18n} baseUrl={baseUrl} />
+        },
+        {
+            path: "/semis/student-profile/*",
+            component: <StudentProfile i18n={i18n} baseUrl={baseUrl} />
         }
     ];
 }

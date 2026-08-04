@@ -8,7 +8,7 @@
     "init": "bash script.sh",
     "build": "d2-app-scripts build --no-verify",
     "build-unix": "node --max-old-space-size=8096 ./node_modules/.bin/d2-app-scripts build --no-verify",
-    "start": "d2-app-scripts start --proxy https://ethiopia.waliku.org/ethiopia",
+    "start": "d2-app-scripts start --proxy https://emis.dhis2.org/startracker",
     "test": "d2-app-scripts test",
     "deploy": "d2-app-scripts deploy"
   },

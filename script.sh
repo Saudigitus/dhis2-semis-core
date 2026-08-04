@@ -10,7 +10,7 @@ declare -a submodules=(
   "https://github.com/Saudigitus/dhis2-semis-enrollment.git|src/modules/enrollment|develop"
   "https://github.com/Saudigitus/dhis2-semis-final-result.git|src/modules/final-result|develop"
   "https://github.com/Saudigitus/dhis2-semis-performance.git|src/modules/performance|develop"
-  "https://github.com/Saudigitus/dhis2-emis-school-calendar.git|src/modules/school-calendar|i18n"
+  "https://github.com/Saudigitus/dhis2-emis-school-calendar.git|src/modules/school-calendar|develop"
   "https://github.com/Saudigitus/dhis2-semis-transfer.git|src/modules/transfer|develop"
   "https://github.com/Saudigitus/dhis2-emis-config.git|src/modules/configurations|develop"
   "https://github.com/Saudigitus/dhis2-semis-transfer-execute.git|src/modules/transfer-execute|develop"

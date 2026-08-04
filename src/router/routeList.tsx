@@ -55,7 +55,7 @@ export default function RouteList() {
             component: <SchoolCalendar i18n={i18n} baseUrl={baseUrl} />
         },
         {
-            path: "/semis/student-profile/*",
+            path: "/semis/profile/*",
             component: <StudentProfile i18n={i18n} baseUrl={baseUrl} />
         }
     ];

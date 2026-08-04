@@ -53,3 +53,6 @@
 	url = https://github.com/Saudigitus/dhis2-semis-customfunc.git
 	branch = develop
 	ignore = all
+[submodule "src/modules/student-profile"]
+	path = src/modules/student-profile
+	url = https://github.com/Saudigitus/dhis2-semis-student-profile.git

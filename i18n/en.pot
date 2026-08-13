@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-08-04T12:53:36.711Z\n"
-"PO-Revision-Date: 2026-08-04T12:53:36.713Z\n"
+"POT-Creation-Date: 2026-08-13T07:35:07.426Z\n"
+"PO-Revision-Date: 2026-08-13T07:35:07.427Z\n"
 
 msgid "No configuration found!"
 msgstr "No configuration found!"
@@ -228,6 +228,15 @@ msgstr "Select a academic year"
 
 msgid "Select a school"
 msgstr "Select a school"
+
+msgid "Back to Enrollments"
+msgstr "Back to Enrollments"
+
+msgid "Enrollment"
+msgstr "Enrollment"
+
+msgid "Staff"
+msgstr "Staff"
 
 msgid "Perform Promotion"
 msgstr "Perform Promotion"
@@ -620,9 +629,6 @@ msgstr "Type of staff"
 msgid "Type of staff filter name"
 msgstr "Type of staff filter name"
 
-msgid "Enrollment"
-msgstr "Enrollment"
-
 msgid "Performance"
 msgstr "Performance"
 
@@ -632,11 +638,17 @@ msgstr "Transfer"
 msgid "Final Result"
 msgstr "Final Result"
 
+msgid "Student Profile"
+msgstr "Student Profile"
+
 msgid "Staff registry"
 msgstr "Staff registry"
 
 msgid "Re-enroll"
 msgstr "Re-enroll"
+
+msgid "Staff Profile"
+msgstr "Staff Profile"
 
 msgid "Program Details"
 msgstr "Program Details"
@@ -1143,12 +1155,9 @@ msgstr "Transfer Execute"
 
 msgid "Configurations"
 msgstr "Configurations"
- 
+
 msgid "Student"
 msgstr "Student"
-
-msgid "Staff"
-msgstr "Staff"
 
 msgid "Navigation"
 msgstr "Navigation"

@@ -23,6 +23,8 @@ const Validator = () => {
                 values as unknown as any
             )
 
+            console.log(isValid, errors)
+
             if (!isValid) {
                 setValidation({ valid: true, converted: converted, deniedConversion: false, year: academicYear, currentAcademicYear: currentAcademicYear })
                 setOpen(true)

@@ -52,6 +52,7 @@ export const values = [
         },
         "key": "student",
         profile: {
+            enabled: false,
             identityCard: {
                 badges: [
                     {

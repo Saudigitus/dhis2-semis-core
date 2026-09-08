@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-08-13T07:35:07.426Z\n"
-"PO-Revision-Date: 2026-08-13T07:35:07.427Z\n"
+"POT-Creation-Date: 2026-09-04T13:57:10.436Z\n"
+"PO-Revision-Date: 2026-09-04T13:57:10.437Z\n"
 
 msgid "No configuration found!"
 msgstr "No configuration found!"
@@ -162,6 +162,9 @@ msgstr "Importing {{module}} data"
 
 msgid "Select an item"
 msgstr "Select an item"
+
+msgid "Selected date"
+msgstr "Selected date"
 
 msgid "SELECT DATE"
 msgstr "SELECT DATE"
@@ -334,11 +337,14 @@ msgstr "No data to display"
 msgid "Hello {{name}}"
 msgstr "Hello {{name}}"
 
-msgid "Uncomplete attendance"
-msgstr "Uncomplete attendance"
-
 msgid "Complete attendance"
 msgstr "Complete attendance"
+
+msgid "Update attendance"
+msgstr "Update attendance"
+
+msgid "Start attendance"
+msgstr "Start attendance"
 
 msgid "Mark all as"
 msgstr "Mark all as"
@@ -387,9 +393,6 @@ msgstr "Yes im sure"
 
 msgid "Attendance title"
 msgstr "Attendance title"
-
-msgid "Selected date"
-msgstr "Selected date"
 
 msgid "Hide reason of absense"
 msgstr "Hide reason of absense"
@@ -452,6 +455,186 @@ msgstr "You must configure this module first to enable it"
 msgid "{{section}}"
 msgstr "{{section}}"
 
+msgid "Add the first profile section."
+msgstr "Add the first profile section."
+
+msgid "Sections are displayed as tabs in the profile."
+msgstr "Sections are displayed as tabs in the profile."
+
+msgid "Add component"
+msgstr "Add component"
+
+msgid "This section has no components yet."
+msgstr "This section has no components yet."
+
+msgid "Add personal details, event cards or an event table."
+msgstr "Add personal details, event cards or an event table."
+
+msgid "Edit component"
+msgstr "Edit component"
+
+msgid "Delete component"
+msgstr "Delete component"
+
+msgid "Profile configuration"
+msgstr "Profile configuration"
+
+msgid "Click any highlighted area to choose its name, variables and presentation."
+msgstr "Click any highlighted area to choose its name, variables and presentation."
+
+msgid "Back"
+msgstr "Back"
+
+msgid "Profile sections"
+msgstr "Profile sections"
+
+msgid "Select section"
+msgstr "Select section"
+
+msgid "Edit section"
+msgstr "Edit section"
+
+msgid "Delete section"
+msgstr "Delete section"
+
+msgid "Add section"
+msgstr "Add section"
+
+msgid "Summary cards"
+msgstr "Summary cards"
+
+msgid "No program indicators"
+msgstr "No program indicators"
+
+msgid "There are no program indicators configured for this program."
+msgstr "There are no program indicators configured for this program."
+
+msgid "N/A"
+msgstr "N/A"
+
+msgid "The component name is required."
+msgstr "The component name is required."
+
+msgid "Select a component type."
+msgstr "Select a component type."
+
+msgid "Select a program stage."
+msgstr "Select a program stage."
+
+msgid "Configure component"
+msgstr "Configure component"
+
+msgid "Confirm deletion"
+msgstr "Confirm deletion"
+
+msgid "Confirm update"
+msgstr "Confirm update"
+
+msgid "Are you sure you want to delete this item?"
+msgstr "Are you sure you want to delete this item?"
+
+msgid "Are you sure you want to update this item?"
+msgstr "Are you sure you want to update this item?"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "The section name is required."
+msgstr "The section name is required."
+
+msgid "Configure section"
+msgstr "Configure section"
+
+msgid "Photo"
+msgstr "Photo"
+
+msgid "Select photo"
+msgstr "Select photo"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Select title variables"
+msgstr "Select title variables"
+
+msgid "Subtitle"
+msgstr "Subtitle"
+
+msgid "Select subtitle variables"
+msgstr "Select subtitle variables"
+
+msgid "Badges"
+msgstr "Badges"
+
+msgid "Add badges"
+msgstr "Add badges"
+
+msgid "Identity card"
+msgstr "Identity card"
+
+msgid "Display name"
+msgstr "Display name"
+
+msgid "Editable"
+msgstr "Editable"
+
+msgid "Size"
+msgstr "Size"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Page size"
+msgstr "Page size"
+
+msgid "Program stage"
+msgstr "Program stage"
+
+msgid "Photo attribute"
+msgstr "Photo attribute"
+
+msgid "Variables"
+msgstr "Variables"
+
+msgid "Separator"
+msgstr "Separator"
+
+msgid "Badge variables"
+msgstr "Badge variables"
+
+msgid "Use option colors when available"
+msgstr "Use option colors when available"
+
+msgid "Configure photo"
+msgstr "Configure photo"
+
+msgid "Configure title"
+msgstr "Configure title"
+
+msgid "Configure subtitle"
+msgstr "Configure subtitle"
+
+msgid "Configure badges"
+msgstr "Configure badges"
+
+msgid "Personal details"
+msgstr "Personal details"
+
+msgid "Event cards"
+msgstr "Event cards"
+
+msgid "Event table"
+msgstr "Event table"
+
+msgid "Tab details"
+msgstr "Tab details"
+
+msgid "Color"
+msgstr "Color"
+
+msgid "Order"
+msgstr "Order"
+
 msgid "Data Element with option sets"
 msgstr "Data Element with option sets"
 
@@ -488,14 +671,20 @@ msgstr "Non Repeatable Program Stage"
 msgid "Attendance Class Config Program Stage"
 msgstr "Attendance Class Config Program Stage"
 
-msgid "Attendance Status"
-msgstr "Attendance Status"
+msgid "Attendance Total Summary"
+msgstr "Attendance Total Summary"
+
+msgid "Attendance Total Records"
+msgstr "Attendance Total Records"
 
 msgid "Repeatable Program Stage"
 msgstr "Repeatable Program Stage"
 
 msgid "Attendance Program Stage"
 msgstr "Attendance Program Stage"
+
+msgid "Attendance Status"
+msgstr "Attendance Status"
 
 msgid "Allow Searching"
 msgstr "Allow Searching"
@@ -737,9 +926,6 @@ msgstr "Single {{section}} Enrollment {{mode}}"
 msgid "Edition"
 msgstr "Edition"
 
-msgid "Delete"
-msgstr "Delete"
-
 msgid "SEMIS-Enrollment"
 msgstr "SEMIS-Enrollment"
 
@@ -973,9 +1159,6 @@ msgstr "Add new"
 msgid "Date"
 msgstr "Date"
 
-msgid "Type"
-msgstr "Type"
-
 msgid "Description"
 msgstr "Description"
 
@@ -1017,9 +1200,6 @@ msgstr "Exam days"
 
 msgid "Break days"
 msgstr "Break days"
-
-msgid "Back"
-msgstr "Back"
 
 msgid "School Calendar"
 msgstr "School Calendar"
@@ -1077,6 +1257,24 @@ msgstr "Saturday"
 
 msgid "Sunday"
 msgstr "Sunday"
+
+msgid "Confirm Final Decision"
+msgstr "Confirm Final Decision"
+
+msgid "Could not conclude the operation."
+msgstr "Could not conclude the operation."
+
+msgid "Edit Student Profile"
+msgstr "Edit Student Profile"
+
+msgid "Not recorded"
+msgstr "Not recorded"
+
+msgid "Profile updated successfully"
+msgstr "Profile updated successfully"
+
+msgid "You can't upload/change a photo"
+msgstr "You can't upload/change a photo"
 
 msgid "Perform transfer"
 msgstr "Perform transfer"

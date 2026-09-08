@@ -47,7 +47,7 @@ export default function RouteList() {
             component: <FinalResult i18n={i18n} baseUrl={baseUrl} />
         },
         {
-            path: "/semis/configuration",
+            path: "/semis/configuration/*",
             component: <ConfigirationsPage i18n={i18n} baseUrl={baseUrl} />
         },
         {

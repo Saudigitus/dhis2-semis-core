@@ -8,7 +8,7 @@ const LayoutWrapper = ({ children }: { children: ReactElement }) => {
     const { urlParameters } = useUrlParams()
     const { sectionType } = urlParameters
 
-    if (!sectionType && (pathname !== "/semis" && pathname !== "/semis/configuration" && !pathname.includes('/semis/school-calendar'))) {
+    if (!sectionType && (pathname !== "/semis" && !pathname.includes("/semis/configuration") && !pathname.includes('/semis/school-calendar'))) {
         return (
             <WithPadding style={{ display: "grid", height: "100%", placeItems: "center" }}>
                 Can't load the app without section type.

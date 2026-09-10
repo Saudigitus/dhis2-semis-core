@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-09-04T13:57:10.436Z\n"
-"PO-Revision-Date: 2026-09-04T13:57:10.437Z\n"
+"POT-Creation-Date: 2026-09-09T15:01:50.623Z\n"
+"PO-Revision-Date: 2026-09-09T15:01:50.625Z\n"
 
 msgid "No configuration found!"
 msgstr "No configuration found!"
@@ -503,12 +503,6 @@ msgstr "Add section"
 msgid "Summary cards"
 msgstr "Summary cards"
 
-msgid "No program indicators"
-msgstr "No program indicators"
-
-msgid "There are no program indicators configured for this program."
-msgstr "There are no program indicators configured for this program."
-
 msgid "N/A"
 msgstr "N/A"
 
@@ -544,6 +538,9 @@ msgstr "The section name is required."
 
 msgid "Configure section"
 msgstr "Configure section"
+
+msgid "Variable"
+msgstr "Variable"
 
 msgid "Photo"
 msgstr "Photo"
@@ -911,6 +908,12 @@ msgstr "Enroll {{section}}"
 msgid "Bulk enrollment"
 msgstr "Bulk enrollment"
 
+msgid "Enrollment deleted successfully"
+msgstr "Enrollment deleted successfully"
+
+msgid "Error occured when deleting enrollment"
+msgstr "Error occured when deleting enrollment"
+
 msgid "Enrollment Deletion"
 msgstr "Enrollment Deletion"
 
@@ -923,8 +926,14 @@ msgstr "Operation concluded successfully"
 msgid "Single {{section}} Enrollment {{mode}}"
 msgstr "Single {{section}} Enrollment {{mode}}"
 
-msgid "Edition"
-msgstr "Edition"
+msgid "edit-enrollment"
+msgstr "edit-enrollment"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "delete-enrollment"
+msgstr "delete-enrollment"
 
 msgid "SEMIS-Enrollment"
 msgstr "SEMIS-Enrollment"
@@ -1090,20 +1099,20 @@ msgstr "student"
 msgid "students"
 msgstr "students"
 
-msgid "Bulk Performance"
-msgstr "Bulk Performance"
+msgid "Update performance"
+msgstr "Update performance"
 
-msgid "Import Performance"
-msgstr "Import Performance"
-
-msgid "Export students performace"
-msgstr "Export students performace"
+msgid "Export performance"
+msgstr "Export performance"
 
 msgid "Disable Edition Mode"
 msgstr "Disable Edition Mode"
 
 msgid "Allow Edit Mode"
 msgstr "Allow Edit Mode"
+
+msgid "Bulk Performance"
+msgstr "Bulk Performance"
 
 msgid "SEMIS-Performance"
 msgstr "SEMIS-Performance"
@@ -1134,9 +1143,6 @@ msgstr "Disagree"
 
 msgid "Agree"
 msgstr "Agree"
-
-msgid "Edit"
-msgstr "Edit"
 
 msgid "This name already exists"
 msgstr "This name already exists"
@@ -1318,8 +1324,8 @@ msgstr "SEMIS - Transfer"
 msgid "Transfers"
 msgstr "Transfers"
 
-msgid "Resquest time"
-msgstr "Resquest time"
+msgid "Request time"
+msgstr "Request time"
 
 msgid "Select at least one row."
 msgstr "Select at least one row."

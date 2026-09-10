@@ -251,7 +251,7 @@ msgstr "Notas em Massa"
 msgid "Import Performance"
 msgstr "Importar notas"
 
-msgid "Export students performace"
+msgid "Export students performance"
 msgstr "Exportar notas dos estudantes"
 
 msgid "Disable Edition Mode"
@@ -356,7 +356,7 @@ msgstr "SEMIS - Transferência"
 msgid "Transfers"
 msgstr "Transferências"
 
-msgid "Resquest time"
+msgid "Request time"
 msgstr "Hora da solicitação"
 
 msgid "Select at least one row."

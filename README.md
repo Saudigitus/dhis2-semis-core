@@ -35,8 +35,8 @@ This project was bootstrapped with [DHIS2 Application Platform](https://github.c
 
 ## Creating the Same Branch in All Submodules
 
-Use `scripts/create-branch-all.sh` to create a branch with the same name in every
-configured module and shared library:
+Use `scripts/create-branch-all.sh` to create and publish a branch with the same
+name in every configured module and shared library:
 
 ```bash
 npm run branch:create -- <branch-name>
@@ -56,14 +56,15 @@ also run the script directly from Git Bash:
 ./scripts/create-branch-all.sh feat/student-profile
 ```
 
-Before creating any branch, the script validates all submodules. It stops if a
-submodule is not initialized, contains local changes, has a Git operation in
-progress, lacks write permission, or already has a conflicting local branch or
-a matching known `origin` branch.
+Before creating any branch, the script validates all submodules and their remote
+repositories. It stops if a submodule is not initialized, contains local
+changes, has a Git operation in progress, lacks write permission, already has a
+conflicting branch, cannot reach `origin`, or cannot push to it.
 
+Each new branch is pushed to `origin` and configured to track its remote branch.
 If an unexpected error occurs after branch creation starts, the script removes
-the branches it created and restores the affected submodules to their previous
-branches or commits.
+the local and remote branches it created and restores the affected submodules to
+their previous branches or commits.
 
 ## Switching All Submodules to the Same Branch
 

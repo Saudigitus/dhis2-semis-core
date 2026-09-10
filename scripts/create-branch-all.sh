@@ -69,17 +69,35 @@ for path in "${submodule_paths[@]}"; do
         fi
     done < <(git -C "$path" for-each-ref --format='%(refname)' refs/heads)
 
-    if git -C "$path" show-ref --verify --quiet "refs/remotes/origin/$branch_name"; then
-        echo "Branch '$branch_name' already exists in the origin known by: $path" >&2
+    if ! git -C "$path" remote get-url origin >/dev/null 2>&1; then
+        echo "Remote 'origin' is not configured in: $path" >&2
+        exit 1
+    fi
+
+    if git -C "$path" ls-remote --exit-code --heads origin "refs/heads/$branch_name" >/dev/null 2>&1; then
+        echo "Branch '$branch_name' already exists in origin for: $path" >&2
+        exit 1
+    else
+        remote_status=$?
+        if [[ $remote_status -ne 2 ]]; then
+            echo "Unable to verify origin for: $path" >&2
+            exit 1
+        fi
+    fi
+
+    if ! git -C "$path" push --dry-run origin "HEAD:refs/heads/$branch_name" >/dev/null 2>&1; then
+        echo "Push validation failed for: $path" >&2
+        echo "Check your network connection and write permission on origin." >&2
         exit 1
     fi
 done
 
-echo "Creating branch '$branch_name'..."
+echo "Creating and publishing branch '$branch_name'..."
 
 created_paths=()
 original_commits=()
 original_branches=()
+published_branches=()
 
 rollback() {
     trap - ERR
@@ -88,6 +106,13 @@ rollback() {
 
     for ((index=${#created_paths[@]} - 1; index >= 0; index--)); do
         path="${created_paths[$index]}"
+        if [[ "${published_branches[$index]}" == "1" ]]; then
+            if git -C "$path" push origin --delete "$branch_name" >/dev/null 2>&1; then
+                echo "Removed from origin: $path" >&2
+            else
+                echo "Warning: could not remove '$branch_name' from origin for: $path" >&2
+            fi
+        fi
         if [[ -n "${original_branches[$index]}" ]]; then
             git -C "$path" switch "${original_branches[$index]}" >/dev/null 2>&1
         else
@@ -109,8 +134,12 @@ for path in "${submodule_paths[@]}"; do
     created_paths+=("$path")
     original_commits+=("$original_commit")
     original_branches+=("$original_branch")
-    echo "Branch created in $path"
+    published_branches+=("0")
+
+    git -C "$path" push --set-upstream origin "$branch_name"
+    published_branches[$((${#published_branches[@]} - 1))]="1"
+    echo "Branch created and published in $path"
 done
 
 trap - ERR
-echo "Done: branch '$branch_name' was created in all submodules."
+echo "Done: branch '$branch_name' was created and published in all submodules."

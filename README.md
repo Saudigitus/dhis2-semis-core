@@ -33,6 +33,65 @@ This project was bootstrapped with [DHIS2 Application Platform](https://github.c
    npm run start
    ```
 
+## Creating the Same Branch in All Submodules
+
+Use `scripts/create-branch-all.sh` to create a branch with the same name in every
+configured module and shared library:
+
+```bash
+npm run branch:create -- <branch-name>
+```
+
+For example:
+
+```bash
+npm run branch:create -- feat/student-profile
+```
+
+The npm command works from Git Bash and PowerShell on Windows, as well as from
+Linux and macOS terminals. It automatically uses Git Bash on Windows. You can
+also run the script directly from Git Bash:
+
+```bash
+./scripts/create-branch-all.sh feat/student-profile
+```
+
+Before creating any branch, the script validates all submodules. It stops if a
+submodule is not initialized, contains local changes, has a Git operation in
+progress, lacks write permission, or already has a conflicting local branch or
+a matching known `origin` branch.
+
+If an unexpected error occurs after branch creation starts, the script removes
+the branches it created and restores the affected submodules to their previous
+branches or commits.
+
+## Switching All Submodules to the Same Branch
+
+Use `scripts/switch-branch-all.sh` to switch every configured module and shared library
+to the same existing branch:
+
+```bash
+npm run branch:switch -- <branch-name>
+```
+
+For example:
+
+```bash
+npm run branch:switch -- develop
+```
+
+The target branch must exist locally or in the submodule's known `origin`
+references. If a remote branch was created recently, fetch the submodules first:
+
+```bash
+git submodule foreach git fetch origin
+```
+
+The script validates every submodule before switching the first one. It stops
+when it finds local changes, an unfinished Git operation, a missing branch, or
+an uninitialized submodule. If an unexpected error occurs during the switch, it
+restores the affected submodules to their previous branches or commits.
+
 ## Available Scripts
 
 In the project directory, you can run:

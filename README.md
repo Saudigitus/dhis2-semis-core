@@ -36,7 +36,7 @@ This project was bootstrapped with [DHIS2 Application Platform](https://github.c
 ## Creating the Same Branch in All Submodules
 
 Use `scripts/create-branch-all.sh` to create and publish a branch with the same
-name in every configured module and shared library:
+name in the core repository, every configured module, and every shared library:
 
 ```bash
 npm run branch:create -- <branch-name>
@@ -56,8 +56,8 @@ also run the script directly from Git Bash:
 ./scripts/create-branch-all.sh feat/student-profile
 ```
 
-Before creating any branch, the script validates all submodules and their remote
-repositories. It stops if a submodule is not initialized, contains local
+Before creating any branch, the script validates the core repository, all
+submodules, and their remote repositories. It stops if a repository contains local
 changes, has a Git operation in progress, lacks write permission, already has a
 conflicting branch, cannot reach `origin`, or cannot push to it.
 
@@ -68,8 +68,8 @@ their previous branches or commits.
 
 ## Switching All Submodules to the Same Branch
 
-Use `scripts/switch-branch-all.sh` to switch every configured module and shared library
-to the same existing branch:
+Use `scripts/switch-branch-all.sh` to switch the core repository, every
+configured module, and every shared library to the same existing branch:
 
 ```bash
 npm run branch:switch -- <branch-name>
@@ -81,17 +81,19 @@ For example:
 npm run branch:switch -- develop
 ```
 
-The target branch must exist locally or in the submodule's known `origin`
-references. If a remote branch was created recently, fetch the submodules first:
+The target branch must exist locally or in each repository's known `origin`
+references. If a remote branch was created recently, fetch all repositories first:
 
 ```bash
+git fetch origin
 git submodule foreach git fetch origin
 ```
 
-The script validates every submodule before switching the first one. It stops
-when it finds local changes, an unfinished Git operation, a missing branch, or
-an uninitialized submodule. If an unexpected error occurs during the switch, it
-restores the affected submodules to their previous branches or commits.
+The script validates the core repository and every submodule before switching
+the first one. It stops when it finds local changes, an unfinished Git operation,
+a missing branch, or an uninitialized submodule. If an unexpected error occurs
+during the switch, it restores the affected repositories to their previous
+branches or commits.
 
 ## Available Scripts
 

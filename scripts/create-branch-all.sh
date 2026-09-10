@@ -24,25 +24,31 @@ if (( ${#submodule_paths[@]} == 0 )); then
     exit 1
 fi
 
-echo "Validating ${#submodule_paths[@]} submodules..."
+# Process submodules first and the core repository last. If any validation
+# fails, no repository is changed.
+repository_paths=("${submodule_paths[@]}" ".")
+
+echo "Validating the core repository and ${#submodule_paths[@]} submodules..."
 
 # Validate every repository before changing any of them. This avoids leaving
 # only part of the project on the new branch after a predictable failure.
-for path in "${submodule_paths[@]}"; do
+for path in "${repository_paths[@]}"; do
     if ! git -C "$path" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-        echo "Submodule is not initialized: $path" >&2
-        echo "Run: git submodule update --init --recursive" >&2
+        echo "Git repository is not available: $path" >&2
+        if [[ "$path" != "." ]]; then
+            echo "Run: git submodule update --init --recursive" >&2
+        fi
         exit 1
     fi
 
     if [[ -n "$(git -C "$path" status --porcelain)" ]]; then
-        echo "Submodule has local changes: $path" >&2
+        echo "Repository has local changes: $path" >&2
         echo "Commit, stash, or discard the changes before continuing." >&2
         exit 1
     fi
 
     if ! git -C "$path" rev-parse --verify HEAD >/dev/null 2>&1; then
-        echo "Submodule does not have a valid initial commit: $path" >&2
+        echo "Repository does not have a valid initial commit: $path" >&2
         exit 1
     fi
 
@@ -127,7 +133,7 @@ rollback() {
 
 trap rollback ERR
 
-for path in "${submodule_paths[@]}"; do
+for path in "${repository_paths[@]}"; do
     original_commit="$(git -C "$path" rev-parse HEAD)"
     original_branch="$(git -C "$path" symbolic-ref --quiet --short HEAD || true)"
     git -C "$path" switch --create "$branch_name"
@@ -142,4 +148,4 @@ for path in "${submodule_paths[@]}"; do
 done
 
 trap - ERR
-echo "Done: branch '$branch_name' was created and published in all submodules."
+echo "Done: branch '$branch_name' was created and published in the core repository and all submodules."

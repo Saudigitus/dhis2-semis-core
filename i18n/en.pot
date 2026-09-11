@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-09-09T15:01:50.623Z\n"
-"PO-Revision-Date: 2026-09-09T15:01:50.625Z\n"
+"POT-Creation-Date: 2026-09-11T14:07:07.586Z\n"
+"PO-Revision-Date: 2026-09-11T14:07:07.587Z\n"
 
 msgid "No configuration found!"
 msgstr "No configuration found!"
@@ -503,6 +503,15 @@ msgstr "Add section"
 msgid "Summary cards"
 msgstr "Summary cards"
 
+msgid "Loading summary cards"
+msgstr "Loading summary cards"
+
+msgid "No program indicators"
+msgstr "No program indicators"
+
+msgid "There are no program indicators configured for this program."
+msgstr "There are no program indicators configured for this program."
+
 msgid "N/A"
 msgstr "N/A"
 
@@ -538,9 +547,6 @@ msgstr "The section name is required."
 
 msgid "Configure section"
 msgstr "Configure section"
-
-msgid "Variable"
-msgstr "Variable"
 
 msgid "Photo"
 msgstr "Photo"

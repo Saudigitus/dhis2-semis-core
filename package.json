@@ -1,16 +1,17 @@
 {
   "name": "semis",
-  "version": "2.0.12",
+  "version": "2.1.0-rc2",
   "description": "",
   "license": "BSD-3-Clause",
   "private": true,
   "scripts": {
+    "test:rules": "node --test src/libs/functions/tests/programRules.test.cjs",
     "init": "node scripts/run-bash-script.cjs init-submodules.sh",
     "branch:create": "node scripts/run-bash-script.cjs create-branch-all.sh",
     "branch:switch": "node scripts/run-bash-script.cjs switch-branch-all.sh",
     "build": "d2-app-scripts build --no-verify",
     "build-unix": "node --max-old-space-size=8096 ./node_modules/.bin/d2-app-scripts build --no-verify",
-    "start": "d2-app-scripts start --proxy https://emis.im.dhis2.org/dev42/",
+    "start": "d2-app-scripts start --proxy https://emis.im.dhis2.org/dev/",
     "test": "d2-app-scripts test",
     "deploy": "d2-app-scripts deploy"
   },
@@ -28,6 +29,7 @@
     "@dhis2/app-adapter": "12.6.0",
     "@dhis2/app-runtime": "^3.13.0",
     "@dhis2/d2-i18n": "^1.1.3",
+    "@dhis2/rule-engine": "3.8.2",
     "@dhis2/ui": "10.7.2",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",

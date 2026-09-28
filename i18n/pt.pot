@@ -102,7 +102,7 @@ msgstr "Não"
 msgid "found"
 msgstr "encontrado"
 
-msgid "Continue serching or click"
+msgid "Continue searching or click"
 msgstr "Continue pesquisando ou clique"
 
 msgid "Register new"

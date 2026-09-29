@@ -102,7 +102,7 @@ msgstr "Aucun"
 msgid "found"
 msgstr "trouvé"
 
-msgid "Continue serching or click"
+msgid "Continue searching or click"
 msgstr "Continuer la recherche ou cliquer sur"
 
 msgid "Register new"

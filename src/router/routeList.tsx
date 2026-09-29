@@ -7,7 +7,7 @@ import { Performance } from "dhis2-semis-performance"
 import { ConfigirationsPage } from "dhis2-semis-configurations";
 import i18n from "../locales/index.js";
 import { App as AttendancePage } from "dhis2-semis-attendance";
-import { FinalResult } from "dhis2-semis-final-result";
+import { FinalResult, StaffReEnrollment } from "dhis2-semis-final-result";
 import { SchoolCalendar } from "dhis2-semis-school-calendar";
 import { useConfig } from "@dhis2/app-runtime";
 
@@ -48,7 +48,7 @@ export default function RouteList() {
         },
         {
             path: "/semis/re-enroll",
-            component: <FinalResult i18n={i18n} baseUrl={baseUrl} />
+            component: <StaffReEnrollment i18n={i18n} baseUrl={baseUrl} />
         },
         {
             path: "/semis/configuration",

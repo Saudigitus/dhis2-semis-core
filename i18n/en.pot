@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-05-15T07:54:28.005Z\n"
-"PO-Revision-Date: 2026-05-15T07:54:28.007Z\n"
+"POT-Creation-Date: 2026-09-28T13:51:31.557Z\n"
+"PO-Revision-Date: 2026-09-28T13:51:31.558Z\n"
 
 msgid "No configuration found!"
 msgstr "No configuration found!"
@@ -418,8 +418,8 @@ msgstr "Transfer"
 msgid "Current Standard"
 msgstr "Current Standard"
 
-msgid "Admission Date"
-msgstr "Admission Date"
+msgid "Academic Year"
+msgstr "Academic Year"
 
 msgid "Edition"
 msgstr "Edition"
@@ -689,9 +689,6 @@ msgstr "Student Program"
 
 msgid "Data Element with Option Sets"
 msgstr "Data Element with Option Sets"
-
-msgid "Academic Year"
-msgstr "Academic Year"
 
 msgid "Grade"
 msgstr "Grade"
@@ -1136,26 +1133,8 @@ msgstr "Saturday"
 msgid "Sunday"
 msgstr "Sunday"
 
-msgid "Search transfer"
-msgstr "Search transfer"
-
 msgid "Perform transfer"
 msgstr "Perform transfer"
-
-msgid "Approve"
-msgstr "Approve"
-
-msgid "Reject"
-msgstr "Reject"
-
-msgid "Pending incoming transfers"
-msgstr "Pending incoming transfers"
-
-msgid "No pending incoming transfers found"
-msgstr "No pending incoming transfers found"
-
-msgid "No students with a pending incoming transfer match your search."
-msgstr "No students with a pending incoming transfer match your search."
 
 msgid "Confirm"
 msgstr "Confirm"
@@ -1217,8 +1196,8 @@ msgstr "Request transfer"
 msgid "WARNING!"
 msgstr "WARNING!"
 
-msgid "Specify all necessary transfer details"
-msgstr "Specify all necessary transfer details"
+msgid "Select the destination school"
+msgstr "Select the destination school"
 
 msgid "Perform Transfer"
 msgstr "Perform Transfer"

@@ -1046,3 +1046,120 @@ msgstr "Configurations non valides !"
 
 msgid "The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!"
 msgstr "Les configurations trouvées ne sont pas compatibles avec cette version de SEMIS. Veuillez vous rendre dans l'application de configurations ci-dessous et mettre à jour les configurations !"
+
+msgid "Student Profile"
+msgstr "Profil de l’étudiant"
+
+msgid "Student personal details"
+msgstr "Données personnelles de l’étudiant"
+
+msgid "Not recorded"
+msgstr "Non renseigné"
+
+msgid "Edit Student Profile"
+msgstr "Modifier le profil de l’étudiant"
+
+msgid "Profile updated successfully"
+msgstr "Profil mis à jour avec succès"
+
+msgid "Could not conclude the operation."
+msgstr "Impossible de terminer l’opération."
+
+msgid "You can't upload/change a photo"
+msgstr "Vous ne pouvez pas ajouter ou modifier une photo"
+
+msgid "More actions"
+msgstr "Autres actions"
+
+msgid "Mark student as {{decision}}"
+msgstr "Marquer l’étudiant comme {{decision}}"
+
+msgid "Confirm Final Decision"
+msgstr "Confirmer la décision finale"
+
+msgid "No enrollment records for {{year}}"
+msgstr "Aucun dossier d’inscription pour {{year}}"
+
+msgid "No enrollment information is available for this student in the selected academic year."
+msgstr "Aucune information d’inscription n’est disponible pour cet étudiant pour l’année scolaire sélectionnée."
+
+msgid "Academic year:"
+msgstr "Année scolaire :"
+
+msgid "More"
+msgstr "Plus"
+
+msgid "Error loading analytics"
+msgstr "Erreur lors du chargement des analyses"
+
+msgid "N/A"
+msgstr "S/O"
+
+msgid "Status"
+msgstr "Statut"
+
+msgid "Organisation Unit"
+msgstr "Unité d’organisation"
+
+msgid "Details"
+msgstr "Détails"
+
+msgid "No Details"
+msgstr "Aucun détail"
+
+msgid "No data found."
+msgstr "Aucune donnée trouvée."
+
+msgid "No events found"
+msgstr "Aucun événement trouvé"
+
+msgid "Loading..."
+msgstr "Chargement..."
+
+msgid "Showing"
+msgstr "Affichage de"
+
+msgid "of"
+msgstr "sur"
+
+msgid "Previous"
+msgstr "Précédent"
+
+msgid "Next"
+msgstr "Suivant"
+
+msgid "Page {{page}} of {{count}}"
+msgstr "Page {{page}} sur {{count}}"
+
+msgid "Occurred at"
+msgstr "Survenu le"
+
+msgid "Event details"
+msgstr "Détails de l’événement"
+
+msgid "COMPLETED"
+msgstr "Terminé"
+
+msgid "ACTIVE"
+msgstr "Actif"
+
+msgid "SCHEDULE"
+msgstr "Programmé"
+
+msgid "CANCELLED"
+msgstr "Annulé"
+
+msgid "Successfully marked this {{section}} as {{decision}}"
+msgstr "{{section}} marqué comme {{decision}} avec succès"
+
+msgid "Could not update final decision for this {{section}}"
+msgstr "Impossible de mettre à jour la décision finale pour ce {{section}}"
+
+msgid "Are you sure you want to mark this {{section}} as {{decision}}?"
+msgstr "Voulez-vous vraiment marquer ce {{section}} comme {{decision}} ?"
+
+msgid "This will finalize the student's enrollment and record the selected final decision."
+msgstr "Cela finalisera l’inscription de l’étudiant et enregistrera la décision finale sélectionnée."
+
+msgid "Could not get data"
+msgstr "Impossible de récupérer les données"

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-09-11T14:07:07.586Z\n"
-"PO-Revision-Date: 2026-09-11T14:07:07.587Z\n"
+"POT-Creation-Date: 2026-09-29T13:17:55.893Z\n"
+"PO-Revision-Date: 2026-09-29T13:17:55.894Z\n"
 
 msgid "No configuration found!"
 msgstr "No configuration found!"
@@ -199,8 +199,14 @@ msgstr "More Filters"
 msgid "Enter text"
 msgstr "Enter text"
 
+msgid "Please provide a value"
+msgstr "Please provide a value"
+
 msgid "Submit"
 msgstr "Submit"
+
+msgid "Please correct the following fields before submitting"
+msgstr "Please correct the following fields before submitting"
 
 msgid "Choose File"
 msgstr "Choose File"
@@ -848,11 +854,11 @@ msgstr "Program Details"
 msgid "Attendance General Details"
 msgstr "Attendance General Details"
 
-msgid "Attendance Statuses Details"
-msgstr "Attendance Statuses Details"
-
 msgid "Class Attendance Configuration"
 msgstr "Class Attendance Configuration"
+
+msgid "Attendance Statuses Details"
+msgstr "Attendance Statuses Details"
 
 msgid "Registration Details"
 msgstr "Registration Details"
@@ -1270,6 +1276,60 @@ msgstr "Saturday"
 msgid "Sunday"
 msgstr "Sunday"
 
+msgid "Error loading analytics"
+msgstr "Error loading analytics"
+
+msgid "More"
+msgstr "More"
+
+msgid "Occurred at"
+msgstr "Occurred at"
+
+msgid "No Details"
+msgstr "No Details"
+
+msgid "Showing"
+msgstr "Showing"
+
+msgid "of"
+msgstr "of"
+
+msgid "Previous"
+msgstr "Previous"
+
+msgid "Page {{page}} of {{count}}"
+msgid_plural "Page {{page}} of {{count}}"
+msgstr[0] "Page {{page}} of {{count}}"
+msgstr[1] "Page {{page}} of {{count}}"
+
+msgid "Next"
+msgstr "Next"
+
+msgid "Event details"
+msgstr "Event details"
+
+msgid "Not recorded"
+msgstr "Not recorded"
+
+msgid "Successfully marked this {{section}} as {{decision}}"
+msgstr "Successfully marked this {{section}} as {{decision}}"
+
+msgid "Could not update final decision for this {{section}}"
+msgstr "Could not update final decision for this {{section}}"
+
+msgid "Are you sure you want to mark this {{section}} as {{decision}}?"
+msgstr "Are you sure you want to mark this {{section}} as {{decision}}?"
+
+msgid ""
+"This will finalize the student's enrollment and record the selected final "
+"decision."
+msgstr ""
+"This will finalize the student's enrollment and record the selected final "
+"decision."
+
+msgid "Confirm"
+msgstr "Confirm"
+
 msgid "Confirm Final Decision"
 msgstr "Confirm Final Decision"
 
@@ -1279,20 +1339,36 @@ msgstr "Could not conclude the operation."
 msgid "Edit Student Profile"
 msgstr "Edit Student Profile"
 
-msgid "Not recorded"
-msgstr "Not recorded"
-
 msgid "Profile updated successfully"
 msgstr "Profile updated successfully"
 
 msgid "You can't upload/change a photo"
 msgstr "You can't upload/change a photo"
 
+msgid "More actions"
+msgstr "More actions"
+
+msgid "Mark student as {{decision}}"
+msgstr "Mark student as {{decision}}"
+
+msgid "Could not get data"
+msgstr "Could not get data"
+
+msgid "No enrollment records for {{year}}"
+msgstr "No enrollment records for {{year}}"
+
+msgid ""
+"No enrollment information is available for this student in the selected "
+"academic year."
+msgstr ""
+"No enrollment information is available for this student in the selected "
+"academic year."
+
+msgid "Student personal details"
+msgstr "Student personal details"
+
 msgid "Perform transfer"
 msgstr "Perform transfer"
-
-msgid "Confirm"
-msgstr "Confirm"
 
 msgid "Attention"
 msgstr "Attention"

@@ -1046,3 +1046,120 @@ msgstr "Configurações inválidas!"
 
 msgid "The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!"
 msgstr "As configurações encontradas não são compatíveis com esta versão do SEMIS. Por favor, vá à aplicação de configurações abaixo e atualize as configurações!"
+
+msgid "Student Profile"
+msgstr "Perfil do Estudante"
+
+msgid "Student personal details"
+msgstr "Dados pessoais do estudante"
+
+msgid "Not recorded"
+msgstr "Não registado"
+
+msgid "Edit Student Profile"
+msgstr "Editar perfil do estudante"
+
+msgid "Profile updated successfully"
+msgstr "Perfil atualizado com sucesso"
+
+msgid "Could not conclude the operation."
+msgstr "Não foi possível concluir a operação."
+
+msgid "You can't upload/change a photo"
+msgstr "Não é possível carregar ou alterar uma fotografia"
+
+msgid "More actions"
+msgstr "Mais ações"
+
+msgid "Mark student as {{decision}}"
+msgstr "Marcar estudante como {{decision}}"
+
+msgid "Confirm Final Decision"
+msgstr "Confirmar decisão final"
+
+msgid "No enrollment records for {{year}}"
+msgstr "Sem registos de matrícula para {{year}}"
+
+msgid "No enrollment information is available for this student in the selected academic year."
+msgstr "Não há informação de matrícula para este estudante no ano letivo selecionado."
+
+msgid "Academic year:"
+msgstr "Ano letivo:"
+
+msgid "More"
+msgstr "Mais"
+
+msgid "Error loading analytics"
+msgstr "Erro ao carregar análises"
+
+msgid "N/A"
+msgstr "N/D"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Organisation Unit"
+msgstr "Unidade organizacional"
+
+msgid "Details"
+msgstr "Detalhes"
+
+msgid "No Details"
+msgstr "Sem detalhes"
+
+msgid "No data found."
+msgstr "Nenhum dado encontrado."
+
+msgid "No events found"
+msgstr "Nenhum evento encontrado"
+
+msgid "Loading..."
+msgstr "A carregar..."
+
+msgid "Showing"
+msgstr "A mostrar"
+
+msgid "of"
+msgstr "de"
+
+msgid "Previous"
+msgstr "Anterior"
+
+msgid "Next"
+msgstr "Seguinte"
+
+msgid "Page {{page}} of {{count}}"
+msgstr "Página {{page}} de {{count}}"
+
+msgid "Occurred at"
+msgstr "Ocorreu em"
+
+msgid "Event details"
+msgstr "Detalhes do evento"
+
+msgid "COMPLETED"
+msgstr "Concluído"
+
+msgid "ACTIVE"
+msgstr "Ativo"
+
+msgid "SCHEDULE"
+msgstr "Agendado"
+
+msgid "CANCELLED"
+msgstr "Cancelado"
+
+msgid "Successfully marked this {{section}} as {{decision}}"
+msgstr "{{section}} marcado como {{decision}} com sucesso"
+
+msgid "Could not update final decision for this {{section}}"
+msgstr "Não foi possível atualizar a decisão final para este {{section}}"
+
+msgid "Are you sure you want to mark this {{section}} as {{decision}}?"
+msgstr "Tem a certeza de que deseja marcar este {{section}} como {{decision}}?"
+
+msgid "This will finalize the student's enrollment and record the selected final decision."
+msgstr "Isto finalizará a matrícula do estudante e registará a decisão final selecionada."
+
+msgid "Could not get data"
+msgstr "Não foi possível obter os dados"

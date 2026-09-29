@@ -21,7 +21,7 @@
 [submodule "src/modules/school-calendar"]
 	path = src/modules/school-calendar
 	url = https://github.com/Saudigitus/dhis2-emis-school-calendar.git
-	branch = i18n
+	branch = develop
 	ignore = all
 [submodule "src/modules/transfer"]
 	path = src/modules/transfer

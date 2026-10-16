@@ -10,9 +10,15 @@ import { FinalResult } from "dhis2-semis-final-result";
 import { SchoolCalendar } from "dhis2-semis-school-calendar";
 import { App as StudentProfile } from "dhis2-semis-student-profile";
 import { useConfig } from "@dhis2/app-runtime";
+import { useRecoilValue } from "recoil";
+import { UserInfoState } from "dhis2-semis-functions";
+import { Navigate } from "react-router-dom";
 
 export default function RouteList() {
     const { baseUrl } = useConfig()
+    const userInfo = useRecoilValue(UserInfoState)
+    const isSuperUser = userInfo?.authorities?.includes("ALL") ?? false
+    const adminOnlyPage = <Navigate to="/semis" replace />
     return [
         {
             path: "/semis",
@@ -48,11 +54,11 @@ export default function RouteList() {
         },
         {
             path: "/semis/configuration/*",
-            component: <ConfigirationsPage i18n={i18n} baseUrl={baseUrl} />
+            component: isSuperUser ? <ConfigirationsPage i18n={i18n} baseUrl={baseUrl} /> : adminOnlyPage
         },
         {
             path: "/semis/school-calendar/*",
-            component: <SchoolCalendar i18n={i18n} baseUrl={baseUrl} />
+            component: isSuperUser ? <SchoolCalendar i18n={i18n} baseUrl={baseUrl} /> : adminOnlyPage
         },
         {
             path: "/semis/profile/*",

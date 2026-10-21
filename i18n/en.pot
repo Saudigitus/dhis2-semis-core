@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-09-29T13:17:55.893Z\n"
-"PO-Revision-Date: 2026-09-29T13:17:55.894Z\n"
+"POT-Creation-Date: 2026-10-21T14:13:48.168Z\n"
+"PO-Revision-Date: 2026-10-21T14:13:48.168Z\n"
 
 msgid "No configuration found!"
 msgstr "No configuration found!"
@@ -62,6 +62,33 @@ msgstr "School"
 msgid "Error message"
 msgstr "Error message"
 
+msgid "Invalid Records"
+msgstr "Invalid Records"
+
+msgid "Rows checked"
+msgstr "Rows checked"
+
+msgid "Errors"
+msgstr "Errors"
+
+msgid "Warnings"
+msgstr "Warnings"
+
+msgid "Imported Records"
+msgstr "Imported Records"
+
+msgid "Updated Records"
+msgstr "Updated Records"
+
+msgid "Rows sent"
+msgstr "Rows sent"
+
+msgid "No records to display!"
+msgstr "No records to display!"
+
+msgid "New Records"
+msgstr "New Records"
+
 msgid "Dry Run"
 msgstr "Dry Run"
 
@@ -77,32 +104,6 @@ msgstr "Errors were found!"
 msgid "No errors!"
 msgstr "No errors!"
 
-msgid "Erros were found, please review your file!"
-msgstr "Erros were found, please review your file!"
-
-msgid "Invalid records were found, please review your file!"
-msgstr "Invalid records were found, please review your file!"
-
-msgid "Occurred errors during the import process, please review your file!"
-msgstr "Occurred errors during the import process, please review your file!"
-
-msgid "Date imported successfully!"
-msgstr "Date imported successfully!"
-
-msgid ""
-"No errors were found during dry run process, you can proceed with the "
-"import."
-msgstr ""
-"No errors were found during dry run process, you can proceed with the "
-"import."
-
-msgid ""
-"No errors were found during file validation process, you can proceed with "
-"the dry run/import."
-msgstr ""
-"No errors were found during file validation process, you can proceed with "
-"the dry run/import."
-
 msgid "Summary"
 msgstr "Summary"
 
@@ -115,35 +116,14 @@ msgstr "Error details"
 msgid "Warning details"
 msgstr "Warning details"
 
-msgid "New Records"
-msgstr "New Records"
-
-msgid "Invalid Records"
-msgstr "Invalid Records"
-
-msgid "Imported Records"
-msgstr "Imported Records"
-
-msgid "Updated Records"
-msgstr "Updated Records"
-
-msgid "Errors"
-msgstr "Errors"
-
-msgid "Warnings"
-msgstr "Warnings"
-
-msgid "Total rows"
-msgstr "Total rows"
-
-msgid "No records to display!"
-msgstr "No records to display!"
-
 msgid "Export Data Details"
 msgstr "Export Data Details"
 
 msgid "Details"
 msgstr "Details"
+
+msgid "Choose the period to export."
+msgstr "Choose the period to export."
 
 msgid "This file will allow the import of new student data into the system."
 msgstr "This file will allow the import of new student data into the system."
@@ -187,14 +167,14 @@ msgstr "Cancel"
 msgid "Continue"
 msgstr "Continue"
 
+msgid "More Filters"
+msgstr "More Filters"
+
 msgid "Update"
 msgstr "Update"
 
 msgid "Restore"
 msgstr "Restore"
-
-msgid "More Filters"
-msgstr "More Filters"
 
 msgid "Enter text"
 msgstr "Enter text"
@@ -259,18 +239,6 @@ msgstr "rows will be affected"
 msgid "Student promotion"
 msgstr "Student promotion"
 
-msgid "Enrollment History"
-msgstr "Enrollment History"
-
-msgid "This {{section}} is already enrolled for this year."
-msgstr "This {{section}} is already enrolled for this year."
-
-msgid "New enrollment"
-msgstr "New enrollment"
-
-msgid "No enrollments found."
-msgstr "No enrollments found."
-
 msgid "View history"
 msgstr "View history"
 
@@ -303,6 +271,18 @@ msgstr "Continue serching or click"
 
 msgid "if you want to register as a new"
 msgstr "if you want to register as a new"
+
+msgid "Enrollment History"
+msgstr "Enrollment History"
+
+msgid "This {{section}} is already enrolled for this year."
+msgstr "This {{section}} is already enrolled for this year."
+
+msgid "New enrollment"
+msgstr "New enrollment"
+
+msgid "No enrollments found."
+msgstr "No enrollments found."
 
 msgid "rows selected"
 msgstr "rows selected"
@@ -391,8 +371,8 @@ msgstr "View attendance records"
 msgid "Please select all filters"
 msgstr "Please select all filters"
 
-msgid "All listed students will be affected"
-msgstr "All listed students will be affected"
+msgid "All students will be affected"
+msgstr "All students will be affected"
 
 msgid "Yes im sure"
 msgstr "Yes im sure"
@@ -854,11 +834,11 @@ msgstr "Program Details"
 msgid "Attendance General Details"
 msgstr "Attendance General Details"
 
-msgid "Class Attendance Configuration"
-msgstr "Class Attendance Configuration"
-
 msgid "Attendance Statuses Details"
 msgstr "Attendance Statuses Details"
+
+msgid "Class Attendance Configuration"
+msgstr "Class Attendance Configuration"
 
 msgid "Registration Details"
 msgstr "Registration Details"
@@ -952,6 +932,9 @@ msgstr "SEMIS-Enrollment"
 
 msgid "Enrollments"
 msgstr "Enrollments"
+
+msgid "The final result was not fully saved"
+msgstr "The final result was not fully saved"
 
 msgid ""
 "No one will be able to access this program. Add some Organisation Units to "
@@ -1081,6 +1064,23 @@ msgstr "Staff re-enrollment preview"
 
 msgid "Students promotion preview"
 msgstr "Students promotion preview"
+
+msgid ""
+"The following staff were not re-enrolled. The server refused the new "
+"enrollment (see the reason)"
+msgstr ""
+"The following staff were not re-enrolled. The server refused the new "
+"enrollment (see the reason)"
+
+msgid ""
+"The following students were not promoted. The server refused the new "
+"enrollment (see the reason)"
+msgstr ""
+"The following students were not promoted. The server refused the new "
+"enrollment (see the reason)"
+
+msgid "Reason"
+msgstr "Reason"
 
 msgid ""
 "The following staff were not re-enrolled. They already exist on the "
@@ -1409,6 +1409,24 @@ msgstr "Transfers"
 msgid "Request time"
 msgstr "Request time"
 
+msgid "1 day"
+msgstr "1 day"
+
+msgid "{{days}} days"
+msgstr "{{days}} days"
+
+msgid "1 month"
+msgstr "1 month"
+
+msgid "{{months}} months"
+msgstr "{{months}} months"
+
+msgid "{{time}} ago"
+msgstr "{{time}} ago"
+
+msgid "Just now"
+msgstr "Just now"
+
 msgid "Select at least one row."
 msgstr "Select at least one row."
 
@@ -1433,11 +1451,20 @@ msgstr "Select the destination school"
 msgid "Perform Transfer"
 msgstr "Perform Transfer"
 
+msgid "Destination school cannot be the same as the origin school"
+msgstr "Destination school cannot be the same as the origin school"
+
 msgid "SEMIS-Transfer-Execute"
 msgstr "SEMIS-Transfer-Execute"
 
 msgid "Transfer Execute"
 msgstr "Transfer Execute"
+
+msgid "This {{sectionType}} enrollment was cancelled"
+msgstr "This {{sectionType}} enrollment was cancelled"
+
+msgid "This {{sectionType}} has a pending transfer request"
+msgstr "This {{sectionType}} has a pending transfer request"
 
 msgid "Configurations"
 msgstr "Configurations"
@@ -1456,7 +1483,3 @@ msgstr "Final result"
 
 msgid "Staff Re-enroll"
 msgstr "Staff Re-enroll"
-
-msgctxt "Date"
-msgid "Enrollment"
-msgstr "Enrollment_Date"

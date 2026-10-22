@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-10-22T07:37:10.803Z\n"
-"PO-Revision-Date: 2026-10-22T07:37:10.803Z\n"
+"POT-Creation-Date: 2026-10-22T08:59:56.176Z\n"
+"PO-Revision-Date: 2026-10-22T08:59:56.176Z\n"
 
 msgid "No configuration found!"
 msgstr "No configuration found!"
@@ -590,9 +590,6 @@ msgstr "Organisation unit data element"
 
 msgid "Destination School"
 msgstr "Destination School"
-
-msgid "Origin School"
-msgstr "Origin School"
 
 msgid "Transfer Program Stage"
 msgstr "Transfer Program Stage"
@@ -1245,6 +1242,9 @@ msgstr "SEMIS - Transfer"
 
 msgid "Transfers"
 msgstr "Transfers"
+
+msgid "Origin School"
+msgstr "Origin School"
 
 msgid "Request time"
 msgstr "Request time"

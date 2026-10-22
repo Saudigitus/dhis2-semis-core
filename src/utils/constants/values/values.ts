@@ -68,7 +68,6 @@ export const values = [
             "destinySchool": "",
             "enabled": false,
             "lastUpdate": "",
-            "originSchool": "",
             "programStage": "",
             "status": "",
             "statusOptions": [
@@ -140,7 +139,6 @@ export const values = [
             "destinySchool": "",
             "enabled": false,
             "lastUpdate": "",
-            "originSchool": "",
             "programStage": "",
             "status": "",
             "statusOptions": [

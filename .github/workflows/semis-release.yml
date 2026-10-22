@@ -1,0 +1,364 @@
+# SEMIS Release
+#
+# Started by hand with "Run workflow", always from develop.
+#
+#   rc       e.g. 2.1.0-rc3  fully automatic, published as a GitHub pre-release.
+#   release  e.g. 2.1.0      same steps, but the GitHub release is a draft: edit the notes,
+#                            then approve the "semis-release-approval" environment. After the
+#                            approval the release is published and main is updated in the core
+#                            and in every submodule.
+#
+# What a run does:
+#   1. Checks the version and that its tag and branches do not exist yet.
+#   2. Takes the develop commit of the core and of every submodule.
+#   3. Sets the version, builds the app zip (nothing is pushed if the build fails).
+#   4. Creates the branch (rc/<version> or release/<version>) and the tag <version> in every submodule.
+#   5. Creates the same branch in the core, pointing the submodules to those branches, and the tag <version>.
+#   6. Writes the release notes and creates the GitHub release with the zip.
+#
+# Needs a GitHub App installed on the core and on every submodule repository, with
+# "Contents: read and write" and "Pull requests: read":
+#   - variable SEMIS_RELEASE_APP_ID
+#   - secret   SEMIS_RELEASE_APP_PRIVATE_KEY
+# and the environment "semis-release-approval" with the required reviewers.
+
+name: SEMIS Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      type:
+        description: "rc (pre-release, automatic) or release (final, notes reviewed before publishing)"
+        required: true
+        type: choice
+        options:
+          - rc
+          - release
+      version:
+        description: "Version, e.g. 2.1.0-rc3 for rc or 2.1.0 for release"
+        required: true
+        type: string
+
+concurrency:
+  group: semis-release
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  TYPE: ${{ inputs.type }}
+  VERSION: ${{ inputs.version }}
+  CORE_REPO: ${{ github.repository }}
+
+jobs:
+  prepare:
+    name: Build and create ${{ inputs.type }} ${{ inputs.version }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the inputs
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_REF_NAME" != "develop" ]; then
+            echo "::error::Run this workflow from develop (it was started from $GITHUB_REF_NAME)."; exit 1
+          fi
+          if [ "$TYPE" = "rc" ]; then
+            [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+-rc[0-9]+$ ]] || { echo "::error::An rc version looks like 2.1.0-rc3."; exit 1; }
+          else
+            [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "::error::A release version looks like 2.1.0."; exit 1; }
+          fi
+
+      - name: Get the GitHub App token
+        id: app
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.SEMIS_RELEASE_APP_ID }}
+          private-key: ${{ secrets.SEMIS_RELEASE_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - name: Set the git identity of the App
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          APP_SLUG: ${{ steps.app.outputs.app-slug }}
+        run: |
+          set -euo pipefail
+          user_id=$(gh api "/users/${APP_SLUG}[bot]" --jq .id)
+          git config --global user.name "${APP_SLUG}[bot]"
+          git config --global user.email "${user_id}+${APP_SLUG}[bot]@users.noreply.github.com"
+          git config --global url."https://x-access-token:${GH_TOKEN}@github.com/".insteadOf "https://github.com/"
+
+      - name: Check out develop
+        uses: actions/checkout@v4
+        with:
+          ref: develop
+          fetch-depth: 0
+          token: ${{ steps.app.outputs.token }}
+
+      - name: Check out every submodule at its develop
+        id: modules
+        run: |
+          set -euo pipefail
+          BRANCH="$TYPE/$VERSION"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+          if git ls-remote --exit-code --tags origin "refs/tags/$VERSION" >/dev/null; then
+            echo "::error::The tag $VERSION already exists in the core."; exit 1
+          fi
+          if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null; then
+            echo "::error::The branch $BRANCH already exists in the core."; exit 1
+          fi
+
+          git submodule update --init
+          : > "$RUNNER_TEMP/modules.tsv"
+          git config -f .gitmodules --get-regexp '^submodule\..*\.path$' | while read -r key path; do
+            url=$(git config -f .gitmodules --get "submodule.$path.url")
+            if git ls-remote --exit-code --tags "$url" "refs/tags/$VERSION" >/dev/null; then
+              echo "::error::The tag $VERSION already exists in $url."; exit 1
+            fi
+            if git ls-remote --exit-code --heads "$url" "$BRANCH" >/dev/null; then
+              echo "::error::The branch $BRANCH already exists in $url."; exit 1
+            fi
+            git -C "$path" fetch --quiet origin develop
+            sha=$(git -C "$path" rev-parse FETCH_HEAD)
+            git -C "$path" checkout --quiet "$sha"
+            repo=$(echo "$url" | sed -E 's#^https://github.com/##; s#\.git$##')
+            printf '%s\t%s\t%s\n' "$path" "$repo" "$sha" >> "$RUNNER_TEMP/modules.tsv"
+            echo "$path -> $repo develop $sha"
+          done
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Set the version
+        run: npm version "$VERSION" --no-git-tag-version --allow-same-version
+
+      # --legacy-peer-deps: react-select 1.3.0 asks for React 16.
+      # --force: package.json lists the Windows build of rollup.
+      # The lock file has no Linux build of rollup (npm bug 4828), so it is added here without saving it.
+      - name: Install the dependencies
+        run: |
+          set -euo pipefail
+          npm ci --no-audit --no-fund --legacy-peer-deps --force
+          rollup_version=$(node -p "require('rollup/package.json').version")
+          npm install --no-save --no-audit --no-fund --legacy-peer-deps --force "@rollup/rollup-linux-x64-gnu@$rollup_version"
+
+      - name: Build the app
+        env:
+          NODE_OPTIONS: --max-old-space-size=8192
+        run: |
+          set -euo pipefail
+          npm run build
+          test -f "build/bundle/SEMIS-$VERSION.zip"
+
+      - name: Create the branch and the tag in every submodule
+        env:
+          BRANCH: ${{ steps.modules.outputs.branch }}
+        run: |
+          set -euo pipefail
+          while IFS=$'\t' read -r path repo sha; do
+            git -C "$path" tag -a "$VERSION" "$sha" -m "SEMIS Web $VERSION"
+            printf '%s\n' "$repo" >> "$RUNNER_TEMP/created.txt"
+            git -C "$path" push --quiet origin "$sha:refs/heads/$BRANCH" "refs/tags/$VERSION"
+            echo "$repo: $BRANCH and $VERSION at $sha"
+          done < "$RUNNER_TEMP/modules.tsv"
+
+      - name: Create the branch and the tag in the core
+        env:
+          BRANCH: ${{ steps.modules.outputs.branch }}
+        run: |
+          set -euo pipefail
+          paths=()
+          while IFS=$'\t' read -r path repo sha; do
+            git config -f .gitmodules "submodule.$path.branch" "$BRANCH"
+            paths+=("$path")
+          done < "$RUNNER_TEMP/modules.tsv"
+          git checkout --quiet -b "$BRANCH"
+          # The submodules are set to "ignore = all", so they are added with -f.
+          git add -f package.json package-lock.json .gitmodules "${paths[@]}"
+          git commit --quiet -m "chore(release): $VERSION"
+          git tag -a "$VERSION" -m "SEMIS Web $VERSION"
+          printf '%s\n' "$CORE_REPO" >> "$RUNNER_TEMP/created.txt"
+          git push --quiet origin "$BRANCH" "refs/tags/$VERSION"
+          echo "core: $BRANCH and $VERSION at $(git rev-parse HEAD)"
+
+      - name: Write the release notes
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          BRANCH: ${{ steps.modules.outputs.branch }}
+        run: |
+          set -euo pipefail
+          # Changes since the previous rc or release (for a release: since the previous release).
+          if [ "$TYPE" = "rc" ]; then
+            pattern='^[0-9]+\.[0-9]+\.[0-9]+(-rc[0-9]+)?$'
+          else
+            pattern='^[0-9]+\.[0-9]+\.[0-9]+$'
+          fi
+          previous=$(git tag --sort=-creatordate | grep -E "$pattern" | grep -vxF "$VERSION" | head -1 || true)
+          since=""
+          if [ -n "$previous" ]; then
+            since=$(gh release view "$previous" --repo "$CORE_REPO" --json publishedAt --jq .publishedAt 2>/dev/null \
+              || git for-each-ref "refs/tags/$previous" --format='%(creatordate:iso-strict)')
+          fi
+
+          notes="$RUNNER_TEMP/notes.md"
+          {
+            if [ "$TYPE" = "rc" ]; then
+              echo "Release candidate **$VERSION** of SEMIS Web, built from \`develop\` on $(date -u +%Y-%m-%d)."
+            else
+              echo "Release **$VERSION** of SEMIS Web, built from \`develop\` on $(date -u +%Y-%m-%d)."
+            fi
+            echo
+            echo "Install \`SEMIS-$VERSION.zip\` with the DHIS2 App Management app."
+            echo
+            if [ -n "$previous" ]; then
+              echo "## Changes since $previous"
+            else
+              echo "## Changes"
+            fi
+          } > "$notes"
+
+          section() {
+            local title="$1" repo="$2" list
+            local search="is:merged"
+            [ -n "$since" ] && search="merged:>$since"
+            list=$(gh pr list --repo "$repo" --base develop --state merged --search "$search" --limit 200 \
+              --json number,title,author,url \
+              --jq '.[] | "- \(.title) ([#\(.number)](\(.url))) by @\(.author.login)"')
+            if [ -n "$list" ]; then
+              printf '\n### %s\n\n%s\n' "$title" "$list" >> "$notes"
+            fi
+          }
+
+          section "Core" "$CORE_REPO"
+          while IFS=$'\t' read -r path repo sha; do
+            section "$(basename "$path")" "$repo"
+          done < "$RUNNER_TEMP/modules.tsv"
+
+          {
+            echo
+            echo "## Module versions"
+            echo
+            echo "Every module has the branch \`$BRANCH\` and the tag \`$VERSION\`."
+            echo
+            echo "| Module | Repository | Commit |"
+            echo "|---|---|---|"
+            while IFS=$'\t' read -r path repo sha; do
+              echo "| $path | [$repo](https://github.com/$repo/tree/$VERSION) | \`${sha:0:7}\` |"
+            done < "$RUNNER_TEMP/modules.tsv"
+          } >> "$notes"
+          cat "$notes"
+
+      - name: Create the GitHub release
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+        run: |
+          set -euo pipefail
+          if [ "$TYPE" = "rc" ]; then
+            kind=(--prerelease --latest=false)
+          else
+            # A draft: edit the notes, then approve the "semis-release-approval" environment.
+            kind=(--draft)
+          fi
+          gh release create "$VERSION" "build/bundle/SEMIS-$VERSION.zip" \
+            --repo "$CORE_REPO" --verify-tag --title "SEMIS Web $VERSION" \
+            --notes-file "$RUNNER_TEMP/notes.md" "${kind[@]}"
+          touch "$RUNNER_TEMP/release-created"
+          cp "$RUNNER_TEMP/modules.tsv" modules.tsv
+
+      # If the run fails half way, remove what it created, so it can run again with the same version.
+      - name: Remove what this run created
+        if: failure()
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          BRANCH: ${{ steps.modules.outputs.branch }}
+        run: |
+          # Only what this run created: a run stopped by the checks removes nothing.
+          if [ -f "$RUNNER_TEMP/release-created" ]; then
+            gh release delete "$VERSION" --repo "$CORE_REPO" --yes || true
+          fi
+          [ -f "$RUNNER_TEMP/created.txt" ] || exit 0
+          while read -r repo; do
+            git push --quiet "https://github.com/$repo.git" ":refs/heads/$BRANCH" 2>/dev/null || true
+            git push --quiet "https://github.com/$repo.git" ":refs/tags/$VERSION" 2>/dev/null || true
+            echo "$repo: removed $BRANCH and $VERSION"
+          done < "$RUNNER_TEMP/created.txt"
+
+      - name: Keep the module list for the publish job
+        if: inputs.type == 'release'
+        uses: actions/upload-artifact@v4
+        with:
+          name: modules
+          path: modules.tsv
+
+  publish:
+    name: Publish ${{ inputs.version }} and update main
+    if: inputs.type == 'release'
+    needs: prepare
+    runs-on: ubuntu-latest
+    environment: semis-release-approval
+    steps:
+      - name: Get the GitHub App token
+        id: app
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.SEMIS_RELEASE_APP_ID }}
+          private-key: ${{ secrets.SEMIS_RELEASE_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - name: Set the git identity of the App
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          APP_SLUG: ${{ steps.app.outputs.app-slug }}
+        run: |
+          set -euo pipefail
+          user_id=$(gh api "/users/${APP_SLUG}[bot]" --jq .id)
+          git config --global user.name "${APP_SLUG}[bot]"
+          git config --global user.email "${user_id}+${APP_SLUG}[bot]@users.noreply.github.com"
+          git config --global url."https://x-access-token:${GH_TOKEN}@github.com/".insteadOf "https://github.com/"
+
+      - name: Get the module list
+        uses: actions/download-artifact@v4
+        with:
+          name: modules
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+        run: gh release edit "$VERSION" --repo "$CORE_REPO" --draft=false --latest
+
+      # main becomes exactly the released version, without rewriting its history:
+      # a fast-forward when possible, otherwise a merge commit that keeps the files of the release.
+      - name: Update main in the core and in every submodule
+        run: |
+          set -euo pipefail
+          update_main() {
+            local repo="$1" dir
+            dir=$(mktemp -d)
+            git init --quiet "$dir"
+            git -C "$dir" remote add origin "https://github.com/$repo.git"
+            git -C "$dir" fetch --quiet origin "refs/tags/$VERSION:refs/tags/$VERSION"
+            local release main
+            release=$(git -C "$dir" rev-parse "$VERSION^{commit}")
+            if ! git -C "$dir" fetch --quiet origin "refs/heads/main:refs/remotes/origin/main" 2>/dev/null; then
+              git -C "$dir" push --quiet origin "$release:refs/heads/main"
+              echo "$repo: main created at $release"; return
+            fi
+            main=$(git -C "$dir" rev-parse origin/main)
+            if git -C "$dir" merge-base --is-ancestor "$main" "$release"; then
+              git -C "$dir" push --quiet origin "$release:refs/heads/main"
+              echo "$repo: main fast-forwarded to $release"
+            else
+              local merge
+              merge=$(git -C "$dir" commit-tree "$release^{tree}" -p "$main" -p "$release" -m "chore(release): update main to $VERSION")
+              git -C "$dir" push --quiet origin "$merge:refs/heads/main"
+              echo "$repo: main updated to $VERSION with $merge"
+            fi
+          }
+
+          update_main "$CORE_REPO"
+          while IFS=$'\t' read -r path repo sha; do
+            update_main "$repo"
+          done < modules.tsv

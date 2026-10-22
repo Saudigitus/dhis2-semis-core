@@ -6,9 +6,12 @@ import { useEffect, useRef } from "react"
 import { useSetRecoilState } from "recoil"
 import { UrlParamsState } from "../schemas/urlParams/paramSchema"
 import { useUrlParams } from "dhis2-semis-functions"
+import { useConfig } from "@dhis2/app-runtime"
 
 const WithSideBarLayout = () => {
     const { menuData } = useMenuData()
+    // The version of the installed app (package.json), shown at the bottom of the menu to help support.
+    const { appVersion } = useConfig()
     const { useQuery } = useUrlParams()
     const sectionType = useQuery.get("sectionType")
     const location = useLocation()
@@ -44,6 +47,7 @@ const WithSideBarLayout = () => {
                     sideBarData={menuData}
                     stickLastItemToBottom={false}
                     sideBarBtnPosition="top-offset"
+                    footer={appVersion?.full ? `SEMIS ${appVersion.full}` : undefined}
                 />
             }
         >

@@ -293,7 +293,7 @@ export const menuData = ({
           id: "",
           route: "/semis/configuration",
           appUrl: `#/semis/configuration`,
-          activationRoutes: ["/semis/configuration", "/semis/configuration/profile"],
+          activationRoutes: ["/semis/configuration"],
           active: false,
           action: () => navigate(`/semis/configuration`),
         },

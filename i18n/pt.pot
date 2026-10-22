@@ -1163,3 +1163,87 @@ msgstr "Isto finalizará a matrícula do estudante e registará a decisão final
 
 msgid "Could not get data"
 msgstr "Não foi possível obter os dados"
+
+msgid "Personal details"
+msgstr "Dados pessoais"
+
+msgid "Absences"
+msgstr "Faltas"
+
+msgid "{{stage}} average"
+msgstr "Média de {{stage}}"
+
+msgid "No name"
+msgstr "Sem nome"
+
+msgid "Pending Code"
+msgstr "Código de pendente"
+
+msgid "Destination School"
+msgstr "Escola de destino"
+
+msgid "Rejected Code"
+msgstr "Código de rejeitado"
+
+msgid "Organisation unit data element"
+msgstr "Elemento de dados de unidade organizacional"
+
+msgid "Non-repeatable program stage"
+msgstr "Etapa do programa não repetível"
+
+msgid "Repeatable program stage"
+msgstr "Etapa do programa repetível"
+
+msgid "Data element, optionally with option sets"
+msgstr "Elemento de dados, opcionalmente com conjunto de opções"
+
+msgid "Option of the status data element"
+msgstr "Opção do elemento de dados do estado"
+
+msgid "Search for existing records before registering a new one"
+msgstr "Procurar registos existentes antes de registar um novo"
+
+msgid "Attribute used to sort the lists"
+msgstr "Atributo usado para ordenar as listas"
+
+msgid "Ascending or descending order"
+msgstr "Ordem crescente ou decrescente"
+
+msgid "Numeric data element"
+msgstr "Elemento de dados numérico"
+
+msgid "Transfer Program Stage"
+msgstr "Etapa do programa de transferência"
+
+msgid "Select a program to configure the registration details"
+msgstr "Selecione um programa para configurar os detalhes do registo"
+
+msgid "If you don't use the socio-economic module, leave this field blank"
+msgstr "Se não usa o módulo socioeconómico, deixe este campo em branco"
+
+msgid "Select a program to configure the socio-economic details"
+msgstr "Selecione um programa para configurar os detalhes socioeconómicos"
+
+msgid "Configurations saved successfully"
+msgstr "Configurações guardadas com sucesso"
+
+msgid "This module contains the general settings required for SEMIS to work properly"
+msgstr "Este módulo contém as configurações gerais necessárias para o SEMIS funcionar corretamente"
+
+msgid "Final Result Criteria"
+msgstr "Critérios do resultado final"
+
+msgid "Defines how the attendance of each class is registered and summarised."
+msgstr "Define como a presença de cada turma é registada e resumida."
+
+msgid "Each status must have a different code"
+msgstr "Cada estado deve ter um código diferente"
+
+msgid "The attendance program stage must have these data elements to register the attendance of each class: {{dataElements}}"
+msgstr "A etapa do programa de presença deve ter estes elementos de dados para registar a presença de cada turma: {{dataElements}}"
+
+msgid "Attendance Total Summary"
+msgstr "Resumo total de presenças"
+
+msgid "Attendance Total Records"
+msgstr "Total de registos de presença"

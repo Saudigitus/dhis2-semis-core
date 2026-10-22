@@ -39,8 +39,15 @@ export default function AlertWithActions({ setValidation, setOpen, open, validat
                         onClick={async () => {
                             await createDataStore({ data: validation.converted })
                             if (validation?.year) {
+                                // Add the academic year to the calendar that exists: its periods and holidays are kept.
+                                const currentCalendar = await getDataStore("dataStore/semis/schoolCalendar").catch(() => undefined)
                                 await createSchoolCalendar({
-                                    data: { academinYear: validation?.year, defaults: { academicYear: validation.currentAcademicYear }, schoolCalendar: [] }
+                                    data: {
+                                        ...currentCalendar,
+                                        academicYear: validation?.year,
+                                        defaults: { ...currentCalendar?.defaults, ...(validation.currentAcademicYear ? { academicYear: validation.currentAcademicYear } : {}) },
+                                        schoolCalendar: currentCalendar?.schoolCalendar ?? []
+                                    }
                                 })
                                 const updatedSchoolCalendar = await getDataStore("dataStore/semis/schoolCalendar")
                                 setSchoolCalendar(updatedSchoolCalendar)

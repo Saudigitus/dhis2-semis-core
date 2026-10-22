@@ -78,6 +78,13 @@ export function mergeDeep(ref: any, input: any, errors: any[]): any {
         merged[key] = mergeDeep(ref[key], input?.[key], errors);
     }
 
+    // Keep the settings the reference does not list (e.g. the class attendance record), so converting does not lose them.
+    if (input && typeof input === 'object' && !Array.isArray(input)) {
+        for (const key of Object.keys(input)) {
+            if (!(key in merged)) merged[key] = input[key];
+        }
+    }
+
     return merged;
 }
 
@@ -91,6 +98,8 @@ export const useValidate = () => {
     ): ValidationResult {
         const errors: string[] = [];
         const converted: AnyObject[] = [];
+        academicYear = '';
+        currentAcademicYear = '';
         const inputCopy = [...(input?.length > 0 ? input : [{}, {}])]
 
         for (const item of inputCopy) {
@@ -103,8 +112,9 @@ export const useValidate = () => {
                     );
                 }
             }
-            currentAcademicYear = item?.defaults?.currentAcademicYear || '';
-            academicYear = item?.registration?.academicYear || '';
+            // The first one found, so an entry without it does not erase the one of the previous entry.
+            currentAcademicYear = currentAcademicYear || item?.defaults?.currentAcademicYear || '';
+            academicYear = academicYear || item?.registration?.academicYear || '';
 
             const refItem = reference?.find(r => r.key === item.key);
             if (!refItem) {
@@ -138,7 +148,8 @@ export const useValidate = () => {
                     const inputValue = item[key];
 
                     if (typeof refValue === 'object' && refValue !== null) {
-                        output[key] = mergeDeep(refValue, inputValue, errors);
+                        // registration only keeps the keys of the reference: its old academicYear goes to the school calendar.
+                        output[key] = mergeDeep(refValue, key === 'registration' ? output.registration : inputValue, errors);
 
                         if (key !== 'registration') {
                             validateNestedKeys(inputValue, inputValue, key, errors);

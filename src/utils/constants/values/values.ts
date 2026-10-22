@@ -51,53 +51,6 @@ export const values = [
             "dropoutStatusValues": []
         },
         "key": "student",
-        profile: {
-            enabled: false,
-            identityCard: {
-                badges: [
-                    {
-                        order: 0,
-                        source: "",
-                        styled: false,
-                        variable: "",
-                    },
-                ],
-                photo: {
-                    attribute: "",
-                },
-                subtitle: {
-                    attributes: [""],
-                    separator: "",
-                },
-                title: {
-                    attributes: [""],
-                    separator: "",
-                },
-            },
-            program: "",
-            tabs: [
-                {
-                    color: "",
-                    components: [
-                        {
-                            displayName: "",
-                            editable: false,
-                            order: 0,
-                            size: "",
-                            type: "",
-                            details: {
-                                pageSize: null,
-                                programStage: null,
-                            },
-                        },
-                    ],
-                    createdAt: 0,
-                    displayName: "",
-                    id: "",
-                    order: 0,
-                },
-            ],
-        },
         "program": "",
         "lastUpdate": "",
         "registration": {
@@ -167,52 +120,6 @@ export const values = [
         },
         "lastUpdate": "",
         "key": "staff",
-        profile: {
-            identityCard: {
-                badges: [
-                    {
-                        order: 0,
-                        source: "",
-                        styled: false,
-                        variable: "",
-                    },
-                ],
-                photo: {
-                    attribute: "",
-                },
-                subtitle: {
-                    attributes: [""],
-                    separator: "",
-                },
-                title: {
-                    attributes: [""],
-                    separator: "",
-                },
-            },
-            program: "",
-            tabs: [
-                {
-                    color: "",
-                    components: [
-                        {
-                            displayName: "",
-                            editable: false,
-                            order: 0,
-                            size: "",
-                            type: "",
-                            details: {
-                                pageSize: 0,
-                                programStage: "",
-                            },
-                        },
-                    ],
-                    createdAt: null,
-                    displayName: "",
-                    id: "",
-                    order: 0,
-                },
-            ],
-        },
         "program": "",
         "registration": {
             "enabled": false,

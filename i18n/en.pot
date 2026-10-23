@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-10-22T08:59:56.176Z\n"
-"PO-Revision-Date: 2026-10-22T08:59:56.176Z\n"
+"POT-Creation-Date: 2026-10-23T14:15:44.749Z\n"
+"PO-Revision-Date: 2026-10-23T14:15:44.750Z\n"
 
 msgid "No configuration found!"
 msgstr "No configuration found!"
@@ -608,6 +608,9 @@ msgstr "Rejected Code"
 
 msgid "List of final result status that allows staff promotion"
 msgstr "List of final result status that allows staff promotion"
+
+msgid "List of final result status that blocks staff re-enrollment"
+msgstr "List of final result status that blocks staff re-enrollment"
 
 msgid "Staff Program"
 msgstr "Staff Program"

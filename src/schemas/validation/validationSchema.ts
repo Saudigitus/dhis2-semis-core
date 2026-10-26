@@ -6,6 +6,7 @@ export type DataStoreValidationSchemaType = {
     deniedConversion: boolean;
     year?: string | null;
     currentAcademicYear?: string | null;
+    toReview?: { section: string, setting: string }[];
 };
 
 export const ValidationSchema = atom<DataStoreValidationSchemaType>({

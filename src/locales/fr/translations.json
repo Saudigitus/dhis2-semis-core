@@ -325,7 +325,6 @@
     "School calendar configuration not found!": "Configuration du calendrier scolaire introuvable !",
     "Go to Configuratios -> Enrollment application and set value to academic year field.": "Allez dans Configurations -> Demande d'inscription et définissez la valeur dans le champ Année universitaire.",
     "Invalid configurations!": "Configurations non valides !",
-    "The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!": "Les configurations trouvées ne sont pas compatibles avec cette version de SEMIS. Veuillez vous rendre dans l'application de configurations ci-dessous et mettre à jour les configurations !",
     "Student Profile": "Profil de l’étudiant",
     "Student personal details": "Données personnelles de l’étudiant",
     "Not recorded": "Non renseigné",
@@ -392,5 +391,19 @@
     "Each status must have a different code": "Chaque statut doit avoir un code différent",
     "The attendance program stage must have these data elements to register the attendance of each class: {{dataElements}}": "L’étape de programme de présence doit contenir ces éléments de données pour enregistrer la présence de chaque classe : {{dataElements}}",
     "Attendance Total Summary": "Résumé total des présences",
-    "Attendance Total Records": "Total des enregistrements de présence"
+    "Attendance Total Records": "Total des enregistrements de présence",
+    "Warning!": "Attention !",
+    "The configurations found are not compatible with this version of SEMIS, would you like to convert?": "Les configurations trouvées ne sont pas compatibles avec cette version de SEMIS. Voulez-vous les convertir ?",
+    "Yes": "Oui",
+    "Program": "Programme",
+    "Absenteeism": "Absentéisme",
+    "Filters": "Filtres",
+    "Defaults": "Valeurs par défaut",
+    "Socio-economics": "Socio-économique",
+    "Profile": "Profil",
+    "SEMIS is not fully set up": "SEMIS n'est pas entièrement configuré",
+    "Contact your SEMIS administrator.": "Contactez votre administrateur SEMIS.",
+    "SEMIS needs the SEMIS metadata on this instance. Then set up Student and Staff in Configurations.": "SEMIS a besoin des métadonnées SEMIS sur cette instance. Configurez ensuite Élève et Personnel dans Configurations.",
+    "Review {{settings}} in Configurations.": "Vérifiez {{settings}} dans Configurations.",
+    "The configurations found are not compatible with this version of SEMIS. Open SEMIS again to update them.": "Les configurations trouvées ne sont pas compatibles avec cette version de SEMIS. Ouvrez SEMIS à nouveau pour les mettre à jour."
 }

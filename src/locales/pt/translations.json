@@ -325,7 +325,6 @@
     "School calendar configuration not found!": "Configuração do calendário escolar não encontrada!",
     "Go to enrollment application and set value to academic year field.": "Vá à aplicação de matrícula e defina o valor no campo «Ano académico».",
     "Invalid configurations!": "Configurações inválidas!",
-    "The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!": "As configurações encontradas não são compatíveis com esta versão do SEMIS. Por favor, vá à aplicação de configurações abaixo e atualize as configurações!",
     "Student Profile": "Perfil do Estudante",
     "Student personal details": "Dados pessoais do estudante",
     "Not recorded": "Não registado",
@@ -392,5 +391,19 @@
     "Each status must have a different code": "Cada estado deve ter um código diferente",
     "The attendance program stage must have these data elements to register the attendance of each class: {{dataElements}}": "A etapa do programa de presença deve ter estes elementos de dados para registar a presença de cada turma: {{dataElements}}",
     "Attendance Total Summary": "Resumo total de presenças",
-    "Attendance Total Records": "Total de registos de presença"
+    "Attendance Total Records": "Total de registos de presença",
+    "Warning!": "Atenção!",
+    "The configurations found are not compatible with this version of SEMIS, would you like to convert?": "As configurações encontradas não são compatíveis com esta versão do SEMIS. Deseja convertê-las?",
+    "Yes": "Sim",
+    "Program": "Programa",
+    "Absenteeism": "Absenteísmo",
+    "Filters": "Filtros",
+    "Defaults": "Padrões",
+    "Socio-economics": "Socioeconômico",
+    "Profile": "Perfil",
+    "SEMIS is not fully set up": "O SEMIS não está totalmente configurado",
+    "Contact your SEMIS administrator.": "Contate o administrador do SEMIS.",
+    "SEMIS needs the SEMIS metadata on this instance. Then set up Student and Staff in Configurations.": "O SEMIS precisa dos metadados do SEMIS nesta instância. Depois configure Aluno e Equipe em Configurações.",
+    "Review {{settings}} in Configurations.": "Revise {{settings}} em Configurações.",
+    "The configurations found are not compatible with this version of SEMIS. Open SEMIS again to update them.": "As configurações encontradas não são compatíveis com esta versão do SEMIS. Abra o SEMIS novamente para atualizá-las."
 }

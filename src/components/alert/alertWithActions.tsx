@@ -5,6 +5,7 @@ import { CircularLoader } from "@dhis2/ui"
 import { DataStoreState, SchoolCalendarData, useGetDataStore } from "dhis2-semis-components"
 import { DataStoreValidationSchemaType } from "../../schemas/validation/validationSchema"
 import { useSetRecoilState } from "recoil"
+import i18n from "../../locales"
 
 interface AlertWithActionsProps {
     open: boolean;
@@ -33,8 +34,8 @@ export default function AlertWithActions({ setValidation, setOpen, open, validat
                 <Alert
                     severity="warning"
                 >
-                    <AlertTitle>Warning!</AlertTitle>
-                    <span style={{ marginRight: "40px" }} >The configurations found are not compatible with this version of SEMIS, would you like to convert?</span>
+                    <AlertTitle>{i18n.t("Warning!")}</AlertTitle>
+                    <span style={{ marginRight: "40px" }} >{i18n.t("The configurations found are not compatible with this version of SEMIS, would you like to convert?")}</span>
                     <Button
                         onClick={async () => {
                             await createDataStore({ data: validation.converted })
@@ -63,13 +64,13 @@ export default function AlertWithActions({ setValidation, setOpen, open, validat
                         color="error"
                         size="small"
                     >
-                        Yes
+                        {i18n.t("Yes")}
                     </Button>
                     <Button onClick={() => {
-                        setValidation({ valid: false, deniedConversion: true })
+                        setValidation({ ...validation, valid: false, deniedConversion: true })
                         setOpen(false)
                     }} color="primary" size="small">
-                        No
+                        {i18n.t("No")}
                     </Button>
                 </Alert>}
         </Backdrop>

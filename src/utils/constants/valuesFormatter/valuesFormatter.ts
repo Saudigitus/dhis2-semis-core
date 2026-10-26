@@ -8,6 +8,19 @@ interface ValidationResult {
     converted: AnyObject[];
     academicYear: any;
     currentAcademicYear: any;
+    // Settings missing inside a configured module: converting cannot guess them, the admin fills them in Configurations.
+    toReview: { section: string, setting: string }[];
+    // True when converting changes the settings (old format, modules that are not there yet).
+    canConvert: boolean;
+}
+
+// Same content whatever the order of the keys.
+function sortedJson(value: any): string {
+    if (Array.isArray(value)) return `[${value.map(sortedJson).join(",")}]`;
+    if (value && typeof value === "object") {
+        return `{${Object.keys(value).filter(k => value[k] !== undefined).sort().map(k => `${JSON.stringify(k)}:${sortedJson(value[k])}`).join(",")}}`;
+    }
+    return JSON.stringify(value);
 }
 
 export function validateNestedKeys(
@@ -60,12 +73,12 @@ export function validateNestedKeys(
     }
 }
 
-export function mergeDeep(ref: any, input: any, errors: any[]): any {
+export function mergeDeep(ref: any, input: any, errors: any[], missing?: string[]): any {
     if (typeof ref !== 'object' || ref === null || ref?.length == 0)
         return input !== undefined ? input : ref;
 
     if (Array.isArray(ref)) {
-        if (Array.isArray(input)) return input.map((item) => mergeDeep(ref[0], item, errors));
+        if (Array.isArray(input)) return input.map((item) => mergeDeep(ref[0], item, errors, missing));
         return ref;
     }
 
@@ -74,8 +87,13 @@ export function mergeDeep(ref: any, input: any, errors: any[]): any {
     for (const key of Object.keys(ref)) {
         if (!input || !(key in input)) {
             errors.push(`Missing required field '${key}' in object: ${JSON.stringify(input)}`);
+            // The reference only has an empty value for it: leave it out instead of saving it empty.
+            if (input && missing) {
+                missing.push(key);
+                continue;
+            }
         }
-        merged[key] = mergeDeep(ref[key], input?.[key], errors);
+        merged[key] = mergeDeep(ref[key], input?.[key], errors, missing);
     }
 
     // Keep the settings the reference does not list (e.g. the class attendance record), so converting does not lose them.
@@ -98,6 +116,7 @@ export const useValidate = () => {
     ): ValidationResult {
         const errors: string[] = [];
         const converted: AnyObject[] = [];
+        const toReview: { section: string, setting: string }[] = [];
         academicYear = '';
         currentAcademicYear = '';
         const inputCopy = [...(input?.length > 0 ? input : [{}, {}])]
@@ -110,6 +129,7 @@ export const useValidate = () => {
                     errors.push(
                         `Missing required field '${reqKey}' in object: ${JSON.stringify(item)}`
                     );
+                    if (item.key && reqKey !== 'key') toReview.push({ section: item.key, setting: reqKey });
                 }
             }
             // The first one found, so an entry without it does not erase the one of the previous entry.
@@ -129,7 +149,7 @@ export const useValidate = () => {
                 program: item.program,
                 registration: {
                     ...Object.fromEntries(
-                        Object.entries(item.registration).filter(([k]) => k in refItem.registration)
+                        Object.entries(item.registration ?? {}).filter(([k]) => k in refItem.registration)
                     )
                 }
             };
@@ -148,8 +168,10 @@ export const useValidate = () => {
                     const inputValue = item[key];
 
                     if (typeof refValue === 'object' && refValue !== null) {
+                        const missing: string[] = [];
                         // registration only keeps the keys of the reference: its old academicYear goes to the school calendar.
-                        output[key] = mergeDeep(refValue, key === 'registration' ? output.registration : inputValue, errors);
+                        output[key] = mergeDeep(refValue, key === 'registration' ? output.registration : inputValue, errors, missing);
+                        if (missing.length > 0) toReview.push({ section: item.key, setting: key });
 
                         if (key !== 'registration') {
                             validateNestedKeys(inputValue, inputValue, key, errors);
@@ -163,19 +185,24 @@ export const useValidate = () => {
 
             }
 
+            // A module that is not there yet is added switched off; a single value (e.g. the program) is left for the admin.
             for (const key of Object.keys(refItem)) {
-                if (!(key in item)) output[key] = refItem[key];
+                if (!(key in item) && typeof refItem[key] === 'object') output[key] = refItem[key];
             }
 
             converted.push(output);
         }
 
+        const result = converted?.length > 0 ? converted : reference;
+
         return {
             isValid: errors?.length === 0,
             errors,
-            converted: converted?.length > 0 ? converted : reference,
+            converted: result,
             academicYear,
             currentAcademicYear,
+            toReview,
+            canConvert: sortedJson(result) !== sortedJson(input ?? []),
         };
     }
 

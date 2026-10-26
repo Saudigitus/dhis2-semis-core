@@ -439,5 +439,6 @@
     "A term with this name already exists": "Un trimestre avec ce nom existe déjà",
     "This term overlaps with another term ({{startDate}} to {{endDate}})": "Ce trimestre chevauche un autre trimestre (du {{startDate}} au {{endDate}})",
     "This date already has a non-school day": "Cette date a déjà un jour non scolaire",
-    "To change this school calendar, edit the form": "Pour modifier ce calendrier scolaire, modifiez le formulaire"
+    "To change this school calendar, edit the form": "Pour modifier ce calendrier scolaire, modifiez le formulaire",
+    "Deleted successfully": "Supprimé avec succès"
 }

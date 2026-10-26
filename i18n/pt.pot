@@ -1389,3 +1389,6 @@ msgstr "Esta data já tem um dia não escolar"
 
 msgid "To change this school calendar, edit the form"
 msgstr "Para alterar este calendário escolar, edite o formulário"
+
+msgid "Deleted successfully"
+msgstr "Excluído com sucesso"

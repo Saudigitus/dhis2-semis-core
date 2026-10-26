@@ -1392,3 +1392,60 @@ msgstr "Para alterar este calendário escolar, edite o formulário"
 
 msgid "Deleted successfully"
 msgstr "Excluído com sucesso"
+
+msgid "In progress"
+msgstr "Em andamento"
+
+msgid "Starts in 1 day"
+msgstr "Começa em 1 dia"
+
+msgid "Starts in {{count}} days"
+msgstr "Começa em {{count}} dias"
+
+msgid "Ended"
+msgstr "Encerrado"
+
+msgid "More actions for {{- year}}"
+msgstr "Mais ações para {{- year}}"
+
+msgid "Edit details"
+msgstr "Editar detalhes"
+
+msgid "This year has no calendar yet. Set its dates, school days, terms and non-school days to use it in Attendance."
+msgstr "Este ano ainda não tem calendário. Defina as datas, os dias letivos, os períodos e os dias não escolares para usá-lo na Presença."
+
+msgid "{{startDate}} to {{endDate}}"
+msgstr "{{startDate}} a {{endDate}}"
+
+msgid "{{percent}}% of the year done"
+msgstr "{{percent}}% do ano concluído"
+
+msgid "1 term"
+msgstr "1 período"
+
+msgid "{{count}} terms"
+msgstr "{{count}} períodos"
+
+msgid "1 day off"
+msgstr "1 dia não escolar"
+
+msgid "{{count}} days off"
+msgstr "{{count}} dias não escolares"
+
+msgid "School days: {{days}}"
+msgstr "Dias letivos: {{days}}"
+
+msgid "No school days"
+msgstr "Sem dias letivos"
+
+msgid "No terms and no school days yet. Attendance cannot be taken."
+msgstr "Ainda não há períodos nem dias letivos. Não é possível registrar a presença."
+
+msgid "No terms yet. Attendance cannot be taken."
+msgstr "Ainda não há períodos. Não é possível registrar a presença."
+
+msgid "No school days yet. Attendance cannot be taken."
+msgstr "Ainda não há dias letivos. Não é possível registrar a presença."
+
+msgid "Set up calendar"
+msgstr "Configurar calendário"

@@ -1392,3 +1392,60 @@ msgstr "Pour modifier ce calendrier scolaire, modifiez le formulaire"
 
 msgid "Deleted successfully"
 msgstr "Supprimé avec succès"
+
+msgid "In progress"
+msgstr "En cours"
+
+msgid "Starts in 1 day"
+msgstr "Commence dans 1 jour"
+
+msgid "Starts in {{count}} days"
+msgstr "Commence dans {{count}} jours"
+
+msgid "Ended"
+msgstr "Terminé"
+
+msgid "More actions for {{- year}}"
+msgstr "Autres actions pour {{- year}}"
+
+msgid "Edit details"
+msgstr "Modifier les détails"
+
+msgid "This year has no calendar yet. Set its dates, school days, terms and non-school days to use it in Attendance."
+msgstr "Cette année n'a pas encore de calendrier. Définissez ses dates, ses jours scolaires, ses trimestres et ses jours non scolaires pour l'utiliser dans Présence."
+
+msgid "{{startDate}} to {{endDate}}"
+msgstr "du {{startDate}} au {{endDate}}"
+
+msgid "{{percent}}% of the year done"
+msgstr "{{percent}} % de l'année écoulée"
+
+msgid "1 term"
+msgstr "1 trimestre"
+
+msgid "{{count}} terms"
+msgstr "{{count}} trimestres"
+
+msgid "1 day off"
+msgstr "1 jour non scolaire"
+
+msgid "{{count}} days off"
+msgstr "{{count}} jours non scolaires"
+
+msgid "School days: {{days}}"
+msgstr "Jours scolaires : {{days}}"
+
+msgid "No school days"
+msgstr "Aucun jour scolaire"
+
+msgid "No terms and no school days yet. Attendance cannot be taken."
+msgstr "Pas encore de trimestres ni de jours scolaires. La présence ne peut pas être saisie."
+
+msgid "No terms yet. Attendance cannot be taken."
+msgstr "Pas encore de trimestres. La présence ne peut pas être saisie."
+
+msgid "No school days yet. Attendance cannot be taken."
+msgstr "Pas encore de jours scolaires. La présence ne peut pas être saisie."
+
+msgid "Set up calendar"
+msgstr "Configurer le calendrier"

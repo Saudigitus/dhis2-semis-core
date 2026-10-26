@@ -5,14 +5,82 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-10-23T14:15:44.749Z\n"
-"PO-Revision-Date: 2026-10-23T14:15:44.750Z\n"
+"POT-Creation-Date: 2026-10-26T10:32:33.411Z\n"
+"PO-Revision-Date: 2026-10-26T10:32:33.411Z\n"
+
+msgid "Warning!"
+msgstr "Warning!"
+
+msgid ""
+"The configurations found are not compatible with this version of SEMIS, "
+"would you like to convert?"
+msgstr ""
+"The configurations found are not compatible with this version of SEMIS, "
+"would you like to convert?"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
+
+msgid "Staff"
+msgstr "Staff"
+
+msgid "Student"
+msgstr "Student"
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Enrollment"
+msgstr "Enrollment"
+
+msgid "Attendance"
+msgstr "Attendance"
+
+msgid "Absenteeism"
+msgstr "Absenteeism"
+
+msgid "Performance"
+msgstr "Performance"
+
+msgid "Final result"
+msgstr "Final result"
+
+msgid "Transfer"
+msgstr "Transfer"
+
+msgid "Filters"
+msgstr "Filters"
+
+msgid "Defaults"
+msgstr "Defaults"
+
+msgid "Socio-economics"
+msgstr "Socio-economics"
+
+msgid "Profile"
+msgstr "Profile"
+
+msgid "SEMIS is not fully set up"
+msgstr "SEMIS is not fully set up"
+
+msgid "Contact your SEMIS administrator."
+msgstr "Contact your SEMIS administrator."
 
 msgid "No configuration found!"
 msgstr "No configuration found!"
 
-msgid "Use semis configuration app to setup your semis workspace."
-msgstr "Use semis configuration app to setup your semis workspace."
+msgid ""
+"SEMIS needs the SEMIS metadata on this instance. Then set up Student and "
+"Staff in Configurations."
+msgstr ""
+"SEMIS needs the SEMIS metadata on this instance. Then set up Student and "
+"Staff in Configurations."
+
+msgid "School calendar configuration not found!"
+msgstr "School calendar configuration not found!"
 
 msgid ""
 "Go to Configurations -> Enrollment application and set value to academic "
@@ -24,12 +92,15 @@ msgstr ""
 msgid "Invalid configurations!"
 msgstr "Invalid configurations!"
 
+msgid "Review {{settings}} in Configurations."
+msgstr "Review {{settings}} in Configurations."
+
 msgid ""
-"The configurations found are not compatible with this version of SEMIS, "
-"please go to configurations app below and update the configrations!"
+"The configurations found are not compatible with this version of SEMIS. "
+"Open SEMIS again to update them."
 msgstr ""
-"The configurations found are not compatible with this version of SEMIS, "
-"please go to configurations app below and update the configrations!"
+"The configurations found are not compatible with this version of SEMIS. "
+"Open SEMIS again to update them."
 
 msgid "Assing final result"
 msgstr "Assing final result"
@@ -214,12 +285,6 @@ msgstr "Select a school"
 msgid "Back to Enrollments"
 msgstr "Back to Enrollments"
 
-msgid "Enrollment"
-msgstr "Enrollment"
-
-msgid "Staff"
-msgstr "Staff"
-
 msgid "Perform Promotion"
 msgstr "Perform Promotion"
 
@@ -252,9 +317,6 @@ msgstr "Results found for"
 
 msgid "search"
 msgstr "search"
-
-msgid "No"
-msgstr "No"
 
 msgid "found"
 msgstr "found"
@@ -336,9 +398,6 @@ msgstr "Students will be affected"
 
 msgid "The chosen attendance status will be assigned to the selected students"
 msgstr "The chosen attendance status will be assigned to the selected students"
-
-msgid "Attendance"
-msgstr "Attendance"
 
 msgid "Bulk attendance"
 msgstr "Bulk attendance"
@@ -626,12 +685,6 @@ msgstr "Type of staff"
 
 msgid "Type of staff filter name"
 msgstr "Type of staff filter name"
-
-msgid "Performance"
-msgstr "Performance"
-
-msgid "Transfer"
-msgstr "Transfer"
 
 msgid "Final Result"
 msgstr "Final Result"
@@ -1204,9 +1257,6 @@ msgstr "Student personal details"
 msgid "Personal details"
 msgstr "Personal details"
 
-msgid "Final result"
-msgstr "Final result"
-
 msgid "Perform transfer"
 msgstr "Perform transfer"
 
@@ -1311,9 +1361,6 @@ msgstr "This {{sectionType}} has a pending transfer request"
 
 msgid "Configurations"
 msgstr "Configurations"
-
-msgid "Student"
-msgstr "Student"
 
 msgid "Navigation"
 msgstr "Navigation"

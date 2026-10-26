@@ -91,10 +91,12 @@ const useMenuData = () => {
         menuData: sideBarData
       }))
     } else {
-      updatedHomePageData([dashboardData[dashboardData?.length - 1]])
-      updateMenuData(menuDataArray?.filter(x => x.id != 'staff' && x.id != 'student'))
+      // Only superusers can fix the settings: other users get no Configurations entries.
+      const isSuperUser = userInfoState?.authorities?.includes("ALL");
+      updatedHomePageData(isSuperUser ? [dashboardData[dashboardData?.length - 1]] : [])
+      updateMenuData(menuDataArray?.filter(x => x.id != 'staff' && x.id != 'student' && (isSuperUser || x.id != 'configurations')))
     }
-  }, [dataStoreData, schoolCalendar, validation.valid, ulrParams])
+  }, [dataStoreData, schoolCalendar, validation.valid, ulrParams, userInfoState])
 
   return {
     menuData: formatMenuData({

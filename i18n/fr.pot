@@ -1044,8 +1044,6 @@ msgstr "Allez dans Configurations -> Demande d'inscription et définissez la val
 msgid "Invalid configurations!"
 msgstr "Configurations non valides !"
 
-msgid "The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!"
-msgstr "Les configurations trouvées ne sont pas compatibles avec cette version de SEMIS. Veuillez vous rendre dans l'application de configurations ci-dessous et mettre à jour les configurations !"
 
 msgid "Student Profile"
 msgstr "Profil de l’étudiant"
@@ -1247,3 +1245,45 @@ msgstr "Résumé total des présences"
 
 msgid "Attendance Total Records"
 msgstr "Total des enregistrements de présence"
+
+msgid "Warning!"
+msgstr "Attention !"
+
+msgid "The configurations found are not compatible with this version of SEMIS, would you like to convert?"
+msgstr "Les configurations trouvées ne sont pas compatibles avec cette version de SEMIS. Voulez-vous les convertir ?"
+
+msgid "Yes"
+msgstr "Oui"
+
+msgid "Program"
+msgstr "Programme"
+
+msgid "Absenteeism"
+msgstr "Absentéisme"
+
+msgid "Filters"
+msgstr "Filtres"
+
+msgid "Defaults"
+msgstr "Valeurs par défaut"
+
+msgid "Socio-economics"
+msgstr "Socio-économique"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "SEMIS is not fully set up"
+msgstr "SEMIS n'est pas entièrement configuré"
+
+msgid "Contact your SEMIS administrator."
+msgstr "Contactez votre administrateur SEMIS."
+
+msgid "SEMIS needs the SEMIS metadata on this instance. Then set up Student and Staff in Configurations."
+msgstr "SEMIS a besoin des métadonnées SEMIS sur cette instance. Configurez ensuite Élève et Personnel dans Configurations."
+
+msgid "Review {{settings}} in Configurations."
+msgstr "Vérifiez {{settings}} dans Configurations."
+
+msgid "The configurations found are not compatible with this version of SEMIS. Open SEMIS again to update them."
+msgstr "Les configurations trouvées ne sont pas compatibles avec cette version de SEMIS. Ouvrez SEMIS à nouveau pour les mettre à jour."

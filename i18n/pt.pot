@@ -1044,8 +1044,6 @@ msgstr "Vá à aplicação de matrícula e defina o valor no campo «Ano académ
 msgid "Invalid configurations!"
 msgstr "Configurações inválidas!"
 
-msgid "The configurations found are not compatible with this version of SEMIS, please go to configurations app below and update the configrations!"
-msgstr "As configurações encontradas não são compatíveis com esta versão do SEMIS. Por favor, vá à aplicação de configurações abaixo e atualize as configurações!"
 
 msgid "Student Profile"
 msgstr "Perfil do Estudante"
@@ -1247,3 +1245,45 @@ msgstr "Resumo total de presenças"
 
 msgid "Attendance Total Records"
 msgstr "Total de registos de presença"
+
+msgid "Warning!"
+msgstr "Atenção!"
+
+msgid "The configurations found are not compatible with this version of SEMIS, would you like to convert?"
+msgstr "As configurações encontradas não são compatíveis com esta versão do SEMIS. Deseja convertê-las?"
+
+msgid "Yes"
+msgstr "Sim"
+
+msgid "Program"
+msgstr "Programa"
+
+msgid "Absenteeism"
+msgstr "Absenteísmo"
+
+msgid "Filters"
+msgstr "Filtros"
+
+msgid "Defaults"
+msgstr "Padrões"
+
+msgid "Socio-economics"
+msgstr "Socioeconômico"
+
+msgid "Profile"
+msgstr "Perfil"
+
+msgid "SEMIS is not fully set up"
+msgstr "O SEMIS não está totalmente configurado"
+
+msgid "Contact your SEMIS administrator."
+msgstr "Contate o administrador do SEMIS."
+
+msgid "SEMIS needs the SEMIS metadata on this instance. Then set up Student and Staff in Configurations."
+msgstr "O SEMIS precisa dos metadados do SEMIS nesta instância. Depois configure Aluno e Equipe em Configurações."
+
+msgid "Review {{settings}} in Configurations."
+msgstr "Revise {{settings}} em Configurações."
+
+msgid "The configurations found are not compatible with this version of SEMIS. Open SEMIS again to update them."
+msgstr "As configurações encontradas não são compatíveis com esta versão do SEMIS. Abra o SEMIS novamente para atualizá-las."

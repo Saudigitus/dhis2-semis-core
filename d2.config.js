@@ -7,7 +7,12 @@ const config = {
         ],
     },
     name: 'SEMIS',
-    description: "SEMIS",
+    title: 'SEMIS',
+    description: 'School management on DHIS2: enrol learners and staff, take daily attendance, record marks, transfer between schools and promote at the end of the year. Needs the SEMIS metadata and the setup in Configurations.',
+    author: {
+        name: 'DHIS2 for Education Team',
+    },
+    minDHIS2Version: '2.41',
 
     entryPoints: {
         app: './src/app/app.tsx',

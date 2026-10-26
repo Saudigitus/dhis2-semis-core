@@ -2,6 +2,7 @@
   "name": "semis",
   "version": "2.1.0",
   "description": "",
+  "author": "DHIS2 for Education Team",
   "license": "BSD-3-Clause",
   "private": true,
   "scripts": {

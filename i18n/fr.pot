@@ -1386,3 +1386,6 @@ msgstr "Ce trimestre chevauche un autre trimestre (du {{startDate}} au {{endDate
 
 msgid "This date already has a non-school day"
 msgstr "Cette date a déjà un jour non scolaire"
+
+msgid "To change this school calendar, edit the form"
+msgstr "Pour modifier ce calendrier scolaire, modifiez le formulaire"

@@ -438,5 +438,6 @@
     "The end date must be on or after the start date": "A data de término deve ser igual ou posterior à data de início",
     "A term with this name already exists": "Já existe um período com este nome",
     "This term overlaps with another term ({{startDate}} to {{endDate}})": "Este período se sobrepõe a outro período ({{startDate}} a {{endDate}})",
-    "This date already has a non-school day": "Esta data já tem um dia não escolar"
+    "This date already has a non-school day": "Esta data já tem um dia não escolar",
+    "To change this school calendar, edit the form": "Para alterar este calendário escolar, edite o formulário"
 }

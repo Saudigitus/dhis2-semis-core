@@ -1386,3 +1386,6 @@ msgstr "Este período se sobrepõe a outro período ({{startDate}} a {{endDate}}
 
 msgid "This date already has a non-school day"
 msgstr "Esta data já tem um dia não escolar"
+
+msgid "To change this school calendar, edit the form"
+msgstr "Para alterar este calendário escolar, edite o formulário"

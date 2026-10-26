@@ -1287,3 +1287,102 @@ msgstr "Vérifiez {{settings}} dans Configurations."
 
 msgid "The configurations found are not compatible with this version of SEMIS. Open SEMIS again to update them."
 msgstr "Les configurations trouvées ne sont pas compatibles avec cette version de SEMIS. Ouvrez SEMIS à nouveau pour les mettre à jour."
+
+msgid "Edit school calendar"
+msgstr "Modifier le calendrier scolaire"
+
+msgid "All"
+msgstr "Tous"
+
+msgid "Active"
+msgstr "Actifs"
+
+msgid "Inactive"
+msgstr "Inactifs"
+
+msgid "Filter Options"
+msgstr "Options de filtre"
+
+msgid "New Academic Year Option"
+msgstr "Nouvelle option d'année scolaire"
+
+msgid "The code or name already exists"
+msgstr "Le code ou le nom existe déjà"
+
+msgid "This name already exists"
+msgstr "Ce nom existe déjà"
+
+msgid "This code already exists"
+msgstr "Ce code existe déjà"
+
+msgid "Code of the option"
+msgstr "Code de l'option"
+
+msgid "Description of the academic year"
+msgstr "Description de l'année scolaire"
+
+msgid "Could not update data"
+msgstr "Impossible de mettre à jour les données"
+
+msgid "Error fetching data element"
+msgstr "Erreur lors de la récupération de l'élément de données"
+
+msgid "No academic year found. Please ensure the data element is configured correctly."
+msgstr "Aucune année scolaire trouvée. Veuillez vous assurer que l'élément de données est correctement configuré."
+
+msgid "The school calendar was changed by someone else. Reload the page to see the latest version."
+msgstr "Le calendrier scolaire a été modifié par quelqu'un d'autre. Rechargez la page pour voir la dernière version."
+
+msgid "Data updated successfully"
+msgstr "Données mises à jour avec succès"
+
+msgid "Default"
+msgstr "Par défaut"
+
+msgid "Back"
+msgstr "Retour"
+
+msgid "General details"
+msgstr "Détails généraux"
+
+msgid "School terms"
+msgstr "Trimestres scolaires"
+
+msgid "Non school days"
+msgstr "Jours non scolaires"
+
+msgid "Non-school days"
+msgstr "Jours non scolaires"
+
+msgid "Off days"
+msgstr "Jours de congé"
+
+msgid "Term days"
+msgstr "Jours des trimestres"
+
+msgid "Week days without school"
+msgstr "Jours de la semaine sans école"
+
+msgid "Term start or end"
+msgstr "Début ou fin du trimestre"
+
+msgid "This will delete"
+msgstr "Cela supprimera"
+
+msgid "The date must be within the academic year ({{startDate}} to {{endDate}})"
+msgstr "La date doit être comprise dans l'année scolaire (du {{startDate}} au {{endDate}})"
+
+msgid "The end date must be after the start date"
+msgstr "La date de fin doit être postérieure à la date de début"
+
+msgid "The end date must be on or after the start date"
+msgstr "La date de fin doit être égale ou postérieure à la date de début"
+
+msgid "A term with this name already exists"
+msgstr "Un trimestre avec ce nom existe déjà"
+
+msgid "This term overlaps with another term ({{startDate}} to {{endDate}})"
+msgstr "Ce trimestre chevauche un autre trimestre (du {{startDate}} au {{endDate}})"
+
+msgid "This date already has a non-school day"
+msgstr "Cette date a déjà un jour non scolaire"

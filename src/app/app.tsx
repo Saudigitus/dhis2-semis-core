@@ -16,7 +16,6 @@ const App = () => {
     const initAndSave = async () => {
       try {
         await initializeDB();
-        console.log('Data loaded successfully');
       } catch (error) {
         console.error('DB error:', error);
       } finally {

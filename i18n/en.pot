@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-10-26T10:32:33.411Z\n"
-"PO-Revision-Date: 2026-10-26T10:32:33.411Z\n"
+"POT-Creation-Date: 2026-10-26T14:13:38.581Z\n"
+"PO-Revision-Date: 2026-10-26T14:13:38.581Z\n"
 
 msgid "Warning!"
 msgstr "Warning!"
@@ -1001,8 +1001,26 @@ msgstr "Sync to all schools"
 msgid "Export as a PDF"
 msgstr "Export as a PDF"
 
-msgid "Data registered successfully"
-msgstr "Data registered successfully"
+msgid "Date"
+msgstr "Date"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Term days"
+msgstr "Term days"
+
+msgid "Non-school days"
+msgstr "Non-school days"
+
+msgid "Week days without school"
+msgstr "Week days without school"
+
+msgid "Term start or end"
+msgstr "Term start or end"
+
+msgid "Deleted successfully"
+msgstr "Deleted successfully"
 
 msgid "Start Date"
 msgstr "Start Date"
@@ -1013,14 +1031,11 @@ msgstr "End Date"
 msgid "Are you sure?"
 msgstr "Are you sure?"
 
+msgid "This will delete"
+msgstr "This will delete"
+
 msgid "This will delete the selected data"
 msgstr "This will delete the selected data"
-
-msgid "Disagree"
-msgstr "Disagree"
-
-msgid "Agree"
-msgstr "Agree"
 
 msgid "This name already exists"
 msgstr "This name already exists"
@@ -1040,20 +1055,11 @@ msgstr "Off-days"
 msgid "Add new"
 msgstr "Add new"
 
-msgid "Date"
-msgstr "Date"
-
-msgid "Type"
-msgstr "Type"
-
 msgid "Description"
 msgstr "Description"
 
 msgid "Non-schoolday description"
 msgstr "Non-schoolday description"
-
-msgid "Non-school days"
-msgstr "Non-school days"
 
 msgid "Term 1"
 msgstr "Term 1"
@@ -1088,6 +1094,29 @@ msgstr "Exam days"
 msgid "Break days"
 msgstr "Break days"
 
+msgid "Could not get data"
+msgstr "Could not get data"
+
+msgid ""
+"No academic year found. Please ensure the data element is configured "
+"correctly."
+msgstr ""
+"No academic year found. Please ensure the data element is configured "
+"correctly."
+
+msgid "Error fetching data element"
+msgstr "Error fetching data element"
+
+msgid "Could not update data"
+msgstr "Could not update data"
+
+msgid ""
+"The school calendar was changed by someone else. Reload the page to see the "
+"latest version."
+msgstr ""
+"The school calendar was changed by someone else. Reload the page to see the "
+"latest version."
+
 msgid "Back"
 msgstr "Back"
 
@@ -1096,6 +1125,24 @@ msgstr "School Calendar"
 
 msgid "Loading..."
 msgstr "Loading..."
+
+msgid "The date must be within the academic year ({{startDate}} to {{endDate}})"
+msgstr "The date must be within the academic year ({{startDate}} to {{endDate}})"
+
+msgid "The end date must be after the start date"
+msgstr "The end date must be after the start date"
+
+msgid "A term with this name already exists"
+msgstr "A term with this name already exists"
+
+msgid "The end date must be on or after the start date"
+msgstr "The end date must be on or after the start date"
+
+msgid "This term overlaps with another term ({{startDate}} to {{endDate}})"
+msgstr "This term overlaps with another term ({{startDate}} to {{endDate}})"
+
+msgid "This date already has a non-school day"
+msgstr "This date already has a non-school day"
 
 msgid "Non-Schoolday Type"
 msgstr "Non-Schoolday Type"
@@ -1115,11 +1162,11 @@ msgstr "Name"
 msgid "Code"
 msgstr "Code"
 
-msgid "Code you configuration"
-msgstr "Code you configuration"
+msgid "Code of the option"
+msgstr "Code of the option"
 
-msgid "Description you configuration"
-msgstr "Description you configuration"
+msgid "Description of the academic year"
+msgstr "Description of the academic year"
 
 msgid "Period"
 msgstr "Period"
@@ -1234,9 +1281,6 @@ msgstr "More actions"
 
 msgid "Mark student as {{decision}}"
 msgstr "Mark student as {{decision}}"
-
-msgid "Could not get data"
-msgstr "Could not get data"
 
 msgid "No enrollment records for {{year}}"
 msgstr "No enrollment records for {{year}}"

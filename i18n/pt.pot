@@ -1287,3 +1287,165 @@ msgstr "Revise {{settings}} em Configurações."
 
 msgid "The configurations found are not compatible with this version of SEMIS. Open SEMIS again to update them."
 msgstr "As configurações encontradas não são compatíveis com esta versão do SEMIS. Abra o SEMIS novamente para atualizá-las."
+
+msgid "Edit school calendar"
+msgstr "Editar calendário escolar"
+
+msgid "All"
+msgstr "Todos"
+
+msgid "Active"
+msgstr "Ativos"
+
+msgid "Inactive"
+msgstr "Inativos"
+
+msgid "Filter Options"
+msgstr "Opções de filtro"
+
+msgid "New Academic Year Option"
+msgstr "Nova Opção de Ano Letivo"
+
+msgid "The code or name already exists"
+msgstr "O código ou o nome já existe"
+
+msgid "This name already exists"
+msgstr "Este nome já existe"
+
+msgid "This code already exists"
+msgstr "Este código já existe"
+
+msgid "Code of the option"
+msgstr "Código da opção"
+
+msgid "Description of the academic year"
+msgstr "Descrição do ano letivo"
+
+msgid "Could not update data"
+msgstr "Não foi possível atualizar os dados"
+
+msgid "Error fetching data element"
+msgstr "Erro ao buscar o elemento de dados"
+
+msgid "No academic year found. Please ensure the data element is configured correctly."
+msgstr "Nenhum ano letivo encontrado. Por favor, certifique-se de que o elemento de dados está configurado corretamente."
+
+msgid "The school calendar was changed by someone else. Reload the page to see the latest version."
+msgstr "O calendário escolar foi alterado por outra pessoa. Recarregue a página para ver a versão mais recente."
+
+msgid "Data updated successfully"
+msgstr "Dados atualizados com sucesso"
+
+msgid "Default"
+msgstr "Padrão"
+
+msgid "Back"
+msgstr "Voltar"
+
+msgid "General details"
+msgstr "Detalhes gerais"
+
+msgid "School terms"
+msgstr "Períodos escolares"
+
+msgid "Non school days"
+msgstr "Dias não escolares"
+
+msgid "Non-school days"
+msgstr "Dias não escolares"
+
+msgid "Off days"
+msgstr "Dias de folga"
+
+msgid "Term days"
+msgstr "Dias dos períodos escolares"
+
+msgid "Week days without school"
+msgstr "Dias da semana sem aulas"
+
+msgid "Term start or end"
+msgstr "Início ou fim do período"
+
+msgid "This will delete"
+msgstr "Isso excluirá"
+
+msgid "The date must be within the academic year ({{startDate}} to {{endDate}})"
+msgstr "A data deve estar dentro do ano letivo ({{startDate}} a {{endDate}})"
+
+msgid "The end date must be after the start date"
+msgstr "A data de término deve ser posterior à data de início"
+
+msgid "The end date must be on or after the start date"
+msgstr "A data de término deve ser igual ou posterior à data de início"
+
+msgid "A term with this name already exists"
+msgstr "Já existe um período com este nome"
+
+msgid "This term overlaps with another term ({{startDate}} to {{endDate}})"
+msgstr "Este período se sobrepõe a outro período ({{startDate}} a {{endDate}})"
+
+msgid "This date already has a non-school day"
+msgstr "Esta data já tem um dia não escolar"
+
+msgid "To change this school calendar, edit the form"
+msgstr "Para alterar este calendário escolar, edite o formulário"
+
+msgid "Deleted successfully"
+msgstr "Excluído com sucesso"
+
+msgid "In progress"
+msgstr "Em andamento"
+
+msgid "Starts in 1 day"
+msgstr "Começa em 1 dia"
+
+msgid "Starts in {{count}} days"
+msgstr "Começa em {{count}} dias"
+
+msgid "Ended"
+msgstr "Encerrado"
+
+msgid "More actions for {{- year}}"
+msgstr "Mais ações para {{- year}}"
+
+msgid "Edit details"
+msgstr "Editar detalhes"
+
+msgid "This year has no calendar yet. Set its dates, school days, terms and non-school days to use it in Attendance."
+msgstr "Este ano ainda não tem calendário. Defina as datas, os dias letivos, os períodos e os dias não escolares para usá-lo na Presença."
+
+msgid "{{startDate}} to {{endDate}}"
+msgstr "{{startDate}} a {{endDate}}"
+
+msgid "{{percent}}% of the year done"
+msgstr "{{percent}}% do ano concluído"
+
+msgid "1 term"
+msgstr "1 período"
+
+msgid "{{count}} terms"
+msgstr "{{count}} períodos"
+
+msgid "1 day off"
+msgstr "1 dia não escolar"
+
+msgid "{{count}} days off"
+msgstr "{{count}} dias não escolares"
+
+msgid "School days: {{days}}"
+msgstr "Dias letivos: {{days}}"
+
+msgid "No school days"
+msgstr "Sem dias letivos"
+
+msgid "No terms and no school days yet. Attendance cannot be taken."
+msgstr "Ainda não há períodos nem dias letivos. Não é possível registrar a presença."
+
+msgid "No terms yet. Attendance cannot be taken."
+msgstr "Ainda não há períodos. Não é possível registrar a presença."
+
+msgid "No school days yet. Attendance cannot be taken."
+msgstr "Ainda não há dias letivos. Não é possível registrar a presença."
+
+msgid "Set up calendar"
+msgstr "Configurar calendário"
